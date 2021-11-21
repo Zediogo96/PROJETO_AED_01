@@ -1,0 +1,39 @@
+//
+// Created by zedio on 21/11/2021.
+//
+
+#include "Time.h"
+
+Time::Time() {};
+Time::Time(int hours, int minutes): hours(hours), minutes(minutes) {};
+
+
+int Time::getHours() {
+    return hours;
+}
+
+int Time::getMinutes() {
+    return minutes;
+}
+
+void Time::setHours(int h) {
+    if (h >= 0)
+        hours = h;
+}
+
+void Time::setMinutes(int m){
+    if (m >= 0)
+        minutes = m;
+}
+
+bool Time::equals(Time &otherTime) {
+    if (hours == otherTime.hours && minutes == otherTime.minutes)
+        return true;
+
+    return false;
+}
+
+void Time::printTime() {
+    std::cout << std::setw(2) << std::setfill('0') << hours << ":"
+              << std::setw(2) << std::setfill('0') << minutes << "\n";
+}
