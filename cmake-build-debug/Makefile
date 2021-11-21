@@ -128,6 +128,30 @@ PROJETO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/build
 .PHONY : PROJETO/fast
 
+Airline.obj: Airline.cpp.obj
+.PHONY : Airline.obj
+
+# target to build an object file
+Airline.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Airline.cpp.obj
+.PHONY : Airline.cpp.obj
+
+Airline.i: Airline.cpp.i
+.PHONY : Airline.i
+
+# target to preprocess a source file
+Airline.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Airline.cpp.i
+.PHONY : Airline.cpp.i
+
+Airline.s: Airline.cpp.s
+.PHONY : Airline.s
+
+# target to generate assembly for a file
+Airline.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Airline.cpp.s
+.PHONY : Airline.cpp.s
+
 Time.obj: Time.cpp.obj
 .PHONY : Time.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... PROJETO
+	@echo ... Airline.obj
+	@echo ... Airline.i
+	@echo ... Airline.s
 	@echo ... Time.obj
 	@echo ... Time.i
 	@echo ... Time.s

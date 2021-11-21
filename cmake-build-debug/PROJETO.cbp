@@ -80,6 +80,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h">
+			<Option target="PROJETO"/>
+		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.cpp">
 			<Option target="PROJETO"/>
 		</Unit>
