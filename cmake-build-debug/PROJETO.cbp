@@ -86,10 +86,25 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h">
 			<Option target="PROJETO"/>
 		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/LinkedList.cpp">
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/LinkedList.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.cpp">

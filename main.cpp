@@ -1,17 +1,33 @@
 #include <iostream>
 
 #include "Time.h"
-
+#include "LinkedList.h"
 int main() {
 
-    Time t1(10, 20);
-    Time t2;
+    LinkedList list = new LinkedList();
 
+    for (int i = 0; i < 5; ++i)
+    {
+        if(i == 3){
+            list->add(105);
+            list->add(106);
+        }
+        list->add(rand() % 100);
+    }
 
-    t2.setHours(10);
-    t2.setMinutes(20);
+    list->print();
+    list->size();
 
-    std::cout << t1.equals(t2);
+    list->remove(105);
+
+    list->print();
+    list->size();
+
+    Node* node = list->search(106);
+    node->print();
+
+    delete list;
+    return 0;
 
 
 

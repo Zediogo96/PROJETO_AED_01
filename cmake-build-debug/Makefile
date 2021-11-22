@@ -152,29 +152,77 @@ Airline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Airline.cpp.s
 .PHONY : Airline.cpp.s
 
-LinkedList.obj: LinkedList.cpp.obj
-.PHONY : LinkedList.obj
+Date.obj: Date.cpp.obj
+.PHONY : Date.obj
 
 # target to build an object file
-LinkedList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/LinkedList.cpp.obj
-.PHONY : LinkedList.cpp.obj
+Date.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.obj
+.PHONY : Date.cpp.obj
 
-LinkedList.i: LinkedList.cpp.i
-.PHONY : LinkedList.i
+Date.i: Date.cpp.i
+.PHONY : Date.i
 
 # target to preprocess a source file
-LinkedList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/LinkedList.cpp.i
-.PHONY : LinkedList.cpp.i
+Date.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.i
+.PHONY : Date.cpp.i
 
-LinkedList.s: LinkedList.cpp.s
-.PHONY : LinkedList.s
+Date.s: Date.cpp.s
+.PHONY : Date.s
 
 # target to generate assembly for a file
-LinkedList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/LinkedList.cpp.s
-.PHONY : LinkedList.cpp.s
+Date.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.s
+.PHONY : Date.cpp.s
+
+Flight.obj: Flight.cpp.obj
+.PHONY : Flight.obj
+
+# target to build an object file
+Flight.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Flight.cpp.obj
+.PHONY : Flight.cpp.obj
+
+Flight.i: Flight.cpp.i
+.PHONY : Flight.i
+
+# target to preprocess a source file
+Flight.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Flight.cpp.i
+.PHONY : Flight.cpp.i
+
+Flight.s: Flight.cpp.s
+.PHONY : Flight.s
+
+# target to generate assembly for a file
+Flight.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Flight.cpp.s
+.PHONY : Flight.cpp.s
+
+Plane.obj: Plane.cpp.obj
+.PHONY : Plane.obj
+
+# target to build an object file
+Plane.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.obj
+.PHONY : Plane.cpp.obj
+
+Plane.i: Plane.cpp.i
+.PHONY : Plane.i
+
+# target to preprocess a source file
+Plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.i
+.PHONY : Plane.cpp.i
+
+Plane.s: Plane.cpp.s
+.PHONY : Plane.s
+
+# target to generate assembly for a file
+Plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.s
+.PHONY : Plane.cpp.s
 
 Time.obj: Time.cpp.obj
 .PHONY : Time.obj
@@ -236,9 +284,15 @@ help:
 	@echo ... Airline.obj
 	@echo ... Airline.i
 	@echo ... Airline.s
-	@echo ... LinkedList.obj
-	@echo ... LinkedList.i
-	@echo ... LinkedList.s
+	@echo ... Date.obj
+	@echo ... Date.i
+	@echo ... Date.s
+	@echo ... Flight.obj
+	@echo ... Flight.i
+	@echo ... Flight.s
+	@echo ... Plane.obj
+	@echo ... Plane.i
+	@echo ... Plane.s
 	@echo ... Time.obj
 	@echo ... Time.i
 	@echo ... Time.s

@@ -11,8 +11,6 @@
 
 class Time {
 private:
-
-
     int hours, minutes;
 public:
 

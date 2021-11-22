@@ -6,6 +6,9 @@
 #define PROJETO_LINKEDLIST_H
 
 
+#include <cstdlib>
+#include <iostream>
+
 /**
  * Implementation of LinkedList
  *
@@ -21,20 +24,20 @@ private:
 
     class Node {
         friend class LinkedList<T>;
-    private:
-        T* info;
-        Node* next;
     public:
         Node(const T& info);
-        /** @brief Returns Information contained in a certain node */
-        const T& getInfo() const; // Returns
-        /** @brief Return a pointer to the next node */
-        const Node* getNext() const; // Return a pointer to the next node
+
+    private:
+        T*    info;
+        Node* next;
     };
 
-    Node* head; // First Element of the LinkedList
-    Node* tail; // Last Element of the LinkedList
+    Node* head; // first Element of LinkedList
+    Node* tail; // last Element of LinkedList
+
 public:
+
+    int length;
 
     LinkedList();
     ~LinkedList();
@@ -42,8 +45,8 @@ public:
     LinkedList(const LinkedList<T>& list) = delete;
     /*const LinkedList<T> operator=(const LinkedList<T>& list) = delete;
     */
-    void addToTail(const T& info);
-    void remove(const T& info);
+    void addAtBeginning(const T& info);
+    void removeElement(const T& info);
     bool contains(const T& info) const;
 
     /*
@@ -71,61 +74,78 @@ LinkedList<T>::~LinkedList()
         delete tmp1;
         tmp1 = tmp2;
 
-        if (tmp1) {
+        if (tmp1) { // If tmp1 is not null
             tmp2 = tmp2->next;
         }
     }
+
+    std::cout << "List was deleted" << std::endl;
 }
 
 template <class T>
-void LinkedList<T>::addToTail(const T& info) {
+void LinkedList<T>::addAtBeginning(const T& info) {
 
-    if (head == nullptr) {
-        head = new Node(info);
-        tail = head;
+    /** Create a new node to be added, with the desired information */
+    Node* node = new Node();
+    node->data = info;
+
+    /** Move head to 2nd position of the LinkedList */
+    node->next = this->head;
+    /** Make new node be the head */
+    this->head = node;
+
+    this->length++;
+}
+template <class T>
+void LinkedList<T>::removeElement(const T& info) {
+
+    Node* prev = head;
+    Node* current = head->next;
+
+    if (this->length == 0) {
+        std::cout << "Empty List" << std:: endl;
+    }
+    else if (this->head->data == info) {
+        Node* current = head;
+        this->head = this->head->next;
+        delete current;
+        this->length--;
     }
     else {
-        tail->next = new Node(info);
-        tail = tail->next;
-    }
-}
-template <class T>
-void LinkedList<T>::remove(const T& info) {
+        Node* previous = this->head;
+        Node* current = this->head->next;
 
-    Node* ptr1 = head;
-    Node* ptr2 = head->next;
-
-    /** brief: In case information is in the head Node of the Linked List */
-    if(head->info == &info) {
-
-        ptr1 = head;
-        head = head->next;
-        delete ptr1;
-        return;
-    }
-
-    while(ptr2 != nullptr)
-    {
-        if (ptr2->info == &info) {
-            if (ptr2 == tail) {
-                tail = ptr1;
+        while (current != nullptr) {
+            if (current-> data == info) {
+                break;
+            }
+            else {
+                previous = current;
+                current = current->next;
             }
         }
+
+        if (current == nullptr) {
+            std::cout << "Can't remove a value that is not contained in the List" << std::endl;
+        }
+        previous->next = current->next;
+        delete current;
+        this->length--;
     }
 }
-
 template <class T>
 bool LinkedList<T>::contains(const T& info) const {
 
-    Node* tmp = head;
-    while (tmp != nullptr) {
-        if (tmp->info == info) return true; // Checks if the info is in the head Node.
+    Node* temp = head;
 
-        tmp = tmp->next; // Else, continues to the next node.
+    while (temp != nullptr) {
+        if (temp->data == info) return true;
+
+        temp = temp->next; // Will eventually turn into nullptr if info is not found, since this is not a circledList.
     }
 
-    return false; // In case nothing was found.
-
+    return false;
 }
+
 
 #endif //PROJETO_LINKEDLIST_H
