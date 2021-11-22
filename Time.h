@@ -39,6 +39,7 @@ public:
 
     void printTime();
 
+    Time(Time *pTime);
 };
 
 #endif //PROJETO_TIME_H

@@ -38,6 +38,8 @@ public:
     bool equals(Date &otherDate);
 
     void printDate();
+
+    Date(Date *pDate);
 };
 
 #endif //PROJETO_DATE_H

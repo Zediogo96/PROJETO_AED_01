@@ -6,15 +6,25 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
 iostream
 -
 iomanip
 -
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
-iostream
--
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.cpp
+Flight.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
+Date.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
 Time.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+iostream
+-
+iomanip
+-
 

@@ -4,7 +4,9 @@
 
 #include "Time.h"
 
-Time::Time() {};
+Time::Time() {
+    hours, minutes = 0;
+};
 Time::Time(int hours, int minutes): hours(hours), minutes(minutes) {};
 
 
