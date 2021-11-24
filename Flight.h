@@ -34,7 +34,7 @@ public:
     void setDestination(std::string destination_);
 
 
-    Flight(Date departureDate);
+    Flight();
 
     Flight(int numberOfFlight_, Date departureDate_, Time flightDuration_,
            std::string departureLocation_, std::string destination_);

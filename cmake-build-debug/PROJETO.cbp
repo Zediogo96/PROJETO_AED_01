@@ -116,6 +116,9 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp">
 			<Option target="PROJETO"/>
 		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h">
+			<Option target="PROJETO"/>
+		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

@@ -44,7 +44,11 @@ std::string Flight::getDestination() const {
 
 
 void Flight::setNumberOfFlight(int numberOfFlight_) {
-    numberOfFlight = numberOfFlight_;
+
+    if (numberOfFlight_ >= 0)
+            this->numberOfFlight = numberOfFlight_;
+
+    std::cout << "Invalid input for number of Flight, must be a number greater than zero." << std::endl;
 }
 
 void Flight::setDepartureDate(Date date_) {

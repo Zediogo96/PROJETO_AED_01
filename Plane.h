@@ -6,6 +6,9 @@
 #define PROJETO_PLANE_H
 
 #include <string>
+#include <iostream>
+
+#include "utility.h"
 
 
 class Plane {
