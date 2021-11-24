@@ -4,6 +4,11 @@
 CMakeFiles/PROJETO.dir/Airline.cpp.obj
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.cpp
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
 CMakeFiles/PROJETO.dir/Date.cpp.obj
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.cpp
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
@@ -13,13 +18,21 @@ CMakeFiles/PROJETO.dir/Flight.cpp.obj
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
 CMakeFiles/PROJETO.dir/Plane.cpp.obj
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
 CMakeFiles/PROJETO.dir/Time.cpp.obj
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.cpp
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
 CMakeFiles/PROJETO.dir/main.cpp.obj
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/LinkedList.h
+ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
  C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h

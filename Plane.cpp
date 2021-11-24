@@ -12,10 +12,11 @@ Plane::Plane() {
 }
 
 /** @brief: Creates a new object of class Plane */
-Plane::Plane(std::string numberPlate, std::string type, int capacity) {
+Plane::Plane(std::string numberPlate, std::string type, int capacity, int planeID) {
     this->numberPlate = numberPlate;
     this->type = type;
-    this-> capacity = capacity;
+    this->capacity = capacity;
+    this->planeID = planeID;
 }
 
 std::string Plane::getNumberPlate() const {
@@ -28,6 +29,10 @@ std::string Plane::getType() const {
 
 int Plane::getCapacity() const {
     return capacity;
+}
+
+int Plane::getPlaneID() const {
+    return planeID;
 }
 
 void Plane::setNumberPlate(std::string numberPlate_) {
@@ -49,6 +54,13 @@ void Plane::setType(std::string type_) {
 
 void Plane::setCapacity(int capacity_) {
     this->capacity = capacity_;
+}
+
+void Plane::setPlaneID(int pID) {
+    if(pID > 0) {
+        this->planeID = pID;
+    }
+    std::cout << "Invalid value for planeID. \n";
 }
 
 

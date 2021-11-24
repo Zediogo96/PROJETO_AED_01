@@ -1,4 +1,4 @@
-//
+/*//
 // Created by zedio on 22/11/2021.
 //
 
@@ -65,4 +65,4 @@ void Flight::setDepartureLocation(std::string departureLocation_) {
 
 void Flight::setDestination(std::string destination_) {
     destination = destination_;
-}
+}*/

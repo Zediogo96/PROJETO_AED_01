@@ -9,32 +9,34 @@
 #include <iostream>
 
 #include "utility.h"
-
+#include "Flight.h"
 
 class Plane {
 
 private:
     /** TO IMPLEMENT LIST OF FLIGHTS */
-    /* vector<Flight> flightList; */
+    /*std::vector<Flight> flightList;*/
 
     /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
     /* queue<Services> servicesQueue; */ //
 
     std::string numberPlate, type;
-    int capacity;
+    int capacity, planeID;
 
 public:
 
     Plane();
-    Plane(std::string numberPlate, std::string type, int capacity);
+    Plane(std::string numberPlate, std::string type, int capacity, int planeID);
 
     void setNumberPlate(std::string numberPlate_);
     void setType(std::string type_);
     void setCapacity(int capacity_);
+    void setPlaneID(int pID);
 
     std::string getNumberPlate() const;
     std::string getType() const;
     int getCapacity() const;
+    int getPlaneID() const;
 
 };
 

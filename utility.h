@@ -7,6 +7,7 @@
 
 #include <string>
 #include <regex>
+#include <iostream>
 
 /**
  * Using Regular Expressions (Regex) to validate a number plate input
@@ -14,11 +15,42 @@
  * @param string
  * @return boolean
  */
-bool validatePlaneType(const std::string &s) {
+static bool validatePlaneType(const std::string &s) {
+
 
     static const std::regex validType("([A-Z]([0-9]{3}))");
 
-    return std::regex_match(s, validType);
+    if (std::regex_match(s, validType))
+        return true;
+    std::cout << "Invalid type format, must be for example 'A750'." << std::endl;
+    return false;
+}
+
+/** @brief Method that implements input in case of string text */
+static void InputStr(std::string &str, std::string const &text) {
+
+    do {
+        if (!std::cin) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+        }
+
+        std::cout << text << std::endl;
+        std::cin >> str;
+    } while(!std::cin);
+
+}
+
+static void InputInt(int &num, const std::string &text) {
+    do {
+        if (!std::cin) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+        }
+
+        std::cout << text << std::endl;
+        std::cin >> num;
+    } while(!std::cin);
 }
 
 #endif //PROJETO_UTILITY_H

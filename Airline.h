@@ -7,11 +7,13 @@
 
 
 #include <string>
+#include <vector>
+#include "Plane.h"
 
 class Airline {
 private:
 
-    /*static const int MAX_NUM_OF_PASSENGERS = 100;*/
+    std::vector<Plane> planesList;
 
     int maxNumOfFlights;
     int currentNumOfFlights;
@@ -42,6 +44,20 @@ public:
     const std::string& getName();
     int getMaxNumOfFlights();
     int getCurrentNumOfFlights();
+
+    /******************************************** HANDLE PLANES **************************** */
+
+    void Save();
+    void Load();
+
+    bool availablePlane(int planeID);
+    int findPlane();
+    void addPlane();
+    void searchPlane();
+    void editPlane();
+    void printPlanes();
+    void deletePlane();
+    void clearPlane();
 
 };
 
