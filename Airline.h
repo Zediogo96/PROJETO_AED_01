@@ -47,8 +47,8 @@ public:
 
     /******************************************** HANDLE PLANES **************************** */
 
-    void Save();
-    void Load();
+    void SavePlanes();
+    void LoadPlanes();
 
     bool availablePlane(int planeID);
     int findPlane();
@@ -57,9 +57,12 @@ public:
     void editPlane();
     void printPlanes();
     void deletePlane();
-    void clearPlane();
+    void clearPlanes();
 
 };
+
+
+
 
 
 #endif //PROJETO_AIRLINE_H

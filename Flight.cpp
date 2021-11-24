@@ -1,10 +1,10 @@
-/*//
 // Created by zedio on 22/11/2021.
 //
 
 #include "Flight.h"
 
-Flight::Flight(Date departureDate) : departureDate(departureDate) {
+Flight::Flight() {
+
     numberOfFlight = 0;
     departureDate = Date();
     flightDuration = Time();
@@ -65,4 +65,4 @@ void Flight::setDepartureLocation(std::string departureLocation_) {
 
 void Flight::setDestination(std::string destination_) {
     destination = destination_;
-}*/
+}

@@ -41,15 +41,15 @@ void Plane::setNumberPlate(std::string numberPlate_) {
 
 void Plane::setType(std::string type_) {
 
-    try {
+    /*try {
         // Using method from utility to validate input using Regular Expressions (regex)
-        if (validatePlaneType(type_)) {
+        if (validatePlaneType(type_)) {*/
             this->type = type_;
-        }
-    }
-    catch (std::logic_error){
+     /*   }
+    }*/
+    /*catch (std::logic_error){
         std::cout << "Invalid input for Plane Type." << std::endl;
-    }
+    }*/
 }
 
 void Plane::setCapacity(int capacity_) {
@@ -57,10 +57,10 @@ void Plane::setCapacity(int capacity_) {
 }
 
 void Plane::setPlaneID(int pID) {
-    if(pID > 0) {
+    /*if(pID > 0) {*/
         this->planeID = pID;
-    }
-    std::cout << "Invalid value for planeID. \n";
+    /*}
+    std::cout << "Invalid value for planeID. \n";*/
 }
 
 

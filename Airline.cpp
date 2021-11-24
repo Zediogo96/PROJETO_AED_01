@@ -1,6 +1,7 @@
 //
 // Created by zedio on 21/11/2021.
 //
+#include <fstream>
 #include "Airline.h"
 #include "utility.h"
 
@@ -46,18 +47,28 @@ int Airline::findPlane() {
 
     int planeID;
 
-    std::cin.ignore();
-    InputInt(planeID, "Enter the Plane's number Plate: \n");
+    std::cin.clear();
+    InputInt(planeID, "Enter the Plane's ID: ");
 
     for (int i = 0; i < planesList.size(); i++) {
 
         if (planesList.at(i).getPlaneID() == planeID) {
             std::cout << "Plane Found. \n";
-            return true;
+            return i;
         }
     }
     std::cout << "Plane not found in our database \n";
     return -1;
+
+}
+
+void Airline::searchPlane() {
+
+    int tmpIndex = findPlane();
+
+    std::cout << "{ PlaneID: " << planesList.at(tmpIndex).getPlaneID() << ", Plane Type: " << planesList.at(tmpIndex).getType()
+        << ", NumberPlate: " << planesList.at(tmpIndex).getNumberPlate()
+              << ", Capacity: " << planesList.at(tmpIndex).getCapacity() << " }" << std::endl;
 }
 
 void Airline::addPlane() {
@@ -84,6 +95,20 @@ void Airline::addPlane() {
     planesList.push_back(newPlane);
 
     std::cin.ignore();
+    SavePlanes();
+}
+
+void Airline::deletePlane() {
+    int planeID;
+
+    int tmpIndex = findPlane();
+
+    if (tmpIndex != -1) {
+        planesList.erase(planesList.begin() + tmpIndex);
+        std::cout << "Plane was deleted successfully" << std::endl;
+    }
+
+    SavePlanes();
 }
 
 void Airline::printPlanes() {
@@ -91,6 +116,47 @@ void Airline::printPlanes() {
         std::cout << "{ PlaneID: " << tmp.getPlaneID() << ", Plane Type: " << tmp.getType() << ", NumberPlate: " << tmp.getNumberPlate()
                 << ", Capacity: " << tmp.getCapacity() << " }" << std::endl;
     }
+}
+
+
+void Airline::SavePlanes() {
+
+    std::fstream file("Planes.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
+
+    for (std::vector<Plane>::iterator it = planesList.begin(); it != planesList.end(); it++) {
+        file << (std::string)(*it).getNumberPlate() << std::endl;
+        file << (std::string)(*it).getType() << std::endl;
+        file << (int)(*it).getCapacity() << std::endl;
+        file << (int)(*it).getPlaneID() << std::endl;
+    }
+    file.close();
+}
+
+void Airline::LoadPlanes() {
+
+    std::ifstream file;
+
+    Plane newPlane;
+    std::string str;
+    int num;
+
+    file.open("Planes.txt");
+
+    while(!file) {
+        file >> str;
+        newPlane.setNumberPlate(str);
+        file >> str;
+        newPlane.setType(str);
+        file >> num;
+        newPlane.setCapacity(num);
+        file >> num;
+        newPlane.setPlaneID(num);
+
+        planesList.push_back(newPlane);
+    }
+}
+void Airline::clearPlanes() {
+    planesList.clear();
 }
 
 

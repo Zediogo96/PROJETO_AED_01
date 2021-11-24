@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.cpp
+fstream
+-
 Airline.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
 utility.h
