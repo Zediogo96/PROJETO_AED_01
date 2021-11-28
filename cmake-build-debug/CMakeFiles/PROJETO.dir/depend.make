@@ -9,9 +9,6 @@ CMakeFiles/PROJETO.dir/Airline.cpp.obj: \
  ../Plane.h \
  ../Time.h \
  ../utility.h
-CMakeFiles/PROJETO.dir/Date.cpp.obj: \
- ../Date.cpp \
- ../Date.h
 CMakeFiles/PROJETO.dir/Flight.cpp.obj: \
  ../Date.h \
  ../Flight.cpp \
@@ -24,14 +21,10 @@ CMakeFiles/PROJETO.dir/Plane.cpp.obj: \
  ../Plane.h \
  ../Time.h \
  ../utility.h
-CMakeFiles/PROJETO.dir/Time.cpp.obj: \
- ../Time.cpp \
- ../Time.h
 CMakeFiles/PROJETO.dir/main.cpp.obj: \
  ../Airline.h \
  ../Date.h \
  ../Flight.h \
- ../LinkedList.h \
  ../Plane.h \
  ../Time.h \
  ../main.cpp \

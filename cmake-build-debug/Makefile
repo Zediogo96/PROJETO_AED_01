@@ -152,30 +152,6 @@ Airline.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Airline.cpp.s
 .PHONY : Airline.cpp.s
 
-Date.obj: Date.cpp.obj
-.PHONY : Date.obj
-
-# target to build an object file
-Date.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.obj
-.PHONY : Date.cpp.obj
-
-Date.i: Date.cpp.i
-.PHONY : Date.i
-
-# target to preprocess a source file
-Date.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.i
-.PHONY : Date.cpp.i
-
-Date.s: Date.cpp.s
-.PHONY : Date.s
-
-# target to generate assembly for a file
-Date.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Date.cpp.s
-.PHONY : Date.cpp.s
-
 Flight.obj: Flight.cpp.obj
 .PHONY : Flight.obj
 
@@ -224,30 +200,6 @@ Plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.s
 .PHONY : Plane.cpp.s
 
-Time.obj: Time.cpp.obj
-.PHONY : Time.obj
-
-# target to build an object file
-Time.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Time.cpp.obj
-.PHONY : Time.cpp.obj
-
-Time.i: Time.cpp.i
-.PHONY : Time.i
-
-# target to preprocess a source file
-Time.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Time.cpp.i
-.PHONY : Time.cpp.i
-
-Time.s: Time.cpp.s
-.PHONY : Time.s
-
-# target to generate assembly for a file
-Time.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Time.cpp.s
-.PHONY : Time.cpp.s
-
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -284,18 +236,12 @@ help:
 	@echo ... Airline.obj
 	@echo ... Airline.i
 	@echo ... Airline.s
-	@echo ... Date.obj
-	@echo ... Date.i
-	@echo ... Date.s
 	@echo ... Flight.obj
 	@echo ... Flight.i
 	@echo ... Flight.s
 	@echo ... Plane.obj
 	@echo ... Plane.i
 	@echo ... Plane.s
-	@echo ... Time.obj
-	@echo ... Time.i
-	@echo ... Time.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

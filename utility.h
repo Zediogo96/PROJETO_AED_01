@@ -9,6 +9,9 @@
 #include <regex>
 #include <iostream>
 
+#include "Date.h"
+#include "Time.h"
+
 /**
  * Using Regular Expressions (Regex) to validate a number plate input
  * Example accepted formats: A340, B500, C731
@@ -51,6 +54,51 @@ static void InputInt(int &num, const std::string &text) {
         std::cout << text << std::endl;
         std::cin >> num;
     } while(!std::cin);
+}
+
+static Date InputDate(Date &date, const std::string &text)
+{
+    int y, m, d;
+
+    std::cin >> y; // read the year
+
+    if ( std::cin.get() != '/' ) // make sure there is a slash between DD and MM
+    {
+        std::cout << "expected / in between Year and Month. \n";
+    }
+    std::cin >> m; // read the month
+
+    if ( std::cin.get() != '/' ) // make sure there is a slash between MM and YYYY
+    {
+        std::cout << "expected / in between Month and Day.\n";
+    }
+    std::cin >> d; // read the day
+
+
+    date.setYear(y);
+    date.setMonth(m);
+    date.setDay(d);
+
+    return date;
+}
+
+
+static Time InputTime(Time &time, const std::string &text)
+{
+    int h, m;
+
+    std::cin >> h; // read the hours
+
+    if ( std::cin.get() != ':' ) // make sure there is a slash between DD and MM
+    {
+        std::cout << "expected : in between Year and Month. \n";
+    }
+    std::cin >> m; // read the month
+
+    time.setHours(h);
+    time.setMinutes(m);
+
+    return time;
 }
 
 #endif //PROJETO_UTILITY_H

@@ -5,7 +5,7 @@
 
 Flight::Flight() {
 
-    numberOfFlight = 0;
+    flightID = 0;
     departureDate = Date();
     flightDuration = Time();
     departureLocation = "N/A";
@@ -22,8 +22,8 @@ Flight::Flight (int numberOfFlight_, Date departureDate_, Time flightDuration_,
     destination = destination_;
 }
 
-int Flight::getNumberOfFlight() const {
-    return numberOfFlight;
+int Flight::getFlightID() const {
+    return flightID;
 }
 
 Date Flight::getDepartureDate() const {
@@ -43,10 +43,10 @@ std::string Flight::getDestination() const {
 }
 
 
-void Flight::setNumberOfFlight(int numberOfFlight_) {
+void Flight::setFlightID(int flightID_) {
 
-    if (numberOfFlight_ >= 0)
-            this->numberOfFlight = numberOfFlight_;
+    if (flightID_ >= 0)
+            this->flightID = flightID_;
 
     std::cout << "Invalid input for number of Flight, must be a number greater than zero." << std::endl;
 }

@@ -28,16 +28,28 @@ iostream
 iomanip
 -
 
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.cpp
+Flight.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
+
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
 Date.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
 Time.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
 
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp
+Plane.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
+
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
 string
 -
 iostream
+-
+list
+-
+fstream
 -
 utility.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
@@ -50,6 +62,16 @@ iostream
 iomanip
 -
 
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
+iostream
+-
+Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
+Airline.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
 string
 -
@@ -57,4 +79,8 @@ regex
 -
 iostream
 -
+Date.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
+Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
 

@@ -95,10 +95,10 @@ void Airline::addPlane() {
     planesList.push_back(newPlane);
 
     std::cin.ignore();
-    SavePlanes();
 }
 
 void Airline::deletePlane() {
+
     int planeID;
 
     int tmpIndex = findPlane();
@@ -107,8 +107,6 @@ void Airline::deletePlane() {
         planesList.erase(planesList.begin() + tmpIndex);
         std::cout << "Plane was deleted successfully" << std::endl;
     }
-
-    SavePlanes();
 }
 
 void Airline::printPlanes() {
@@ -118,10 +116,11 @@ void Airline::printPlanes() {
     }
 }
 
-
 void Airline::SavePlanes() {
 
+
     std::fstream file("Planes.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
+    file.clear();
 
     for (std::vector<Plane>::iterator it = planesList.begin(); it != planesList.end(); it++) {
         file << (std::string)(*it).getNumberPlate() << std::endl;
@@ -142,7 +141,7 @@ void Airline::LoadPlanes() {
 
     file.open("Planes.txt");
 
-    while(!file) {
+    while(file) {
         file >> str;
         newPlane.setNumberPlate(str);
         file >> str;
@@ -154,9 +153,42 @@ void Airline::LoadPlanes() {
 
         planesList.push_back(newPlane);
     }
+    file.close();
 }
 void Airline::clearPlanes() {
     planesList.clear();
+}
+
+void Airline::sortPlanes() {
+
+    int userInput;
+
+    std::cout << "Please select the parameter you wish to sort the planes by: " << std::endl;
+    std::cout << "1. PlaneID" << std::endl;
+    std::cout << "2. Plate Number" << std::endl;
+    std::cout << "3. Plane Type" << std::endl;
+    std::cout << "2. Capacity" << std::endl;
+
+    std::cin >> userInput;
+
+    switch(userInput) {
+        case 1:
+            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+                return a.getPlaneID() > b.getPlaneID();
+            });
+        case 2:
+            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+                return a.getNumberPlate() > b.getNumberPlate();
+            });
+        case 3:
+            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+                return a.getType() > b.getType();
+            });
+        case 4:
+            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+                return a.getCapacity() > b.getCapacity();
+            });
+    }
 }
 
 

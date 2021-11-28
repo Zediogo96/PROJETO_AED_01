@@ -13,7 +13,7 @@ class Flight {
 
 private:
 
-    int numberOfFlight;
+    int flightID;
     Date departureDate;
     Time flightDuration;
     std::string departureLocation;
@@ -21,13 +21,13 @@ private:
 
 public:
 
-    int getNumberOfFlight() const;
+    int getFlightID() const;
     Date getDepartureDate() const;
     Time getFlightDuration() const;
     std::string getDepartureLocation() const;
     std::string getDestination() const;
 
-    void setNumberOfFlight(int numberOfFlight_);
+    void setFlightID(int flightID_);
     void setDepartureDate(Date date_);
     void setFlightDuration(Time time_);
     void setDepartureLocation(std::string departureLocation_);

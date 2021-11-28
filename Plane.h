@@ -7,6 +7,8 @@
 
 #include <string>
 #include <iostream>
+#include <list>
+#include <fstream>
 
 #include "utility.h"
 #include "Flight.h"
@@ -14,8 +16,9 @@
 class Plane {
 
 private:
+
     /** TO IMPLEMENT LIST OF FLIGHTS */
-    /*std::vector<Flight> flightList;*/
+    std::list<Flight> flightsList;
 
     /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
     /* queue<Services> servicesQueue; */ //
@@ -37,6 +40,13 @@ public:
     std::string getType() const;
     int getCapacity() const;
     int getPlaneID() const;
+
+    void addFlight();
+    void deleteFlight();
+    void SaveFlights();
+    void LoadFlights();
+
+    void printFlights();
 
 };
 

@@ -53,11 +53,19 @@ public:
     bool availablePlane(int planeID);
     int findPlane();
     void addPlane();
+    void deletePlane();
     void searchPlane();
     void editPlane();
     void printPlanes();
-    void deletePlane();
     void clearPlanes();
+
+    void sortPlanes();
+
+
+    /******************************************** HANDLE FLIGHTS **************************** */
+
+
+
 
 };
 

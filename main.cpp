@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "Time.h"
-#include "LinkedList.h"
 #include "utility.h"
 
 #include "Airline.h"
@@ -13,19 +12,17 @@ int main() {
 
 
     airline.addPlane();
-    /*airline.addPlane();*/
-
-
-    /*airline.printPlanes();*/
-
-
-    /*airline.deletePlane();*/
-
-    /*airline.printPlanes();*/
-
-    airline.LoadPlanes();
+    airline.addPlane();
 
     airline.printPlanes();
+
+    airline.sortPlanes();
+
+    airline.printPlanes();
+
+    /*Date date;
+    InputDate(date, "Please enter the input for date: ");*/
+
 
     return 0;
 }
