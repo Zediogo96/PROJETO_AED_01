@@ -4,28 +4,34 @@
 CMakeFiles/PROJETO.dir/Airline.cpp.obj: \
  ../Airline.cpp \
  ../Airline.h \
- ../Date.h \
  ../Flight.h \
  ../Plane.h \
- ../Time.h \
- ../utility.h
+ ../Utility/Date.h \
+ ../Utility/Time.h \
+ ../Utility/utility.h
 CMakeFiles/PROJETO.dir/Flight.cpp.obj: \
- ../Date.h \
  ../Flight.cpp \
  ../Flight.h \
- ../Time.h
+ ../Utility/Date.h \
+ ../Utility/Time.h
 CMakeFiles/PROJETO.dir/Plane.cpp.obj: \
- ../Date.h \
  ../Flight.h \
  ../Plane.cpp \
  ../Plane.h \
- ../Time.h \
- ../utility.h
+ ../Utility/Date.h \
+ ../Utility/Time.h \
+ ../Utility/utility.h
+CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj: \
+ ../Services/Cleaning.cpp \
+ ../Services/Cleaning.h
+CMakeFiles/PROJETO.dir/Services/Transport.cpp.obj: \
+ ../Services/Transport.cpp \
+ ../Services/Transport.h
 CMakeFiles/PROJETO.dir/main.cpp.obj: \
  ../Airline.h \
- ../Date.h \
  ../Flight.h \
  ../Plane.h \
- ../Time.h \
- ../main.cpp \
- ../utility.h
+ ../Utility/Date.h \
+ ../Utility/Time.h \
+ ../Utility/utility.h \
+ ../main.cpp

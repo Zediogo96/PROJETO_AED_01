@@ -3,9 +3,9 @@
 //
 #include <fstream>
 #include "Airline.h"
-#include "utility.h"
+#include "Utility/utility.h"
 
-Airline* Airline::airline = nullptr;
+/*Airline* Airline::airline = nullptr;
 
 Airline::Airline(const std::string& name, int maxNumOfFlights): name(name), maxNumOfFlights(maxNumOfFlights) {}
 
@@ -14,11 +14,11 @@ Airline& Airline::getInstance(const std::string &name, int maxNumOfFlights) {
         airline = new Airline(name, maxNumOfFlights);
     }
     return *airline;
-}
+}*/
 
-Airline::~Airline() {
+/*Airline::~Airline() {
     delete airline;
-}
+}*/
 
 const std::string& Airline::getName() {
     return name;
@@ -26,10 +26,6 @@ const std::string& Airline::getName() {
 
 int Airline::getMaxNumOfFlights() {
     return maxNumOfFlights;
-}
-
-int Airline::getCurrentNumOfFlights() {
-    return currentNumOfFlights;
 }
 
 bool Airline::availablePlane(int planeID) {
@@ -48,6 +44,7 @@ int Airline::findPlane() {
     int planeID;
 
     std::cin.clear();
+
     InputInt(planeID, "Enter the Plane's ID: ");
 
     for (int i = 0; i < planesList.size(); i++) {
@@ -59,7 +56,6 @@ int Airline::findPlane() {
     }
     std::cout << "Plane not found in our database \n";
     return -1;
-
 }
 
 void Airline::searchPlane() {
@@ -99,8 +95,6 @@ void Airline::addPlane() {
 
 void Airline::deletePlane() {
 
-    int planeID;
-
     int tmpIndex = findPlane();
 
     if (tmpIndex != -1) {
@@ -117,7 +111,6 @@ void Airline::printPlanes() {
 }
 
 void Airline::SavePlanes() {
-
 
     std::fstream file("Planes.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
     file.clear();
@@ -155,6 +148,7 @@ void Airline::LoadPlanes() {
     }
     file.close();
 }
+
 void Airline::clearPlanes() {
     planesList.clear();
 }

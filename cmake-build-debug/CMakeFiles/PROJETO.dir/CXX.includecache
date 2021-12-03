@@ -11,32 +11,24 @@ fstream
 -
 Airline.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
-utility.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
+Utility/utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
 string
 -
 vector
 -
+list
+-
 Plane.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
-iostream
--
-iomanip
--
-
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.cpp
-Flight.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
-
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
-Date.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
-Time.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+Utility/Date.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
+Utility/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp
 Plane.h
@@ -51,28 +43,24 @@ list
 -
 fstream
 -
-utility.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
+Utility/utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
 Flight.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 iostream
 -
 iomanip
 -
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
 iostream
 -
-Time.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
-utility.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
-Airline.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+iomanip
+-
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
 string
 -
 regex
@@ -80,7 +68,17 @@ regex
 iostream
 -
 Date.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 Time.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
+iostream
+-
+Utility/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
+Utility/utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
+Airline.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
 

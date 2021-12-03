@@ -8,42 +8,34 @@
 
 #include <string>
 #include <vector>
+#include <list>
+
 #include "Plane.h"
 
 class Airline {
-private:
 
+private:
     std::vector<Plane> planesList;
 
-    int maxNumOfFlights;
-    int currentNumOfFlights;
-    std::string name;
-
-    /* LinkedList<Flight> flights;
-    vector<Passenger*> passengers;
+    /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
 
-    Airline(const std::string &name, int maxNumOfFlights);
-
-    static Airline *airline;
+    std::string name;
+    int maxNumOfFlights;
 
 public:
-    /** Safer way to create an instance */
-    static Airline &getInstance(const std::string &name, int maxNumOfFlights);
 
-    /** @brief Destructor */
-    ~Airline();
-
-    /** @brief Singletons should not be cloneable. */
-    Airline(const Airline &other) = delete;
-
-    /** @brief Singletons should not be assignable, hence overload it's = operator. */
-    const Airline &operator=(const Airline &other) = delete;
+    /** @brief Constructor for the Airline Class */
+    Airline(const std::string &name, int maxNumOfFlights) {
+        this->name = name;
+        this->maxNumOfFlights = maxNumOfFlights;
+        planesList.clear();
+    }
 
     /** @brief GETTERS for fields of Airline Class */
     const std::string& getName();
     int getMaxNumOfFlights();
-    int getCurrentNumOfFlights();
+    std::vector<Plane> getPlanes();
 
     /******************************************** HANDLE PLANES **************************** */
 
@@ -63,7 +55,6 @@ public:
 
 
     /******************************************** HANDLE FLIGHTS **************************** */
-
 
 
 

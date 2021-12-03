@@ -6,8 +6,8 @@
 #define PROJETO_FLIGHT_H
 
 
-#include "Date.h"
-#include "Time.h"
+#include "Utility/Date.h"
+#include "Utility/Time.h"
 
 class Flight {
 
@@ -32,7 +32,6 @@ public:
     void setFlightDuration(Time time_);
     void setDepartureLocation(std::string departureLocation_);
     void setDestination(std::string destination_);
-
 
     Flight();
 

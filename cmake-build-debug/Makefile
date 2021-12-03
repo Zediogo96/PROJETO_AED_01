@@ -200,6 +200,54 @@ Plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.s
 .PHONY : Plane.cpp.s
 
+Services/Cleaning.obj: Services/Cleaning.cpp.obj
+.PHONY : Services/Cleaning.obj
+
+# target to build an object file
+Services/Cleaning.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj
+.PHONY : Services/Cleaning.cpp.obj
+
+Services/Cleaning.i: Services/Cleaning.cpp.i
+.PHONY : Services/Cleaning.i
+
+# target to preprocess a source file
+Services/Cleaning.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.i
+.PHONY : Services/Cleaning.cpp.i
+
+Services/Cleaning.s: Services/Cleaning.cpp.s
+.PHONY : Services/Cleaning.s
+
+# target to generate assembly for a file
+Services/Cleaning.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.s
+.PHONY : Services/Cleaning.cpp.s
+
+Services/Transport.obj: Services/Transport.cpp.obj
+.PHONY : Services/Transport.obj
+
+# target to build an object file
+Services/Transport.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Transport.cpp.obj
+.PHONY : Services/Transport.cpp.obj
+
+Services/Transport.i: Services/Transport.cpp.i
+.PHONY : Services/Transport.i
+
+# target to preprocess a source file
+Services/Transport.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Transport.cpp.i
+.PHONY : Services/Transport.cpp.i
+
+Services/Transport.s: Services/Transport.cpp.s
+.PHONY : Services/Transport.s
+
+# target to generate assembly for a file
+Services/Transport.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Transport.cpp.s
+.PHONY : Services/Transport.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -242,6 +290,12 @@ help:
 	@echo ... Plane.obj
 	@echo ... Plane.i
 	@echo ... Plane.s
+	@echo ... Services/Cleaning.obj
+	@echo ... Services/Cleaning.i
+	@echo ... Services/Cleaning.s
+	@echo ... Services/Transport.obj
+	@echo ... Services/Transport.i
+	@echo ... Services/Transport.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

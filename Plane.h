@@ -10,7 +10,7 @@
 #include <list>
 #include <fstream>
 
-#include "utility.h"
+#include "Utility/utility.h"
 #include "Flight.h"
 
 class Plane {
@@ -41,6 +41,8 @@ public:
     int getCapacity() const;
     int getPlaneID() const;
 
+
+    Flight findFlight();
     void addFlight();
     void deleteFlight();
     void SaveFlights();

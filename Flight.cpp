@@ -42,7 +42,6 @@ std::string Flight::getDestination() const {
     return destination;
 }
 
-
 void Flight::setFlightID(int flightID_) {
 
     if (flightID_ >= 0)

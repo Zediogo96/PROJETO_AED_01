@@ -3,4 +3,4 @@ project(PROJETO)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PROJETO main.cpp Time.h Airline.cpp Airline.h Plane.cpp Plane.h Flight.cpp Flight.h Date.h utility.h)
+add_executable(PROJETO main.cpp Utility/Time.h Airline.cpp Airline.h Plane.cpp Plane.h Flight.cpp Flight.h Utility/Date.h Utility/utility.h Services/Transport.cpp Services/Transport.h Services/Cleaning.cpp Services/Cleaning.h Menus/Menu.h)

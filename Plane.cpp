@@ -111,30 +111,58 @@ void Plane::addFlight() {
     Flight newFlight;
 
     int flightID;
-    Date departDate;
-    Time duration;
+    std::string departDate;
+    std::string flightDuration;
     std::string departLocation;
     std::string destination;
 
     InputInt(flightID, "Enter the flightID for this Flight: ");
 
-    InputDate(departDate, "Enter the Departure Date for this Flight: ");
+    do {
+        InputStr(departDate, "Enter the Departure Date for this Flight: ");
+    } while(!validateDate(departDate));
 
-    InputTime(duration, "Enter the duration of this Flight: ");
+    do {
+        InputStr(flightDuration, "Enter the duration of this Flight: ");
+    } while(!validateTime(flightDuration));
+
+
 
     InputStr(departLocation, "Enter the Departure Location for this Flight: ");
 
     InputStr(destination, "Enter the Destination for this Flight: ");
 
     newFlight.setFlightID(flightID);
-    newFlight.setDepartureDate(departDate);
-    newFlight.setFlightDuration(duration);
+    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
+                                    std::stoi(departDate.substr(5,6)),
+                                    std::stoi(departDate.substr(8,11))));
+
+    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
+                                     std::stoi(flightDuration.substr(3,4))));
+
     newFlight.setDepartureLocation(departLocation);
     newFlight.setDestination(destination);
 
+
+    // std::cout <<newFlight.getDepartureDate().getYear() << " " << newFlight.getDepartureDate().getMonth() << " " << newFlight.getDepartureDate().getDay();
+    std::cout << newFlight.getFlightDuration().getHours() << " " << newFlight.getFlightDuration().getMinutes();
     flightsList.push_back(newFlight);
 }
 
+void Plane::deleteFlight() {
+
+    int flightID;
+    InputInt(flightID, "Enter the Flight's ID: ");
+
+    for (std::list<Flight>::iterator it = flightsList.begin(); it != flightsList.end(); it++) {
+        if ((*it).getFlightID() == flightID) {
+            flightsList.erase(it);
+            std::cout << "Plane was deleted successfully" << std::endl;
+        }
+
+    }
+    std::cout << "Plane not found in our database \n";
+}
 
 
 

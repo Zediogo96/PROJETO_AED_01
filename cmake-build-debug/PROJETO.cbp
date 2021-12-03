@@ -86,13 +86,13 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h">
 			<Option target="PROJETO"/>
 		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Date.h">
-			<Option target="PROJETO"/>
-		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.cpp">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp">
@@ -101,13 +101,28 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h">
 			<Option target="PROJETO"/>
 		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Time.h">
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Cleaning.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Cleaning.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Transport.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Transport.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp">
-			<Option target="PROJETO"/>
-		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/utility.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/CMakeLists.txt">
