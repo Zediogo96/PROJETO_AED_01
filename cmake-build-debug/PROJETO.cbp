@@ -92,6 +92,9 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h">
 			<Option target="PROJETO"/>
 		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.cpp">
+			<Option target="PROJETO"/>
+		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h">
 			<Option target="PROJETO"/>
 		</Unit>
@@ -101,10 +104,13 @@
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h">
 			<Option target="PROJETO"/>
 		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Cleaning.cpp">
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Service.cpp">
 			<Option target="PROJETO"/>
 		</Unit>
-		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Cleaning.h">
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Service.h">
+			<Option target="PROJETO"/>
+		</Unit>
+		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Staff.h">
 			<Option target="PROJETO"/>
 		</Unit>
 		<Unit filename="C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Transport.cpp">

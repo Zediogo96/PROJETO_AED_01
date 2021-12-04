@@ -4,7 +4,7 @@
 #include "Utility/utility.h"
 
 #include "Airline.h"
-
+#include "Menus/Menu.h"
 
 void testAddPlane() {
     Airline airline("TAP", 100);
@@ -21,9 +21,9 @@ void testAddFlight() {
 }
 
 int main() {
+    Airline airline("Tap", 100);
+    main_menu(airline);
 
-    /*testAddPlane();*/
-    testAddFlight();
     return 0;
 }
 

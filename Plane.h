@@ -24,7 +24,7 @@ private:
     /* queue<Services> servicesQueue; */ //
 
     std::string numberPlate, type;
-    int capacity, planeID;
+    int capacity, planeID{};
 
 public:
 

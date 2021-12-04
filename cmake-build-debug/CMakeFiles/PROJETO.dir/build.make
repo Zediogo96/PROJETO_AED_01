@@ -130,18 +130,31 @@ CMakeFiles/PROJETO.dir/Services/Transport.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROJETO.dir/Services/Transport.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Transport.cpp -o CMakeFiles\PROJETO.dir\Services\Transport.cpp.s
 
-CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj: CMakeFiles/PROJETO.dir/flags.make
-CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj: ../Services/Cleaning.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PROJETO.dir\Services\Cleaning.cpp.obj -c C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Cleaning.cpp
+CMakeFiles/PROJETO.dir/Services/Service.cpp.obj: CMakeFiles/PROJETO.dir/flags.make
+CMakeFiles/PROJETO.dir/Services/Service.cpp.obj: ../Services/Service.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PROJETO.dir/Services/Service.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PROJETO.dir\Services\Service.cpp.obj -c C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Service.cpp
 
-CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Cleaning.cpp > CMakeFiles\PROJETO.dir\Services\Cleaning.cpp.i
+CMakeFiles/PROJETO.dir/Services/Service.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROJETO.dir/Services/Service.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Service.cpp > CMakeFiles\PROJETO.dir\Services\Service.cpp.i
 
-CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Cleaning.cpp -o CMakeFiles\PROJETO.dir\Services\Cleaning.cpp.s
+CMakeFiles/PROJETO.dir/Services/Service.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROJETO.dir/Services/Service.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Services\Service.cpp -o CMakeFiles\PROJETO.dir\Services\Service.cpp.s
+
+CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj: CMakeFiles/PROJETO.dir/flags.make
+CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj: ../Menus/Menu.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PROJETO.dir\Menus\Menu.cpp.obj -c C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Menus\Menu.cpp
+
+CMakeFiles/PROJETO.dir/Menus/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PROJETO.dir/Menus/Menu.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Menus\Menu.cpp > CMakeFiles\PROJETO.dir\Menus\Menu.cpp.i
+
+CMakeFiles/PROJETO.dir/Menus/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PROJETO.dir/Menus/Menu.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Menus\Menu.cpp -o CMakeFiles\PROJETO.dir\Menus\Menu.cpp.s
 
 # Object files for target PROJETO
 PROJETO_OBJECTS = \
@@ -150,7 +163,8 @@ PROJETO_OBJECTS = \
 "CMakeFiles/PROJETO.dir/Plane.cpp.obj" \
 "CMakeFiles/PROJETO.dir/Flight.cpp.obj" \
 "CMakeFiles/PROJETO.dir/Services/Transport.cpp.obj" \
-"CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj"
+"CMakeFiles/PROJETO.dir/Services/Service.cpp.obj" \
+"CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj"
 
 # External object files for target PROJETO
 PROJETO_EXTERNAL_OBJECTS =
@@ -160,12 +174,13 @@ PROJETO.exe: CMakeFiles/PROJETO.dir/Airline.cpp.obj
 PROJETO.exe: CMakeFiles/PROJETO.dir/Plane.cpp.obj
 PROJETO.exe: CMakeFiles/PROJETO.dir/Flight.cpp.obj
 PROJETO.exe: CMakeFiles/PROJETO.dir/Services/Transport.cpp.obj
-PROJETO.exe: CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj
+PROJETO.exe: CMakeFiles/PROJETO.dir/Services/Service.cpp.obj
+PROJETO.exe: CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj
 PROJETO.exe: CMakeFiles/PROJETO.dir/build.make
 PROJETO.exe: CMakeFiles/PROJETO.dir/linklibs.rsp
 PROJETO.exe: CMakeFiles/PROJETO.dir/objects1.rsp
 PROJETO.exe: CMakeFiles/PROJETO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PROJETO.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable PROJETO.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PROJETO.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

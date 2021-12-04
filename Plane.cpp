@@ -13,8 +13,8 @@ Plane::Plane() {
 
 /** @brief: Creates a new object of class Plane */
 Plane::Plane(std::string numberPlate, std::string type, int capacity, int planeID) {
-    this->numberPlate = numberPlate;
-    this->type = type;
+    this->numberPlate = std::move(numberPlate);
+    this->type = std::move(type);
     this->capacity = capacity;
     this->planeID = planeID;
 }
@@ -36,11 +36,11 @@ int Plane::getPlaneID() const {
 }
 
 void Plane::setNumberPlate(std::string numberPlate_) {
-    this->numberPlate = numberPlate_;
+    this->numberPlate = std::move(numberPlate_);
 }
 
 void Plane::setType(std::string type_) {
-    this->type = type_;
+    this->type = std::move(type_);
 }
 
 void Plane::setCapacity(int capacity_) {
@@ -55,19 +55,19 @@ void Plane::SaveFlights() {
 
     std::fstream file("Flights.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
 
-    for (std::list<Flight>::iterator it = flightsList.begin(); it != flightsList.end(); it++) {
+    for (auto & it : flightsList) {
 
-        file << (int) (*it).getFlightID() << std::endl;
+        file << (int) it.getFlightID() << std::endl;
 
-        file << (int) (*it).getDepartureDate().getYear() << std::endl;
-        file << (int) (*it).getDepartureDate().getMonth() << std::endl;
-        file << (int) (*it).getDepartureDate().getDay() << std::endl;
+        file << (int) it.getDepartureDate().getYear() << std::endl;
+        file << (int) it.getDepartureDate().getMonth() << std::endl;
+        file << (int) it.getDepartureDate().getDay() << std::endl;
 
-        file << (int) (*it).getFlightDuration().getHours() << std::endl;
-        file << (int) (*it).getFlightDuration().getMinutes() << std::endl;
+        file << (int) it.getFlightDuration().getHours() << std::endl;
+        file << (int) it.getFlightDuration().getMinutes() << std::endl;
 
-        file << (std::string) (*it).getDepartureLocation() << std::endl;
-        file << (std::string) (*it).getDestination() << std::endl;
+        file << (std::string) it.getDepartureLocation() << std::endl;
+        file << (std::string) it.getDestination() << std::endl;
     }
     file.close();
 }
@@ -144,8 +144,8 @@ void Plane::addFlight() {
     newFlight.setDestination(destination);
 
 
-    // std::cout <<newFlight.getDepartureDate().getYear() << " " << newFlight.getDepartureDate().getMonth() << " " << newFlight.getDepartureDate().getDay();
-    std::cout << newFlight.getFlightDuration().getHours() << " " << newFlight.getFlightDuration().getMinutes();
+    /*std::cout <<newFlight.getDepartureDate().getYear() << " " << newFlight.getDepartureDate().getMonth() << " " << newFlight.getDepartureDate().getDay()*/;
+    /*std::cout << newFlight.getFlightDuration().getHours() << " " << newFlight.getFlightDuration().getMinutes();*/
     flightsList.push_back(newFlight);
 }
 
@@ -154,7 +154,7 @@ void Plane::deleteFlight() {
     int flightID;
     InputInt(flightID, "Enter the Flight's ID: ");
 
-    for (std::list<Flight>::iterator it = flightsList.begin(); it != flightsList.end(); it++) {
+    for (auto it = flightsList.begin(); it != flightsList.end(); it++) {
         if ((*it).getFlightID() == flightID) {
             flightsList.erase(it);
             std::cout << "Plane was deleted successfully" << std::endl;

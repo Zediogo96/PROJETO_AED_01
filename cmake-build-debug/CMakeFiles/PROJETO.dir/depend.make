@@ -14,6 +14,15 @@ CMakeFiles/PROJETO.dir/Flight.cpp.obj: \
  ../Flight.h \
  ../Utility/Date.h \
  ../Utility/Time.h
+CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj: \
+ ../Airline.h \
+ ../Flight.h \
+ ../Menus/Menu.cpp \
+ ../Menus/Menu.h \
+ ../Plane.h \
+ ../Utility/Date.h \
+ ../Utility/Time.h \
+ ../Utility/utility.h
 CMakeFiles/PROJETO.dir/Plane.cpp.obj: \
  ../Flight.h \
  ../Plane.cpp \
@@ -21,15 +30,22 @@ CMakeFiles/PROJETO.dir/Plane.cpp.obj: \
  ../Utility/Date.h \
  ../Utility/Time.h \
  ../Utility/utility.h
-CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj: \
- ../Services/Cleaning.cpp \
- ../Services/Cleaning.h
+CMakeFiles/PROJETO.dir/Services/Service.cpp.obj: \
+ ../Flight.h \
+ ../Plane.h \
+ ../Services/Service.cpp \
+ ../Services/Service.h \
+ ../Services/Staff.h \
+ ../Utility/Date.h \
+ ../Utility/Time.h \
+ ../Utility/utility.h
 CMakeFiles/PROJETO.dir/Services/Transport.cpp.obj: \
  ../Services/Transport.cpp \
  ../Services/Transport.h
 CMakeFiles/PROJETO.dir/main.cpp.obj: \
  ../Airline.h \
  ../Flight.h \
+ ../Menus/Menu.h \
  ../Plane.h \
  ../Utility/Date.h \
  ../Utility/Time.h \

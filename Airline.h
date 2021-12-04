@@ -34,7 +34,7 @@ public:
 
     /** @brief GETTERS for fields of Airline Class */
     const std::string& getName();
-    int getMaxNumOfFlights();
+    int getMaxNumOfFlights() const;
     std::vector<Plane> getPlanes();
 
     /******************************************** HANDLE PLANES **************************** */

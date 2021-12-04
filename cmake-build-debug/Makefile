@@ -176,6 +176,30 @@ Flight.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Flight.cpp.s
 .PHONY : Flight.cpp.s
 
+Menus/Menu.obj: Menus/Menu.cpp.obj
+.PHONY : Menus/Menu.obj
+
+# target to build an object file
+Menus/Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Menus/Menu.cpp.obj
+.PHONY : Menus/Menu.cpp.obj
+
+Menus/Menu.i: Menus/Menu.cpp.i
+.PHONY : Menus/Menu.i
+
+# target to preprocess a source file
+Menus/Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Menus/Menu.cpp.i
+.PHONY : Menus/Menu.cpp.i
+
+Menus/Menu.s: Menus/Menu.cpp.s
+.PHONY : Menus/Menu.s
+
+# target to generate assembly for a file
+Menus/Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Menus/Menu.cpp.s
+.PHONY : Menus/Menu.cpp.s
+
 Plane.obj: Plane.cpp.obj
 .PHONY : Plane.obj
 
@@ -200,29 +224,29 @@ Plane.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Plane.cpp.s
 .PHONY : Plane.cpp.s
 
-Services/Cleaning.obj: Services/Cleaning.cpp.obj
-.PHONY : Services/Cleaning.obj
+Services/Service.obj: Services/Service.cpp.obj
+.PHONY : Services/Service.obj
 
 # target to build an object file
-Services/Cleaning.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.obj
-.PHONY : Services/Cleaning.cpp.obj
+Services/Service.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Service.cpp.obj
+.PHONY : Services/Service.cpp.obj
 
-Services/Cleaning.i: Services/Cleaning.cpp.i
-.PHONY : Services/Cleaning.i
+Services/Service.i: Services/Service.cpp.i
+.PHONY : Services/Service.i
 
 # target to preprocess a source file
-Services/Cleaning.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.i
-.PHONY : Services/Cleaning.cpp.i
+Services/Service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Service.cpp.i
+.PHONY : Services/Service.cpp.i
 
-Services/Cleaning.s: Services/Cleaning.cpp.s
-.PHONY : Services/Cleaning.s
+Services/Service.s: Services/Service.cpp.s
+.PHONY : Services/Service.s
 
 # target to generate assembly for a file
-Services/Cleaning.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Cleaning.cpp.s
-.PHONY : Services/Cleaning.cpp.s
+Services/Service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PROJETO.dir\build.make CMakeFiles/PROJETO.dir/Services/Service.cpp.s
+.PHONY : Services/Service.cpp.s
 
 Services/Transport.obj: Services/Transport.cpp.obj
 .PHONY : Services/Transport.obj
@@ -287,12 +311,15 @@ help:
 	@echo ... Flight.obj
 	@echo ... Flight.i
 	@echo ... Flight.s
+	@echo ... Menus/Menu.obj
+	@echo ... Menus/Menu.i
+	@echo ... Menus/Menu.s
 	@echo ... Plane.obj
 	@echo ... Plane.i
 	@echo ... Plane.s
-	@echo ... Services/Cleaning.obj
-	@echo ... Services/Cleaning.i
-	@echo ... Services/Cleaning.s
+	@echo ... Services/Service.obj
+	@echo ... Services/Service.i
+	@echo ... Services/Service.s
 	@echo ... Services/Transport.obj
 	@echo ... Services/Transport.i
 	@echo ... Services/Transport.s

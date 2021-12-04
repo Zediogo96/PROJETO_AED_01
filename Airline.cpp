@@ -5,33 +5,18 @@
 #include "Airline.h"
 #include "Utility/utility.h"
 
-/*Airline* Airline::airline = nullptr;
-
-Airline::Airline(const std::string& name, int maxNumOfFlights): name(name), maxNumOfFlights(maxNumOfFlights) {}
-
-Airline& Airline::getInstance(const std::string &name, int maxNumOfFlights) {
-    if (airline == nullptr) {
-        airline = new Airline(name, maxNumOfFlights);
-    }
-    return *airline;
-}*/
-
-/*Airline::~Airline() {
-    delete airline;
-}*/
-
 const std::string& Airline::getName() {
     return name;
 }
 
-int Airline::getMaxNumOfFlights() {
+int Airline::getMaxNumOfFlights() const {
     return maxNumOfFlights;
 }
 
 bool Airline::availablePlane(int planeID) {
 
-    for (std::vector<Plane>::iterator it = planesList.begin(); it != planesList.end(); it++) {
-        if ((*it).getPlaneID() == planeID) {
+    for (auto & it : planesList) {
+        if (it.getPlaneID() == planeID) {
             std::cout << "This planeID is already used in another plane, please select another.\n";
             return false;
         }
@@ -90,6 +75,8 @@ void Airline::addPlane() {
 
     planesList.push_back(newPlane);
 
+
+    std::cout << "Plane was added successfully!" << std::endl;
     std::cin.ignore();
 }
 
@@ -104,7 +91,7 @@ void Airline::deletePlane() {
 }
 
 void Airline::printPlanes() {
-    for (Plane tmp : planesList) {
+    for (const Plane& tmp : planesList) {
         std::cout << "{ PlaneID: " << tmp.getPlaneID() << ", Plane Type: " << tmp.getType() << ", NumberPlate: " << tmp.getNumberPlate()
                 << ", Capacity: " << tmp.getCapacity() << " }" << std::endl;
     }
@@ -115,11 +102,11 @@ void Airline::SavePlanes() {
     std::fstream file("Planes.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
     file.clear();
 
-    for (std::vector<Plane>::iterator it = planesList.begin(); it != planesList.end(); it++) {
-        file << (std::string)(*it).getNumberPlate() << std::endl;
-        file << (std::string)(*it).getType() << std::endl;
-        file << (int)(*it).getCapacity() << std::endl;
-        file << (int)(*it).getPlaneID() << std::endl;
+    for (auto & it : planesList) {
+        file << (std::string)it.getNumberPlate() << std::endl;
+        file << (std::string)it.getType() << std::endl;
+        file << (int)it.getCapacity() << std::endl;
+        file << (int)it.getPlaneID() << std::endl;
     }
     file.close();
 }
@@ -158,10 +145,10 @@ void Airline::sortPlanes() {
     int userInput;
 
     std::cout << "Please select the parameter you wish to sort the planes by: " << std::endl;
-    std::cout << "1. PlaneID" << std::endl;
-    std::cout << "2. Plate Number" << std::endl;
-    std::cout << "3. Plane Type" << std::endl;
-    std::cout << "2. Capacity" << std::endl;
+    std::cout << "[1] PlaneID" << std::endl;
+    std::cout << "[2] Plate Number" << std::endl;
+    std::cout << "[3] Plane Type" << std::endl;
+    std::cout << "[4] Capacity" << std::endl;
 
     std::cin >> userInput;
 
@@ -182,7 +169,12 @@ void Airline::sortPlanes() {
             std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
                 return a.getCapacity() > b.getCapacity();
             });
+        default: std::cout << "Invalid Input" << std::endl;
     }
+}
+
+std::vector<Plane> Airline::getPlanes() {
+    return planesList;
 }
 
 
