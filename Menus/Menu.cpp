@@ -12,7 +12,7 @@ void main_menu(Airline &airline) {
     while (true) {
 
         std::cout << "----------------------------" << std::endl;
-        std::cout << "      Main Menu   " << std::endl;
+        std::cout << "      Main Menu   "           << std::endl;
         std::cout << "----------------------------" << std::endl;
 
         std::cout << "\n [1] Airport Management";
@@ -61,9 +61,7 @@ void airport_menu(Airline &airline) {
                 ;
                 break;
             case '0':
-                ;
                 return;
-
             default:
                 std::cout << "Invalid Input \n:";
                 system("pause");
@@ -111,6 +109,9 @@ void planes_menu(Airline &airline) {
                 }
                 std::cout << "All planes were erased" << std::endl;
                 planes_menu(airline);
+            case '5':
+                airline.LoadPlanes();
+                break;
             case '0':
                 return;
             default:

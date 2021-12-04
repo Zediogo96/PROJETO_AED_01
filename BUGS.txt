@@ -1,2 +1,2 @@
 Problem with Loading and Saving planes file - multiple instances of the same plane-> possible problem with SavePlanes();
-
+Ver problemas com console clear para o trabalho ficar mais fluído.

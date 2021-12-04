@@ -47,7 +47,6 @@ public:
     void addPlane();
     void deletePlane();
     void searchPlane();
-    void editPlane();
     void printPlanes();
     void clearPlanes();
 

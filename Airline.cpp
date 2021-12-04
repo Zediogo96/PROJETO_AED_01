@@ -3,7 +3,6 @@
 //
 #include <fstream>
 #include "Airline.h"
-#include "Utility/utility.h"
 
 const std::string& Airline::getName() {
     return name;
@@ -75,8 +74,7 @@ void Airline::addPlane() {
 
     planesList.push_back(newPlane);
 
-
-    std::cout << "Plane was added successfully!" << std::endl;
+    std::cout << "Plane was added successfully! \n" << std::endl;
     std::cin.ignore();
 }
 
@@ -99,41 +97,35 @@ void Airline::printPlanes() {
 
 void Airline::SavePlanes() {
 
-    std::fstream file("Planes.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
-    file.clear();
+    std::string filename = R"(C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Data\planes.txt)";
+    std::fstream output;
 
-    for (auto & it : planesList) {
-        file << (std::string)it.getNumberPlate() << std::endl;
-        file << (std::string)it.getType() << std::endl;
-        file << (int)it.getCapacity() << std::endl;
-        file << (int)it.getPlaneID() << std::endl;
+    output.open(filename, std::fstream::out);
+
+    if(output.is_open()) {
+        for (auto & it : planesList) {
+            output << (std::string)it.getNumberPlate() << " " << (std::string)it.getType() <<
+                 " " << (int)it.getCapacity() << " " << (int)it.getPlaneID() << std::endl;
+        }
     }
-    file.close();
 }
 
 void Airline::LoadPlanes() {
 
-    std::ifstream file;
+    planesList.clear();
 
     Plane newPlane;
-    std::string str;
-    int num;
+    std::string plateNumber, type;
+    int capacity, planeID;
 
-    file.open("Planes.txt");
+    std::ifstream file;
+    std::string filename = R"(C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Data\planes.txt)";
 
-    while(file) {
-        file >> str;
-        newPlane.setNumberPlate(str);
-        file >> str;
-        newPlane.setType(str);
-        file >> num;
-        newPlane.setCapacity(num);
-        file >> num;
-        newPlane.setPlaneID(num);
+    file.open(filename, std::ifstream::in);
 
-        planesList.push_back(newPlane);
+    while(file >> plateNumber >> type >> capacity >> planeID) {
+        planesList.emplace_back(Plane(plateNumber, type, capacity, planeID));
     }
-    file.close();
 }
 
 void Airline::clearPlanes() {
