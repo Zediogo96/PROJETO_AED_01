@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.cpp
-fstream
--
-Airline.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
-
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
 string
 -
@@ -27,6 +21,20 @@ Utility/Date.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 Utility/Time.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h
+cstdlib
+-
+iostream
+-
+../Airline.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+conio.h
+-
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp
+Plane.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
 string
@@ -65,4 +73,16 @@ Date.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 Time.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
+iostream
+-
+Utility/Time.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
+Utility/utility.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
+Airline.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
+Menus/Menu.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h
 

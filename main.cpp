@@ -15,8 +15,12 @@ void testAddPlane() {
 }
 
 void testAddFlight() {
-    Plane plane = Plane();
+    Plane plane = Plane("123123", "A340", 200, 1);
     plane.addFlight();
+    plane.addFlight();
+
+    plane.deleteFlight();
+    plane.printFlights();
 }
 
 void testSavePlanes() {
@@ -38,8 +42,7 @@ void testMenus() {
 }
 
 int main() {
-    testLoadPlanes();
-
+    testAddFlight();
 
     return 0;
 }

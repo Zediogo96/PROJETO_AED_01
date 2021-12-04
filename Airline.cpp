@@ -42,15 +42,6 @@ int Airline::findPlane() {
     return -1;
 }
 
-void Airline::searchPlane() {
-
-    int tmpIndex = findPlane();
-
-    std::cout << "{ PlaneID: " << planesList.at(tmpIndex).getPlaneID() << ", Plane Type: " << planesList.at(tmpIndex).getType()
-        << ", NumberPlate: " << planesList.at(tmpIndex).getNumberPlate()
-              << ", Capacity: " << planesList.at(tmpIndex).getCapacity() << " }" << std::endl;
-}
-
 void Airline::addPlane() {
 
     std::string numberPlate, type;
@@ -169,4 +160,18 @@ std::vector<Plane> Airline::getPlanes() {
     return planesList;
 }
 
+
+//////////////////////////////////////////
+
+void Airline::printAllFlights() {
+    for (auto elem : planesList) {
+        elem.printFlights();
+    }
+}
+
+void Airline::clearFlights() {
+    for (auto elem : planesList) {
+        elem.getFlightsList().clear();
+    }
+}
 

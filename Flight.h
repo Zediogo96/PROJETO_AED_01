@@ -39,5 +39,4 @@ public:
            std::string departureLocation_, std::string destination_);
 };
 
-
 #endif //PROJETO_FLIGHT_H

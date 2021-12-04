@@ -12,6 +12,7 @@
 
 #include "Utility/utility.h"
 #include "Flight.h"
+#include "Services/Service.h"
 
 class Plane {
 
@@ -21,7 +22,7 @@ private:
     std::list<Flight> flightsList;
 
     /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
-    /* queue<Services> servicesQueue; */ //
+    queue<Service> servicesQueue;
 
     std::string numberPlate, type;
     int capacity, planeID{};
@@ -40,15 +41,17 @@ public:
     std::string getType() const;
     int getCapacity() const;
     int getPlaneID() const;
+    std::list<Flight> getFlightsList();
 
+    /* ******************************************** HANDLE FLIGHTS ********************************* */
 
-    Flight findFlight();
     void addFlight();
     void deleteFlight();
     void SaveFlights();
     void LoadFlights();
 
     void printFlights();
+
 
 };
 

@@ -5,7 +5,6 @@
 #ifndef PROJETO_SERVICE_H
 #define PROJETO_SERVICE_H
 
-
 #include <queue>
 #include "../Plane.h"
 #include "Staff.h"
@@ -16,11 +15,10 @@ private:
     Plane plane;
     Staff responsible;
     Date date;
-    std::string status;
+    bool status;
 
 public:
-
-    void setResponsible(Staff staff);
+    void setResponsible(const Staff& staff);
     void setComplete();
     Staff getResponsible();
 };

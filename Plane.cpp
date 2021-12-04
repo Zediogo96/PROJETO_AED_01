@@ -35,6 +35,10 @@ int Plane::getPlaneID() const {
     return planeID;
 }
 
+std::list<Flight> Plane::getFlightsList() {
+    return flightsList;
+}
+
 void Plane::setNumberPlate(std::string numberPlate_) {
     this->numberPlate = std::move(numberPlate_);
 }
@@ -143,9 +147,6 @@ void Plane::addFlight() {
     newFlight.setDepartureLocation(departLocation);
     newFlight.setDestination(destination);
 
-
-    /*std::cout <<newFlight.getDepartureDate().getYear() << " " << newFlight.getDepartureDate().getMonth() << " " << newFlight.getDepartureDate().getDay()*/;
-    /*std::cout << newFlight.getFlightDuration().getHours() << " " << newFlight.getFlightDuration().getMinutes();*/
     flightsList.push_back(newFlight);
 }
 
@@ -157,11 +158,21 @@ void Plane::deleteFlight() {
     for (auto it = flightsList.begin(); it != flightsList.end(); it++) {
         if ((*it).getFlightID() == flightID) {
             flightsList.erase(it);
-            std::cout << "Plane was deleted successfully" << std::endl;
+            std::cout << "Flight was deleted successfully!" << std::endl;
         }
 
     }
-    std::cout << "Plane not found in our database \n";
+    std::cout << "Flight was not found in our database. \n";
+}
+
+void Plane::printFlights() {
+
+    for (auto & it : flightsList) {
+        std::cout << "{ FlightID: " << it.getFlightID() << ", Departure Date:  " << it.getDepartureDate().getYear()
+        << "/" << it.getDepartureDate().getMonth() << "/" << it.getDepartureDate().getDay() << ", Flight Duration: "
+        << it.getFlightDuration().getHours() << ":" << it.getFlightDuration().getMinutes() << ", Departure Location: "
+        << it.getDepartureLocation() << ", Destination: " << it.getDestination() << " }" << std::endl;
+    }
 }
 
 

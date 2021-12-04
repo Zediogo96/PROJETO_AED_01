@@ -120,3 +120,53 @@ void planes_menu(Airline &airline) {
         }
     }
 }
+
+void planes_menu(Airline &airline) {
+    char option;
+
+    while (true) {
+
+        std::cout << "----------------------------" << std::endl;
+        std::cout << "      Flights Management   " << std::endl;
+        std::cout << "----------------------------" << std::endl;
+
+        std::cout << "\n [1] Add Flight";
+        std::cout << "\n [2] Delete Flight";
+        std::cout << "\n [3] View Flights";
+        std::cout << "\n [4] Erase all Flights";
+        std::cout << "\n [0] Exit to Main Menu\n";
+
+        std::cout << "Please input your choice: " << std::flush;
+        std::cin >> option;
+
+        switch (option) {
+            case '1':
+
+                break;
+            case '2':
+
+                break;
+            case '3':
+                airline.printAllFlights();
+                break;
+            case '4':
+                char check;
+                std::cout << "Are you sure? [Y/n]" << std::endl;
+                std::cin >> check;
+                if (check == 'Y' || check == 'y') {
+                    airline.clearFlights();
+                    break;
+                }
+                std::cout << "All planes were erased" << std::endl;
+                planes_menu(airline);
+            case '5':
+                airline.LoadPlanes();
+                break;
+            case '0':
+                return;
+            default:
+                std::cout << "Invalid input" << std::endl;
+                system("pause");
+        }
+    }
+}

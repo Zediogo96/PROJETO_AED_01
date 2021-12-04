@@ -42,25 +42,56 @@ public:
     void SavePlanes();
     void LoadPlanes();
 
+
+    /**
+     * Method that analyzes if a determinate planeID is already in use when creating a new plane,
+     * return False if it's already in use, return True if it's free.
+     * @param planeID
+     * @return Boolean
+     */
     bool availablePlane(int planeID);
+
+    /**
+     * Method that allows the user to search for a determinate plane based on it's planeID (by input),
+     * returns the planeID if its found, or -1 in case if it's not found.
+     * @return planeID
+     */
     int findPlane();
+
+    /**
+     * @brief: Method to add a plane to the airline planes database, filling it's parameters by user input.
+     */
     void addPlane();
+
+    /**
+     * @brief: Method to allow the user to delete a plane by inputting it's userID.
+     */
     void deletePlane();
-    void searchPlane();
+
+    /**
+     * @brief: Method that prints all the planes in the Airline database.
+     */
     void printPlanes();
+
+    /**
+     * @brief: Method that eliminates all Planes from the planesList database.
+     */
     void clearPlanes();
 
+    /**
+     * Allows the user to sort the planeList according to the user chosen parameter.
+     */
     void sortPlanes();
 
 
-    /******************************************** HANDLE FLIGHTS **************************** */
+    void printAllFlights();
 
 
+    /**
+     * @brief: Method that eliminates all Flights from all planes in the database.
+     */
+    void clearFlights();
 
 };
-
-
-
-
 
 #endif //PROJETO_AIRLINE_H
