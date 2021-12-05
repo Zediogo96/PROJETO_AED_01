@@ -3,6 +3,8 @@
 
 #include "Flight.h"
 
+#include <utility>
+
 Flight::Flight() {
 
     flightID = 0;
@@ -12,14 +14,15 @@ Flight::Flight() {
     destination = "N/A";
 }
 
-Flight::Flight (int numberOfFlight_, Date departureDate_, Time flightDuration_,
+Flight::Flight (int flightID, Date departureDate_, Time flightDuration_,
        std::string departureLocation_, std::string destination_) {
 
-    numberOfFlight_ = numberOfFlight_;
-    departureDate = departureDate_;
-    flightDuration = flightDuration_;
-    departureLocation = departureLocation_;
-    destination = destination_;
+    this->flightID = flightID;
+    this->departureDate = departureDate_;
+    this->flightDuration = flightDuration_;
+    this->departureLocation = std::move(departureLocation_);
+    this->destination = std::move(destination_);
+
 }
 
 int Flight::getFlightID() const {
@@ -55,9 +58,9 @@ void Flight::setFlightDuration(Time time_) {
 }
 
 void Flight::setDepartureLocation(std::string departureLocation_) {
-    departureLocation = departureLocation_;
+    departureLocation = std::move(departureLocation_);
 }
 
 void Flight::setDestination(std::string destination_) {
-    destination = destination_;
+    destination = std::move(destination_);
 }

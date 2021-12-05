@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <ctime>
 
 class Time {
 private:
@@ -16,7 +17,8 @@ public:
 
     /** @brief Constructors for Time Class */
     Time() {
-        hours, minutes = 0;
+        hours = 0;
+        minutes = 0;
     };
 
     Time(int hours_, int minutes_) {
@@ -25,11 +27,11 @@ public:
     };
 
     /** @brief GETTERS for the Time Class */
-    int getHours() {
+    int getHours() const {
         return hours;
     }
 
-    int getMinutes() {
+    int getMinutes() const {
         return minutes;
     }
 
@@ -54,9 +56,9 @@ public:
     * Compares the Time Object we are using to another Time Object, returning True
     * if they are equal and False if they're not.
     * @param Time object to compare
-    * @return boolearn
+    * @return boolean
     */
-    bool equals(Time &otherTime) {
+    bool equals(Time &otherTime) const {
         if (hours == otherTime.hours && minutes == otherTime.minutes)
             return true;
 
@@ -64,10 +66,9 @@ public:
     }
 
     /** @brief Prints attributes associated with the Time object to the screen */
-    void printTime() {
+    void printTime() const {
         std::cout << std::setw(2) << std::setfill('0') << hours << ":"
                   << std::setw(2) << std::setfill('0') << minutes << "\n";
     }
 };
-
 #endif //PROJETO_TIME_H

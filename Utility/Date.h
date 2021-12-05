@@ -41,35 +41,15 @@ public:
     /** @brief SETTERS for the Date Class */
 
     void setYear(int y) {
-        if (y > 0)
-            year = y;
-        else {
-            std::cout << "Invalid Year" << std::endl;
-        }
+        year = y;
     }
 
     void setMonth(int m){
-        if (m > 0 && m < 13)
-            month = m;
-        else {
-            std::cout << "Invalid Month" << std::endl;
-        }
+        month = m;
     }
 
     void setDay(int d) {
-        if ((month = 1) || (month = 3) || (month = 5) || (month = 7) ||
-            (month = 8) || (month = 10) || (month = 12)) {
-            if (day > 0 && day <= 31) {
-                day = d;
-            }
-        }
-
-        else if ((month = 4) || (month = 6) || (month = 9) || (month = 11))
-        {
-            if (day > 0 && day <= 30) {
-                day = d;
-            }
-        }
+        day = d;
     }
 
     /**
@@ -77,17 +57,32 @@ public:
      * @param otherTime
      * @return boolean
      */
-    bool equals(Date &otherDate) {
+    bool equals(Date &otherDate) const {
         if (year == otherDate.year && month == otherDate.month && day == otherDate.day)
             return true;
 
         return false;
     }
 
-    void printDate() {
+    void printDate() const {
         std::cout << std::setw(4) << std::setfill('0') << year << "/"
                   << std::setw(2) << std::setfill('0') << month << "/"
                   << std::setw(2) << std::setfill('0') << day << std::endl;
+    }
+
+    /**
+    * Calculates today's Date based on current system, and updates current Date object with those values
+    */
+    void now() {
+        // Current Date/Time based on current System
+        time_t now = time(0);
+
+        tm *ltm = localtime(&now);
+
+        setYear(1900+ltm->tm_year);
+        setMonth(1+ltm->tm_mon);
+        setDay(ltm->tm_mday);
+
     }
 };
 

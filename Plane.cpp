@@ -55,6 +55,17 @@ void Plane::setPlaneID(int pID) {
     this->planeID = pID;
 }
 
+bool Plane::availableFlight(int flightID) {
+
+    for (auto & it : flightsList) {
+        if (it.getFlightID() == flightID) {
+            std::cout << "This flightID is already used in another flight, please select another.\n";
+            return false;
+        }
+    }
+    return true;
+}
+
 void Plane::SaveFlights() {
 
     std::fstream file("Flights.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
@@ -120,7 +131,9 @@ void Plane::addFlight() {
     std::string departLocation;
     std::string destination;
 
-    InputInt(flightID, "Enter the flightID for this Flight: ");
+    do {
+        InputInt(flightID, "Enter the flightID for this Flight: ");
+    } while (!availableFlight(flightID));
 
     do {
         InputStr(departDate, "Enter the Departure Date for this Flight: ");
@@ -129,8 +142,6 @@ void Plane::addFlight() {
     do {
         InputStr(flightDuration, "Enter the duration of this Flight: ");
     } while(!validateTime(flightDuration));
-
-
 
     InputStr(departLocation, "Enter the Departure Location for this Flight: ");
 
@@ -147,7 +158,7 @@ void Plane::addFlight() {
     newFlight.setDepartureLocation(departLocation);
     newFlight.setDestination(destination);
 
-    flightsList.push_back(newFlight);
+    flightsList.emplace_back(newFlight);
 }
 
 void Plane::deleteFlight() {
@@ -167,12 +178,16 @@ void Plane::deleteFlight() {
 
 void Plane::printFlights() {
 
-    for (auto & it : flightsList) {
-        std::cout << "{ FlightID: " << it.getFlightID() << ", Departure Date:  " << it.getDepartureDate().getYear()
-        << "/" << it.getDepartureDate().getMonth() << "/" << it.getDepartureDate().getDay() << ", Flight Duration: "
-        << it.getFlightDuration().getHours() << ":" << it.getFlightDuration().getMinutes() << ", Departure Location: "
-        << it.getDepartureLocation() << ", Destination: " << it.getDestination() << " }" << std::endl;
+    if (!flightsList.empty()) {
+        std::cout << "[PlaneID: " << this->getPlaneID() << " ]" << std::endl;
+        for (const Flight& it : flightsList) {
+            std::cout << "{ FlightID: " << it.getFlightID() << ", Departure Date:  " << it.getDepartureDate().getYear()
+                      << "/" << it.getDepartureDate().getMonth() << "/" << it.getDepartureDate().getDay() << ", Flight Duration: "
+                      << it.getFlightDuration().getHours() << ":" << it.getFlightDuration().getMinutes() << ", Departure Location: "
+                      << it.getDepartureLocation() << ", Destination: " << it.getDestination() << " }" << std::endl;
+        }
     }
+
 }
 
 

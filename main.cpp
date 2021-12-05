@@ -40,10 +40,21 @@ void testMenus() {
     Airline airline("Tap", 100);
     main_menu(airline);
 }
+void testDate_now() {
+    Date date;
+    date.now();
+    std::cout << date.getYear() << " " << date.getMonth() << " " << date.getDay();
+}
+
+void test() {
+    Airline airline("Tap", 100);
+    airline.LoadPlanes();
+    main_menu(airline);
+}
 
 int main() {
-    testAddFlight();
 
+    test();
     return 0;
 }
 

@@ -9,9 +9,6 @@
 #include <regex>
 #include <iostream>
 
-#include "Date.h"
-#include "Time.h"
-
 /**
  * Using Regular Expressions (Regex) to validate a number plate input
  * Example accepted formats: A340, B500, C731
@@ -32,7 +29,7 @@ static bool validatePlaneType(const std::string &s) {
  * Using Regular Expressions (Regex) to validate a Date input
  * Example accepted formats: YYYY-MM-DD
  * @param string
- * @return boolean
+ * @return true if the regex accepts the string, false otherwise
  */
 static bool validateDate(const std::string &s) {
     static const std::regex validType(R"(^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$)");
@@ -47,7 +44,7 @@ static bool validateDate(const std::string &s) {
  * Using Regular Expressions (Regex) to validate a TIME input
  * Example accepted formats: HH:MM (H -> hours , M -> minutes)
  * @param string
- * @return boolean
+ * @return true if the regex accepts the string, false otherwise
  */
 static bool validateTime(const std::string &s) {
 
@@ -82,24 +79,6 @@ static void InputInt(int &num, const std::string &text) {
         std::cout << text << std::endl;
         std::cin >> num;
     } while(!std::cin);
-}
-
-static Time InputTime(Time &time, const std::string &text)
-{
-    int h, m;
-
-    std::cin >> h; // read the hours
-
-    if ( std::cin.get() != ':' ) // make sure there is a slash between DD and MM
-    {
-        std::cout << "expected : in between Year and Month. \n";
-    }
-    std::cin >> m; // read the month
-
-    time.setHours(h);
-    time.setMinutes(m);
-
-    return time;
 }
 
 #endif //PROJETO_UTILITY_H

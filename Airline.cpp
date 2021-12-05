@@ -38,7 +38,6 @@ int Airline::findPlane() {
             return i;
         }
     }
-    std::cout << "Plane not found in our database \n";
     return -1;
 }
 
@@ -119,6 +118,24 @@ void Airline::LoadPlanes() {
     }
 }
 
+Plane* Airline::getRef() {
+    int planeID;
+
+    std::cin.clear();
+
+    InputInt(planeID, "Enter the Plane's ID: ");
+
+    Plane *c = nullptr;
+    for (auto &i: planesList) {
+        if (i.getPlaneID() == planeID) {
+            c = &i;
+            break;
+        }
+    }
+
+    return c;
+}
+
 void Airline::clearPlanes() {
     planesList.clear();
 }
@@ -157,9 +174,8 @@ void Airline::sortPlanes() {
 }
 
 std::vector<Plane> Airline::getPlanes() {
-    return planesList;
+    return this->planesList;
 }
-
 
 //////////////////////////////////////////
 
@@ -170,7 +186,7 @@ void Airline::printAllFlights() {
 }
 
 void Airline::clearFlights() {
-    for (auto elem : planesList) {
+    for (Plane elem : planesList) {
         elem.getFlightsList().clear();
     }
 }

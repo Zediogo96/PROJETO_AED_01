@@ -9,6 +9,7 @@
 #include <iostream>
 #include <list>
 #include <fstream>
+#include <queue>
 
 #include "Utility/utility.h"
 #include "Flight.h"
@@ -22,7 +23,7 @@ private:
     std::list<Flight> flightsList;
 
     /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
-    queue<Service> servicesQueue;
+    std::queue<Service> servicesQueue;
 
     std::string numberPlate, type;
     int capacity, planeID{};
@@ -47,12 +48,13 @@ public:
 
     void addFlight();
     void deleteFlight();
+
     void SaveFlights();
     void LoadFlights();
 
     void printFlights();
 
-
+    bool availableFlight(int flightID);
 };
 
 #endif //PROJETO_PLANE_H

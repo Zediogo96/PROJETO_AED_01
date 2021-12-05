@@ -92,6 +92,7 @@ public:
      */
     void clearFlights();
 
+    Plane* getRef();
 };
 
 #endif //PROJETO_AIRLINE_H

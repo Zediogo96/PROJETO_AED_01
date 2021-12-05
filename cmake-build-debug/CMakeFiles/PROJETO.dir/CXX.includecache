@@ -6,31 +6,11 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
-string
--
-vector
--
-list
--
-Plane.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.h
-
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
 Utility/Date.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 Utility/Time.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
-
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h
-cstdlib
--
-iostream
--
-../Airline.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
-conio.h
--
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Plane.cpp
 Plane.h
@@ -45,10 +25,24 @@ list
 -
 fstream
 -
+queue
+-
 Utility/utility.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
 Flight.h
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Flight.h
+Services/Service.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Service.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Service.h
+../Utility/Date.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
+Staff.h
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Staff.h
+
+C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Services/Staff.h
+string
+-
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
 iostream
@@ -60,6 +54,8 @@ C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
 iostream
 -
 iomanip
+-
+ctime
 -
 
 C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
@@ -69,20 +65,4 @@ regex
 -
 iostream
 -
-Date.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Date.h
-Time.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
-
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/main.cpp
-iostream
--
-Utility/Time.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/Time.h
-Utility/utility.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Utility/utility.h
-Airline.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Airline.h
-Menus/Menu.h
-C:/Users/zedio/Documents/Documentos/FEUP/2ANO/AED/PROJETO/Menus/Menu.h
 
