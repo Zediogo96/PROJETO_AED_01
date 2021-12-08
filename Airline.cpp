@@ -98,8 +98,6 @@ void Airline::SavePlanes() {
                  " " << (int)it.getCapacity() << " " << (int)it.getPlaneID() << std::endl;
         }
     }
-
-
 }
 
 void Airline::LoadPlanes() {
@@ -118,60 +116,6 @@ void Airline::LoadPlanes() {
     while(file >> plateNumber >> type >> capacity >> planeID) {
         planesList.emplace_back(Plane(plateNumber, type, capacity, planeID));
     }
-}
-
-void Airline::SaveFlights() {
-    std::string filename = "flights.txt";
-    std::fstream output;
-
-    output.open(filename, std::fstream::out);
-
-    if(output.is_open()) {
-        for (auto & plane : planesList) {
-            for (auto & it : plane.getFlightsList()) {
-                std::string s;
-                output << plane.getPlaneID() << " " << it.getFlightID() << " "
-                       << it.getDepartureDate().toString() << " " << it.getFlightDuration().toString()
-                       << " " << it.getDepartureLocation() << " " << it.getDestination() << std::endl;
-            }
-        }
-    }
-}
-
-void Airline::LoadFlights() {
-/*
-    std::ifstream file;
-
-    Flight newFlight;
-
-    int planeID, flightID, hours, minutes;
-    std::string depart, destination, date;
-
-    file.open("flights.txt");
-
-    while(file >> planeID >> flightID >> date >> hours >> minutes >> depart >> destination) {
-
-        newFlight.setFlightID(flightID);
-
-        newFlight.getDepartureDate().setYear(std::stoi(date.substr(0,3)));
-
-        newFlight.getDepartureDate().setMonth(std::stoi(date.substr(5,6)));
-
-        newFlight.getDepartureDate().setDay(std::stoi(date.substr(8,9)));
-
-
-        newFlight.getFlightDuration().setHours(hours);
-
-        newFlight.getFlightDuration().setMinutes(minutes);
-
-        newFlight.setDepartureLocation(depart);
-
-        newFlight.setDestination(destination);
-
-        for (auto it : planesList) {
-            if (it.getPlaneID() == planeID) it.getFlightsList().push_back()
-        }
-    }*/
 }
 
 Plane* Airline::getPlaneRef_input() {
@@ -200,6 +144,13 @@ Plane* Airline::getPlaneRef(int num) {
         }
     }
     return c;
+}
+
+bool Airline::PlaneExists(int num) {
+    for(const auto &it : planesList) {
+        if (it.getPlaneID() == num) return true;
+    }
+    return false;
 }
 
 void Airline::clearPlanes() {
@@ -243,17 +194,138 @@ std::vector<Plane> Airline::getPlanes() {
     return this->planesList;
 }
 
-//////////////////////////////////////////
+//////////////// HANDLE FLIGHTS //////////////
+
+bool Airline::availableFlight(int flightID) {
+
+    for (auto & it : flightsList) {
+        if (it.getFlightID() == flightID) {
+            std::cout << "This flightID is already used in another flight, please select another.\n";
+            return false;
+        }
+    }
+    return true;
+}
+
+void Airline::addFlight() {
+
+    Flight newFlight;
+
+    int flightID, planeID;
+    std::string departDate;
+    std::string flightDuration;
+    std::string departLocation;
+    std::string destination;
+    do  {
+        InputInt(planeID, "Enter the planeID for this Flight:");
+    } while (!PlaneExists(planeID));
+
+    do {
+        InputInt(flightID, "Enter the flightID for this Flight: ");
+    } while (!availableFlight(flightID));
+
+    do {
+        InputStr(departDate, "Enter the Departure Date for this Flight: ");
+    } while(!validateDate(departDate));
+
+    do {
+        InputStr(flightDuration, "Enter the duration of this Flight: ");
+    } while(!validateTime(flightDuration));
+
+    InputStr(departLocation, "Enter the Flight's Departure Location: ");
+
+    InputStr(destination, "Enter the Flight's Destination: ");
+
+    newFlight.setPlaneID(planeID);
+    newFlight.setFlightID(flightID);
+    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
+                                    std::stoi(departDate.substr(5,6)),
+                                    std::stoi(departDate.substr(8,11))));
+
+    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
+                                     std::stoi(flightDuration.substr(3,4))));
+
+    newFlight.setDepartureLocation(departLocation);
+    newFlight.setDestination(destination);
+
+    flightsList.emplace_back(newFlight);
+}
+
+void Airline::deleteFlight() {
+
+    int flightID;
+    InputInt(flightID, "Enter the Flight's ID: ");
+
+    for (auto it = flightsList.begin(); it != flightsList.end(); it++) {
+        if ((*it).getFlightID() == flightID) {
+            flightsList.erase(it);
+            std::cout << "Flight was deleted successfully!" << std::endl;
+        }
+
+    }
+    std::cout << "Flight was not found in our database. \n";
+}
 
 void Airline::printAllFlights() {
-    for (auto elem : planesList) {
-        elem.printFlights();
+    for (const auto& it : flightsList) {
+        std::cout << "{Plane ID: " << it.getPlaneID() << " ,FlightID: " << it.getFlightID() << ", Departure Date: " <<
+                  it.getDepartureDate().toString() << ", Flight Duration: "
+                  << it.getFlightDuration().toString() << ", Departure Location: "
+                  << it.getDepartureLocation() << ", Destination: " << it.getDestination() << "}" << std::endl;
     }
 }
 
 void Airline::clearFlights() {
-    for (Plane elem : planesList) {
-        elem.getFlightsList().clear();
+    flightsList.clear();
+}
+
+void Airline::SaveFlights() {
+    std::string filename = "flights.txt";
+    std::fstream output;
+
+    output.open(filename, std::fstream::out);
+
+    if(output.is_open()) {
+        for (auto & it : flightsList) {
+            std::string s;
+            output << it.getPlaneID() << " " << it.getFlightID() << " "
+            << it.getDepartureDate().toString() << " " << it.getFlightDuration().toString()
+            << " " << it.getDepartureLocation() << " " << it.getDestination() << std::endl;
+        }
     }
 }
 
+void Airline::LoadFlights() {
+
+    std::ifstream file;
+
+    Flight newFlight;
+
+    int planeID, flightID;
+    int year, month, day, hour, minute;
+    std::string depart, destination, line;
+    char separator = '/';
+    char sep2 = ':';
+    file.open("flights.txt");
+
+    while(!file.eof()) {
+
+                //  Chk string
+                std::getline(file, line);
+                std::istringstream str(line);
+
+                str >> planeID >> flightID >> year >> separator >> month >> separator >> day >> hour >> sep2 >> minute
+                >> depart >> destination;
+
+                newFlight.setPlaneID(planeID);
+                newFlight.setFlightID(flightID);
+                newFlight.setDepartureDate(Date(year, month, day));
+
+                newFlight.setFlightDuration(Time(hour, minute));
+
+                newFlight.setDepartureLocation(depart);
+                newFlight.setDestination(destination);
+
+                flightsList.push_back(newFlight);
+            }
+}

@@ -44,17 +44,6 @@ public:
     int getPlaneID() const;
     std::list<Flight> getFlightsList();
 
-    /* ******************************************** HANDLE FLIGHTS ********************************* */
-
-    void addFlight();
-    void deleteFlight();
-
-
-    void LoadFlights();
-
-    void printFlights();
-
-    bool availableFlight(int flightID);
 };
 
 #endif //PROJETO_PLANE_H

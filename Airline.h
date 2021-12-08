@@ -16,6 +16,7 @@ class Airline {
 
 private:
     std::vector<Plane> planesList;
+    std::list<Flight> flightsList;
 
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
@@ -83,10 +84,6 @@ public:
      */
     void sortPlanes();
 
-
-    void printAllFlights();
-
-
     /**
      * @brief: Method that eliminates all Flights from all planes in the database.
      */
@@ -96,10 +93,20 @@ public:
 
     Plane *getPlaneRef(int num);
 
+    /************************************** HANDLE FLIGHTS *********************/
+
+
     void SaveFlights();
-
-
     void LoadFlights();
+
+    bool availableFlight(int flightID);
+
+    void addFlight();
+    void deleteFlight();
+
+    void printAllFlights();
+
+    bool PlaneExists(int num);
 };
 
 #endif //PROJETO_AIRLINE_H

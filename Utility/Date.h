@@ -44,7 +44,7 @@ public:
         year = y;
     }
 
-    void setMonth(int m){
+    void setMonth(int m) {
         month = m;
     }
 
@@ -79,31 +79,21 @@ public:
 
         tm *ltm = localtime(&now);
 
-        setYear(1900+ltm->tm_year);
-        setMonth(1+ltm->tm_mon);
+        setYear(1900 + ltm->tm_year);
+        setMonth(1 + ltm->tm_mon);
         setDay(ltm->tm_mday);
 
     }
 
 
-    std::string toString() const
-    {
+    std::string toString() const {
         std::ostringstream oss;
-        oss << year << "/" << std::setfill('0')  << std::setw(2) << month << "/"
-        << std::setfill('0')  << std::setw(2) << day;
+        oss << year << "/" << std::setfill('0') << std::setw(2) << month << "/"
+            << std::setfill('0') << std::setw(2) << day;
         return oss.str();
     }
 
+
 };
-
-
-
-
-
-
-
-
-
-
 
 #endif //PROJETO_DATE_H

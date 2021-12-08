@@ -123,8 +123,8 @@ void planes_menu(Airline &airline) {
 }
 
 void flights_menu(Airline &airline) {
+
     char option;
-    int tmpIndex;
 
     while (true) {
 
@@ -144,16 +144,11 @@ void flights_menu(Airline &airline) {
 
         switch (option) {
             case '1': {
-                Plane *tmp = airline.getPlaneRef_input();
-                if (tmp != nullptr) {
-                    tmp->addFlight();
-                }
-                else std::cout << "Plane not found in our Database." << std::endl;
+                airline.addFlight();
                 break;
             }
             case '2':
-                tmpIndex = airline.findPlane();
-                airline.getPlanes().at(tmpIndex).deleteFlight();
+                airline.deleteFlight();
                 break;
             case '3':
                 airline.printAllFlights();

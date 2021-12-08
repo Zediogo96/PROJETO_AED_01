@@ -55,7 +55,7 @@ void Plane::setPlaneID(int pID) {
     this->planeID = pID;
 }
 
-bool Plane::availableFlight(int flightID) {
+/*bool Plane::availableFlight(int flightID) {
 
     for (auto & it : flightsList) {
         if (it.getFlightID() == flightID) {
@@ -136,7 +136,7 @@ void Plane::printFlights() {
         }
     }
 
-}
+}*/
 
 
 

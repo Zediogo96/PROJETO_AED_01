@@ -14,15 +14,6 @@ void testAddPlane() {
     airline.printPlanes();
 }
 
-void testAddFlight() {
-    Plane plane = Plane("123123", "A340", 200, 1);
-    plane.addFlight();
-    plane.addFlight();
-
-    plane.deleteFlight();
-    plane.printFlights();
-}
-
 void testSavePlanes() {
     Airline airline("TAP", 100);
     airline.addPlane();
@@ -49,7 +40,7 @@ void testDate_now() {
 void test() {
     Airline airline("Tap", 100);
     airline.LoadPlanes();
-
+    airline.LoadFlights();
     main_menu(airline);
 }
 
@@ -57,4 +48,3 @@ int main() {
     test();
     return 0;
 }
-
