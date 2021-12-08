@@ -11,15 +11,17 @@ void main_menu(Airline &airline) {
 
     while (true) {
 
-        std::cout << "----------------------------" << std::endl;
-        std::cout << "      Main Menu   "           << std::endl;
-        std::cout << "----------------------------" << std::endl;
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|        AIRLINE MANAGEMENT         |" << std::endl;
+        std::cout << "|             MAIN MENU             |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Airport Management         |" << std::endl;
+        std::cout << "|    [2] Costumer                   |" << std::endl;
+        std::cout << "|    [0] Exit                       |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
 
-        std::cout << "\n [1] Airport Management";
-        std::cout << "\n [2] Costumer";
-        std::cout << "\n [0] Exit\n \n";
-
-        std::cout << "Please input your choice: " << std::flush;
+        std::cout << "Please input your choice: " << std::endl << std::flush;
         std::cin >> option;
 
         switch ((char) option) {
@@ -39,18 +41,19 @@ void airport_menu(Airline &airline) {
 
     while (true) {
 
-        std::cout << "----------------------------" << std::endl;
-        std::cout << "      Airport Management   " << std::endl;
-        std::cout << "----------------------------" << std::endl;
 
-        std::cout << "What do you want to manage? \n";
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|        AIRPORT MANAGEMENT         |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|    What do you want to manage?    |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Planes                     |" << std::endl;
+        std::cout << "|    [2] Flights                    |" << std::endl;
+        std::cout << "|    [3] Services                   |" << std::endl;
+        std::cout << "|    [0] Exit                       |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
 
-        std::cout << "\n [1] Planes";
-        std::cout << "\n [2] Flights";
-        std::cout << "\n [3] Services";
-        std::cout << "\n [0] Exit\n";
-
-        std::cout << "Please input your choice: " << std::flush;
+        std::cout << "Please input your choice: " << std::endl << std::flush;
         std::cin >> option;
 
         switch (option) {
@@ -74,19 +77,20 @@ void planes_menu(Airline &airline) {
 
     while (true) {
 
-        std::cout << "----------------------------" << std::endl;
-        std::cout << "      Planes Management   " << std::endl;
-        std::cout << "----------------------------" << std::endl;
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|         PLANES MANAGEMENT         |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|    What do you want to manage?    |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Add Plane                  |" << std::endl;
+        std::cout << "|    [2] Delete Plane               |" << std::endl;
+        std::cout << "|    [3] View all Planes            |" << std::endl;
+        std::cout << "|    [4] Erase all Planes           |" << std::endl;
+        std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
 
-        std::cout << "\n [1] Add Plane";
-        std::cout << "\n [2] Delete Plane";
-        std::cout << "\n [3] View Planes";
-        std::cout << "\n [4] Erase all planes.";
-        std::cout << "\n [0] Exit to Main Menu\n";
-
-        std::cout << "Please input your choice: " << std::flush;
+        std::cout << "Please input your choice: " << std::endl << std::flush;
         std::cin >> option;
-
 
         switch (option) {
             case '1':
@@ -128,16 +132,18 @@ void flights_menu(Airline &airline) {
 
     while (true) {
 
-        std::cout << "----------------------------" << std::endl;
-        std::cout << "      Flights Management   " << std::endl;
-        std::cout << "----------------------------" << std::endl;
-
-        std::cout << "\n [1] Add Flight";
-        std::cout << "\n [2] Delete Flight";
-        std::cout << "\n [3] View Flights";
-        std::cout << "\n [4] Erase all Flights";
-        std::cout << "\n [5] Save all Flights";
-        std::cout << "\n [0] Exit to Main Menu\n";
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|         FLIGHTS MANAGEMENT        |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|    What do you want to manage?    |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Add Flight                 |" << std::endl;
+        std::cout << "|    [2] Delete Flight              |" << std::endl;
+        std::cout << "|    [3] View all Flights           |" << std::endl;
+        std::cout << "|    [4] Erase all Flights          |" << std::endl;
+        std::cout << "|    [4] Save all Flights           |" << std::endl;
+        std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
 
         std::cout << "Please input your choice: " << std::flush;
         std::cin >> option;
@@ -181,17 +187,20 @@ void services_menu(Airline &airline) {
 
     while (true) {
 
-        std::cout << "----------------------------" << std::endl;
-        std::cout << "      Services Management   " << std::endl;
-        std::cout << "----------------------------" << std::endl;
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|         SERVICE MANAGEMENT        |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|    What do you want to manage?    |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Add Service                |" << std::endl;
+        std::cout << "|    [2] Delete Service             |" << std::endl;
+        std::cout << "|    [3] Set Complete               |" << std::endl;
+        std::cout << "|    [4] Erase all Services         |" << std::endl;
+        std::cout << "|    [4] Save all Service           |" << std::endl;
+        std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
 
-        std::cout << "\n [1] Add Service";
-        std::cout << "\n [2] ";
-        std::cout << "\n [3] View Flights";
-        std::cout << "\n [4] Erase all Flights";
-        std::cout << "\n [0] Exit to Main Menu\n";
-
-        std::cout << "Please input your choice: " << std::flush;
+        std::cout << "Please input your choice: " << std::endl <<std::flush;
         std::cin >> option;
 
         switch (option) {
