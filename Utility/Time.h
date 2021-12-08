@@ -70,5 +70,13 @@ public:
         std::cout << std::setw(2) << std::setfill('0') << hours << ":"
                   << std::setw(2) << std::setfill('0') << minutes << "\n";
     }
+
+    std::string toString() const
+    {
+        std::ostringstream oss;
+        oss << std::setfill('0')  << std::setw(2) << hours << ":" << std::setfill('0')
+        << std::setw(2)<< minutes;
+        return oss.str();
+    }
 };
 #endif //PROJETO_TIME_H

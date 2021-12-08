@@ -92,7 +92,14 @@ public:
      */
     void clearFlights();
 
-    Plane* getRef();
+    Plane* getPlaneRef_input();
+
+    Plane *getPlaneRef(int num);
+
+    void SaveFlights();
+
+
+    void LoadFlights();
 };
 
 #endif //PROJETO_AIRLINE_H

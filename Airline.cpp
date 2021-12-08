@@ -87,7 +87,7 @@ void Airline::printPlanes() {
 
 void Airline::SavePlanes() {
 
-    std::string filename = R"(C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Data\planes.txt)";
+    std::string filename = "planes.txt";
     std::fstream output;
 
     output.open(filename, std::fstream::out);
@@ -98,6 +98,8 @@ void Airline::SavePlanes() {
                  " " << (int)it.getCapacity() << " " << (int)it.getPlaneID() << std::endl;
         }
     }
+
+
 }
 
 void Airline::LoadPlanes() {
@@ -109,7 +111,7 @@ void Airline::LoadPlanes() {
     int capacity, planeID;
 
     std::ifstream file;
-    std::string filename = R"(C:\Users\zedio\Documents\Documentos\FEUP\2ANO\AED\PROJETO\Data\planes.txt)";
+    std::string filename = "planes.txt";
 
     file.open(filename, std::ifstream::in);
 
@@ -118,7 +120,61 @@ void Airline::LoadPlanes() {
     }
 }
 
-Plane* Airline::getRef() {
+void Airline::SaveFlights() {
+    std::string filename = "flights.txt";
+    std::fstream output;
+
+    output.open(filename, std::fstream::out);
+
+    if(output.is_open()) {
+        for (auto & plane : planesList) {
+            for (auto & it : plane.getFlightsList()) {
+                std::string s;
+                output << plane.getPlaneID() << " " << it.getFlightID() << " "
+                       << it.getDepartureDate().toString() << " " << it.getFlightDuration().toString()
+                       << " " << it.getDepartureLocation() << " " << it.getDestination() << std::endl;
+            }
+        }
+    }
+}
+
+void Airline::LoadFlights() {
+/*
+    std::ifstream file;
+
+    Flight newFlight;
+
+    int planeID, flightID, hours, minutes;
+    std::string depart, destination, date;
+
+    file.open("flights.txt");
+
+    while(file >> planeID >> flightID >> date >> hours >> minutes >> depart >> destination) {
+
+        newFlight.setFlightID(flightID);
+
+        newFlight.getDepartureDate().setYear(std::stoi(date.substr(0,3)));
+
+        newFlight.getDepartureDate().setMonth(std::stoi(date.substr(5,6)));
+
+        newFlight.getDepartureDate().setDay(std::stoi(date.substr(8,9)));
+
+
+        newFlight.getFlightDuration().setHours(hours);
+
+        newFlight.getFlightDuration().setMinutes(minutes);
+
+        newFlight.setDepartureLocation(depart);
+
+        newFlight.setDestination(destination);
+
+        for (auto it : planesList) {
+            if (it.getPlaneID() == planeID) it.getFlightsList().push_back()
+        }
+    }*/
+}
+
+Plane* Airline::getPlaneRef_input() {
     int planeID;
 
     std::cin.clear();
@@ -132,7 +188,17 @@ Plane* Airline::getRef() {
             break;
         }
     }
+    return c;
+}
 
+Plane* Airline::getPlaneRef(int num) {
+    Plane *c = nullptr;
+    for (auto &i: planesList) {
+        if (i.getPlaneID() == num) {
+            c = &i;
+            break;
+        }
+    }
     return c;
 }
 
@@ -155,19 +221,19 @@ void Airline::sortPlanes() {
     switch(userInput) {
         case 1:
             std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
-                return a.getPlaneID() > b.getPlaneID();
+                return a.getPlaneID() < b.getPlaneID();
             });
         case 2:
             std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
-                return a.getNumberPlate() > b.getNumberPlate();
+                return a.getNumberPlate() < b.getNumberPlate();
             });
         case 3:
             std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
-                return a.getType() > b.getType();
+                return a.getType() < b.getType();
             });
         case 4:
             std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
-                return a.getCapacity() > b.getCapacity();
+                return a.getCapacity() < b.getCapacity();
             });
         default: std::cout << "Invalid Input" << std::endl;
     }

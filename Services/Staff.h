@@ -7,11 +7,12 @@
 
 
 #include <string>
-
+#include "Service.h"
 
 class Staff {
 private:
     std::string name;
+    list<Service*>
 public:
     std::string getName() {
         return name;

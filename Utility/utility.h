@@ -32,11 +32,11 @@ static bool validatePlaneType(const std::string &s) {
  * @return true if the regex accepts the string, false otherwise
  */
 static bool validateDate(const std::string &s) {
-    static const std::regex validType(R"(^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$)");
+    static const std::regex validType(R"(^(19|20)\d\d([/ /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$)");
 
     if (std::regex_match(s, validType))
         return true;
-    std::cout << "Invalid date format, must be for example: 2021-12-03.";
+    std::cout << "Invalid date format, must be for example: 1996/12/19 (yyyy/mm/dd).";
     return false;
 }
 
@@ -67,6 +67,17 @@ static void InputStr(std::string &str, std::string const &text) {
         std::cout << text << std::endl;
         std::cin >> str;
     } while(!std::cin);
+}
+
+/** @brief Method that implements input in case of string text with spaces */
+static void InputStr_withSpaces(std::string &str, std::string const &text) {
+    do {
+        std::cin.clear();
+        std::cin.ignore(10000, '\n');
+
+        std::cout << text << std::endl;
+
+    } while(!std::getline(std::cin, str));
 }
 
 static void InputInt(int &num, const std::string &text) {

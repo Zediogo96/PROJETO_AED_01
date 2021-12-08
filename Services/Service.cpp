@@ -1,29 +1,25 @@
 //
-// Created by zedio on 05/12/2021.
+// Created by zedio on 07/12/2021.
 //
 
 #include "Service.h"
 
-Service::Service(Type type, const Staff& responsible) {
-    this->type = type;
-    this->currentDate.now();
-    this->responsible = responsible;
-    this->completed = false;
+
+
+Service::Service(Plane &plane, Date* date, Staff &staff) {
+    this->plane = &plane;
+    this->responsible = &staff;
+    created = date;
 }
 
-void Service::setResponsible(const Staff& staff) {
-    responsible = staff;
-}
-
-void Service::setComplete() {
-    completed = true;
-    completedDate.now();
-}
-
-Staff Service::getResponsible() const {
+Staff* Service::getResponsible() {
     return responsible;
 }
 
-Type Service::getType() const {
-    return type;
+void Service::setComplete(Date *date) {
+    this->completed = date;
+}
+
+void Service::setResponsible(Staff *staff) {
+    this->responsible = staff;
 }

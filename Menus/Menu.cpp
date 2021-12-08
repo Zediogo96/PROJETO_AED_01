@@ -136,6 +136,7 @@ void flights_menu(Airline &airline) {
         std::cout << "\n [2] Delete Flight";
         std::cout << "\n [3] View Flights";
         std::cout << "\n [4] Erase all Flights";
+        std::cout << "\n [5] Save all Flights";
         std::cout << "\n [0] Exit to Main Menu\n";
 
         std::cout << "Please input your choice: " << std::flush;
@@ -143,7 +144,7 @@ void flights_menu(Airline &airline) {
 
         switch (option) {
             case '1': {
-                Plane *tmp = airline.getRef();
+                Plane *tmp = airline.getPlaneRef_input();
                 if (tmp != nullptr) {
                     tmp->addFlight();
                 }
@@ -168,6 +169,9 @@ void flights_menu(Airline &airline) {
                 }
                 std::cout << "All planes were erased" << std::endl;
                 planes_menu(airline);
+
+            case '5':
+                airline.SaveFlights();
             case '0':
                 return;
             default:

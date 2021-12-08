@@ -84,6 +84,16 @@ public:
         setDay(ltm->tm_mday);
 
     }
+
+
+    std::string toString() const
+    {
+        std::ostringstream oss;
+        oss << year << "/" << std::setfill('0')  << std::setw(2) << month << "/"
+        << std::setfill('0')  << std::setw(2) << day;
+        return oss.str();
+    }
+
 };
 
 

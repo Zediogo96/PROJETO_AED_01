@@ -49,11 +49,11 @@ void testDate_now() {
 void test() {
     Airline airline("Tap", 100);
     airline.LoadPlanes();
+
     main_menu(airline);
 }
 
 int main() {
-
     test();
     return 0;
 }

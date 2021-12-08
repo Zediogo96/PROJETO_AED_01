@@ -49,7 +49,7 @@ public:
     void addFlight();
     void deleteFlight();
 
-    void SaveFlights();
+
     void LoadFlights();
 
     void printFlights();
