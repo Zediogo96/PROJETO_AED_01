@@ -26,14 +26,19 @@ void main_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airport_menu(airline); break;
-            case '2': ; break;
+                airport_menu(airline);
+                break;
+            case '2':
+                costumer_menu(airline);
+                break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
                 system("pause");
         }
     }
 }
+
+
 
 void airport_menu(Airline &airline) {
 
@@ -227,6 +232,40 @@ void services_menu(Airline &airline) {
                 return;
             default:
                 std::cout << "Invalid input" << std::endl;
+                system("pause");
+        }
+    }
+}
+
+void costumer_menu(Airline &airline) {
+
+    char option;
+
+    while (true) {
+
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|             COSTUMER              |" << std::endl;
+        std::cout << "|               MENU                |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [1] Seat Reservation           |" << std::endl;
+        std::cout << "|    [2] Flights Schedule           |" << std::endl;
+        std::cout << "|    [0] Exit                       |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+
+        std::cout << "Please input your choice: " << std::endl << std::flush;
+        std::cin >> option;
+
+        switch ((char) option) {
+            case '1':
+                airline.reserveSeat();
+                break;
+            case '2':
+                airline.printAllFlights();
+                system("pause");
+                break;
+            case '0': return;
+            default: std::cout << "Invalid Input \n:";
                 system("pause");
         }
     }

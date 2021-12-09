@@ -337,3 +337,55 @@ void Airline::LoadFlights() {
                 flightsList.push_back(newFlight);
             }
 }
+
+Flight& Airline::getFlightRef(int num) {
+
+    for (Flight &i: flightsList) {
+        if (i.getPlaneID() == num) {
+            return i;
+        }
+    }
+    throw std::logic_error("This flight number doesn't exist, please check our Records");
+}
+
+////////////////////////////// HANDLE PASSENGERS //////////////////////////////////
+
+void Airline::reserveSeat() {
+    int chosenSeat, numberOfSeats, flightID;
+    std::string firstName;
+    std::string lastName;
+    int passengerId;
+
+    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
+    Flight& flight = getFlightRef(flightID);
+
+    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
+
+    for (int seat : flight.getSeatsAvailable()) {
+        std::cout << seat << " ";
+    }
+
+    for (int i = 0; i < numberOfSeats; i++) {
+
+        do {
+            InputInt(chosenSeat, "Choose your seat: ");
+        } while(!flight.availableSeat(chosenSeat));
+
+        InputStr(firstName, "Your First Name: ");
+        InputStr(lastName, "Your Last Name: ");
+
+        do {
+            InputInt(passengerId, "Your Client ID: ");
+        } while(!flight.availableClientID(passengerId, firstName, lastName));
+
+
+        Passenger passenger(firstName, lastName, passengerId);
+        passenger.SetSeatNumber(chosenSeat);
+        flight.ReserveSeat(passenger);
+    }
+
+    std::cout << "________________________________________________" << std::endl;
+    std::cout << "|                                              |" << std::endl;
+    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
+    std::cout << "________________________________________________" << std::endl;
+}

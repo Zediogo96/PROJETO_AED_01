@@ -93,6 +93,8 @@ public:
 
     Plane *getPlaneRef(int num);
 
+    bool PlaneExists(int num);
+
     /************************************** HANDLE FLIGHTS *********************/
 
 
@@ -103,10 +105,12 @@ public:
 
     void addFlight();
     void deleteFlight();
+    Flight &getFlightRef(int num);
 
     void printAllFlights();
 
-    bool PlaneExists(int num);
+
+    void reserveSeat();
 };
 
 #endif //PROJETO_AIRLINE_H
