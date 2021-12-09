@@ -16,7 +16,7 @@ class Airline {
 
 private:
     std::vector<Plane> planesList;
-    std::list<Flight> flightsList;
+    std::vector<Flight> flightsList;
 
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */

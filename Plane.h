@@ -19,9 +19,9 @@ class Plane {
 
 private:
 
-    /** TO IMPLEMENT LIST OF FLIGHTS */
-    std::list<Flight> flightsList;
-
+    /** TO IMPLEMENT ASSIGNMENT OF FLIGHTS */
+    std::list<int> assignments;
+    
     /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
     std::queue<Service> servicesQueue;
 

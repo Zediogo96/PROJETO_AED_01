@@ -79,6 +79,7 @@ void Airline::deletePlane() {
 }
 
 void Airline::printPlanes() {
+    sortPlanes();
     for (const Plane& tmp : planesList) {
         std::cout << "{ PlaneID: " << tmp.getPlaneID() << ", Plane Type: " << tmp.getType() << ", NumberPlate: " << tmp.getNumberPlate()
                 << ", Capacity: " << tmp.getCapacity() << " }" << std::endl;
@@ -159,7 +160,9 @@ void Airline::clearPlanes() {
 
 void Airline::sortPlanes() {
 
-    int userInput;
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+    char userInput;
 
     std::cout << "Please select the parameter you wish to sort the planes by: " << std::endl;
     std::cout << "[1] PlaneID" << std::endl;
@@ -170,23 +173,27 @@ void Airline::sortPlanes() {
     std::cin >> userInput;
 
     switch(userInput) {
-        case 1:
-            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+        case '1':
+            std::sort(planesList.begin(), planesList.end(),[](Plane & a, Plane & b) {
                 return a.getPlaneID() < b.getPlaneID();
             });
-        case 2:
-            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
-                return a.getNumberPlate() < b.getNumberPlate();
-            });
-        case 3:
-            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+            break;
+        case '2':
+            std::sort(planesList.begin(), planesList.end(),[](Plane & a, Plane & b) {
                 return a.getType() < b.getType();
             });
-        case 4:
-            std::sort(planesList.begin(), planesList.end(),[&](const Plane & a, const Plane & b) {
+            break;
+        case '3':
+            std::sort(planesList.begin(), planesList.end(),[](Plane & a, Plane & b) {
+                return a.getNumberPlate() < b.getNumberPlate();
+            });
+            break;
+        case '4':
+            std::sort(planesList.begin(), planesList.end(),[](Plane & a, Plane & b) {
                 return a.getCapacity() < b.getCapacity();
             });
-        default: std::cout << "Invalid Input" << std::endl;
+            break;
+        default: std::cout << "Invalid Input." << std::endl;
     }
 }
 

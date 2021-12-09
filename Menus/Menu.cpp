@@ -86,6 +86,7 @@ void planes_menu(Airline &airline) {
         std::cout << "|    [2] Delete Plane               |" << std::endl;
         std::cout << "|    [3] View all Planes            |" << std::endl;
         std::cout << "|    [4] Erase all Planes           |" << std::endl;
+        std::cout << "|    [5] Save all Planes           |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -100,7 +101,6 @@ void planes_menu(Airline &airline) {
                 airline.deletePlane();
                 break;
             case '3':
-                airline.sortPlanes();
                 airline.printPlanes();
                 system("pause");
                 break;
@@ -115,7 +115,7 @@ void planes_menu(Airline &airline) {
                 std::cout << "All planes were erased" << std::endl;
                 planes_menu(airline);
             case '5':
-                airline.LoadPlanes();
+                airline.SavePlanes();
                 break;
             case '0':
                 return;
