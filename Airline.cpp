@@ -253,6 +253,10 @@ void Airline::addFlight() {
     newFlight.setDepartureLocation(departLocation);
     newFlight.setDestination(destination);
 
+    int numSeats = getPlaneRef(planeID)->getCapacity();
+    newFlight.setSeatsNumber(numSeats);
+
+
     flightsList.emplace_back(newFlight);
 }
 
@@ -273,10 +277,7 @@ void Airline::deleteFlight() {
 
 void Airline::printAllFlights() {
     for (const auto& it : flightsList) {
-        std::cout << "{Plane ID: " << it.getPlaneID() << " ,FlightID: " << it.getFlightID() << ", Departure Date: " <<
-                  it.getDepartureDate().toString() << ", Flight Duration: "
-                  << it.getFlightDuration().toString() << ", Departure Location: "
-                  << it.getDepartureLocation() << ", Destination: " << it.getDestination() << "}" << std::endl;
+        it.printInfo();
     }
 }
 
@@ -331,6 +332,8 @@ void Airline::LoadFlights() {
                 newFlight.setDepartureLocation(depart);
                 newFlight.setDestination(destination);
 
+                int numSeats = getPlaneRef(planeID)->getCapacity();
+                newFlight.setSeatsNumber(numSeats);
                 flightsList.push_back(newFlight);
             }
 }

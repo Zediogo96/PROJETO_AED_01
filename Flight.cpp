@@ -3,17 +3,10 @@
 
 #include "Flight.h"
 
-Flight::Flight() {
-    planeID = 0;
-    flightID = 0;
-    departureDate = Date();
-    flightDuration = Time();
-    departureLocation = "N/A";
-    destination = "N/A";
-}
+Flight::Flight() = default;
 
 Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDuration_,
-       std::string departureLocation_, std::string destination_) {
+       std::string departureLocation_, std::string destination_, int seatsNum) {
 
     this->planeID = planeID;
     this->flightID = flightID;
@@ -21,6 +14,7 @@ Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDurati
     this->flightDuration = flightDuration_;
     this->departureLocation = std::move(departureLocation_);
     this->destination = std::move(destination_);
+    this->seatsNumber = seatsNum;
 
 }
 
@@ -48,6 +42,10 @@ std::string Flight::getDestination() const {
     return destination;
 }
 
+int Flight::getSeatsNumber() const {
+    return seatsNumber;
+}
+
 void Flight::setFlightID(int flightID_) {
     this->flightID = flightID_;
 }
@@ -70,6 +68,18 @@ void Flight::setDestination(std::string destination_) {
 
 void Flight::setPlaneID(int planeID_) {
     planeID = planeID_;
+}
+
+void Flight::setSeatsNumber(int seatsNum_) {
+    seatsNumber = seatsNum_;
+}
+
+void Flight::printInfo() const {
+    std::cout << "{Plane ID: " << getPlaneID() << " ,FlightID: " << getFlightID() << ", Departure Date: " <<
+              getDepartureDate().toString() << ", Flight Duration: "
+              << getFlightDuration().toString() << ", Departure Location: "
+              << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats: "
+              << getSeatsNumber() << "}" << std::endl;
 }
 
 
