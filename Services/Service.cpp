@@ -4,8 +4,6 @@
 
 #include "Service.h"
 
-
-
 Service::Service(Plane &plane, Date* date, Staff &staff) {
     this->plane = &plane;
     this->responsible = &staff;

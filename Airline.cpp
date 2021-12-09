@@ -46,23 +46,21 @@ void Airline::addPlane() {
     std::string numberPlate, type;
     int capacity, planeID;
 
-    InputStr(numberPlate, "Enter the numberPlate of this plane: ");
-
-    do {
-        InputStr(type, "Enter the type of this plane: ");
-    } while (!validatePlaneType(type));
-
-    InputInt(capacity, "Enter the capacity of this plane: ");
-
     do
     {
         InputInt(planeID, "Enter the ID for this plane: ");
 
     } while(!availablePlane(planeID));
 
-    Plane newPlane(numberPlate, type, capacity, planeID);
+    do {
+        InputStr(type, "Enter the type of this plane: ");
+    } while (!validatePlaneType(type));
 
-    planesList.push_back(newPlane);
+    InputStr(numberPlate, "Enter the numberPlate of this plane: ");
+
+    InputInt(capacity, "Enter the capacity of this plane: ");
+
+    planesList.emplace_back(Plane(planeID, type, numberPlate, capacity));
 
     std::cout << "Plane was added successfully! \n" << std::endl;
     std::cin.ignore();
@@ -95,8 +93,8 @@ void Airline::SavePlanes() {
 
     if(output.is_open()) {
         for (auto & it : planesList) {
-            output << (std::string)it.getNumberPlate() << " " << (std::string)it.getType() <<
-                 " " << (int)it.getCapacity() << " " << (int)it.getPlaneID() << std::endl;
+            output << it.getPlaneID() << " " << it.getType() << " " <<
+            it.getNumberPlate() << " " << it.getCapacity();
         }
     }
 }
@@ -114,8 +112,8 @@ void Airline::LoadPlanes() {
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> plateNumber >> type >> capacity >> planeID) {
-        planesList.emplace_back(Plane(plateNumber, type, capacity, planeID));
+    while(file >> planeID >> type >> plateNumber>> capacity) {
+        planesList.emplace_back(Plane(planeID, type, plateNumber, capacity));
     }
 }
 

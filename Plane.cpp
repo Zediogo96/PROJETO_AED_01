@@ -12,11 +12,12 @@ Plane::Plane() {
 }
 
 /** @brief: Creates a new object of class Plane */
-Plane::Plane(std::string numberPlate, std::string type, int capacity, int planeID) {
-    this->numberPlate = std::move(numberPlate);
-    this->type = std::move(type);
-    this->capacity = capacity;
+Plane::Plane(int planeID, std::string type, std::string numberPlate,  int capacity) {
     this->planeID = planeID;
+    this->type = std::move(type);
+    this->numberPlate = std::move(numberPlate);
+    this->capacity = capacity;
+
 }
 
 std::string Plane::getNumberPlate() const {

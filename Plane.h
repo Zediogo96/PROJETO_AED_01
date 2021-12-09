@@ -31,7 +31,7 @@ private:
 public:
 
     Plane();
-    Plane(std::string numberPlate, std::string type, int capacity, int planeID);
+    Plane(int planeID, std::string type, std::string numberPlate,  int capacity);
 
     void setNumberPlate(std::string numberPlate_);
     void setType(std::string type_);

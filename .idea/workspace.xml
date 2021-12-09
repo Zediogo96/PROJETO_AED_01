@@ -12,12 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed5fa24c-7912-467b-9f05-e3adc323fd0f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Airline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline.h" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/flights.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/flights.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data/planes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/planes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Menus/Menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Menus/Menu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plane.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plane.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" afterDir="false" />
