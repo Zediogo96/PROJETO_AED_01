@@ -80,7 +80,7 @@ void Airline::printPlanes() {
     sortPlanes();
     for (const Plane& tmp : planesList) {
         std::cout << "{ PlaneID: " << tmp.getPlaneID() << ", Plane Type: " << tmp.getType() << ", NumberPlate: " << tmp.getNumberPlate()
-                << ", Capacity: " << tmp.getCapacity() << " }" << std::endl;
+                  << ", Capacity: " << tmp.getCapacity() << " }" << std::endl;
     }
 }
 
@@ -94,7 +94,7 @@ void Airline::SavePlanes() {
     if(output.is_open()) {
         for (auto & it : planesList) {
             output << it.getPlaneID() << " " << it.getType() << " " <<
-            it.getNumberPlate() << " " << it.getCapacity();
+                   it.getNumberPlate() << " " << it.getCapacity();
         }
     }
 }
@@ -295,8 +295,8 @@ void Airline::SaveFlights() {
         for (auto & it : flightsList) {
             std::string s;
             output << it.getPlaneID() << " " << it.getFlightID() << " "
-            << it.getDepartureDate().toString() << " " << it.getFlightDuration().toString()
-            << " " << it.getDepartureLocation() << " " << it.getDestination() << std::endl;
+                   << it.getDepartureDate().toString() << " " << it.getFlightDuration().toString()
+                   << " " << it.getDepartureLocation() << " " << it.getDestination() << std::endl;
         }
     }
 }
@@ -316,26 +316,26 @@ void Airline::LoadFlights() {
 
     while(!file.eof()) {
 
-                //  Chk string
-                std::getline(file, line);
-                std::istringstream str(line);
+        //  Chk string
+        std::getline(file, line);
+        std::istringstream str(line);
 
-                str >> planeID >> flightID >> year >> separator >> month >> separator >> day >> hour >> sep2 >> minute
-                >> depart >> destination;
+        str >> planeID >> flightID >> year >> separator >> month >> separator >> day >> hour >> sep2 >> minute
+            >> depart >> destination;
 
-                newFlight.setPlaneID(planeID);
-                newFlight.setFlightID(flightID);
-                newFlight.setDepartureDate(Date(year, month, day));
+        newFlight.setPlaneID(planeID);
+        newFlight.setFlightID(flightID);
+        newFlight.setDepartureDate(Date(year, month, day));
 
-                newFlight.setFlightDuration(Time(hour, minute));
+        newFlight.setFlightDuration(Time(hour, minute));
 
-                newFlight.setDepartureLocation(depart);
-                newFlight.setDestination(destination);
+        newFlight.setDepartureLocation(depart);
+        newFlight.setDestination(destination);
 
-                int numSeats = getPlaneRef(planeID)->getCapacity();
-                newFlight.setSeatsNumber(numSeats);
-                flightsList.push_back(newFlight);
-            }
+        int numSeats = getPlaneRef(planeID)->getCapacity();
+        newFlight.setSeatsNumber(numSeats);
+        flightsList.push_back(newFlight);
+    }
 }
 
 Flight& Airline::getFlightRef(int num) {
@@ -382,6 +382,20 @@ void Airline::reserveSeat() {
         Passenger passenger(firstName, lastName, passengerId);
         passenger.SetSeatNumber(chosenSeat);
         flight.ReserveSeat(passenger);
+
+        string includeBaggage;
+        string autoBaggage;
+        InputStr(includeBaggage, "Include baggage (y/n)? ");
+        if(includeBaggage == "y") {
+            InputStr(autoBaggage, "Automatic baggage check-in (y/n)? ");
+            if(autoBaggage == "y") {
+                baggageCart.addBaggage(Baggage(passengerId));
+                if(baggageCart.isFull()) {
+                    cout << "Baggage Cart full, emptying..." << endl;
+                    baggageCart.empty();
+                }
+            }
+        }
     }
 
     std::cout << "________________________________________________" << std::endl;

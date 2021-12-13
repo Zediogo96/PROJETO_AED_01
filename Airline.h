@@ -11,6 +11,7 @@
 #include <list>
 
 #include "Plane.h"
+#include "BaggageCart.h"
 
 class Airline {
 
@@ -23,6 +24,7 @@ private:
 
     std::string name;
     int maxNumOfFlights;
+    BaggageCart baggageCart = BaggageCart(4);
 
 public:
 

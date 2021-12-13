@@ -73,6 +73,6 @@ void transporttest(){
 }
 
 int main() {
-    transporttest();
+    test();
     return 0;
 }
