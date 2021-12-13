@@ -25,3 +25,9 @@ void BaggageCarriage::addBaggage(Baggage baggage) {
             baggageStack.push(baggage);
     }
 }
+
+void BaggageCarriage::empty() {
+    for(stack<Baggage> baggageStack : baggageStacks)
+        while(baggageStack.size() > 0)
+            baggageStack.pop();
+}

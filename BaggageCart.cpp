@@ -7,6 +7,8 @@ BaggageCart::BaggageCart(int c) {
         BaggageCarriage carriage = BaggageCarriage(3, 4);
         carriages.push_back(carriage);
     }
+
+    full = false;
 }
 
 void BaggageCart::addBaggage(Baggage baggage) {
@@ -15,4 +17,23 @@ void BaggageCart::addBaggage(Baggage baggage) {
         if(carriage.hasSpace())
             carriage.addBaggage(baggage);
     }
+}
+
+bool BaggageCart::isFull() {
+    full = true;
+
+    for(BaggageCarriage carriage : carriages) {
+        if(carriage.hasSpace())
+            full = false;
+    }
+
+    return full;
+}
+
+void BaggageCart::empty() {
+    for(BaggageCarriage carriage : carriages) {
+        carriage.empty();
+    }
+
+    full = false;
 }

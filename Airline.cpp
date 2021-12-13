@@ -383,11 +383,19 @@ void Airline::reserveSeat() {
         passenger.SetSeatNumber(chosenSeat);
         flight.ReserveSeat(passenger);
 
-        std::cout << "Automatic baggage check-in (y/n) ? ";
-        if(cin.peek() == 'y')
-            baggageCart.addBaggage(passengerId);
-        cin.clear();
-        cin.ignore(1000, '\n');
+        string includeBaggage;
+        string autoBaggage;
+        InputStr(includeBaggage, "Include baggage (y/n)? ");
+        if(includeBaggage == "y") {
+            InputStr(autoBaggage, "Automatic baggage check-in (y/n)? ");
+            if(autoBaggage == "y") {
+                baggageCart.addBaggage(Baggage(passengerId));
+                if(baggageCart.isFull()) {
+                    cout << "Baggage Cart full, emptying..." << endl;
+                    baggageCart.empty();
+                }
+            }
+        }
     }
 
     std::cout << "________________________________________________" << std::endl;
