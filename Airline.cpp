@@ -382,6 +382,12 @@ void Airline::reserveSeat() {
         Passenger passenger(firstName, lastName, passengerId);
         passenger.SetSeatNumber(chosenSeat);
         flight.ReserveSeat(passenger);
+
+        std::cout << "Automatic baggage check-in (y/n) ? ";
+        if(cin.peek() == 'y')
+            baggageCart.addBaggage(passengerId);
+        cin.clear();
+        cin.ignore(1000, '\n');
     }
 
     std::cout << "________________________________________________" << std::endl;
