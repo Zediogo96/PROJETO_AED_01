@@ -244,12 +244,13 @@ void costumer_menu(Airline &airline) {
     while (true) {
 
         std::cout << "_____________________________________" << std::endl;
-        std::cout << "|             COSTUMER              |" << std::endl;
+        std::cout << "|             CUSTOMER              |" << std::endl;
         std::cout << "|               MENU                |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;
         std::cout << "|    [1] Seat Reservation           |" << std::endl;
         std::cout << "|    [2] Flights Schedule           |" << std::endl;
+        std::cout << "|    [3] Transport Information      |" << std::endl;
         std::cout << "|    [0] Exit                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -262,6 +263,10 @@ void costumer_menu(Airline &airline) {
                 break;
             case '2':
                 airline.printAllFlights();
+                system("pause");
+                break;
+            case '3':
+
                 system("pause");
                 break;
             case '0': return;
