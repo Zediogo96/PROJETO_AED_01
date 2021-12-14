@@ -11,13 +11,16 @@
 #include <list>
 
 #include "Plane.h"
+#include "Services/Staff.h"
+#include "Services/Service.h"
 
 class Airline {
 
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
-
+    std::queue<Service*> servicesQueue;
+    std::list<Service*> servicesHistory;
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
 
@@ -34,9 +37,11 @@ public:
     }
 
     /** @brief GETTERS for fields of Airline Class */
-    const std::string& getName();
+    const std::string & getName();
     int getMaxNumOfFlights() const;
     std::vector<Plane> getPlanes();
+    /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
+
 
     /******************************************** HANDLE PLANES **************************** */
 
@@ -107,6 +112,13 @@ public:
     void printAllFlights();
 
     bool PlaneExists(int num);
-};
 
+    /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
+
+    void addService();
+
+    void checkService();
+
+    void printAllServices();
+};
 #endif //PROJETO_AIRLINE_H

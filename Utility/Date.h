@@ -82,7 +82,6 @@ public:
         setYear(1900 + ltm->tm_year);
         setMonth(1 + ltm->tm_mon);
         setDay(ltm->tm_mday);
-
     }
 
 

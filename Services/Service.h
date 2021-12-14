@@ -6,22 +6,56 @@
 #define PROJETO_SERVICE_H
 
 
+#include "../Utility/Date.h"
+
+
 class Service {
 
 private:
-
-    class Plane* plane;
-    class Staff* responsible;
-    class Date* created;
-    class Date* completed;
+    int planeID{};
+    int serviceID{};
+    class Staff* responsible{};
+    class Date created;
+    class Date completed;
 
 public:
-
-    Service(Plane &plane, Date* date, Staff &staff);
-    void setResponsible(Staff* staff);
-    void setComplete(Date* date);
-    Staff* getResponsible();
+    virtual int getPlaneID();
+    virtual int getServiceID();
+    virtual Date getCreationDate();
+    virtual Staff* getStaff();
+    virtual void setResponsible(Staff &staff);
+    virtual void setComplete(Date &date);
+    virtual Staff* getResponsible();
+    virtual bool check() = 0;
 };
 
+class Cleaning : public Service {
+
+private:
+
+    bool wc = false;
+    bool seats = false;
+    bool floor = false;
+
+public:
+    Cleaning(int planeID, int serviceID, Date &date, Staff &staff);
+    void setWc();
+    void setSeats();
+    void setFloor();
+    bool check() override;
+};
+
+class Maintenance : public Service {
+
+private:
+
+    bool engine = false;
+    bool landingGear = false;
+    bool emergencyDoors = false;
+
+public:
+    Maintenance(int planeID, int serviceID, Date &date, Staff &staff);
+    bool check() override;
+};
 
 #endif //PROJETO_SERVICE_H

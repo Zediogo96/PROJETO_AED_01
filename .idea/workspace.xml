@@ -12,10 +12,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed5fa24c-7912-467b-9f05-e3adc323fd0f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Data/services.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Airline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/planes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/planes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Airline.h" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menus/Menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Menus/Menu.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menus/Menu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Menus/Menu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plane.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Plane.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plane.h" beforeDir="false" afterPath="$PROJECT_DIR$/Plane.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Service.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Service.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Service.h" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Service.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Staff.h" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Staff.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utility/Date.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utility/Date.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Utility/utility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Utility/utility.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
@@ -38,6 +47,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="21EiDPIMkkJHzUUhUSGPAZBDD5T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -69,19 +81,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="PROJETO" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="$PROJECT_DIR$/Data/planes.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/Data" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PROJETO" TARGET_NAME="PROJETO" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PROJETO" RUN_TARGET_NAME="PROJETO">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PROJETO" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" REDIRECT_INPUT_PATH="$PROJECT_DIR$/Data/planes.txt" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" WORKING_DIR="file://$PROJECT_DIR$/Data" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PROJETO" TARGET_NAME="PROJETO" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PROJETO" RUN_TARGET_NAME="PROJETO">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -112,6 +119,9 @@
       <workItem from="1638931545643" duration="3113000" />
       <workItem from="1638967904784" duration="4744000" />
       <workItem from="1639059987537" duration="1653000" />
+      <workItem from="1639438400877" duration="11624000" />
+      <workItem from="1639451977636" duration="3000" />
+      <workItem from="1639490288614" duration="8807000" />
     </task>
     <servers />
   </component>

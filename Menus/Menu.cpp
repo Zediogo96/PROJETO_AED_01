@@ -63,6 +63,8 @@ void airport_menu(Airline &airline) {
             case '2':
                 flights_menu(airline);
                 break;
+            case '3':
+                services_menu(airline);
             case '0':
                 return;
             default:
@@ -193,10 +195,8 @@ void services_menu(Airline &airline) {
         std::cout << "|    What do you want to manage?    |" << std::endl;
         std::cout << "|                                   |" << std::endl;
         std::cout << "|    [1] Add Service                |" << std::endl;
-        std::cout << "|    [2] Delete Service             |" << std::endl;
-        std::cout << "|    [3] Set Complete               |" << std::endl;
-        std::cout << "|    [4] Erase all Services         |" << std::endl;
-        std::cout << "|    [4] Save all Service           |" << std::endl;
+        std::cout << "|    [2] Check next Service         |" << std::endl;
+        std::cout << "|    [3] Print All Services         |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -205,24 +205,15 @@ void services_menu(Airline &airline) {
 
         switch (option) {
             case '1':
-
+                airline.addService();
                 break;
             case '2':
-
+                airline.checkService();
+                services_menu(airline);
                 break;
             case '3':
-
+                airline.printAllServices();
                 break;
-            case '4':
-                char check;
-                std::cout << "Are you sure? [Y/n]" << std::endl;
-                std::cin >> check;
-                if (check == 'Y' || check == 'y') {
-                    airline.clearFlights();
-                    break;
-                }
-                std::cout << "All planes were erased" << std::endl;
-                planes_menu(airline);
             case '0':
                 return;
             default:
