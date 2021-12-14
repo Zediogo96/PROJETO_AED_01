@@ -13,17 +13,19 @@ BaggageCart::BaggageCart(int c) {
 
 void BaggageCart::addBaggage(Baggage baggage) {
 
-    for(BaggageCarriage carriage : carriages) {
-        if(carriage.hasSpace())
-            carriage.addBaggage(baggage);
+    for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
+        if(itr->hasSpace()) {
+            itr->addBaggage(baggage);
+            return;
+        }
     }
 }
 
 bool BaggageCart::isFull() {
     full = true;
 
-    for(BaggageCarriage carriage : carriages) {
-        if(carriage.hasSpace())
+    for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
+        if(itr->hasSpace())
             full = false;
     }
 
@@ -31,9 +33,19 @@ bool BaggageCart::isFull() {
 }
 
 void BaggageCart::empty() {
-    for(BaggageCarriage carriage : carriages) {
-        carriage.empty();
+    for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
+        itr->empty();
     }
 
     full = false;
+}
+
+int BaggageCart::getSize() {
+    int size = 0;
+
+    for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
+        size += itr->getSize();
+    }
+
+    return size;
 }

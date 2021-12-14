@@ -1,3 +1,5 @@
+#pragma once
+
 class Baggage {
     int passengerID;
 
