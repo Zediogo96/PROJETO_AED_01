@@ -19,19 +19,17 @@ int Airline::getMaxNumOfFlights() const {
 void Airline::LoadTransports() {
     ifstream transports;
     transports.open("transports.txt", ifstream::in);
-    string id, dist, trans;
-    vector<Time> schedule;
-    int nID, nDist;
-    type t;
     while(!transports.eof()){
-        string id, dist, trans;
+        string id, dist, trans, airportId;
         vector<Time> schedule;
-        int nID, nDist;
+        int nID, nDist, airportid;
         type t;
         getline(transports, trans, ' ');
         getline(transports, id, ' ');
+        getline(transports, airportId, ' ');
         getline(transports, dist, ' ');
         nID = stoi(id);
+        airportid = stoi(airportId);
         nDist = stoi(dist);
         if (trans == "SUBWAY") t = type::SUBWAY;
         if (trans == "TRAIN") t = type::TRAIN;
@@ -48,7 +46,7 @@ void Airline::LoadTransports() {
             time1 = Time(stoi(hour),stoi(min));
             schedule.push_back(time1);
         }
-        Transport P1 = Transport(t, nID,nDist, schedule);
+        Transport P1 = Transport(t, nID, airportid ,nDist, schedule);
         transportTree.insert(P1);
     }
     transports.close();

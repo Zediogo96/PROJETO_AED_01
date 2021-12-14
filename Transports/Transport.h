@@ -15,14 +15,16 @@ class Transport {
 private:
         type transporttype;
         int transportid;
+        int airportid;
         int distance;
         vector<Time> schedule;
 public:
-    Transport(type t, int id , int distance, vector<Time> schedule);
+    Transport(type t, int id, int airportid , int distance, vector<Time> schedule);
     void addTime(Time time);
     void printSchedule() const;
     type getType() const;
     int getId() const;
+    int getAirportId() const;
     int getDistance() const;
     vector<Time> getSchedule() const;
     bool operator < (const Transport& T1) const;

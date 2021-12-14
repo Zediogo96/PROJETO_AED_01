@@ -4,9 +4,10 @@
 
 #include "Transport.h"
 
-Transport::Transport(type t, int id , int distance, vector<Time> schedule) {
+Transport::Transport(type t, int id, int airportid , int distance, vector<Time> schedule) {
     this->transporttype = t;
     this->transportid = id;
+    this->airportid = airportid;
     this->distance = distance;
     this->schedule = schedule;
 }
@@ -34,5 +35,6 @@ bool Transport::operator == (const Transport& T1) const{
 
 type Transport::getType()const {return transporttype;}
 int Transport::getId() const {return transportid;}
+int Transport::getAirportId() const {return airportid;}
 int Transport::getDistance() const {return distance;}
 vector<Time> Transport::getSchedule() const {return schedule;}

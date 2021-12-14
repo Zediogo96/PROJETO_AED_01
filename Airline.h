@@ -32,7 +32,7 @@ private:
 public:
 
     /** @brief Constructor for the Airline Class */
-    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::BUS, -1, -1, vector<Time>())) {
+    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
         this->name = name;
         this->maxNumOfFlights = maxNumOfFlights;
         planesList.clear();
