@@ -21,9 +21,7 @@ private:
 
     /** TO IMPLEMENT ASSIGNMENT OF FLIGHTS */
     std::list<int> assignments;
-    
-    /** TO IMPLEMENT LIST OF CLEANING AND MAINTENANCE SCHEDULE */
-    std::queue<Service> servicesQueue;
+
 
     std::string numberPlate, type;
     int capacity, planeID{};

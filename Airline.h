@@ -14,6 +14,8 @@
 #include "Transports/Transport.h"
 #include "Plane.h"
 #include "BaggageCart.h"
+#include "Services/Staff.h"
+#include "Services/Service.h"
 
 class Airline {
 
@@ -21,6 +23,8 @@ private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
     BST<Transport> transportTree;
+    std::queue<Service*> servicesQueue;
+    std::list<Service*> servicesHistory;
 
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
@@ -120,6 +124,14 @@ public:
 
 
     void reserveSeat();
+
+    /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
+
+    void addService();
+
+    void checkService();
+
+    void printAllServices();
 };
 
 #endif //PROJETO_AIRLINE_H

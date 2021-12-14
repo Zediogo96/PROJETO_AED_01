@@ -7,15 +7,25 @@
 
 
 #include <string>
+#include <utility>
 #include "Service.h"
 
 class Staff {
 private:
-    std::string name;
-    list<Service*>
+    std::string firstName;
+    std::string lastName;
+
 public:
-    std::string getName() {
-        return name;
+
+    Staff(std::string firstName, std::string lastName) {
+        this->firstName = std::move(firstName);
+        this->lastName = std::move(lastName);
+    }
+
+    std::string toString() {
+        std::ostringstream oss;
+        oss << firstName << " " << lastName;
+        return oss.str();
     }
 };
 
