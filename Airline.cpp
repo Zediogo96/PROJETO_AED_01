@@ -2,7 +2,10 @@
 // Created by zedio on 21/11/2021.
 //
 #include <fstream>
+#include <iostream>
 #include "Airline.h"
+
+using namespace std;
 
 const std::string& Airline::getName() {
     return name;
@@ -10,6 +13,44 @@ const std::string& Airline::getName() {
 
 int Airline::getMaxNumOfFlights() const {
     return maxNumOfFlights;
+}
+
+void Airline::LoadTransports() {
+    ifstream transports;
+    transports.open("transports.txt", ifstream::in);
+    string id, dist, trans;
+    vector<Time> schedule;
+    int nID, nDist;
+    type t;
+    while(!transports.eof()){
+        string id, dist, trans;
+        vector<Time> schedule;
+        int nID, nDist;
+        type t;
+        getline(transports, trans, ' ');
+        getline(transports, id, ' ');
+        getline(transports, dist, ' ');
+        nID = stoi(id);
+        nDist = stoi(dist);
+        if (trans == "METRO") t = type::METRO;
+        if (trans == "COMBOIO") t = type::COMBOIO;
+        if (trans == "AUTOCARRO") t = type::AUTOCARRO;
+        Time time1;
+        string time;
+        int len = 0;
+        getline(transports, time);
+        while(len < time.length()){
+            string subtime = time.substr(len, 5);
+            len += subtime.size() + 1;
+            string hour = subtime.substr(0,2);
+            string min = subtime.substr(3,2);
+            time1 = Time(stoi(hour),stoi(min));
+            schedule.push_back(time1);
+        }
+        Transport P1 = Transport(t, nID,nDist, schedule);
+        transportTree.insert(P1);
+    }
+    transports.close();
 }
 
 bool Airline::availablePlane(int planeID) {

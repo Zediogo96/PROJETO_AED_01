@@ -41,6 +41,7 @@ void testDate_now() {
 
 void test() {
     Airline airline("Tap", 100);
+    airline.LoadTransports();
     airline.LoadPlanes();
     airline.LoadFlights();
     main_menu(airline);
@@ -68,7 +69,7 @@ void transporttest(){
     v1.push_back(t9);
     int distance = 24;
     type trans = type::METRO;
-    Transport p1(trans, distance, v1);
+    Transport p1(trans,1, distance, v1);
     p1.printSchedule();
 }
 

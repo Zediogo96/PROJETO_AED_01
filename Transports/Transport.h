@@ -14,16 +14,19 @@ enum class type {METRO,AUTOCARRO,COMBOIO};
 class Transport {
 private:
         type transporttype;
+        int transportid;
         int distance;
         vector<Time> schedule;
 public:
-    Transport(type t, int distance, vector<Time> schedule);
+    Transport(type t, int id , int distance, vector<Time> schedule);
     void addTime(Time time);
     void printSchedule();
-    type getType();
-    int getDistance();
-    vector<Time> getSchedule();
-
+    type getType() const;
+    int getId() const;
+    int getDistance() const;
+    vector<Time> getSchedule() const;
+    bool operator < (const Transport& T1) const;
+    bool operator == (const Transport& T1) const;
 };
 
 

@@ -4,8 +4,9 @@
 
 #include "Transport.h"
 
-Transport::Transport(type t, int distance, vector<Time> schedule) {
+Transport::Transport(type t, int id , int distance, vector<Time> schedule) {
     this->transporttype = t;
+    this->transportid = id;
     this->distance = distance;
     this->schedule = schedule;
 }
@@ -23,6 +24,18 @@ void Transport::printSchedule() {
     cout << endl;
 }
 
-type Transport::getType() {return transporttype;}
-int Transport::getDistance() {return distance;}
-vector<Time> Transport::getSchedule() {return schedule;}
+bool Transport::operator<(const Transport& T1) const{
+    if (this->distance < T1.distance) return true;
+    else if (this->distance == T1.distance && this->transportid < T1.transportid) return true;
+    else return false;
+}
+
+bool Transport::operator == (const Transport& T1) const{
+    if (this->transportid == T1.transportid && this->transporttype == T1.transporttype) return true;
+    else return false;
+}
+
+type Transport::getType()const {return transporttype;}
+int Transport::getId() const {return transportid;}
+int Transport::getDistance() const {return distance;}
+vector<Time> Transport::getSchedule() const {return schedule;}

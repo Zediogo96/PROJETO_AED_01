@@ -10,6 +10,8 @@
 #include <vector>
 #include <list>
 
+#include "binaryTree.h"
+#include "Transports/Transport.h"
 #include "Plane.h"
 #include "BaggageCart.h"
 
@@ -18,6 +20,7 @@ class Airline {
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
+    BST<Transport> transportTree;
 
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
@@ -29,7 +32,7 @@ private:
 public:
 
     /** @brief Constructor for the Airline Class */
-    Airline(const std::string &name, int maxNumOfFlights) {
+    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::AUTOCARRO,-1,-1,vector<Time>())) {
         this->name = name;
         this->maxNumOfFlights = maxNumOfFlights;
         planesList.clear();
@@ -45,6 +48,7 @@ public:
     void SavePlanes();
     void LoadPlanes();
 
+    void LoadTransports();
 
     /**
      * Method that analyzes if a determinate planeID is already in use when creating a new plane,
