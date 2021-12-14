@@ -1,6 +1,6 @@
 #include <list>
 #include "BaggageCarriage.h"
-
+#include "Baggage.h"
 
 using namespace std;
 
@@ -14,4 +14,5 @@ public:
     void addBaggage(Baggage baggage);
     bool isFull();
     void empty();
+    int getSize();
 };

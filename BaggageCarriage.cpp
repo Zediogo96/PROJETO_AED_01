@@ -11,8 +11,8 @@ BaggageCarriage::BaggageCarriage(int n, int m) {
 }
 
 bool BaggageCarriage::hasSpace() {
-    for (stack<Baggage> baggageStack : baggageStacks) {
-        if (baggageStack.size() < stackSize)
+    for (list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+        if (itr->size() < stackSize)
             return true;
     }
 
@@ -20,14 +20,26 @@ bool BaggageCarriage::hasSpace() {
 }
 
 void BaggageCarriage::addBaggage(Baggage baggage) {
-    for (stack<Baggage> baggageStack : baggageStacks) {
-        if (baggageStack.size() < stackSize)
-            baggageStack.push(baggage);
+    for (list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+        if (itr->size() < stackSize) {
+            itr->push(baggage);
+            return;
+        }
     }
 }
 
 void BaggageCarriage::empty() {
-    for(stack<Baggage> baggageStack : baggageStacks)
-        while(baggageStack.size() > 0)
-            baggageStack.pop();
+    for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+        while(itr->size() > 0)
+            itr->pop();
+    }
+}
+
+int BaggageCarriage::getSize() {
+    int size = 0;
+    for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+        size += itr->size();
+    }
+
+    return size;
 }
