@@ -32,7 +32,7 @@ private:
 public:
 
     /** @brief Constructor for the Airline Class */
-    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::AUTOCARRO,-1,-1,vector<Time>())) {
+    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::BUS, -1, -1, vector<Time>())) {
         this->name = name;
         this->maxNumOfFlights = maxNumOfFlights;
         planesList.clear();
@@ -49,6 +49,9 @@ public:
     void LoadPlanes();
 
     void LoadTransports();
+    void showAvailables(type vehicle);
+    void showDistances(type vehicle);
+    void showSchedules(type vehicle);
 
     /**
      * Method that analyzes if a determinate planeID is already in use when creating a new plane,

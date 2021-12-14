@@ -13,12 +13,9 @@ Transport::Transport(type t, int id , int distance, vector<Time> schedule) {
 void Transport::addTime(Time time) {
     schedule.push_back(time);
 }
-void Transport::printSchedule() {
-    cout << "--------------------------" << endl;
-    cout << "|  Available Schedules:  |" << endl;
-    cout << "--------------------------" << endl;
+void Transport::printSchedule() const {
     for (int i = 0; i < schedule.size(); i++){
-        if ((i % 4) == 0) cout << endl;
+        if ((i % 4) == 0 && i != 0) cout << endl;
         cout << setfill('0') << setw(2) << schedule[i].getHours() << ":" << setw(2) <<schedule[i].getMinutes() << "  ";
     }
     cout << endl;

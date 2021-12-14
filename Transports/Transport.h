@@ -9,7 +9,7 @@
 
 using namespace std;
 
-enum class type {METRO,AUTOCARRO,COMBOIO};
+enum class type {SUBWAY,BUS,TRAIN};
 
 class Transport {
 private:
@@ -20,7 +20,7 @@ private:
 public:
     Transport(type t, int id , int distance, vector<Time> schedule);
     void addTime(Time time);
-    void printSchedule();
+    void printSchedule() const;
     type getType() const;
     int getId() const;
     int getDistance() const;

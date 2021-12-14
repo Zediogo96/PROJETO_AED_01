@@ -12,11 +12,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ed5fa24c-7912-467b-9f05-e3adc323fd0f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/binaryTree.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Airline.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Airline.h" beforeDir="false" afterPath="$PROJECT_DIR$/Airline.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BUGS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BUGS.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/transports.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Data/transports.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Menus/Menu.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Menus/Menu.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Transports/Transport.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Transports/Transport.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Transports/Transport.h" beforeDir="false" afterPath="$PROJECT_DIR$/Transports/Transport.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PROJETO.exe" afterDir="false" />
@@ -121,7 +122,7 @@
       <workItem from="1638931545643" duration="3113000" />
       <workItem from="1638967904784" duration="4744000" />
       <workItem from="1639059987537" duration="1653000" />
-      <workItem from="1639417284389" duration="20744000" />
+      <workItem from="1639417284389" duration="25591000" />
     </task>
     <servers />
   </component>

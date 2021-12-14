@@ -15,6 +15,7 @@ int Airline::getMaxNumOfFlights() const {
     return maxNumOfFlights;
 }
 
+/** Handle Transports **/
 void Airline::LoadTransports() {
     ifstream transports;
     transports.open("transports.txt", ifstream::in);
@@ -32,9 +33,9 @@ void Airline::LoadTransports() {
         getline(transports, dist, ' ');
         nID = stoi(id);
         nDist = stoi(dist);
-        if (trans == "METRO") t = type::METRO;
-        if (trans == "COMBOIO") t = type::COMBOIO;
-        if (trans == "AUTOCARRO") t = type::AUTOCARRO;
+        if (trans == "SUBWAY") t = type::SUBWAY;
+        if (trans == "TRAIN") t = type::TRAIN;
+        if (trans == "BUS") t = type::BUS;
         Time time1;
         string time;
         int len = 0;
@@ -52,6 +53,34 @@ void Airline::LoadTransports() {
     }
     transports.close();
 }
+void Airline::showAvailables(type vehicle) {
+    cout << "Available: " << endl;
+    BSTItrLevel<Transport> it(transportTree);
+    while (!it.isAtEnd()){
+        if (it.retrieve().getType() == vehicle) cout << "- " << it.retrieve().getId() << endl;
+        it.advance();
+    }
+}
+void Airline::showDistances(type vehicle) {
+    cout << "Distance from the airport: " << endl;
+    BSTItrLevel<Transport> it(transportTree);
+    while (!it.isAtEnd()){
+        if (it.retrieve().getType() == vehicle) cout << "Number: " << it.retrieve().getId() << " is " << it.retrieve().getDistance() << " kms away from the airport." << endl;
+        it.advance();
+    }
+}
+void Airline::showSchedules(type vehicle) {
+    cout << "Available Schedules: " << endl;
+    BSTItrLevel<Transport> it(transportTree);
+    while (!it.isAtEnd()){
+        if (it.retrieve().getType() == vehicle){
+            cout << "\n-For number: " << it.retrieve().getId() << endl;
+            it.retrieve().printSchedule();
+        }
+        it.advance();
+    }
+}
+
 
 bool Airline::availablePlane(int planeID) {
 

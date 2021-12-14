@@ -68,7 +68,7 @@ void transporttest(){
     v1.push_back(t8);
     v1.push_back(t9);
     int distance = 24;
-    type trans = type::METRO;
+    type trans = type::SUBWAY;
     Transport p1(trans,1, distance, v1);
     p1.printSchedule();
 }

@@ -1,3 +1,4 @@
 
 Ver problemas com console clear para o trabalho ficar mais fluído.
 Não consigo dar load aos planes (por causa das datas e time)
+
