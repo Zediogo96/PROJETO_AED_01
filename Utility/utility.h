@@ -56,14 +56,6 @@ static bool validateTime(const std::string &s) {
     return false;
 }
 
-static bool validateAnswer(const std::string &s) {
-    static const std::regex validType("^(y|Y|n|N)$");
-
-    if (std::regex_match(s, validType)) return true;
-    std::cout << "Invalid Answer, must be Y / N.";
-    return false;
-}
-
 /** @brief Method that implements input in case of string text */
 static void InputStr(std::string &str, std::string const &text) {
     do {
@@ -74,19 +66,6 @@ static void InputStr(std::string &str, std::string const &text) {
 
         std::cout << text << std::endl;
         std::cin >> str;
-    } while(!std::cin);
-}
-
-/** @brief Method that implements input in case of string text */
-static void InputChar(char ch, std::string const &text) {
-    do {
-        if (!std::cin) {
-            std::cin.clear();
-            std::cin.ignore(10000, '\n');
-        }
-
-        std::cout << text << std::endl;
-        std::cin >> ch;
     } while(!std::cin);
 }
 
