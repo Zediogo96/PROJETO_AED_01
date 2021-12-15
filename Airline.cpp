@@ -471,3 +471,68 @@ void Airline::reserveSeat() {
     std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
     std::cout << "________________________________________________" << std::endl;
 }
+
+/////////////////////////////// HANDLE SERVICES ////////////////////////////////////////////////
+
+void Airline::addService() {
+
+    int serviceID, planeID;
+    std::string firstName, lastName, date;
+    std::string type;
+
+    do  {
+        InputInt(planeID, "Enter the planeID you want to add a Service to:");
+    } while (!PlaneExists(planeID));
+
+    /*do {*/
+    InputInt(serviceID, "Enter the serviceID for this service: ");
+    /*} while (!availableService(serviceID));*/
+
+    do {
+        InputStr(type, "Type of Service (Maintenance or Cleaning) : ");
+    } while (!(type == "Cleaning" || (type == "Maintenance")));
+
+    InputStr(firstName, "Enter the First Name of the Staff Member responsible for this Service: ");
+    InputStr(lastName, "Enter his Last Name: ");
+
+    do {
+        InputStr(date, "Enter the current date: ");
+    } while (!validateDate(date));
+
+    Date dateS(std::stoi(date.substr(0, 4)),
+               std::stoi(date.substr(5,6)),
+               std::stoi(date.substr(8,11)));
+
+    Staff staff(firstName, lastName);
+
+
+
+    if (type == "Cleaning") {
+        Service* serviceptr;
+        Cleaning cleaning(planeID, serviceID, dateS, staff);
+
+        serviceptr = &cleaning;
+        servicesQueue.push(serviceptr);
+    }
+    else {
+        Service* serviceptr;
+        Maintenance maintenance(planeID, serviceID, dateS, staff);
+
+        serviceptr = &maintenance;
+        servicesQueue.push(serviceptr);
+    }
+}
+
+void Airline::checkService() {
+
+    Service* service = servicesQueue.back();
+
+    if (service->check()) {
+        servicesQueue.pop();
+        delete service;
+    }
+}
+
+void Airline::printAllServices() {
+    std::cout << servicesQueue.size() << std::flush;
+}

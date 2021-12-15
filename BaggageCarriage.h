@@ -14,4 +14,5 @@ public:
     bool hasSpace();
     void addBaggage(Baggage baggage);
     void empty();
+    int getSize();
 };
