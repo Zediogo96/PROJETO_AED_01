@@ -18,7 +18,7 @@ class Airport {
     BaggageCart baggageCart = BaggageCart(2);
 
 public:
-    Airport(int id, string name);
+    Airport(int id, string name, Airline* airline);
     const std::string& getName();
     const int& getID();
     
