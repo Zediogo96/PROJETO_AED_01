@@ -35,7 +35,7 @@ public:
     std::string getDepartureLocation() const;
     std::string getDestination() const;
     int getSeatsNumber() const;
-    std::vector<int> getSeatsAvailable();
+    std::vector<int> & getSeatsAvailable();
 
     void setPlaneID(int planeID_);
     void setFlightID(int flightID_);
@@ -53,7 +53,6 @@ public:
            std::string departureLocation_, std::string destination_, int seatsNum);
 
     void ReserveSeat(Passenger &passenger);
-
 
     bool availableSeat(int num);
 

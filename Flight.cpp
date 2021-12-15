@@ -49,7 +49,7 @@ int Flight::getSeatsNumber() const {
     return seatsNumber;
 }
 
-std::vector<int> Flight::getSeatsAvailable() {
+std::vector<int>& Flight::getSeatsAvailable() {
     return mSeatsAvailable;
 }
 

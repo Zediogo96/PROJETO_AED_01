@@ -13,17 +13,17 @@ class Service {
 
 protected:
     int planeID{};
-    int serviceID{};
     class Staff responsible;
     class Date completed;
 
 public:
     virtual int getPlaneID();
-    virtual int getServiceID();
     virtual void setPlaneID(int planeID_);
-    virtual void setServiceID(int serviceID_);
     virtual void setComplete(Date &date);
+    Date getDateCompleted();
+    Staff getResponsible();
     virtual bool check() = 0;
+    virtual string printType() = 0;
 };
 
 class Cleaning : public Service {
@@ -35,12 +35,16 @@ private:
     bool floor = false;
 
 public:
-    Cleaning(int planeID, int serviceID, Staff &staff);
+    Cleaning(int planeID, Staff &staff);
     ~Cleaning() = default;
     void setWc();
     void setSeats();
     void setFloor();
     bool check() override;
+    string printType() override {
+        return "Cleaning";
+    }
+
 };
 
 class Maintenance : public Service {
@@ -52,9 +56,13 @@ private:
     bool emergencyDoors = false;
 
 public:
-    Maintenance(int planeID, int serviceID, Staff &staff);
-    ~Maintenance() = default;;
+    Maintenance(int planeID, Staff &staff);
+    ~Maintenance() = default;
     bool check() override;
+    string printType() {
+        return "Maintenance";
+    }
+
 };
 
 #endif //PROJETO_SERVICE_H

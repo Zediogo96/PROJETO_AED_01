@@ -131,9 +131,11 @@ public:
 
     void checkService();
 
-    void printAllServices();
+    void printAllServicesHistory();
 
     void LoadServices();
+
+    void printAllServicesDue();
 };
 
 #endif //PROJETO_AIRLINE_H

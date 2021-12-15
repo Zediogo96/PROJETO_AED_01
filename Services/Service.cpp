@@ -9,9 +9,6 @@ int Service::getPlaneID() {
     return planeID;
 }
 
-int Service::getServiceID() {
-    return serviceID;
-}
 void Service::setComplete(Date &date) {
     this->completed = date;
 }
@@ -20,13 +17,16 @@ void Service::setPlaneID(int planeID_) {
     this->planeID = planeID_;
 }
 
-void Service::setServiceID(int serviceID_) {
-    this->serviceID = serviceID_;
+Staff Service::getResponsible() {
+    return responsible;
 }
 
-Cleaning::Cleaning(int planeID_, int serviceID_, Staff &staff){
+Date Service::getDateCompleted() {
+    return completed;
+}
+
+Cleaning::Cleaning(int planeID_, Staff &staff){
     planeID = planeID_;
-    this->serviceID = serviceID_;
     this->responsible = staff;
 }
 
@@ -79,9 +79,8 @@ void Cleaning::setFloor() {
     floor = true;
 }
 
-Maintenance::Maintenance(int planeID_, int serviceID, Staff &staff) {
+Maintenance::Maintenance(int planeID_,Staff &staff) {
     planeID = planeID_;
-    this->serviceID = serviceID;
     this->responsible = staff;
 }
 

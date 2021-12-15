@@ -489,10 +489,6 @@ void Airline::addService() {
         InputInt(planeID, "Enter the planeID you want to add a Service to:");
     } while (!PlaneExists(planeID));
 
-    /*do {*/
-    InputInt(serviceID, "Enter the serviceID for this service: ");
-    /*} while (!availableService(serviceID));*/
-
     do {
         InputStr(type, "Type of Service (Maintenance or Cleaning) : ");
     } while (!(type == "Cleaning" || (type == "Maintenance")));
@@ -500,63 +496,98 @@ void Airline::addService() {
     InputStr(firstName, "Enter the First Name of the Staff Member responsible for this Service: ");
     InputStr(lastName, "Enter his Last Name: ");
 
-    /*do {
-        InputStr(date, "Enter the current date: ");
-    } while (!validateDate(date));*/
-
-    /*Date dateS(std::stoi(date.substr(0, 4)),
-               std::stoi(date.substr(5,6)),
-               std::stoi(date.substr(8,11)));*/
-
     Staff staff(firstName, lastName);
 
-    Service* serviceptr;
-
     if (type == "Cleaning") {
-        Cleaning cleaning(planeID, serviceID, staff);
+        Service* serviceptr;
+        auto* cleaning = new Cleaning(planeID, staff);
 
-        serviceptr = &cleaning;
+        serviceptr = cleaning;
         servicesQueue.push(serviceptr);
     }
     else {
+        Service* serviceptr;
+        auto * maintenance = new Maintenance(planeID, staff);
 
-        Maintenance maintenance(planeID, serviceID, staff);
-
-        serviceptr = &maintenance;
+        serviceptr = maintenance;
         servicesQueue.push(serviceptr);
     }
 }
 
 void Airline::checkService() {
-    Service* service = servicesQueue.back();
+    Service* service = servicesQueue.front();
+
+    cout << "Service you are checking: " << endl;
+    cout << "[Plane ID: " << service->getPlaneID() << "], [Responsible Staff: "<< service->getResponsible().toString()
+         << "], [Type: " << service->printType() << "]" << endl;
+
     if (service->check()) {
+        Date date;
+        date.now();
+        service->setComplete(date);
+        servicesHistory.push_back(service);
         servicesQueue.pop();
     }
 }
 
-void Airline::printAllServices() {
-    std::cout << servicesQueue.size() << std::flush;
+void Airline::printAllServicesDue() {
+    queue<Service*> temp = servicesQueue;
+
+    while (!temp.empty()) {
+        Service* service = temp.front();
+        cout << "[Plane ID: " << service->getPlaneID() << "], [Responsible Staff: "<< service->getResponsible().toString()
+                << "], [Type: " << service->printType() << "]" << endl;
+        temp.pop();
+    }
+
 }
 
-/*
+void Airline::printAllServicesHistory() {
+    if (servicesHistory.empty()) {
+        cout << "There are no records of completed services." << endl;
+    }
+    else {
+        for (auto elem : servicesHistory) {
+            cout << "[Plane ID: " << elem->getPlaneID() << "], [Responsible Staff: "<< elem->getResponsible().toString()
+                 << "] [Completed in: " << elem->getDateCompleted().toString() << "], [Type: " << elem->printType() << "]" << endl;
+        }
+    }
+
+}
+
 void Airline::LoadServices() {
 
     while (!servicesQueue.empty()) {
         Service* service = servicesQueue.front();
         servicesQueue.pop();
-        delete service;
     }
 
-    Plane newPlane;
-    std::string plateNumber, type;
-    int capacity, planeID;
+    int planeID;
+    string type, firstName, lastName;
 
     std::ifstream file;
-    std::string filename = "planes.txt";
+    std::string filename = "services.txt";
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> planeID >> type >> plateNumber>> capacity) {
-        planesList.emplace_back(Plane(planeID, type, plateNumber, capacity));
+    while(file >> planeID >> type >> firstName >> lastName) {
+
+        Staff staff(firstName, lastName);
+
+        if (type == "Cleaning") {
+            Service* serviceptr;
+            auto* cleaning = new Cleaning(planeID, staff);
+
+            serviceptr = cleaning;
+            servicesQueue.push(serviceptr);
+        }
+        else {
+            Service* serviceptr;
+            auto * maintenance = new Maintenance(planeID, staff);
+
+            serviceptr = maintenance;
+            servicesQueue.push(serviceptr);
+        }
     }
-}*/
+    file.close();
+}

@@ -6,7 +6,6 @@
 #include "Menu.h"
 
 void main_menu(Airline &airline) {
-
     char option;
 
     while (true) {
@@ -44,7 +43,6 @@ void airport_menu(Airline &airline) {
 
     while (true) {
 
-
         std::cout << "_____________________________________" << std::endl;
         std::cout << "|        AIRPORT MANAGEMENT         |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
@@ -79,6 +77,7 @@ void airport_menu(Airline &airline) {
 }
 
 void planes_menu(Airline &airline) {
+
     char option;
 
     while (true) {
@@ -200,7 +199,8 @@ void services_menu(Airline &airline) {
         std::cout << "|                                   |" << std::endl;
         std::cout << "|    [1] Add Service                |" << std::endl;
         std::cout << "|    [2] Check next Service         |" << std::endl;
-        std::cout << "|    [3] Print All Services         |" << std::endl;
+        std::cout << "|    [3] Services not completed     |" << std::endl;
+        std::cout << "|    [4] Services history           |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -215,7 +215,10 @@ void services_menu(Airline &airline) {
                 airline.checkService();
                 break;
             case '3':
-                airline.printAllServices();
+                airline.printAllServicesDue();
+                break;
+            case '4':
+                airline.printAllServicesHistory();
                 break;
             case '0':
                 return;
@@ -244,6 +247,10 @@ void transport_options(char vehicle, Airline &airline){
                 transp = type::TRAIN;
                 std::cout << "|               TRAIN               |" << std::endl;
                 break;
+            default:
+                std::cout << "Invalid Input \n:";
+                system("pause");
+
         }
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;
@@ -275,7 +282,6 @@ void transport_options(char vehicle, Airline &airline){
                 system("pause");
         }
     }
-
 }
 
 void transport_menu(Airline &airline){

@@ -19,11 +19,7 @@ class Plane {
 
 private:
 
-    /** TO IMPLEMENT ASSIGNMENT OF FLIGHTS */
-    std::list<int> assignments;
-
-
-    std::string numberPlate, type;
+    string numberPlate, type;
     int capacity, planeID{};
 
 public:
@@ -40,8 +36,6 @@ public:
     std::string getType() const;
     int getCapacity() const;
     int getPlaneID() const;
-    std::list<Flight> getFlightsList();
-
 };
 
 #endif //PROJETO_PLANE_H
