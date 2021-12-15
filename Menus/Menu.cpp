@@ -38,8 +38,6 @@ void main_menu(Airline &airline) {
     }
 }
 
-
-
 void airport_menu(Airline &airline) {
 
     char option;
@@ -94,7 +92,7 @@ void planes_menu(Airline &airline) {
         std::cout << "|    [2] Delete Plane               |" << std::endl;
         std::cout << "|    [3] View all Planes            |" << std::endl;
         std::cout << "|    [4] Erase all Planes           |" << std::endl;
-        std::cout << "|    [5] Save all Planes           |" << std::endl;
+        std::cout << "|    [5] Save all Planes            |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -121,7 +119,6 @@ void planes_menu(Airline &airline) {
                     break;
                 }
                 std::cout << "All planes were erased" << std::endl;
-                planes_menu(airline);
             case '5':
                 airline.SavePlanes();
                 break;
@@ -149,7 +146,7 @@ void flights_menu(Airline &airline) {
         std::cout << "|    [2] Delete Flight              |" << std::endl;
         std::cout << "|    [3] View all Flights           |" << std::endl;
         std::cout << "|    [4] Erase all Flights          |" << std::endl;
-        std::cout << "|    [4] Save all Flights           |" << std::endl;
+        std::cout << "|    [5] Save all Flights           |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -216,7 +213,6 @@ void services_menu(Airline &airline) {
                 break;
             case '2':
                 airline.checkService();
-                services_menu(airline);
                 break;
             case '3':
                 airline.printAllServices();
@@ -274,7 +270,8 @@ void transport_options(char vehicle, Airline &airline){
                 system("pause");
                 break;
             case '0': return;
-            default: std::cout << "Invalid Input \n:";
+            default:
+                std::cout << "Invalid Input \n:";
                 system("pause");
         }
     }

@@ -6,25 +6,23 @@
 #define PROJETO_SERVICE_H
 
 #include "../Utility/Date.h"
+#include "Staff.h"
 
 
 class Service {
 
-private:
+protected:
     int planeID{};
     int serviceID{};
-    class Staff* responsible{};
-    class Date created;
+    class Staff responsible;
     class Date completed;
 
 public:
     virtual int getPlaneID();
     virtual int getServiceID();
-    virtual Date getCreationDate();
-    virtual Staff* getStaff();
-    virtual void setResponsible(Staff &staff);
+    virtual void setPlaneID(int planeID_);
+    virtual void setServiceID(int serviceID_);
     virtual void setComplete(Date &date);
-    virtual Staff* getResponsible();
     virtual bool check() = 0;
 };
 
@@ -37,7 +35,8 @@ private:
     bool floor = false;
 
 public:
-    Cleaning(int planeID, int serviceID, Date &date, Staff &staff);
+    Cleaning(int planeID, int serviceID, Staff &staff);
+    ~Cleaning() = default;
     void setWc();
     void setSeats();
     void setFloor();
@@ -53,7 +52,8 @@ private:
     bool emergencyDoors = false;
 
 public:
-    Maintenance(int planeID, int serviceID, Date &date, Staff &staff);
+    Maintenance(int planeID, int serviceID, Staff &staff);
+    ~Maintenance() = default;;
     bool check() override;
 };
 

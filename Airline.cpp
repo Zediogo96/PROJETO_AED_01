@@ -282,50 +282,55 @@ bool Airline::availableFlight(int flightID) {
 
 void Airline::addFlight() {
 
-    Flight newFlight;
+    if ((flightsList.size()) == maxNumOfFlights) {
+        cout << "You can't add anymore flights (limit reached)." << endl;
+    }
+    else {
+        Flight newFlight;
 
-    int flightID, planeID;
-    std::string departDate;
-    std::string flightDuration;
-    std::string departLocation;
-    std::string destination;
-    do  {
-        InputInt(planeID, "Enter the planeID for this Flight:");
-    } while (!PlaneExists(planeID));
+        int flightID, planeID;
+        std::string departDate;
+        std::string flightDuration;
+        std::string departLocation;
+        std::string destination;
+        do {
+            InputInt(planeID, "Enter the planeID for this Flight:");
+        } while (!PlaneExists(planeID));
 
-    do {
-        InputInt(flightID, "Enter the flightID for this Flight: ");
-    } while (!availableFlight(flightID));
+        do {
+            InputInt(flightID, "Enter the flightID for this Flight: ");
+        } while (!availableFlight(flightID));
 
-    do {
-        InputStr(departDate, "Enter the Departure Date for this Flight: ");
-    } while(!validateDate(departDate));
+        do {
+            InputStr(departDate, "Enter the Departure Date for this Flight: ");
+        } while (!validateDate(departDate));
 
-    do {
-        InputStr(flightDuration, "Enter the duration of this Flight: ");
-    } while(!validateTime(flightDuration));
+        do {
+            InputStr(flightDuration, "Enter the duration of this Flight: ");
+        } while (!validateTime(flightDuration));
 
-    InputStr(departLocation, "Enter the Flight's Departure Location: ");
+        InputStr(departLocation, "Enter the Flight's Departure Location: ");
 
-    InputStr(destination, "Enter the Flight's Destination: ");
+        InputStr(destination, "Enter the Flight's Destination: ");
 
-    newFlight.setPlaneID(planeID);
-    newFlight.setFlightID(flightID);
-    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
-                                    std::stoi(departDate.substr(5,6)),
-                                    std::stoi(departDate.substr(8,11))));
+        newFlight.setPlaneID(planeID);
+        newFlight.setFlightID(flightID);
+        newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0, 4)),
+                                        std::stoi(departDate.substr(5, 6)),
+                                        std::stoi(departDate.substr(8, 11))));
 
-    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
-                                     std::stoi(flightDuration.substr(3,4))));
+        newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0, 2)),
+                                         std::stoi(flightDuration.substr(3, 4))));
 
-    newFlight.setDepartureLocation(departLocation);
-    newFlight.setDestination(destination);
+        newFlight.setDepartureLocation(departLocation);
+        newFlight.setDestination(destination);
 
-    int numSeats = getPlaneRef(planeID)->getCapacity();
-    newFlight.setSeatsNumber(numSeats);
+        int numSeats = getPlaneRef(planeID)->getCapacity();
+        newFlight.setSeatsNumber(numSeats);
 
 
-    flightsList.emplace_back(newFlight);
+        flightsList.emplace_back(newFlight);
+    }
 }
 
 void Airline::deleteFlight() {
@@ -495,28 +500,27 @@ void Airline::addService() {
     InputStr(firstName, "Enter the First Name of the Staff Member responsible for this Service: ");
     InputStr(lastName, "Enter his Last Name: ");
 
-    do {
+    /*do {
         InputStr(date, "Enter the current date: ");
-    } while (!validateDate(date));
+    } while (!validateDate(date));*/
 
-    Date dateS(std::stoi(date.substr(0, 4)),
+    /*Date dateS(std::stoi(date.substr(0, 4)),
                std::stoi(date.substr(5,6)),
-               std::stoi(date.substr(8,11)));
+               std::stoi(date.substr(8,11)));*/
 
     Staff staff(firstName, lastName);
 
-
+    Service* serviceptr;
 
     if (type == "Cleaning") {
-        Service* serviceptr;
-        Cleaning cleaning(planeID, serviceID, dateS, staff);
+        Cleaning cleaning(planeID, serviceID, staff);
 
         serviceptr = &cleaning;
         servicesQueue.push(serviceptr);
     }
     else {
-        Service* serviceptr;
-        Maintenance maintenance(planeID, serviceID, dateS, staff);
+
+        Maintenance maintenance(planeID, serviceID, staff);
 
         serviceptr = &maintenance;
         servicesQueue.push(serviceptr);
@@ -524,15 +528,35 @@ void Airline::addService() {
 }
 
 void Airline::checkService() {
-
     Service* service = servicesQueue.back();
-
     if (service->check()) {
         servicesQueue.pop();
-        delete service;
     }
 }
 
 void Airline::printAllServices() {
     std::cout << servicesQueue.size() << std::flush;
 }
+
+/*
+void Airline::LoadServices() {
+
+    while (!servicesQueue.empty()) {
+        Service* service = servicesQueue.front();
+        servicesQueue.pop();
+        delete service;
+    }
+
+    Plane newPlane;
+    std::string plateNumber, type;
+    int capacity, planeID;
+
+    std::ifstream file;
+    std::string filename = "planes.txt";
+
+    file.open(filename, std::ifstream::in);
+
+    while(file >> planeID >> type >> plateNumber>> capacity) {
+        planesList.emplace_back(Plane(planeID, type, plateNumber, capacity));
+    }
+}*/
