@@ -57,7 +57,7 @@ void Airport::showAvailables(type vehicle) {
     cout << "Available: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "- " << it.retrieve().getId() << endl;
+        if (it.retrieve().getType() == vehicle && it.retrieve().getAirportId() == id) cout << "- " << it.retrieve().getId() << endl;
         it.advance();
     }
 }
@@ -65,7 +65,7 @@ void Airport::showDistances(type vehicle) {
     cout << "Distance from the airport: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "Number: " << it.retrieve().getId() << " is " << it.retrieve().getDistance() << " kms away from the airport." << endl;
+        if (it.retrieve().getType() == vehicle && it.retrieve().getAirportId() == id) cout << "Number: " << it.retrieve().getId() << " is " << it.retrieve().getDistance() << " kms away from the airport." << endl;
         it.advance();
     }
 }
@@ -73,7 +73,7 @@ void Airport::showSchedules(type vehicle) {
     cout << "Available Schedules: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle){
+        if (it.retrieve().getType() == vehicle && it.retrieve().getAirportId() == id){
             cout << "\n-For number: " << it.retrieve().getId() << endl;
             it.retrieve().printSchedule();
         }
