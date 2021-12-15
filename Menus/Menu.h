@@ -12,6 +12,7 @@ void main_menu(Airline &airline);
 void airport_menu(Airline &airline);
 void costumer_menu(Airline &airline);
 
+int select_airport_menu(Airline &airline);
 void planes_menu(Airline &airline);
 void flights_menu(Airline &airline);
 void services_menu(Airline &airline);
