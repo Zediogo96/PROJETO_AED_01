@@ -8,12 +8,14 @@
 #include <string>
 #include <iostream>
 #include <list>
+#include <vector>
 #include <fstream>
 #include <queue>
 
 #include "Utility/utility.h"
 #include "Flight.h"
 #include "Services/Service.h"
+#include "Baggage.h"
 
 class Plane {
 
@@ -25,6 +27,7 @@ private:
 
     std::string numberPlate, type;
     int capacity, planeID{};
+    std::vector<Baggage> baggages;
 
 public:
 
@@ -41,6 +44,7 @@ public:
     int getCapacity() const;
     int getPlaneID() const;
     std::list<Flight> getFlightsList();
+    void fill(Baggage baggage);
 
 };
 

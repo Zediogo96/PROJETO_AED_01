@@ -28,18 +28,28 @@ void BaggageCarriage::addBaggage(Baggage baggage) {
     }
 }
 
-void BaggageCarriage::empty() {
+void BaggageCarriage::clear() {
     for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
         while(itr->size() > 0)
             itr->pop();
     }
 }
 
-int BaggageCarriage::getSize() {
+int BaggageCarriage::getAmount() {
     int size = 0;
     for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
         size += itr->size();
     }
 
     return size;
+}
+
+Baggage BaggageCarriage::retrieveBaggage() {
+    for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+        if(!itr->empty()) {
+            Baggage baggage = itr->top();
+            itr->pop();
+            return baggage;
+        }  
+    }
 }

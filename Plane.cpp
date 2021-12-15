@@ -51,3 +51,7 @@ void Plane::setCapacity(int capacity_) {
 void Plane::setPlaneID(int pID) {
     this->planeID = pID;
 }
+
+void Plane::fill(Baggage baggage) {
+    baggages.push_back(baggage);
+}

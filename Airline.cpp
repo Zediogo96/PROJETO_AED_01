@@ -15,70 +15,30 @@ int Airline::getMaxNumOfFlights() const {
     return maxNumOfFlights;
 }
 
-/** Handle Transports **/
-void Airline::LoadTransports() {
-    ifstream transports;
-    transports.open("transports.txt", ifstream::in);
-    while(!transports.eof()){
-        string id, dist, trans, airportId;
-        vector<Time> schedule;
-        int nID, nDist, airportid;
-        type t;
-        getline(transports, trans, ' ');
-        getline(transports, id, ' ');
-        getline(transports, airportId, ' ');
-        getline(transports, dist, ' ');
-        nID = stoi(id);
-        airportid = stoi(airportId);
-        nDist = stoi(dist);
-        if (trans == "SUBWAY") t = type::SUBWAY;
-        if (trans == "TRAIN") t = type::TRAIN;
-        if (trans == "BUS") t = type::BUS;
-        Time time1;
-        string time;
-        int len = 0;
-        getline(transports, time);
-        while(len < time.length()){
-            string subtime = time.substr(len, 5);
-            len += subtime.size() + 1;
-            string hour = subtime.substr(0,2);
-            string min = subtime.substr(3,2);
-            time1 = Time(stoi(hour),stoi(min));
-            schedule.push_back(time1);
-        }
-        Transport P1 = Transport(t, nID, airportid ,nDist, schedule);
-        transportTree.insert(P1);
-    }
-    transports.close();
-}
-void Airline::showAvailables(type vehicle) {
-    cout << "Available: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "- " << it.retrieve().getId() << endl;
-        it.advance();
-    }
-}
-void Airline::showDistances(type vehicle) {
-    cout << "Distance from the airport: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "Number: " << it.retrieve().getId() << " is " << it.retrieve().getDistance() << " kms away from the airport." << endl;
-        it.advance();
-    }
-}
-void Airline::showSchedules(type vehicle) {
-    cout << "Available Schedules: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle){
-            cout << "\n-For number: " << it.retrieve().getId() << endl;
-            it.retrieve().printSchedule();
-        }
-        it.advance();
-    }
+int Airline::getAirportCount() {
+    return airportList.size();
 }
 
+Airport Airline::getAirport(int id) {
+    for(auto airport : airportList);
+        if(airport.getID() == id)
+            return airport;
+}
+
+void Airline::loadAirports() {
+    ifstream airports;
+    airports.open("airports.txt", ifstream::in);
+
+    while(!airports.eof()) {
+        string id, name;
+        getline(airports, id, ' ');
+        getline(airports, name, ' ');
+
+        Airport airport(stoi(id), name);
+        airport.airline = this;
+        airportList.push_back(airport);
+    }
+}
 
 bool Airline::availablePlane(int planeID) {
 
@@ -414,62 +374,6 @@ Flight& Airline::getFlightRef(int num) {
         }
     }
     throw std::logic_error("This flight number doesn't exist, please check our Records");
-}
-
-////////////////////////////// HANDLE PASSENGERS //////////////////////////////////
-
-void Airline::reserveSeat() {
-    int chosenSeat, numberOfSeats, flightID;
-    std::string firstName;
-    std::string lastName;
-    int passengerId;
-
-    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
-    Flight& flight = getFlightRef(flightID);
-
-    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
-
-    for (int seat : flight.getSeatsAvailable()) {
-        std::cout << seat << " ";
-    }
-
-    for (int i = 0; i < numberOfSeats; i++) {
-
-        do {
-            InputInt(chosenSeat, "Choose your seat: ");
-        } while(!flight.availableSeat(chosenSeat));
-
-        InputStr(firstName, "Your First Name: ");
-        InputStr(lastName, "Your Last Name: ");
-
-        do {
-            InputInt(passengerId, "Your Client ID: ");
-        } while(!flight.availableClientID(passengerId, firstName, lastName));
-
-
-        Passenger passenger(firstName, lastName, passengerId);
-        passenger.SetSeatNumber(chosenSeat);
-        flight.ReserveSeat(passenger);
-
-        string includeBaggage;
-        string autoBaggage;
-        InputStr(includeBaggage, "Include baggage (y/n)? ");
-        if(includeBaggage == "y") {
-            InputStr(autoBaggage, "Automatic baggage check-in (y/n)? ");
-            if(autoBaggage == "y") {
-                baggageCart.addBaggage(Baggage(passengerId));
-                if(baggageCart.isFull()) {
-                    cout << "Baggage Cart full, emptying..." << endl;
-                    baggageCart.empty();
-                }
-            }
-        }
-    }
-
-    std::cout << "________________________________________________" << std::endl;
-    std::cout << "|                                              |" << std::endl;
-    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
-    std::cout << "________________________________________________" << std::endl;
 }
 
 /////////////////////////////// HANDLE SERVICES ////////////////////////////////////////////////

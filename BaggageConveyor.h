@@ -10,5 +10,6 @@ class BaggageConveyor {
 public:
     void addBaggage(Baggage baggage);
     Baggage retrieveBaggage();
-    int getSize();
+    int getAmount();
+    bool isEmpty();
 };

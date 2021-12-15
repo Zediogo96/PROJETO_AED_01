@@ -11,6 +11,10 @@ Baggage BaggageConveyor::retrieveBaggage() {
     return baggage;
 }
 
-int BaggageConveyor::getSize() {
+int BaggageConveyor::getAmount() {
     return conveyor.size();
+}
+
+bool BaggageConveyor::isEmpty() {
+    return conveyor.empty();
 }

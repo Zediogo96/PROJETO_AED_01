@@ -11,20 +11,20 @@
 #include <list>
 
 #include "binaryTree.h"
-#include "Transports/Transport.h"
 #include "Plane.h"
 #include "BaggageCart.h"
 #include "Services/Staff.h"
 #include "Services/Service.h"
+#include "Airport.h"
 
 class Airline {
 
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
-    BST<Transport> transportTree;
     std::queue<Service*> servicesQueue;
     std::list<Service*> servicesHistory;
+    std::vector<Airport> airportList;
 
     /*vector<Passenger*> passengers;
     vector<Employee*> employees; */
@@ -36,7 +36,7 @@ private:
 public:
 
     /** @brief Constructor for the Airline Class */
-    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
+    Airline(const std::string &name, int maxNumOfFlights) {
         this->name = name;
         this->maxNumOfFlights = maxNumOfFlights;
         planesList.clear();
@@ -46,16 +46,14 @@ public:
     const std::string& getName();
     int getMaxNumOfFlights() const;
     std::vector<Plane> getPlanes();
-
+    int getAirportCount();
+    Airport getAirport(int id);
     /******************************************** HANDLE PLANES **************************** */
 
     void SavePlanes();
     void LoadPlanes();
 
-    void LoadTransports();
-    void showAvailables(type vehicle);
-    void showDistances(type vehicle);
-    void showSchedules(type vehicle);
+    void loadAirports();
 
     /**
      * Method that analyzes if a determinate planeID is already in use when creating a new plane,
@@ -122,8 +120,6 @@ public:
 
     void printAllFlights();
 
-
-    void reserveSeat();
 
     /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
 
