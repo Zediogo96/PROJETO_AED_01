@@ -20,7 +20,7 @@ bool BaggageCarriage::hasSpace() {
 }
 
 void BaggageCarriage::addBaggage(Baggage baggage) {
-    for (list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
+    for (auto itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
         if (itr->size() < stackSize) {
             itr->push(baggage);
             return;
