@@ -8,7 +8,8 @@
 
 #include <string>
 #include <utility>
-#include "Service.h"
+
+using namespace std;
 
 class Staff {
 private:
@@ -17,9 +18,11 @@ private:
 
 public:
 
-    Staff(std::string firstName, std::string lastName) {
-        this->firstName = std::move(firstName);
-        this->lastName = std::move(lastName);
+    Staff() = default;
+
+    Staff(string &firstName, string &lastName) {
+        this->firstName = firstName;
+        this->lastName = lastName;
     }
 
     std::string toString() {

@@ -22,4 +22,5 @@ public:
     int getAmount();
     int getMaxAmount();
     Baggage retrieveBaggage();
+    
 };

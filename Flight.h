@@ -10,11 +10,13 @@
 #include "Utility/Date.h"
 #include "Utility/Time.h"
 #include "Passenger/Passenger.h"
+#include "Airport.h"
 
 class Flight {
 
 private:
-
+    Airport destAirport;
+    Airport originAirport;
     int planeID{};
     int flightID{};
     Date departureDate;
@@ -44,7 +46,8 @@ public:
     void setDepartureLocation(std::string departureLocation_);
     void setDestination(std::string destination_);
     void setSeatsNumber(int seatsNum_);
-
+    void setDestAirport(Airport airport);
+    void setOriginAirport(Airport airport);
     void printInfo() const;
 
     Flight();
@@ -58,6 +61,8 @@ public:
     bool availableSeat(int num);
 
     bool availableClientID(int num, const std::string& firstName, const std::string& lastName);
+
+    string board();
 };
 
 #endif //PROJETO_FLIGHT_H

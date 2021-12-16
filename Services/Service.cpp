@@ -5,35 +5,30 @@
 #include "Service.h"
 #include "../Utility/utility.h"
 
-Staff* Service::getResponsible() {
-    return responsible;
+int Service::getPlaneID() {
+    return planeID;
 }
 
 void Service::setComplete(Date &date) {
     this->completed = date;
 }
 
-void Service::setResponsible(Staff &staff) {
-    this->responsible = &staff;
+void Service::setPlaneID(int planeID_) {
+    this->planeID = planeID_;
 }
 
-int Service::getPlaneID() {
-    return planeID;
-}
-
-int Service::getServiceID() {
-    return serviceID;
-}
-
-Date Service::getCreationDate() {
-    return created;
-}
-
-Staff* Service::getStaff() {
+Staff Service::getResponsible() {
     return responsible;
 }
 
-Cleaning::Cleaning(int planeID, int     serviceID, Date &date, Staff &staff){}
+Date Service::getDateCompleted() {
+    return completed;
+}
+
+Cleaning::Cleaning(int planeID_, Staff &staff){
+    planeID = planeID_;
+    this->responsible = staff;
+}
 
 bool Cleaning::check() {
 
@@ -57,7 +52,7 @@ bool Cleaning::check() {
 
     do {
         InputStr(ch, "Is the floor cleaning complete? (Y/n)");
-    } while(!validateAnswer(ch));;
+    } while(!validateAnswer(ch));
     if (ch == "Y" || ch == "y") {
         setFloor();
     }
@@ -84,7 +79,10 @@ void Cleaning::setFloor() {
     floor = true;
 }
 
-Maintenance::Maintenance(int planeID, int serviceID, Date &date, Staff &staff) {}
+Maintenance::Maintenance(int planeID_,Staff &staff) {
+    planeID = planeID_;
+    this->responsible = staff;
+}
 
 bool Maintenance::check() {
     std::string ch;
@@ -104,7 +102,7 @@ bool Maintenance::check() {
 
     do {
         InputStr(ch, "Are the Emergency Doors fully functional? (Y/n)");
-    } while(!validateAnswer(ch));;
+    } while(!validateAnswer(ch));
     if (ch == "Y" || ch == "y") {
         this->emergencyDoors = true;
     }

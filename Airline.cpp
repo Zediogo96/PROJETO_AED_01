@@ -29,18 +29,29 @@ Airport Airline::getAirport(int id) {
     return airport;
 }
 
+Airport Airline::getAirport(string name) {
+        Airport airport;
+    for(auto ap : airportList) {
+        if(ap.getName() == name)
+            airport = ap;
+    }
+
+    return airport;
+}
 void Airline::loadAirports() {
-    ifstream airports;
-    airports.open("airports.txt", ifstream::in);
+    int airportID;
+    string airportName;
 
-    while(!airports.eof()) {
-        string id, name;
-        getline(airports, id, ' ');
-        getline(airports, name, ' ');
+    std::ifstream file;
+    std::string filename = "airports.txt";
 
-        Airport airport(stoi(id), name, this);
+    file.open(filename, std::ifstream::in);
+
+    while(file >> airportID >> airportName) {
+        Airport airport(airportID, airportName);
         airportList.push_back(airport);
     }
+    file.close();
 }
 
 bool Airline::availablePlane(int planeID) {
@@ -362,7 +373,8 @@ void Airline::LoadFlights() {
 
         newFlight.setDepartureLocation(depart);
         newFlight.setDestination(destination);
-
+        newFlight.setDestAirport(getAirport(destination));
+        newFlight.setOriginAirport(getAirport(depart));
         int numSeats = getPlaneRef(planeID)->getCapacity();
         newFlight.setSeatsNumber(numSeats);
         flightsList.push_back(newFlight);
@@ -391,10 +403,6 @@ void Airline::addService() {
         InputInt(planeID, "Enter the planeID you want to add a Service to:");
     } while (!PlaneExists(planeID));
 
-    /*do {*/
-    InputInt(serviceID, "Enter the serviceID for this service: ");
-    /*} while (!availableService(serviceID));*/
-
     do {
         InputStr(type, "Type of Service (Maintenance or Cleaning) : ");
     } while (!(type == "Cleaning" || (type == "Maintenance")));
@@ -402,44 +410,146 @@ void Airline::addService() {
     InputStr(firstName, "Enter the First Name of the Staff Member responsible for this Service: ");
     InputStr(lastName, "Enter his Last Name: ");
 
-    do {
-        InputStr(date, "Enter the current date: ");
-    } while (!validateDate(date));
-
-    Date dateS(std::stoi(date.substr(0, 4)),
-               std::stoi(date.substr(5,6)),
-               std::stoi(date.substr(8,11)));
-
     Staff staff(firstName, lastName);
-
-
 
     if (type == "Cleaning") {
         Service* serviceptr;
-        Cleaning cleaning(planeID, serviceID, dateS, staff);
+        auto* cleaning = new Cleaning(planeID, staff);
 
-        serviceptr = &cleaning;
+        serviceptr = cleaning;
         servicesQueue.push(serviceptr);
     }
     else {
         Service* serviceptr;
-        Maintenance maintenance(planeID, serviceID, dateS, staff);
+        auto * maintenance = new Maintenance(planeID, staff);
 
-        serviceptr = &maintenance;
+        serviceptr = maintenance;
         servicesQueue.push(serviceptr);
     }
 }
 
 void Airline::checkService() {
+    Service* service = servicesQueue.front();
 
-    Service* service = servicesQueue.back();
+    cout << "Service you are checking: " << endl;
+    cout << "[Plane ID: " << service->getPlaneID() << "], [Responsible Staff: "<< service->getResponsible().toString()
+         << "], [Type: " << service->printType() << "]" << endl;
 
     if (service->check()) {
+        Date date;
+        date.now();
+        service->setComplete(date);
+        servicesHistory.push_back(service);
         servicesQueue.pop();
-        delete service;
     }
 }
 
-void Airline::printAllServices() {
-    std::cout << servicesQueue.size() << std::flush;
+void Airline::printAllServicesDue() {
+    queue<Service*> temp = servicesQueue;
+
+    while (!temp.empty()) {
+        Service* service = temp.front();
+        cout << "[Plane ID: " << service->getPlaneID() << "], [Responsible Staff: "<< service->getResponsible().toString()
+                << "], [Type: " << service->printType() << "]" << endl;
+        temp.pop();
+    }
+
+}
+
+void Airline::printAllServicesHistory() {
+    if (servicesHistory.empty()) {
+        cout << "There are no records of completed services." << endl;
+    }
+    else {
+        for (auto elem : servicesHistory) {
+            cout << "[Plane ID: " << elem->getPlaneID() << "], [Responsible Staff: "<< elem->getResponsible().toString()
+                 << "] [Completed in: " << elem->getDateCompleted().toString() << "], [Type: " << elem->printType() << "]" << endl;
+        }
+    }
+
+}
+
+void Airline::LoadServices() {
+
+    while (!servicesQueue.empty()) {
+        Service* service = servicesQueue.front();
+        servicesQueue.pop();
+    }
+
+    int planeID;
+    string type, firstName, lastName;
+
+    std::ifstream file;
+    std::string filename = "services.txt";
+
+    file.open(filename, std::ifstream::in);
+
+    while(file >> planeID >> type >> firstName >> lastName) {
+
+        Staff staff(firstName, lastName);
+
+        if (type == "Cleaning") {
+            Service* serviceptr;
+            auto* cleaning = new Cleaning(planeID, staff);
+
+            serviceptr = cleaning;
+            servicesQueue.push(serviceptr);
+        }
+        else {
+            Service* serviceptr;
+            auto * maintenance = new Maintenance(planeID, staff);
+
+            serviceptr = maintenance;
+            servicesQueue.push(serviceptr);
+        }
+    }
+    file.close();
+}
+
+void Airline::reserveSeat() {
+    int chosenSeat, numberOfSeats, flightID;
+    std::string firstName;
+    std::string lastName;
+    int passengerId;
+
+    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
+    Flight& flight = getFlightRef(flightID);
+
+    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
+
+    for (int seat : flight.getSeatsAvailable()) {
+        std::cout << seat << " ";
+    }
+
+    for (int i = 0; i < numberOfSeats; i++) {
+
+        do {
+            InputInt(chosenSeat, "Choose your seat: ");
+        } while(!flight.availableSeat(chosenSeat));
+
+        InputStr(firstName, "Your First Name: ");
+        InputStr(lastName, "Your Last Name: ");
+
+        do {
+            InputInt(passengerId, "Your Client ID: ");
+        } while(!flight.availableClientID(passengerId, firstName, lastName));
+
+
+        Passenger passenger(firstName, lastName, passengerId);
+        passenger.SetSeatNumber(chosenSeat);
+        flight.ReserveSeat(passenger);
+
+        string includeBaggage;
+        string autoBaggage;
+        InputStr(includeBaggage, "Include baggage (y/n)? ");
+        if(includeBaggage == "y") 
+            passenger.setBaggageInclusion(true);
+        else 
+            passenger.setBaggageInclusion(false);
+    }
+
+    std::cout << "________________________________________________" << std::endl;
+    std::cout << "|                                              |" << std::endl;
+    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
+    std::cout << "________________________________________________" << std::endl;
 }

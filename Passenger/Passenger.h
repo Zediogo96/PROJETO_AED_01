@@ -6,6 +6,7 @@
 #define PROJETO_PASSENGER_H
 
 #include <string>
+#include "..\Baggage.h"
 
 class Passenger
 	{
@@ -20,12 +21,16 @@ class Passenger
 		int GetPassengerID() const;
 		void SetSeatNumber(int seatNumber);
 		int GetSeatNumber() const;
-
+		void setBaggageInclusion(bool state);
+		bool includedBaggage();
+		Baggage getBaggage();
 	private:
 		std::string mfirstName;
 		std::string mlastName;
 		int mSeatNumber=-1;
 		int mID=-1;
+		bool includeBaggage;
+		Baggage baggage;
 	};
 
 

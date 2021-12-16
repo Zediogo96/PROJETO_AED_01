@@ -1,3 +1,3 @@
-1 JFK
-2 LAX
-3 HEATHROW
+1 Porto
+2 Lisboa
+3 Barcelona

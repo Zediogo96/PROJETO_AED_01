@@ -2,13 +2,9 @@
 
 Baggage::Baggage() {};
 
-Baggage::Baggage(int pid, int fid) : passengerID(pid), flightID(fid) 
+Baggage::Baggage(int pid) : passengerID(pid)
 {}
 
 int Baggage::getPassengerID() {
     return passengerID;
-}
-
-int Baggage::getFlightID() {
-    return flightID;
 }

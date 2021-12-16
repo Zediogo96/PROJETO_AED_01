@@ -1,12 +1,6 @@
-//
-// Created by zedio on 04/12/2021.
-//
-
-
 #include "Menu.h"
 
 void main_menu(Airline &airline) {
-
     char option;
 
     while (true) {
@@ -38,38 +32,11 @@ void main_menu(Airline &airline) {
     }
 }
 
-int select_airport_menu(Airline &airline) {
-    char option;
-
-    while(true) {
-        std::cout << "_____________________________________" << std::endl;
-        std::cout << "|        AIRPORT SELECTION          |" << std::endl;
-        std::cout << "|___________________________________|" << std::endl;
-        std::cout << "| Which airport you want to manage? |" << std::endl;
-        std::cout << "|                                   |" << std::endl;
-        
-        for(int i = 0; i < airline.getAirportCount(); i++) {
-            std::cout << "|    [" << i + 1 << "] " << setw(27) << airline.getAirport(i).getName() << "|" << std::endl;
-        }
-        std::cout << "|___________________________________|" << std::endl;
-
-        std::cout << "Please input your choice: " << std::endl << std::flush;
-        std::cin >> option;
-        if(option > airline.getAirportCount() - 1) {
-            std::cout << "Invalid Input \n:";
-                system("pause");
-        }
-        else
-            return option;
-    }
-}
-
 void airport_menu(Airline &airline) {
-    
+
     char option;
 
     while (true) {
-
 
         std::cout << "_____________________________________" << std::endl;
         std::cout << "|        AIRPORT MANAGEMENT         |" << std::endl;
@@ -79,6 +46,7 @@ void airport_menu(Airline &airline) {
         std::cout << "|    [1] Planes                     |" << std::endl;
         std::cout << "|    [2] Flights                    |" << std::endl;
         std::cout << "|    [3] Services                   |" << std::endl;
+        std::cout << "|    [4] Boarding                   |" << std::endl;
         std::cout << "|    [0] Exit                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -95,6 +63,15 @@ void airport_menu(Airline &airline) {
             case '3':
                 services_menu(airline);
                 break;
+            case '4': {
+               int id;
+                std::cout << "Choose which flight to board passengers into: " << std::endl << std::flush;
+                std::cin >> id;
+                Flight& flight = airline.getFlightRef(id);
+                string message = flight.board();
+                std::cout << message << endl;
+                break;
+            }
             case '0':
                 return;
             default:
@@ -105,6 +82,7 @@ void airport_menu(Airline &airline) {
 }
 
 void planes_menu(Airline &airline) {
+
     char option;
 
     while (true) {
@@ -145,7 +123,6 @@ void planes_menu(Airline &airline) {
                     break;
                 }
                 std::cout << "All planes were erased" << std::endl;
-                planes_menu(airline);
             case '5':
                 airline.SavePlanes();
                 break;
@@ -173,7 +150,7 @@ void flights_menu(Airline &airline) {
         std::cout << "|    [2] Delete Flight              |" << std::endl;
         std::cout << "|    [3] View all Flights           |" << std::endl;
         std::cout << "|    [4] Erase all Flights          |" << std::endl;
-        std::cout << "|    [4] Save all Flights           |" << std::endl;
+        std::cout << "|    [5] Save all Flights           |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -214,7 +191,6 @@ void flights_menu(Airline &airline) {
     }
 }
 
-
 void services_menu(Airline &airline) {
     char option;
 
@@ -227,7 +203,8 @@ void services_menu(Airline &airline) {
         std::cout << "|                                   |" << std::endl;
         std::cout << "|    [1] Add Service                |" << std::endl;
         std::cout << "|    [2] Check next Service         |" << std::endl;
-        std::cout << "|    [3] Print All Services         |" << std::endl;
+        std::cout << "|    [3] Services not completed     |" << std::endl;
+        std::cout << "|    [4] Services history           |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -240,10 +217,12 @@ void services_menu(Airline &airline) {
                 break;
             case '2':
                 airline.checkService();
-                services_menu(airline);
                 break;
             case '3':
-                airline.printAllServices();
+                airline.printAllServicesDue();
+                break;
+            case '4':
+                airline.printAllServicesHistory();
                 break;
             case '0':
                 return;
@@ -254,7 +233,7 @@ void services_menu(Airline &airline) {
     }
 }
 
-void transport_options(char vehicle, Airport airport){
+void transport_options(char vehicle, const Airport &airport){
     char option;
     type transp;
     while (true){
@@ -305,8 +284,8 @@ void transport_options(char vehicle, Airport airport){
 
 }
 
-void transport_menu(Airport airport){
-    
+void transport_menu(const Airport &airport){
+
     char option;
 
     while (true){
@@ -325,15 +304,12 @@ void transport_menu(Airport airport){
         switch ((char) option) {
             case '1':
                 transport_options('B', airport);
-
                 break;
             case '2':
                 transport_options('S', airport);
-
                 break;
             case '3':
                 transport_options('T', airport);
-
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
@@ -343,7 +319,6 @@ void transport_menu(Airport airport){
 }
 
 void costumer_menu(Airline &airline) {
-    Airport airport = airline.getAirport(select_airport_menu(airline));
     char option;
 
     while (true) {
@@ -364,19 +339,43 @@ void costumer_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airport.reserveSeat();
+                airline.reserveSeat();
                 break;
             case '2':
                 airline.printAllFlights();
-
                 break;
             case '3':
-                transport_menu(airport);
-
+                transport_menu(airline.getAirport(select_airport_menu(airline)));
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
                 system("pause");
         }
+    }
+}
+
+int select_airport_menu(Airline &airline) {
+    char option;
+
+    while(true) {
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|        AIRPORT SELECTION          |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "| Which airport you want to check?  |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+
+        for(int i = 0; i < airline.getAirportCount(); i++) {
+            std::cout << "|    [" << i + 1 << "] " << setw(27) << left << airline.getAirport(i + 1).getName() << "|" << std::endl;
+        }
+        std::cout << "|___________________________________|" << std::endl;
+
+        std::cout << "Please input your choice: " << std::endl << std::flush;
+        std::cin >> option;
+        if(option > 0 && option < airline.getAirportCount() - 1) {
+            std::cout << "Invalid Input \n:";
+            system("pause");
+        }
+        else
+            return option;
     }
 }

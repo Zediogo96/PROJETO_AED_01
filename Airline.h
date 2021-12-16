@@ -28,7 +28,6 @@ private:
 
     std::string name;
     int maxNumOfFlights;
-    BaggageCart baggageCart = BaggageCart(4);
 
 public:
 
@@ -45,6 +44,7 @@ public:
     std::vector<Plane> getPlanes();
     int getAirportCount();
     Airport getAirport(int id);
+    Airport getAirport(string name);
     /******************************************** HANDLE PLANES **************************** */
 
     void SavePlanes();
@@ -124,7 +124,13 @@ public:
 
     void checkService();
 
-    void printAllServices();
+    void printAllServicesHistory();
+
+    void LoadServices();
+
+    void printAllServicesDue();
+
+    void reserveSeat();
 };
 
 #endif //PROJETO_AIRLINE_H

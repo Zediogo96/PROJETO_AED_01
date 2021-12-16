@@ -2,11 +2,9 @@
 
 class Baggage {
     int passengerID;
-    int flightID;
 
 public:
     Baggage();
-    Baggage(int pid, int fid);
+    Baggage(int pid);
     int getPassengerID();
-    int getFlightID();
 };
