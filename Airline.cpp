@@ -48,8 +48,7 @@ void Airline::loadAirports() {
     file.open(filename, std::ifstream::in);
 
     while(file >> airportID >> airportName >> city) {
-        Airport airport;
-        airport = Airport(airportID, airportName, city);
+        Airport airport(airportID, airportName, city);
         airportList.push_back(airport);
     }
     file.close();

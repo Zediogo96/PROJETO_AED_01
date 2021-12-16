@@ -377,7 +377,8 @@ void select_airport_menu(Airline &airline) {
             std::cout << "|    [" << i + 1 << "] " << setw(3) << left << airline.getAirport(i + 1).getName() << " "
             << setw(23) << "|" << std::endl;
         }
-        std::cout << "| Press 0 to go back                |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+        std::cout << "|    [0] EXIT                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
         std::cout << "Please input your choice: " << std::endl << std::flush;
