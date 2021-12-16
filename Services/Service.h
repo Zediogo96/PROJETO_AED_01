@@ -73,11 +73,9 @@ public:
 class Maintenance : public Service {
 
 private:
-
     bool engine = false;
     bool landingGear = false;
     bool emergencyDoors = false;
-
 public:
     Maintenance(int planeID, Staff &staff);
     ~Maintenance() = default;

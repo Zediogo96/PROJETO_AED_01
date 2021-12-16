@@ -13,12 +13,22 @@ int Airline::getAirportCount() {
 
 Airport Airline::getAirport(int id) {
     Airport airport;
-    for (auto & i : airportList){
-        if (i.getID() == id){
+    for (auto & i : airportList) {
+        if (i.getID() == id) {
             return i;
         }
     }
     return airport;
+}
+
+bool Airline::airportExists(string &city) {
+    for (auto &i : airportList) {
+        if (i.getCity() == city) {
+            return true;
+        }
+    }
+    cout << "We do not have any Airport with that destination in our Airline." << endl;
+    return false;
 }
 
 Airport Airline::getAirport(const string& city_) {
@@ -233,13 +243,12 @@ bool Airline::availableFlight(int flightID) {
 
 void Airline::addFlight() {
 
-    Flight newFlight;
-
     int flightID, planeID;
     std::string departDate;
     std::string flightDuration;
     std::string departLocation;
     std::string destination;
+
     do  {
         InputInt(planeID, "Enter the planeID for this Flight:");
     } while (!PlaneExists(planeID));
@@ -256,27 +265,30 @@ void Airline::addFlight() {
         InputStr(flightDuration, "Enter the duration of this Flight: ");
     } while(!validateTime(flightDuration));
 
-    InputStr(departLocation, "Enter the Flight's Departure Location: ");
+    do {
+        InputStr(departLocation, "Enter the Flight's Departure Location: ");
+    } while (!airportExists(departLocation));
 
-    InputStr(destination, "Enter the Flight's Destination: ");
+    do {
+        InputStr(destination, "Enter the Flight's Destination: ");
+    } while (!airportExists(destination));
 
-    newFlight.setPlaneID(planeID);
-    newFlight.setFlightID(flightID);
-    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
+    Date date (std::stoi(departDate.substr(0,4)),
                                     std::stoi(departDate.substr(5,6)),
-                                    std::stoi(departDate.substr(8,11))));
+                                    std::stoi(departDate.substr(8,11)));
 
-    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
-                                     std::stoi(flightDuration.substr(3,4))));
-
-    newFlight.setDepartureLocation(departLocation);
-    newFlight.setDestination(destination);
+    Time time(std::stoi(flightDuration.substr(0,2)),
+                                     std::stoi(flightDuration.substr(3,4)));
 
     int numSeats = getPlaneRef(planeID)->getCapacity();
-    newFlight.setSeatsNumber(numSeats);
 
+    Flight flight(planeID, flightID, date,
+                  time, departLocation, destination, numSeats);
 
-    flightsList.emplace_back(newFlight);
+    flight.setOriginAirport(getAirport(departLocation));
+    flight.setDestAirport(getAirport(destination));
+
+    flightsList.emplace_back(flight);
 }
 
 void Airline::deleteFlight() {

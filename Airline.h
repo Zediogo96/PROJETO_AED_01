@@ -126,6 +126,8 @@ public:
     void printAllServicesDue();
 
     void reserveSeat();
+
+    bool airportExists(string &city);
 };
 
 #endif //PROJETO_AIRLINE_H
