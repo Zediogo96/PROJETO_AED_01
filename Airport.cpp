@@ -1,4 +1,5 @@
 #include <fstream>
+#include <utility>
 
 #include "Airport.h"
 #include "Utility/utility.h"
@@ -6,9 +7,10 @@
 
 Airport::Airport() : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {}
 
-Airport::Airport(int id, string name) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
+Airport::Airport(int id, string name, string city) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
     this->id = id;
-    this->name = name;
+    this->name = std::move(name);
+    this->city  = std::move(city);
 }
 
 const string& Airport::getName() {
@@ -56,6 +58,7 @@ void Airport::LoadTransports() {
     }
     transports.close();
 }
+
 void Airport::showAvailables(type vehicle) const {
     cout << "Available: " << endl;
     BSTItrLevel<Transport> it(transportTree);
@@ -112,4 +115,14 @@ void Airport::fillPlane(Plane& plane) {
         Baggage baggage = baggageCart.retrieveBaggage();
         plane.fill(baggage);
     }
+}
+
+const std::string &Airport::getCity() {
+    return city;
+}
+
+std::string Airport::toString() const {
+    std::ostringstream oss;
+    oss << id << " "  << name  << " "  << city;
+    return oss.str();
 }

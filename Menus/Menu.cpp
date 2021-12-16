@@ -154,8 +154,8 @@ void flights_menu(Airline &airline) {
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
-        std::cout << "Please input your choice: " << std::flush;
-        std::cin >> option;
+        cout << "Please input your choice: " << endl;
+        cin >> option;
 
         switch (option) {
             case '1': {
@@ -171,17 +171,20 @@ void flights_menu(Airline &airline) {
                 break;
             case '4':
                 char check;
-                std::cout << "Are you sure? [Y/n]" << std::endl;
-                std::cin >> check;
+                cout << "Are you sure? [Y/n]" << endl;
+                cin >> check;
                 if (check == 'Y' || check == 'y') {
                     airline.clearFlights();
                     break;
                 }
-                std::cout << "All planes were erased" << std::endl;
+                cout << "All planes were erased" << endl;
                 planes_menu(airline);
 
             case '5':
                 airline.SaveFlights();
+            case '6':
+
+                break;
             case '0':
                 return;
             default:
@@ -251,6 +254,9 @@ void transport_options(char vehicle, const Airport &airport){
                 transp = type::TRAIN;
                 std::cout << "|               TRAIN               |" << std::endl;
                 break;
+            default: std::cout << "Invalid Input \n:";
+                system("pause");
+
         }
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;

@@ -12,6 +12,7 @@ class Plane;
 class Airport {
     BST<Transport> transportTree;
     std::string name;
+    string city;
     int id;
     int numCarts;
     BaggageConveyor conveyor;
@@ -19,9 +20,12 @@ class Airport {
 
 public:
     Airport();
-    Airport(int id, string name);
-    const std::string& getName();
+    Airport(int id, string name, string city);
     const int& getID();
+    const std::string& getName();
+    const std::string& getCity();
+
+
     
     void LoadTransports();
     void showAvailables(type vehicle) const;
@@ -34,4 +38,6 @@ public:
     void addBaggageToConveyor(Baggage baggage);
     void emptyConveyor();
     void fillPlane(Plane& plane);
+
+    string toString() const;
 };

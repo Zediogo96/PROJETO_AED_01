@@ -1,3 +1,8 @@
-1 Porto
-2 Lisboa
-3 Barcelona
+1 OPO Porto
+2 LSB Lisbon
+3 BCN Barcelona
+4 LAX California
+5 HTX London
+6 CR7 Madeira
+7 MAD Madrid
+8 BRB Brasilia

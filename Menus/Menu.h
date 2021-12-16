@@ -17,6 +17,4 @@ void planes_menu(Airline &airline);
 void flights_menu(Airline &airline);
 void services_menu(Airline &airline);
 
-
-
 #endif //PROJETO_MENU_H

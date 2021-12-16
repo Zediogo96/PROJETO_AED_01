@@ -153,3 +153,11 @@ string Flight::board() {
     
     return "All passengers boarded!";
 }
+
+Airport &Flight::getOriginAirport() {
+    return originAirport;
+}
+
+Airport &Flight::getDestAirport() {
+    return destAirport;
+}
