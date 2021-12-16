@@ -13,10 +13,6 @@ void Service::setComplete(Date &date) {
     this->completed = date;
 }
 
-void Service::setPlaneID(int planeID_) {
-    this->planeID = planeID_;
-}
-
 Staff Service::getResponsible() {
     return responsible;
 }

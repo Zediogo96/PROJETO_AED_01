@@ -8,7 +8,7 @@
 #include "../Utility/Date.h"
 #include "Staff.h"
 
-
+/** brief: Abstract Class for the different types of services **/
 class Service {
 
 protected:
@@ -17,12 +17,36 @@ protected:
     class Date completed;
 
 public:
+
+    /**
+     * Method that returns the planeID to which the Service refers to
+     * @return int (foreign key)
+     */
     virtual int getPlaneID();
-    virtual void setPlaneID(int planeID_);
+
+    /**
+     * Method to use after checking if the Service is already complete, sets the Date of completion of Service
+     * (using date.now())
+     * @param date
+     */
     virtual void setComplete(Date &date);
+
+    /**
+     * Returns the Date in which the Service was completed
+     * @return Date
+     */
     Date getDateCompleted();
+
+    /**
+     * Returns the Staff responsible for the Service
+     * @return Staff
+     */
     Staff getResponsible();
+
+    /** brief: Body for pure virtual method **/
     virtual bool check() = 0;
+
+    /** brief: Body for pure virtual method **/
     virtual string printType() = 0;
 };
 
@@ -44,7 +68,6 @@ public:
     string printType() override {
         return "Cleaning";
     }
-
 };
 
 class Maintenance : public Service {
@@ -59,10 +82,9 @@ public:
     Maintenance(int planeID, Staff &staff);
     ~Maintenance() = default;
     bool check() override;
-    string printType() {
+    string printType() override {
         return "Maintenance";
     }
-
 };
 
 #endif //PROJETO_SERVICE_H

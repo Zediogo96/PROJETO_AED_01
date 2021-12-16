@@ -16,6 +16,7 @@
 class Flight {
 
 private:
+
     Airport destAirport;
     Airport originAirport;
     int planeID{};
@@ -25,7 +26,6 @@ private:
     std::string departureLocation;
     std::string destination;
     int seatsNumber{};
-
     std::vector<Passenger> mPassengers;
     std::vector<Seat> mSeatsAvailable;
 
