@@ -53,18 +53,23 @@ public:
 class Cleaning : public Service {
 
 private:
-
     bool wc = false;
     bool seats = false;
     bool floor = false;
 
 public:
+
+    /**
+     * Constructor for Cleaning class, derived from Service
+     * @param planeID
+     * @param staff
+     */
     Cleaning(int planeID, Staff &staff);
+    /** brief: default destructor **/
     ~Cleaning() = default;
-    void setWc();
-    void setSeats();
-    void setFloor();
+    /** brief: Overriden method from service, to use when we want to complete a service **/
     bool check() override;
+    /** brief: Just for convenience in outputting Service this type **/
     string printType() override {
         return "Cleaning";
     }
@@ -77,9 +82,17 @@ private:
     bool landingGear = false;
     bool emergencyDoors = false;
 public:
+    /**
+     * Constructor for Maintenace class, derived from service
+     * @param planeID
+     * @param staff
+     */
     Maintenance(int planeID, Staff &staff);
+    /** brief: default destructor **/
     ~Maintenance() = default;
+    /** brief: Overriden method from service, to use when we want to complete a service **/
     bool check() override;
+    /** brief: Just for convenience in outputting Service of this type **/
     string printType() override {
         return "Maintenance";
     }

@@ -36,21 +36,21 @@ bool Cleaning::check() {
         InputStr(ch, "Are all the bathrooms cleaned? (Y/n)");
     } while(!validateAnswer(ch));
     if (ch == "Y" || ch == "y") {
-        setWc();
+        wc = true;
     }
 
     do {
         InputStr(ch, "Are all the seats cleaned? (Y/n)");
     } while(!validateAnswer(ch));
     if (ch == "Y" || ch == "y") {
-        setSeats();
+        seats = true;
     }
 
     do {
         InputStr(ch, "Is the floor cleaning complete? (Y/n)");
     } while(!validateAnswer(ch));
     if (ch == "Y" || ch == "y") {
-        setFloor();
+       floor = true;
     }
 
     if (wc && seats && floor) {
@@ -61,18 +61,6 @@ bool Cleaning::check() {
         std::cout << "Better ask the Responsible for this Service what's going on!" << std::endl;
         return false;
     }
-}
-
-void Cleaning::setWc() {
-    wc = true;
-}
-
-void Cleaning::setSeats() {
-    seats = true;
-}
-
-void Cleaning::setFloor() {
-    floor = true;
 }
 
 Maintenance::Maintenance(int planeID_,Staff &staff) {

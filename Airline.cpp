@@ -7,10 +7,6 @@
 
 using namespace std;
 
-int Airline::getAirportCount() {
-    return (int) airportList.size();
-}
-
 Airport Airline::getAirport(int id) {
     Airport airport;
     for (auto & i : airportList) {
@@ -40,6 +36,7 @@ Airport Airline::getAirport(const string& city_) {
 
     return airport;
 }
+
 void Airline::loadAirports() {
     int airportID;
     string airportName, city;
@@ -56,6 +53,7 @@ void Airline::loadAirports() {
     file.close();
 }
 
+/////////////////////////////// HANDLE PLANES ////////////////////////////////////////////////
 bool Airline::availablePlane(int planeID) {
 
     for (auto & it : planesList) {
@@ -228,7 +226,7 @@ void Airline::sortPlanes() {
     }
 }
 
-//////////////// HANDLE FLIGHTS //////////////
+/////////////////////////////// HANDLE FLIGHTS ////////////////////////////////////////////////
 
 bool Airline::availableFlight(int flightID) {
 
@@ -242,7 +240,9 @@ bool Airline::availableFlight(int flightID) {
 }
 
 void Airline::addFlight() {
+    if (flightsList.size() == maxNumOfFlights) {
 
+    }
     int flightID, planeID;
     std::string departDate;
     std::string flightDuration;

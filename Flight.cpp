@@ -55,34 +55,6 @@ std::vector<Seat>& Flight::getSeatsAvailable() {
     return mSeatsAvailable;
 }
 
-void Flight::setFlightID(int flightID_) {
-    this->flightID = flightID_;
-}
-
-void Flight::setDepartureDate(Date date_) {
-    departureDate = date_;
-}
-
-void Flight::setFlightDuration(Time time_) {
-    flightDuration = time_;
-}
-
-void Flight::setDepartureLocation(std::string departureLocation_) {
-    departureLocation = std::move(departureLocation_);
-}
-
-void Flight::setDestination(std::string destination_) {
-    destination = std::move(destination_);
-}
-
-void Flight::setPlaneID(int planeID_) {
-    planeID = planeID_;
-}
-
-void Flight::setSeatsNumber(int seatsNum_) {
-    seatsNumber = seatsNum_;
-}
-
 void Flight::setDestAirport(Airport airport) {
     this->destAirport = std::move(airport);
 }
