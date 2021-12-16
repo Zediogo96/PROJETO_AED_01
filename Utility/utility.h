@@ -8,6 +8,13 @@
 #include <string>
 #include <regex>
 #include <iostream>
+#include <cstdlib>
+
+#ifdef _WIN32
+#define CLEAR "cls"
+#else
+#define CLEAR "clear"
+#endif
 
 /**
  * Using Regular Expressions (Regex) to validate a number plate input
@@ -44,7 +51,7 @@ static bool validateDate(const std::string &s) {
  * Using Regular Expressions (Regex) to validate a TIME input
  * Example accepted formats: HH:MM (H -> hours , M -> minutes)
  * @param string
- * @return true if the regex accepts the string, false otherwise
+ * @return True if the regex accepts the string, False otherwise
  */
 static bool validateTime(const std::string &s) {
 
@@ -56,6 +63,11 @@ static bool validateTime(const std::string &s) {
     return false;
 }
 
+/**
+ * @brief: Validates the answer of some user Input
+ * @param string
+ * @return True in case the regular expression Valid Type accepts the input, else False
+ */
 static bool validateAnswer(const std::string &s) {
     static const std::regex validType("^(y|Y|n|N)$");
 
@@ -101,6 +113,10 @@ static void InputStr_withSpaces(std::string &str, std::string const &text) {
     } while(!std::getline(std::cin, str));
 }
 
+/**
+ * @param num Number the User will input
+ * @param text Text Message associated with the input, describing what type of input it expects.
+ */
 static void InputInt(int &num, const std::string &text) {
     do {
         if (!std::cin) {

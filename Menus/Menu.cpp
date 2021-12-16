@@ -319,6 +319,7 @@ void transport_menu(const Airport &airport){
 }
 
 void costumer_menu(Airline &airline) {
+    Airport airport = airline.getAirport(select_airport_menu(airline));
     char option;
 
     while (true) {
@@ -339,7 +340,7 @@ void costumer_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airline.reserveSeat();
+                airport.reserveSeat();
                 break;
             case '2':
                 airline.printAllFlights();

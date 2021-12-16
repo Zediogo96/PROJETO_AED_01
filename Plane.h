@@ -21,11 +21,7 @@ class Plane {
 
 private:
 
-    /** TO IMPLEMENT ASSIGNMENT OF FLIGHTS */
-    std::list<int> assignments;
-
-
-    std::string numberPlate, type;
+    string numberPlate, type;
     int capacity, planeID{};
     std::vector<Baggage> baggages;
 
@@ -46,6 +42,7 @@ public:
     std::list<Flight> getFlightsList();
     void fill(Baggage baggage);
 
+    void fill(Baggage baggage);
 };
 
 #endif //PROJETO_PLANE_H

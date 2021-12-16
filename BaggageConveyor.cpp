@@ -5,7 +5,7 @@ void BaggageConveyor::addBaggage(Baggage baggage) {
 }
 
 Baggage BaggageConveyor::retrieveBaggage() {
-    Baggage baggage = conveyor.front(); 
+    Baggage baggage = conveyor.front();
     conveyor.pop();
 
     return baggage;

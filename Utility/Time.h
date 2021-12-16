@@ -65,12 +65,10 @@ public:
         return false;
     }
 
-    /** @brief Prints attributes associated with the Time object to the screen */
-    void printTime() const {
-        std::cout << std::setw(2) << std::setfill('0') << hours << ":"
-                  << std::setw(2) << std::setfill('0') << minutes << "\n";
-    }
-
+    /**
+     * @brief: Converts this Date into a string format to be output
+     * @return string format of Date
+     */
     std::string toString() const
     {
         std::ostringstream oss;

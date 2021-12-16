@@ -21,10 +21,7 @@ private:
     std::vector<Flight> flightsList;
     std::queue<Service*> servicesQueue;
     std::list<Service*> servicesHistory;
-    std::vector<Airport> airportList;
-
-    /*vector<Passenger*> passengers;
-    vector<Employee*> employees; */
+    vector<Airport> airportList;
 
     std::string name;
     int maxNumOfFlights;
@@ -59,6 +56,10 @@ public:
      * @return Boolean
      */
     bool availablePlane(int planeID);
+
+    int getAirportCount();
+    Airport getAirport(int id);
+    void loadAirports();
 
     /**
      * Method that allows the user to search for a determinate plane based on it's planeID (by input),
@@ -116,7 +117,6 @@ public:
     Flight &getFlightRef(int num);
 
     void printAllFlights();
-
 
     /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
 
