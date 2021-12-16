@@ -7,14 +7,6 @@
 
 using namespace std;
 
-const std::string& Airline::getName() {
-    return name;
-}
-
-int Airline::getMaxNumOfFlights() const {
-    return maxNumOfFlights;
-}
-
 int Airline::getAirportCount() {
     return airportList.size();
 }
@@ -347,13 +339,12 @@ void Airline::LoadFlights() {
 
     std::ifstream file;
 
-    Flight newFlight;
-
     int planeID, flightID;
     int year, month, day, hour, minute;
     std::string depart, destination, line;
     char separator = '/';
     char sep2 = ':';
+
     file.open("flights.txt");
 
     while(!file.eof()) {
@@ -365,19 +356,15 @@ void Airline::LoadFlights() {
         str >> planeID >> flightID >> year >> separator >> month >> separator >> day >> hour >> sep2 >> minute
             >> depart >> destination;
 
-        newFlight.setPlaneID(planeID);
-        newFlight.setFlightID(flightID);
-        newFlight.setDepartureDate(Date(year, month, day));
-
-        newFlight.setFlightDuration(Time(hour, minute));
-
-        newFlight.setDepartureLocation(depart);
-        newFlight.setDestination(destination);
-        newFlight.setOriginAirport(getAirport(depart));
-        newFlight.setDestAirport(getAirport(destination));
         int numSeats = getPlaneRef(planeID)->getCapacity();
-        newFlight.setSeatsNumber(numSeats);
-        flightsList.push_back(newFlight);
+
+        Flight flight(planeID, flightID, Date(year,month,day),
+                      Time(hour,minute), depart, destination,
+                      numSeats);
+
+        flight.setOriginAirport(getAirport(depart));
+        flight.setDestAirport(getAirport(destination));
+        flightsList.push_back(flight);
     }
 }
 
@@ -453,7 +440,6 @@ void Airline::printAllServicesDue() {
                 << "], [Type: " << service->printType() << "]" << endl;
         temp.pop();
     }
-
 }
 
 void Airline::printAllServicesHistory() {
@@ -517,11 +503,10 @@ void Airline::reserveSeat() {
 
     InputInt(numberOfSeats, "How many Seats do you wish to buy?");
 
-
-
     for (int i = 0; i < numberOfSeats; i++) {
 
-        getFlightRef(flightID).printSeats();
+        flight.printSeats();
+
         do {
             InputInt(chosenSeat, "Choose your seat: ");
         } while(!flight.availableSeat(chosenSeat));

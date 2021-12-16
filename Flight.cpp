@@ -165,9 +165,17 @@ Airport &Flight::getDestAirport() {
 }
 
 void Flight::printSeats() {
-    for (Seat elem : mSeatsAvailable) {
-        /*if (!elem.isTaken()) {*/
-        cout << "[" << elem.getSeatNum() << "]";
-        }/**/
+    int aux = 1;
+    cout << "Seats Available: " << endl;
+    for (Seat elem: mSeatsAvailable) {
+        if (!elem.isTaken()) {
+            if (aux % 16 == 0) {
+                cout << endl;
+            } else {
+                cout << "[" << elem.getSeatNum() << "]";
+            }
+            aux++;
+        }
     }
-
+    cout << endl;
+}
