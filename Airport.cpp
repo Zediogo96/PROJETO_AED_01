@@ -3,6 +3,7 @@
 //
 
 #include <fstream>
+#include <utility>
 
 #include "Airport.h"
 #include "Airline.h"
@@ -10,17 +11,22 @@
 
 Airport::Airport() : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {}
 
-Airport::Airport(int id, string name, Airline* airline) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
+Airport::Airport(int id, string name, string city, Airline* airline) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
     this->id = id;
-    this->name = name;
+    this->name = std::move(name);
     this->airline = airline;
+    this->city = std::move(city);
 }
 
 const string& Airport::getName() {
     return name;
 }
 
-const int& Airport::getID() {
+const string& Airport::getCity() {
+    return city;
+}
+
+const int& Airport::getID() const {
     return id;
 }
 

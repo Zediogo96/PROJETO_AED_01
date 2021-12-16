@@ -7,14 +7,6 @@
 
 using namespace std;
 
-const std::string& Airline::getName() {
-    return name;
-}
-
-int Airline::getMaxNumOfFlights() const {
-    return maxNumOfFlights;
-}
-
 int Airline::getAirportCount() {
     return airportList.size();
 }
@@ -31,15 +23,15 @@ Airport Airline::getAirport(int id) {
 void Airline::loadAirports() {
 
     int airportID;
-    string airportName;
+    string airportName, city;
 
     std::ifstream file;
     std::string filename = "airports.txt";
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> airportID >> airportName) {
-        Airport airport(airportID, airportName, this);
+    while(file >> airportID >> airportName >> city) {
+        Airport airport(airportID, airportName, city, this);
         airportList.push_back(airport);
     }
     file.close();
@@ -150,23 +142,6 @@ void Airline::LoadPlanes() {
     }
 }
 
-Plane* Airline::getPlaneRef_input() {
-    int planeID;
-
-    std::cin.clear();
-
-    InputInt(planeID, "Enter the Plane's ID: ");
-
-    Plane *c = nullptr;
-    for (auto &i: planesList) {
-        if (i.getPlaneID() == planeID) {
-            c = &i;
-            break;
-        }
-    }
-    return c;
-}
-
 Plane* Airline::getPlaneRef(int num) {
     Plane *c = nullptr;
     for (auto &i: planesList) {
@@ -228,10 +203,6 @@ void Airline::sortPlanes() {
     }
 }
 
-std::vector<Plane> Airline::getPlanes() {
-    return this->planesList;
-}
-
 //////////////// HANDLE FLIGHTS //////////////
 
 bool Airline::availableFlight(int flightID) {
@@ -289,7 +260,14 @@ void Airline::addFlight() {
     int numSeats = getPlaneRef(planeID)->getCapacity();
     newFlight.setSeatsNumber(numSeats);
 
-
+    for (auto elem : airportList) {
+        if (elem.getCity() == departLocation) {
+            newFlight.setDepartureAirport(elem);
+        }
+        if (elem.getCity() == destination) {
+            newFlight.setArrivalAirport(elem);
+        }
+    }
     flightsList.emplace_back(newFlight);
 }
 

@@ -14,7 +14,7 @@
 #include "Utility/utility.h"
 #include "Flight.h"
 #include "Services/Service.h"
-#include "Baggage.h"
+#include "Baggage/Baggage.h"
 
 class Plane {
 

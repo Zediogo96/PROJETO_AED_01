@@ -1,3 +1,5 @@
-1 JFK
-2 LAX
-3 HEATHROW
+1 OPO Porto
+2 LIS Lisbon
+3 LAX California
+4 HTX London
+5 BSB Brasília

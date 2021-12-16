@@ -9,10 +9,10 @@
 #pragma once
 #include <string>
 
-#include "binaryTree.h"
+#include "Transports/binaryTree.h"
 #include "Transports/Transport.h"
-#include "BaggageCart.h"
-#include "BaggageConveyor.h"
+#include "Baggage/BaggageCart.h"
+#include "Baggage/BaggageConveyor.h"
 
 
 class Airline;
@@ -21,6 +21,7 @@ class Airport {
     BST<Transport> transportTree;
     Airline *airline;
     std::string name;
+    string city;
     int id;
     int numCarts;
     BaggageConveyor conveyor;
@@ -28,9 +29,9 @@ class Airport {
 
 public:
     Airport();
-    Airport(int id, string name, Airline *airline);
+    Airport(int id, string name, string city,Airline *airline);
     const std::string& getName();
-    const int& getID();
+    const int& getID() const;
 
     void LoadTransports();
     void showAvailables(type vehicle);
@@ -42,6 +43,8 @@ public:
     void addBaggageToConveyor(Baggage baggage);
     void emptyConveyor();
     void fillPlane();
+
+    const string &getCity();
 };
 
 

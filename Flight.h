@@ -10,6 +10,7 @@
 #include "Utility/Date.h"
 #include "Utility/Time.h"
 #include "Passenger/Passenger.h"
+#include "Airport.h"
 
 class Flight {
 
@@ -22,6 +23,8 @@ private:
     std::string departureLocation;
     std::string destination;
     int seatsNumber{};
+    Airport airportDeparture;
+    Airport airportArrival;
 
     std::vector<Passenger> mPassengers;
     std::vector<int> mSeatsAvailable;
@@ -44,6 +47,8 @@ public:
     void setDepartureLocation(std::string departureLocation_);
     void setDestination(std::string destination_);
     void setSeatsNumber(int seatsNum_);
+    void setDepartureAirport(Airport &airport);
+    void setArrivalAirport(Airport & airport);
 
     void printInfo() const;
 

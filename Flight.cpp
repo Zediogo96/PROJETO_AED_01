@@ -127,4 +127,10 @@ bool Flight::availableClientID(int num, const std::string& firstName, const std:
     return true;
 }
 
+void Flight::setDepartureAirport(Airport &airport) {
+    this->airportDeparture = airport;
+}
 
+void Flight::setArrivalAirport(Airport &airport) {
+    this->airportArrival = airport;
+}
