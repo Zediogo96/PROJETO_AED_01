@@ -41,8 +41,6 @@ public:
     int getPlaneID() const;
     std::list<Flight> getFlightsList();
     void fill(Baggage baggage);
-
-    void fill(Baggage baggage);
 };
 
 #endif //PROJETO_PLANE_H

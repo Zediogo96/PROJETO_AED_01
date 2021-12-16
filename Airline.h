@@ -57,10 +57,6 @@ public:
      */
     bool availablePlane(int planeID);
 
-    int getAirportCount();
-    Airport getAirport(int id);
-    void loadAirports();
-
     /**
      * Method that allows the user to search for a determinate plane based on it's planeID (by input),
      * returns the planeID if its found, or -1 in case if it's not found.
