@@ -1,32 +1,21 @@
-//
-// Created by zedio on 16/12/2021.
-//
-
 #include <fstream>
-#include <utility>
 
 #include "Airport.h"
-#include "Airline.h"
 #include "Utility/utility.h"
+#include "Plane.h"
 
 Airport::Airport() : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {}
 
-Airport::Airport(int id, string name, string city, Airline* airline) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
+Airport::Airport(int id, string name) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
     this->id = id;
-    this->name = std::move(name);
-    this->airline = airline;
-    this->city = std::move(city);
+    this->name = name;
 }
 
 const string& Airport::getName() {
     return name;
 }
 
-const string& Airport::getCity() {
-    return city;
-}
-
-const int& Airport::getID() const {
+const int& Airport::getID() {
     return id;
 }
 
@@ -67,7 +56,7 @@ void Airport::LoadTransports() {
     }
     transports.close();
 }
-void Airport::showAvailables(type vehicle) {
+void Airport::showAvailables(type vehicle) const {
     cout << "Available: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
@@ -75,7 +64,7 @@ void Airport::showAvailables(type vehicle) {
         it.advance();
     }
 }
-void Airport::showDistances(type vehicle) {
+void Airport::showDistances(type vehicle) const {
     cout << "Distance from the airport: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
@@ -83,7 +72,7 @@ void Airport::showDistances(type vehicle) {
         it.advance();
     }
 }
-void Airport::showSchedules(type vehicle) {
+void Airport::showSchedules(type vehicle) const {
     cout << "Available Schedules: " << endl;
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
@@ -95,54 +84,16 @@ void Airport::showSchedules(type vehicle) {
     }
 }
 
-void Airport::reserveSeat() {
-    int chosenSeat, numberOfSeats, flightID;
-    std::string firstName;
-    std::string lastName;
-    int passengerId;
+int Airport::getCartLoad() {
+    return baggageCart.getAmount();
+}
 
-    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
-    Flight& flight = airline->getFlightRef(flightID);
+int Airport::getCartMaxLoad() {
+    return baggageCart.getMaxAmount();
+}
 
-    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
-
-    for (int seat : flight.getSeatsAvailable()) {
-        std::cout << seat << " ";
-    }
-
-    for (int i = 0; i < numberOfSeats; i++) {
-
-        do {
-            InputInt(chosenSeat, "Choose your seat: ");
-        } while(!flight.availableSeat(chosenSeat));
-
-        InputStr(firstName, "Your First Name: ");
-        InputStr(lastName, "Your Last Name: ");
-
-        do {
-            InputInt(passengerId, "Your Client ID: ");
-        } while(!flight.availableClientID(passengerId, firstName, lastName));
-
-
-        Passenger passenger(firstName, lastName, passengerId);
-        passenger.SetSeatNumber(chosenSeat);
-        flight.ReserveSeat(passenger);
-
-        string includeBaggage;
-        string autoBaggage;
-        InputStr(includeBaggage, "Include baggage (y/n)? ");
-        if(includeBaggage == "y") {
-            InputStr(autoBaggage, "Automatic baggage check-in (y/n)? ");
-            if(autoBaggage == "y") {
-                addBaggageToConveyor(Baggage(passengerId, flightID));
-            }
-        }
-    }
-
-    std::cout << "________________________________________________" << std::endl;
-    std::cout << "|                                              |" << std::endl;
-    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
-    std::cout << "________________________________________________" << std::endl;
+int Airport::getConveyorLoad() {
+    return conveyor.getAmount();
 }
 
 void Airport::addBaggageToConveyor(Baggage baggage) {
@@ -154,13 +105,11 @@ void Airport::addBaggageToConveyor(Baggage baggage) {
 void Airport::emptyConveyor() {
     while(!conveyor.isEmpty())
         baggageCart.addBaggage(conveyor.retrieveBaggage());
-
-    fillPlane();
 }
 
-void Airport::fillPlane() {
-    while(baggageCart.getAmount() > 0) {
+void Airport::fillPlane(Plane& plane) {
+    while(!baggageCart.getAmount() > 0) {
         Baggage baggage = baggageCart.retrieveBaggage();
-        airline->getPlaneRef(airline->getFlightRef(baggage.getFlightID()).getPlaneID())->fill(baggage);
+        plane.fill(baggage);
     }
 }

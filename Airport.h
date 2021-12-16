@@ -1,27 +1,17 @@
-//
-// Created by zedio on 16/12/2021.
-//
-
-#ifndef PROJETO_AIRPORT_H
-#define PROJETO_AIRPORT_H
-
-
 #pragma once
 #include <string>
+#include <vector>
 
-#include "Transports/binaryTree.h"
+#include "binaryTree.h"
 #include "Transports/Transport.h"
-#include "Baggage/BaggageCart.h"
-#include "Baggage/BaggageConveyor.h"
+#include "BaggageCart.h"
+#include "BaggageConveyor.h"
 
-
-class Airline;
+class Plane;
 
 class Airport {
     BST<Transport> transportTree;
-    Airline *airline;
     std::string name;
-    string city;
     int id;
     int numCarts;
     BaggageConveyor conveyor;
@@ -29,23 +19,19 @@ class Airport {
 
 public:
     Airport();
-    Airport(int id, string name, string city,Airline *airline);
+    Airport(int id, string name);
     const std::string& getName();
-    const int& getID() const;
-
+    const int& getID();
+    
     void LoadTransports();
-    void showAvailables(type vehicle);
-    void showDistances(type vehicle);
-    void showSchedules(type vehicle);
+    void showAvailables(type vehicle) const;
+    void showDistances(type vehicle) const;
+    void showSchedules(type vehicle) const;
 
-    void reserveSeat();
-
+    int getCartLoad();
+    int getCartMaxLoad();
+    int getConveyorLoad();
     void addBaggageToConveyor(Baggage baggage);
     void emptyConveyor();
-    void fillPlane();
-
-    const string &getCity();
+    void fillPlane(Plane& plane);
 };
-
-
-#endif //PROJETO_AIRPORT_H

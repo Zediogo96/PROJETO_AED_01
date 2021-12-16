@@ -7,6 +7,14 @@
 
 using namespace std;
 
+const std::string& Airline::getName() {
+    return name;
+}
+
+int Airline::getMaxNumOfFlights() const {
+    return maxNumOfFlights;
+}
+
 int Airline::getAirportCount() {
     return airportList.size();
 }
@@ -15,23 +23,32 @@ Airport Airline::getAirport(int id) {
     Airport airport;
     for(auto ap : airportList) {
         if(ap.getID() == id)
-            return ap;
+            airport = ap;
     }
-    return {};
+
+    return airport;
 }
 
-void Airline::loadAirports() {
+Airport Airline::getAirport(string name) {
+        Airport airport;
+    for(auto ap : airportList) {
+        if(ap.getName() == name)
+            airport = ap;
+    }
 
+    return airport;
+}
+void Airline::loadAirports() {
     int airportID;
-    string airportName, city;
+    string airportName;
 
     std::ifstream file;
     std::string filename = "airports.txt";
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> airportID >> airportName >> city) {
-        Airport airport(airportID, airportName, city, this);
+    while(file >> airportID >> airportName) {
+        Airport airport(airportID, airportName);
         airportList.push_back(airport);
     }
     file.close();
@@ -142,6 +159,23 @@ void Airline::LoadPlanes() {
     }
 }
 
+Plane* Airline::getPlaneRef_input() {
+    int planeID;
+
+    std::cin.clear();
+
+    InputInt(planeID, "Enter the Plane's ID: ");
+
+    Plane *c = nullptr;
+    for (auto &i: planesList) {
+        if (i.getPlaneID() == planeID) {
+            c = &i;
+            break;
+        }
+    }
+    return c;
+}
+
 Plane* Airline::getPlaneRef(int num) {
     Plane *c = nullptr;
     for (auto &i: planesList) {
@@ -203,6 +237,10 @@ void Airline::sortPlanes() {
     }
 }
 
+std::vector<Plane> Airline::getPlanes() {
+    return this->planesList;
+}
+
 //////////////// HANDLE FLIGHTS //////////////
 
 bool Airline::availableFlight(int flightID) {
@@ -260,14 +298,7 @@ void Airline::addFlight() {
     int numSeats = getPlaneRef(planeID)->getCapacity();
     newFlight.setSeatsNumber(numSeats);
 
-    for (auto elem : airportList) {
-        if (elem.getCity() == departLocation) {
-            newFlight.setDepartureAirport(elem);
-        }
-        if (elem.getCity() == destination) {
-            newFlight.setArrivalAirport(elem);
-        }
-    }
+
     flightsList.emplace_back(newFlight);
 }
 
@@ -342,7 +373,8 @@ void Airline::LoadFlights() {
 
         newFlight.setDepartureLocation(depart);
         newFlight.setDestination(destination);
-
+        newFlight.setDestAirport(getAirport(destination));
+        newFlight.setOriginAirport(getAirport(depart));
         int numSeats = getPlaneRef(planeID)->getCapacity();
         newFlight.setSeatsNumber(numSeats);
         flightsList.push_back(newFlight);
@@ -472,4 +504,52 @@ void Airline::LoadServices() {
         }
     }
     file.close();
+}
+
+void Airline::reserveSeat() {
+    int chosenSeat, numberOfSeats, flightID;
+    std::string firstName;
+    std::string lastName;
+    int passengerId;
+
+    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
+    Flight& flight = getFlightRef(flightID);
+
+    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
+
+    for (int seat : flight.getSeatsAvailable()) {
+        std::cout << seat << " ";
+    }
+
+    for (int i = 0; i < numberOfSeats; i++) {
+
+        do {
+            InputInt(chosenSeat, "Choose your seat: ");
+        } while(!flight.availableSeat(chosenSeat));
+
+        InputStr(firstName, "Your First Name: ");
+        InputStr(lastName, "Your Last Name: ");
+
+        do {
+            InputInt(passengerId, "Your Client ID: ");
+        } while(!flight.availableClientID(passengerId, firstName, lastName));
+
+
+        Passenger passenger(firstName, lastName, passengerId);
+        passenger.SetSeatNumber(chosenSeat);
+        flight.ReserveSeat(passenger);
+
+        string includeBaggage;
+        string autoBaggage;
+        InputStr(includeBaggage, "Include baggage (y/n)? ");
+        if(includeBaggage == "y") 
+            passenger.setBaggageInclusion(true);
+        else 
+            passenger.setBaggageInclusion(false);
+    }
+
+    std::cout << "________________________________________________" << std::endl;
+    std::cout << "|                                              |" << std::endl;
+    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
+    std::cout << "________________________________________________" << std::endl;
 }

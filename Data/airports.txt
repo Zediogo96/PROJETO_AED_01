@@ -1,5 +1,3 @@
-1 OPO Porto
-2 LIS Lisbon
-3 LAX California
-4 HTX London
-5 BSB Brasília
+1 Porto
+2 Lisboa
+3 Barcelona

@@ -40,7 +40,7 @@ void testDate_now() {
 }
 
 void test() {
-    Airline airline("Tap", 50);
+    Airline airline("Tap", 100);
     airline.loadAirports();
     airline.LoadPlanes();
     airline.LoadFlights();

@@ -15,7 +15,8 @@
 class Flight {
 
 private:
-
+    Airport destAirport;
+    Airport originAirport;
     int planeID{};
     int flightID{};
     Date departureDate;
@@ -23,8 +24,6 @@ private:
     std::string departureLocation;
     std::string destination;
     int seatsNumber{};
-    Airport airportDeparture;
-    Airport airportArrival;
 
     std::vector<Passenger> mPassengers;
     std::vector<int> mSeatsAvailable;
@@ -47,9 +46,8 @@ public:
     void setDepartureLocation(std::string departureLocation_);
     void setDestination(std::string destination_);
     void setSeatsNumber(int seatsNum_);
-    void setDepartureAirport(Airport &airport);
-    void setArrivalAirport(Airport & airport);
-
+    void setDestAirport(Airport airport);
+    void setOriginAirport(Airport airport);
     void printInfo() const;
 
     Flight();
@@ -62,6 +60,8 @@ public:
     bool availableSeat(int num);
 
     bool availableClientID(int num, const std::string& firstName, const std::string& lastName);
+
+    string board();
 };
 
 #endif //PROJETO_FLIGHT_H

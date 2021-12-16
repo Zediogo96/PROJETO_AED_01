@@ -6,7 +6,7 @@ class Baggage {
 
 public:
     Baggage();
-    Baggage(int pid, int fid);
+    Baggage(int pid);
     int getPassengerID();
     int getFlightID();
 };

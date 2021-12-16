@@ -45,3 +45,17 @@ int Passenger::GetPassengerID() const
 {
     return mID;
 }
+
+bool Passenger::includedBaggage() {
+    return includeBaggage;
+}
+
+void Passenger::setBaggageInclusion(bool state) {
+    includeBaggage = state;
+    if(includeBaggage)
+        baggage = Baggage(GetPassengerID());
+}
+
+Baggage Passenger::getBaggage() {
+    return baggage;
+}

@@ -1,8 +1,3 @@
-//
-// Created by zedio on 04/12/2021.
-//
-
-
 #include "Menu.h"
 
 void main_menu(Airline &airline) {
@@ -51,6 +46,7 @@ void airport_menu(Airline &airline) {
         std::cout << "|    [1] Planes                     |" << std::endl;
         std::cout << "|    [2] Flights                    |" << std::endl;
         std::cout << "|    [3] Services                   |" << std::endl;
+        std::cout << "|    [4] Boarding                   |" << std::endl;
         std::cout << "|    [0] Exit                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -67,6 +63,15 @@ void airport_menu(Airline &airline) {
             case '3':
                 services_menu(airline);
                 break;
+            case '4': {
+               int id;
+                std::cout << "Choose which flight to board passengers into: " << std::endl << std::flush;
+                std::cin >> id;
+                Flight& flight = airline.getFlightRef(id);
+                string message = flight.board();
+                std::cout << message << endl;
+                break;
+            }
             case '0':
                 return;
             default:
@@ -228,7 +233,7 @@ void services_menu(Airline &airline) {
     }
 }
 
-void transport_options(char vehicle, Airport &airport){
+void transport_options(char vehicle, const Airport &airport){
     char option;
     type transp;
     while (true){
@@ -279,7 +284,7 @@ void transport_options(char vehicle, Airport &airport){
 
 }
 
-void transport_menu(Airport &airport){
+void transport_menu(const Airport &airport){
 
     char option;
 
@@ -335,13 +340,13 @@ void costumer_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airport.reserveSeat();
+                airline.reserveSeat();
                 break;
             case '2':
                 airline.printAllFlights();
                 break;
             case '3':
-                transport_menu(airport);
+                transport_menu(airline.getAirport(select_airport_menu(airline)));
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
@@ -357,7 +362,7 @@ int select_airport_menu(Airline &airline) {
         std::cout << "_____________________________________" << std::endl;
         std::cout << "|        AIRPORT SELECTION          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
-        std::cout << "| Which airport you want to manage? |" << std::endl;
+        std::cout << "| Which airport you want to check?  |" << std::endl;
         std::cout << "|                                   |" << std::endl;
 
         for(int i = 0; i < airline.getAirportCount(); i++) {

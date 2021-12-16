@@ -1,7 +1,6 @@
 //
 // Created by zedio on 21/11/2021.
 //
-
 #ifndef PROJETO_AIRLINE_H
 #define PROJETO_AIRLINE_H
 
@@ -10,15 +9,13 @@
 #include <vector>
 #include <list>
 
-#include "Transports/binaryTree.h"
-#include "Transports/Transport.h"
+#include "binaryTree.h"
 #include "Plane.h"
-#include "Airport.h"
 #include "Services/Staff.h"
 #include "Services/Service.h"
+#include "Airport.h"
 
 class Airline {
-
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
@@ -42,11 +39,15 @@ public:
     const std::string& getName();
     int getMaxNumOfFlights() const;
     std::vector<Plane> getPlanes();
-
+    int getAirportCount();
+    Airport getAirport(int id);
+    Airport getAirport(string name);
     /******************************************** HANDLE PLANES **************************** */
 
     void SavePlanes();
     void LoadPlanes();
+
+    void loadAirports();
 
     /**
      * Method that analyzes if a determinate planeID is already in use when creating a new plane,
@@ -55,10 +56,6 @@ public:
      * @return Boolean
      */
     bool availablePlane(int planeID);
-
-    int getAirportCount();
-    Airport getAirport(int id);
-    void loadAirports();
 
     /**
      * Method that allows the user to search for a determinate plane based on it's planeID (by input),
@@ -128,6 +125,8 @@ public:
     void LoadServices();
 
     void printAllServicesDue();
+
+    void reserveSeat();
 };
 
 #endif //PROJETO_AIRLINE_H

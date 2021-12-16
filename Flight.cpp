@@ -81,6 +81,14 @@ void Flight::setSeatsNumber(int seatsNum_) {
     seatsNumber = seatsNum_;
 }
 
+void Flight::setDestAirport(Airport airport) {
+    this->destAirport = airport;
+}
+
+void Flight::setOriginAirport(Airport airport) {
+    this->originAirport = airport;
+}
+
 void Flight::printInfo() const {
     std::cout << "{Plane ID: " << getPlaneID() << " ,FlightID: " << getFlightID() << ", Departure Date: " <<
               getDepartureDate().toString() << ", Flight Duration: "
@@ -127,10 +135,21 @@ bool Flight::availableClientID(int num, const std::string& firstName, const std:
     return true;
 }
 
-void Flight::setDepartureAirport(Airport &airport) {
-    this->airportDeparture = airport;
-}
+string Flight::board() {
+    if (mPassengers.size() < 1)
+        return "This flight has no passengers!";
 
-void Flight::setArrivalAirport(Airport &airport) {
-    this->airportArrival = airport;
+    char option;
+    for(Passenger& passenger : mPassengers) {
+        if(passenger.includedBaggage()) {
+            std::cout << "Passenger " << passenger.GetPassengerFirstName() << " " << passenger.GetPassengerLastName() << ", auto-baggage collection (y/n)? " << endl;
+            std::cin >> option;
+            if(option == 'y')
+                originAirport.addBaggageToConveyor(passenger.getBaggage());
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+        }
+    }
+    
+    return "All passengers boarded!";
 }

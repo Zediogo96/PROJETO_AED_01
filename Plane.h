@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <list>
+#include <vector>
 #include <fstream>
 #include <queue>
 
@@ -38,7 +39,7 @@ public:
     std::string getType() const;
     int getCapacity() const;
     int getPlaneID() const;
-
+    std::list<Flight> getFlightsList();
     void fill(Baggage baggage);
 };
 
