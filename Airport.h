@@ -4,8 +4,8 @@
 
 #include "binaryTree.h"
 #include "Transports/Transport.h"
-#include "BaggageCart.h"
-#include "BaggageConveyor.h"
+#include "Baggage/BaggageCart.h"
+#include "Baggage/BaggageConveyor.h"
 
 class Plane;
 

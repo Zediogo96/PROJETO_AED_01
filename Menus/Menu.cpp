@@ -367,7 +367,7 @@ int select_airport_menu(Airline &airline) {
 
         for(int i = 0; i < airline.getAirportCount(); i++) {
             std::cout << "|    [" << i + 1 << "] " << setw(3) << left << airline.getAirport(i + 1).getName() << " "
-            << setw(23) << left << airline.getAirport(i + 1).getCity() << "|" << std::endl;
+            << setw(23) << "|" << std::endl;
         }
         std::cout << "|___________________________________|" << std::endl;
 

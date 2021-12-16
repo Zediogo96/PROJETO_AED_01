@@ -6,7 +6,7 @@
 #define PROJETO_PASSENGER_H
 
 #include <string>
-#include "..\Baggage.h"
+#include "../Baggage/Baggage.h"
 
 class Passenger
 	{
