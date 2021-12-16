@@ -1,5 +1,7 @@
 #include "Baggage.h"
 
+Baggage::Baggage() {};
+
 Baggage::Baggage(int pid, int fid) : passengerID(pid), flightID(fid) 
 {}
 

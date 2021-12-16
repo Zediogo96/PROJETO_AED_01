@@ -5,6 +5,7 @@ class Baggage {
     int flightID;
 
 public:
+    Baggage();
     Baggage(int pid, int fid);
     int getPassengerID();
     int getFlightID();

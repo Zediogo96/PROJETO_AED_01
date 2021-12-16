@@ -1,10 +1,11 @@
+#pragma once
 #include <string>
 
 #include "binaryTree.h"
 #include "Transports/Transport.h"
 #include "BaggageCart.h"
 #include "BaggageConveyor.h"
-#include "Airline.h"
+
 
 class Airline;
 
@@ -18,6 +19,7 @@ class Airport {
     BaggageCart baggageCart = BaggageCart(2);
 
 public:
+    Airport();
     Airport(int id, string name, Airline* airline);
     const std::string& getName();
     const int& getID();

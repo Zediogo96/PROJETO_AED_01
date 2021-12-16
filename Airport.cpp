@@ -1,8 +1,10 @@
 #include <fstream>
 
 #include "Airport.h"
+#include "Airline.h"
 #include "Utility/utility.h"
 
+Airport::Airport() : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {}
 
 Airport::Airport(int id, string name, Airline* airline) : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
     this->id = id;

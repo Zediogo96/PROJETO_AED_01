@@ -1,7 +1,6 @@
 //
 // Created by zedio on 21/11/2021.
 //
-
 #ifndef PROJETO_AIRLINE_H
 #define PROJETO_AIRLINE_H
 
@@ -12,13 +11,11 @@
 
 #include "binaryTree.h"
 #include "Plane.h"
-#include "BaggageCart.h"
 #include "Services/Staff.h"
 #include "Services/Service.h"
 #include "Airport.h"
 
 class Airline {
-
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;

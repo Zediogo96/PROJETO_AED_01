@@ -45,11 +45,15 @@ int BaggageCarriage::getAmount() {
 }
 
 Baggage BaggageCarriage::retrieveBaggage() {
+    Baggage baggage;
+    
     for(list<stack<Baggage>>::iterator itr = baggageStacks.begin(); itr != baggageStacks.end(); itr++) {
         if(!itr->empty()) {
-            Baggage baggage = itr->top();
+            baggage = itr->top();
             itr->pop();
-            return baggage;
+            break;
         }  
     }
+
+    return baggage;
 }

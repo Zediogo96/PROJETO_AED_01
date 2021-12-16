@@ -20,10 +20,13 @@ int Airline::getAirportCount() {
 }
 
 Airport Airline::getAirport(int id) {
-    for(auto airport : airportList) {
-        if(airport.getID() == id)
-            return airport;
+    Airport airport;
+    for(auto ap : airportList) {
+        if(ap.getID() == id)
+            airport = ap;
     }
+
+    return airport;
 }
 
 void Airline::loadAirports() {

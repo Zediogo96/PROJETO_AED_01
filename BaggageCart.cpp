@@ -58,8 +58,11 @@ int BaggageCart::getMaxAmount() {
 }
 
 Baggage BaggageCart::retrieveBaggage() {
+    list<BaggageCarriage>::iterator carriage;
     for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
         if(itr->getAmount() > 0)
-            return itr->retrieveBaggage();
+            carriage = itr;
     }
+
+    return carriage->retrieveBaggage();
 }

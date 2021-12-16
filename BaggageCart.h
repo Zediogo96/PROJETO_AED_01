@@ -1,3 +1,5 @@
+#pragma once
+
 #include <list>
 #include "BaggageCarriage.h"
 #include "Baggage.h"
