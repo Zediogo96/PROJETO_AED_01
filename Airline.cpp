@@ -490,6 +490,7 @@ void Airline::LoadServices() {
 }
 
 void Airline::reserveSeat() {
+
     int chosenSeat, numberOfSeats, flightID;
     std::string firstName;
     std::string lastName;

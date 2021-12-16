@@ -113,13 +113,13 @@ void Flight::ReserveSeat(Passenger& passenger)
 
 bool Flight::availableSeat(int num) {
 
-    for (auto & it : mPassengers) {
-        if (it.GetSeatNumber() == num) {
-            std::cout << "This Seat is Already Taken! \n";
-            return false;
+    for (auto &it : mSeatsAvailable) {
+        if (it.getSeatNum() == num && !it.isTaken()) {
+            return true;
         }
     }
-    return true;
+    std::cout << "This Seat is Already Taken! \n";
+    return false;
 }
 
 bool Flight::availableClientID(int num, const std::string& firstName, const std::string& lastName) {
