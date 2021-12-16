@@ -11,6 +11,7 @@
 #include "Utility/Time.h"
 #include "Passenger/Passenger.h"
 #include "Airport.h"
+#include "Passenger/Seat.h"
 
 class Flight {
 
@@ -26,7 +27,7 @@ private:
     int seatsNumber{};
 
     std::vector<Passenger> mPassengers;
-    std::vector<int> mSeatsAvailable;
+    std::vector<Seat> mSeatsAvailable;
 
 public:
 
@@ -39,7 +40,7 @@ public:
     int getSeatsNumber() const;
     Airport& getOriginAirport();
     Airport& getDestAirport();
-    std::vector<int> & getSeatsAvailable();
+    vector<Seat> & getSeatsAvailable();
 
     void setPlaneID(int planeID_);
     void setFlightID(int flightID_);
@@ -70,6 +71,8 @@ public:
     bool availableClientID(int num, const std::string& firstName, const std::string& lastName);
 
     string board();
+
+    void printSeats();
 };
 
 #endif //PROJETO_FLIGHT_H

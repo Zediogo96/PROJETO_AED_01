@@ -3,6 +3,8 @@
 
 #include "Flight.h"
 
+#include <utility>
+
 Flight::Flight() = default;
 
 Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDuration_,
@@ -17,7 +19,7 @@ Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDurati
     this->seatsNumber = seatsNum;
 
     for (int i = 1; i <= seatsNum; i++) {
-        mSeatsAvailable.push_back(i);
+        mSeatsAvailable.emplace_back(Seat(i));
     }
 }
 
@@ -49,7 +51,7 @@ int Flight::getSeatsNumber() const {
     return seatsNumber;
 }
 
-std::vector<int>& Flight::getSeatsAvailable() {
+std::vector<Seat>& Flight::getSeatsAvailable() {
     return mSeatsAvailable;
 }
 
@@ -82,11 +84,11 @@ void Flight::setSeatsNumber(int seatsNum_) {
 }
 
 void Flight::setDestAirport(Airport airport) {
-    this->destAirport = airport;
+    this->destAirport = std::move(airport);
 }
 
 void Flight::setOriginAirport(Airport airport) {
-    this->originAirport = airport;
+    this->originAirport = std::move(airport);
 }
 
 void Flight::printInfo() const {
@@ -102,9 +104,9 @@ void Flight::ReserveSeat(Passenger& passenger)
     mPassengers.push_back(passenger);
     int seatNumber = passenger.GetSeatNumber();
 
-    for (auto it = mSeatsAvailable.begin(); it != mSeatsAvailable.end(); it++) {
-        if ((*it) == seatNumber) {
-            mSeatsAvailable.erase(it);
+    for (auto & it : mSeatsAvailable) {
+        if (it.getSeatNum() == seatNumber) {
+            it.setTaken();
         }
     }
 }
@@ -136,7 +138,7 @@ bool Flight::availableClientID(int num, const std::string& firstName, const std:
 }
 
 string Flight::board() {
-    if (mPassengers.size() < 1)
+    if (mPassengers.empty())
         return "This flight has no passengers!";
 
     char option;
@@ -161,3 +163,11 @@ Airport &Flight::getOriginAirport() {
 Airport &Flight::getDestAirport() {
     return destAirport;
 }
+
+void Flight::printSeats() {
+    for (Seat elem : mSeatsAvailable) {
+        /*if (!elem.isTaken()) {*/
+        cout << "[" << elem.getSeatNum() << "]";
+        }/**/
+    }
+

@@ -517,12 +517,11 @@ void Airline::reserveSeat() {
 
     InputInt(numberOfSeats, "How many Seats do you wish to buy?");
 
-    for (int seat : flight.getSeatsAvailable()) {
-        std::cout << seat << " ";
-    }
+
 
     for (int i = 0; i < numberOfSeats; i++) {
 
+        getFlightRef(flightID).printSeats();
         do {
             InputInt(chosenSeat, "Choose your seat: ");
         } while(!flight.availableSeat(chosenSeat));
@@ -534,9 +533,9 @@ void Airline::reserveSeat() {
             InputInt(passengerId, "Your Client ID: ");
         } while(!flight.availableClientID(passengerId, firstName, lastName));
 
-
         Passenger passenger(firstName, lastName, passengerId);
         passenger.SetSeatNumber(chosenSeat);
+
         flight.ReserveSeat(passenger);
 
         string includeBaggage;
