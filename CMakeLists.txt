@@ -3,5 +3,5 @@ project(PROJETO)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(PROJETO main.cpp Utility/Time.h Airline.cpp Airline.h Plane.cpp Plane.h Flight.cpp Flight.h Utility/Date.h Utility/utility.h Menus/Menu.cpp Menus/Menu.h Services/Staff.h Services/Service.cpp Services/Service.h Passenger/Passenger.cpp Passenger/Passenger.h Transports/Transport.h Transports/Transport.cpp Baggage/Baggage.cpp Baggage/Baggage.h Baggage/BaggageCarriage.cpp Baggage/BaggageCarriage.h Baggage/BaggageCart.cpp Baggage/BaggageConveyor.h Baggage/BaggageConveyor.cpp binaryTree.h Airport.cpp Airport.h Passenger/Seat.h)
+add_executable(PROJETO main.cpp Utility/Time.h Airline.cpp Airline.h Plane.cpp Plane.h Flight.cpp Flight.h Utility/Date.h Utility/utility.h Menus/Menu.cpp Menus/Menu.h Services/Staff.h Services/Service.cpp Services/Service.h Passenger/Passenger.cpp Passenger/Passenger.h Transports/Transport.h Transports/Transport.cpp Baggage/Baggage.cpp Baggage/Baggage.h Baggage/BaggageCarriage.cpp Baggage/BaggageCarriage.h Baggage/BaggageCart.cpp Baggage/BaggageConveyor.h Baggage/BaggageConveyor.cpp binaryTree.h Airport.cpp Airport.h Passenger/Seat.h Passenger/Ticket.h)
 
