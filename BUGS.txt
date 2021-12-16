@@ -1,5 +1,2 @@
-
 Ver problemas com console clear para o trabalho ficar mais fluído.
-Não consigo dar load aos planes (por causa das datas e time)
-
-adicionar lista(queue) n parte das bagagens (tapete rolante)
+adicionar lista(queue) na parte das bagagens (tapete rolante)

@@ -37,6 +37,8 @@ public:
     std::string getDepartureLocation() const;
     std::string getDestination() const;
     int getSeatsNumber() const;
+    Airport& getOriginAirport();
+    Airport& getDestAirport();
     std::vector<int> & getSeatsAvailable();
 
     void setPlaneID(int planeID_);
@@ -46,9 +48,15 @@ public:
     void setDepartureLocation(std::string departureLocation_);
     void setDestination(std::string destination_);
     void setSeatsNumber(int seatsNum_);
-    void setDestAirport(Airport airport);
     void setOriginAirport(Airport airport);
+    void setDestAirport(Airport airport);
+
     void printInfo() const;
+
+    void printAirport() {
+        destAirport.toString();
+        originAirport.toString();
+    }
 
     Flight();
 

@@ -21,18 +21,18 @@ int Airline::getAirportCount() {
 
 Airport Airline::getAirport(int id) {
     Airport airport;
-    for(auto ap : airportList) {
-        if(ap.getID() == id)
-            airport = ap;
+    for (int i = 0; i < airportList.size(); i++){
+        if (airportList[i].getID() == id){
+            return airportList[i];
+        }
     }
-
     return airport;
 }
 
-Airport Airline::getAirport(string name) {
-        Airport airport;
+Airport Airline::getAirport(string city_) {
+    Airport airport;
     for(auto ap : airportList) {
-        if(ap.getName() == name)
+        if(ap.getCity() == city_)
             airport = ap;
     }
 
@@ -40,15 +40,16 @@ Airport Airline::getAirport(string name) {
 }
 void Airline::loadAirports() {
     int airportID;
-    string airportName;
+    string airportName, city;
 
     std::ifstream file;
     std::string filename = "airports.txt";
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> airportID >> airportName) {
-        Airport airport(airportID, airportName);
+    while(file >> airportID >> airportName >> city) {
+        Airport airport;
+        airport = Airport(airportID, airportName, city);
         airportList.push_back(airport);
     }
     file.close();
@@ -373,8 +374,8 @@ void Airline::LoadFlights() {
 
         newFlight.setDepartureLocation(depart);
         newFlight.setDestination(destination);
-        newFlight.setDestAirport(getAirport(destination));
         newFlight.setOriginAirport(getAirport(depart));
+        newFlight.setDestAirport(getAirport(destination));
         int numSeats = getPlaneRef(planeID)->getCapacity();
         newFlight.setSeatsNumber(numSeats);
         flightsList.push_back(newFlight);
