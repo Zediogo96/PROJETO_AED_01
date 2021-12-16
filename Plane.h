@@ -14,6 +14,7 @@
 #include "Utility/utility.h"
 #include "Flight.h"
 #include "Services/Service.h"
+#include "Baggage.h"
 
 class Plane {
 
@@ -21,6 +22,7 @@ private:
 
     string numberPlate, type;
     int capacity, planeID{};
+    std::vector<Baggage> baggages;
 
 public:
 
@@ -36,6 +38,8 @@ public:
     std::string getType() const;
     int getCapacity() const;
     int getPlaneID() const;
+
+    void fill(Baggage baggage);
 };
 
 #endif //PROJETO_PLANE_H

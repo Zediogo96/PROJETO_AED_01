@@ -1,3 +1,5 @@
+#pragma once
+
 #include <stack>
 #include <list>
 #include "Baggage.h"
@@ -13,6 +15,7 @@ public:
     BaggageCarriage(int n, int m);
     bool hasSpace();
     void addBaggage(Baggage baggage);
-    void empty();
-    int getSize();
+    void clear();
+    int getAmount();
+    Baggage retrieveBaggage();
 };

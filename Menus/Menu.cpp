@@ -186,7 +186,6 @@ void flights_menu(Airline &airline) {
     }
 }
 
-
 void services_menu(Airline &airline) {
     char option;
 
@@ -229,7 +228,7 @@ void services_menu(Airline &airline) {
     }
 }
 
-void transport_options(char vehicle, Airline &airline){
+void transport_options(char vehicle, Airport &airport){
     char option;
     type transp;
     while (true){
@@ -247,10 +246,6 @@ void transport_options(char vehicle, Airline &airline){
                 transp = type::TRAIN;
                 std::cout << "|               TRAIN               |" << std::endl;
                 break;
-            default:
-                std::cout << "Invalid Input \n:";
-                system("pause");
-
         }
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;
@@ -265,26 +260,26 @@ void transport_options(char vehicle, Airline &airline){
 
         switch ((char) option) {
             case '1':
-                airline.showAvailables(transp);
+                airport.showAvailables(transp);
                 system("pause");
                 break;
             case '2':
-                airline.showDistances(transp);
+                airport.showDistances(transp);
                 system("pause");
                 break;
             case '3':
-                airline.showSchedules(transp);
+                airport.showSchedules(transp);
                 system("pause");
                 break;
             case '0': return;
-            default:
-                std::cout << "Invalid Input \n:";
+            default: std::cout << "Invalid Input \n:";
                 system("pause");
         }
     }
+
 }
 
-void transport_menu(Airline &airline){
+void transport_menu(Airport &airport){
 
     char option;
 
@@ -303,16 +298,13 @@ void transport_menu(Airline &airline){
         std::cin >> option;
         switch ((char) option) {
             case '1':
-                transport_options('B', airline);
-
+                transport_options('B', airport);
                 break;
             case '2':
-                transport_options('S', airline);
-
+                transport_options('S', airport);
                 break;
             case '3':
-                transport_options('T', airline);
-
+                transport_options('T', airport);
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
@@ -322,6 +314,7 @@ void transport_menu(Airline &airline){
 }
 
 void costumer_menu(Airline &airline) {
+    Airport airport = airline.getAirport(select_airport_menu(airline));
     char option;
 
     while (true) {
@@ -342,19 +335,43 @@ void costumer_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airline.reserveSeat();
+                airport.reserveSeat();
                 break;
             case '2':
                 airline.printAllFlights();
-
                 break;
             case '3':
-                transport_menu(airline);
-
+                transport_menu(airport);
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
                 system("pause");
         }
+    }
+}
+
+int select_airport_menu(Airline &airline) {
+    char option;
+
+    while(true) {
+        std::cout << "_____________________________________" << std::endl;
+        std::cout << "|        AIRPORT SELECTION          |" << std::endl;
+        std::cout << "|___________________________________|" << std::endl;
+        std::cout << "| Which airport you want to manage? |" << std::endl;
+        std::cout << "|                                   |" << std::endl;
+
+        for(int i = 0; i < airline.getAirportCount(); i++) {
+            std::cout << "|    [" << i + 1 << "] " << setw(27) << left << airline.getAirport(i + 1).getName() << "|" << std::endl;
+        }
+        std::cout << "|___________________________________|" << std::endl;
+
+        std::cout << "Please input your choice: " << std::endl << std::flush;
+        std::cin >> option;
+        if(option > 0 && option < airline.getAirportCount() - 1) {
+            std::cout << "Invalid Input \n:";
+            system("pause");
+        }
+        else
+            return option;
     }
 }

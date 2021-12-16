@@ -5,12 +5,16 @@ void BaggageConveyor::addBaggage(Baggage baggage) {
 }
 
 Baggage BaggageConveyor::retrieveBaggage() {
-    Baggage baggage = conveyor.front(); 
+    Baggage baggage = conveyor.front();
     conveyor.pop();
 
     return baggage;
 }
 
-int BaggageConveyor::getSize() {
+int BaggageConveyor::getAmount() {
     return conveyor.size();
+}
+
+bool BaggageConveyor::isEmpty() {
+    return conveyor.empty();
 }

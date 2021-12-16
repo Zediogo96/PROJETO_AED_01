@@ -13,7 +13,7 @@
 #include "binaryTree.h"
 #include "Transports/Transport.h"
 #include "Plane.h"
-#include "BaggageCart.h"
+#include "Airport.h"
 #include "Services/Staff.h"
 #include "Services/Service.h"
 
@@ -22,21 +22,17 @@ class Airline {
 private:
     std::vector<Plane> planesList;
     std::vector<Flight> flightsList;
-    BST<Transport> transportTree;
     std::queue<Service*> servicesQueue;
     std::list<Service*> servicesHistory;
-
-    /*vector<Passenger*> passengers;
-    vector<Employee*> employees; */
+    vector<Airport> airportList;
 
     std::string name;
     int maxNumOfFlights;
-    BaggageCart baggageCart = BaggageCart(4);
 
 public:
 
     /** @brief Constructor for the Airline Class */
-    Airline(const std::string &name, int maxNumOfFlights):transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {
+    Airline(const std::string &name, int maxNumOfFlights) {
         this->name = name;
         this->maxNumOfFlights = maxNumOfFlights;
         planesList.clear();
@@ -52,11 +48,6 @@ public:
     void SavePlanes();
     void LoadPlanes();
 
-    void LoadTransports();
-    void showAvailables(type vehicle);
-    void showDistances(type vehicle);
-    void showSchedules(type vehicle);
-
     /**
      * Method that analyzes if a determinate planeID is already in use when creating a new plane,
      * return False if it's already in use, return True if it's free.
@@ -64,6 +55,10 @@ public:
      * @return Boolean
      */
     bool availablePlane(int planeID);
+
+    int getAirportCount();
+    Airport getAirport(int id);
+    void loadAirports();
 
     /**
      * Method that allows the user to search for a determinate plane based on it's planeID (by input),
@@ -121,9 +116,6 @@ public:
     Flight &getFlightRef(int num);
 
     void printAllFlights();
-
-
-    void reserveSeat();
 
     /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
 

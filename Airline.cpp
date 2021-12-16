@@ -15,70 +15,35 @@ int Airline::getMaxNumOfFlights() const {
     return maxNumOfFlights;
 }
 
-/** Handle Transports **/
-void Airline::LoadTransports() {
-    ifstream transports;
-    transports.open("transports.txt", ifstream::in);
-    while(!transports.eof()){
-        string id, dist, trans, airportId;
-        vector<Time> schedule;
-        int nID, nDist, airportid;
-        type t;
-        getline(transports, trans, ' ');
-        getline(transports, id, ' ');
-        getline(transports, airportId, ' ');
-        getline(transports, dist, ' ');
-        nID = stoi(id);
-        airportid = stoi(airportId);
-        nDist = stoi(dist);
-        if (trans == "SUBWAY") t = type::SUBWAY;
-        if (trans == "TRAIN") t = type::TRAIN;
-        if (trans == "BUS") t = type::BUS;
-        Time time1;
-        string time;
-        int len = 0;
-        getline(transports, time);
-        while(len < time.length()){
-            string subtime = time.substr(len, 5);
-            len += subtime.size() + 1;
-            string hour = subtime.substr(0,2);
-            string min = subtime.substr(3,2);
-            time1 = Time(stoi(hour),stoi(min));
-            schedule.push_back(time1);
-        }
-        Transport P1 = Transport(t, nID, airportid ,nDist, schedule);
-        transportTree.insert(P1);
-    }
-    transports.close();
-}
-void Airline::showAvailables(type vehicle) {
-    cout << "Available: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "- " << it.retrieve().getId() << endl;
-        it.advance();
-    }
-}
-void Airline::showDistances(type vehicle) {
-    cout << "Distance from the airport: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle) cout << "Number: " << it.retrieve().getId() << " is " << it.retrieve().getDistance() << " kms away from the airport." << endl;
-        it.advance();
-    }
-}
-void Airline::showSchedules(type vehicle) {
-    cout << "Available Schedules: " << endl;
-    BSTItrLevel<Transport> it(transportTree);
-    while (!it.isAtEnd()){
-        if (it.retrieve().getType() == vehicle){
-            cout << "\n-For number: " << it.retrieve().getId() << endl;
-            it.retrieve().printSchedule();
-        }
-        it.advance();
-    }
+int Airline::getAirportCount() {
+    return airportList.size();
 }
 
+Airport Airline::getAirport(int id) {
+    Airport airport;
+    for(auto ap : airportList) {
+        if(ap.getID() == id)
+            return ap;
+    }
+    return {};
+}
+
+void Airline::loadAirports() {
+
+    int airportID;
+    string airportName;
+
+    std::ifstream file;
+    std::string filename = "airports.txt";
+
+    file.open(filename, std::ifstream::in);
+
+    while(file >> airportID >> airportName) {
+        Airport airport(airportID, airportName, this);
+        airportList.push_back(airport);
+    }
+    file.close();
+}
 
 bool Airline::availablePlane(int planeID) {
 
@@ -282,55 +247,50 @@ bool Airline::availableFlight(int flightID) {
 
 void Airline::addFlight() {
 
-    if ((flightsList.size()) == maxNumOfFlights) {
-        cout << "You can't add anymore flights (limit reached)." << endl;
-    }
-    else {
-        Flight newFlight;
+    Flight newFlight;
 
-        int flightID, planeID;
-        std::string departDate;
-        std::string flightDuration;
-        std::string departLocation;
-        std::string destination;
-        do {
-            InputInt(planeID, "Enter the planeID for this Flight:");
-        } while (!PlaneExists(planeID));
+    int flightID, planeID;
+    std::string departDate;
+    std::string flightDuration;
+    std::string departLocation;
+    std::string destination;
+    do  {
+        InputInt(planeID, "Enter the planeID for this Flight:");
+    } while (!PlaneExists(planeID));
 
-        do {
-            InputInt(flightID, "Enter the flightID for this Flight: ");
-        } while (!availableFlight(flightID));
+    do {
+        InputInt(flightID, "Enter the flightID for this Flight: ");
+    } while (!availableFlight(flightID));
 
-        do {
-            InputStr(departDate, "Enter the Departure Date for this Flight: ");
-        } while (!validateDate(departDate));
+    do {
+        InputStr(departDate, "Enter the Departure Date for this Flight: ");
+    } while(!validateDate(departDate));
 
-        do {
-            InputStr(flightDuration, "Enter the duration of this Flight: ");
-        } while (!validateTime(flightDuration));
+    do {
+        InputStr(flightDuration, "Enter the duration of this Flight: ");
+    } while(!validateTime(flightDuration));
 
-        InputStr(departLocation, "Enter the Flight's Departure Location: ");
+    InputStr(departLocation, "Enter the Flight's Departure Location: ");
 
-        InputStr(destination, "Enter the Flight's Destination: ");
+    InputStr(destination, "Enter the Flight's Destination: ");
 
-        newFlight.setPlaneID(planeID);
-        newFlight.setFlightID(flightID);
-        newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0, 4)),
-                                        std::stoi(departDate.substr(5, 6)),
-                                        std::stoi(departDate.substr(8, 11))));
+    newFlight.setPlaneID(planeID);
+    newFlight.setFlightID(flightID);
+    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
+                                    std::stoi(departDate.substr(5,6)),
+                                    std::stoi(departDate.substr(8,11))));
 
-        newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0, 2)),
-                                         std::stoi(flightDuration.substr(3, 4))));
+    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
+                                     std::stoi(flightDuration.substr(3,4))));
 
-        newFlight.setDepartureLocation(departLocation);
-        newFlight.setDestination(destination);
+    newFlight.setDepartureLocation(departLocation);
+    newFlight.setDestination(destination);
 
-        int numSeats = getPlaneRef(planeID)->getCapacity();
-        newFlight.setSeatsNumber(numSeats);
+    int numSeats = getPlaneRef(planeID)->getCapacity();
+    newFlight.setSeatsNumber(numSeats);
 
 
-        flightsList.emplace_back(newFlight);
-    }
+    flightsList.emplace_back(newFlight);
 }
 
 void Airline::deleteFlight() {
@@ -419,62 +379,6 @@ Flight& Airline::getFlightRef(int num) {
         }
     }
     throw std::logic_error("This flight number doesn't exist, please check our Records");
-}
-
-////////////////////////////// HANDLE PASSENGERS //////////////////////////////////
-
-void Airline::reserveSeat() {
-    int chosenSeat, numberOfSeats, flightID;
-    std::string firstName;
-    std::string lastName;
-    int passengerId;
-
-    InputInt(flightID, "To which Flight do you wish to buy seat(s)?");
-    Flight& flight = getFlightRef(flightID);
-
-    InputInt(numberOfSeats, "How many Seats do you wish to buy?");
-
-    for (int seat : flight.getSeatsAvailable()) {
-        std::cout << seat << " ";
-    }
-
-    for (int i = 0; i < numberOfSeats; i++) {
-
-        do {
-            InputInt(chosenSeat, "Choose your seat: ");
-        } while(!flight.availableSeat(chosenSeat));
-
-        InputStr(firstName, "Your First Name: ");
-        InputStr(lastName, "Your Last Name: ");
-
-        do {
-            InputInt(passengerId, "Your Client ID: ");
-        } while(!flight.availableClientID(passengerId, firstName, lastName));
-
-
-        Passenger passenger(firstName, lastName, passengerId);
-        passenger.SetSeatNumber(chosenSeat);
-        flight.ReserveSeat(passenger);
-
-        string includeBaggage;
-        string autoBaggage;
-        InputStr(includeBaggage, "Include baggage (y/n)? ");
-        if(includeBaggage == "y") {
-            InputStr(autoBaggage, "Automatic baggage check-in (y/n)? ");
-            if(autoBaggage == "y") {
-                baggageCart.addBaggage(Baggage(passengerId));
-                if(baggageCart.isFull()) {
-                    cout << "Baggage Cart full, emptying..." << endl;
-                    baggageCart.empty();
-                }
-            }
-        }
-    }
-
-    std::cout << "________________________________________________" << std::endl;
-    std::cout << "|                                              |" << std::endl;
-    std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
-    std::cout << "________________________________________________" << std::endl;
 }
 
 /////////////////////////////// HANDLE SERVICES ////////////////////////////////////////////////

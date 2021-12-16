@@ -2,9 +2,12 @@
 
 BaggageCart::BaggageCart(int c) {
     numCarriages = c;
+    carriage_stacks = 3;
+    stack_size = 4;
+    maxAmount = carriage_stacks * stack_size;
 
     for(int i = 0; i < numCarriages; i++) {
-        BaggageCarriage carriage = BaggageCarriage(3, 4);
+        BaggageCarriage carriage = BaggageCarriage(carriage_stacks, stack_size);
         carriages.push_back(carriage);
     }
 
@@ -32,20 +35,34 @@ bool BaggageCart::isFull() {
     return full;
 }
 
-void BaggageCart::empty() {
+void BaggageCart::clear() {
     for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
-        itr->empty();
+        itr->clear();
     }
 
     full = false;
 }
 
-int BaggageCart::getSize() {
+int BaggageCart::getAmount() {
     int size = 0;
 
     for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
-        size += itr->getSize();
+        size += itr->getAmount();
     }
 
     return size;
+}
+
+int BaggageCart::getMaxAmount() {
+    return maxAmount;
+}
+
+Baggage BaggageCart::retrieveBaggage() {
+    list<BaggageCarriage>::iterator carriage;
+    for(list<BaggageCarriage>::iterator itr = carriages.begin(); itr != carriages.end(); itr++) {
+        if(itr->getAmount() > 0)
+            carriage = itr;
+    }
+
+    return carriage->retrieveBaggage();
 }

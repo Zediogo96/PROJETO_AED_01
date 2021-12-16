@@ -1,3 +1,5 @@
+#pragma once
+
 #include <queue>
 #include <vector>
 #include "Baggage.h"
@@ -10,5 +12,6 @@ class BaggageConveyor {
 public:
     void addBaggage(Baggage baggage);
     Baggage retrieveBaggage();
-    int getSize();
+    int getAmount();
+    bool isEmpty();
 };
