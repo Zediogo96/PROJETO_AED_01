@@ -8,20 +8,20 @@
 using namespace std;
 
 int Airline::getAirportCount() {
-    return airportList.size();
+    return (int) airportList.size();
 }
 
 Airport Airline::getAirport(int id) {
     Airport airport;
-    for (int i = 0; i < airportList.size(); i++){
-        if (airportList[i].getID() == id){
-            return airportList[i];
+    for (auto & i : airportList){
+        if (i.getID() == id){
+            return i;
         }
     }
     return airport;
 }
 
-Airport Airline::getAirport(string city_) {
+Airport Airline::getAirport(const string& city_) {
     Airport airport;
     for(auto ap : airportList) {
         if(ap.getCity() == city_)
@@ -151,23 +151,6 @@ void Airline::LoadPlanes() {
     }
 }
 
-Plane* Airline::getPlaneRef_input() {
-    int planeID;
-
-    std::cin.clear();
-
-    InputInt(planeID, "Enter the Plane's ID: ");
-
-    Plane *c = nullptr;
-    for (auto &i: planesList) {
-        if (i.getPlaneID() == planeID) {
-            c = &i;
-            break;
-        }
-    }
-    return c;
-}
-
 Plane* Airline::getPlaneRef(int num) {
     Plane *c = nullptr;
     for (auto &i: planesList) {
@@ -180,10 +163,16 @@ Plane* Airline::getPlaneRef(int num) {
 }
 
 bool Airline::PlaneExists(int num) {
-    for(const auto &it : planesList) {
-        if (it.getPlaneID() == num) return true;
+
+    bool result = std::any_of(planesList.begin(), planesList.end(), [&num](const Plane &plane){
+        return (plane.getPlaneID() == num);
+    });
+
+    if (result) return true;
+    else {
+        cout << "Plane not found!" << endl;
+        return false;
     }
-    return false;
 }
 
 void Airline::clearPlanes() {
@@ -227,10 +216,6 @@ void Airline::sortPlanes() {
             break;
         default: std::cout << "Invalid Input." << std::endl;
     }
-}
-
-std::vector<Plane> Airline::getPlanes() {
-    return this->planesList;
 }
 
 //////////////// HANDLE FLIGHTS //////////////

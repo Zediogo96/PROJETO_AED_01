@@ -40,7 +40,7 @@ public:
     std::vector<Plane> getPlanes();
     int getAirportCount();
     Airport getAirport(int id);
-    Airport getAirport(string name);
+    Airport getAirport(const string& name);
     /******************************************** HANDLE PLANES **************************** */
 
     void SavePlanes();
