@@ -11,6 +11,7 @@ Airport::Airport(int id, string name, string city) : transportTree(Transport(typ
     this->id = id;
     this->name = std::move(name);
     this->city  = std::move(city);
+    LoadTransports();
 }
 
 const string& Airport::getName() {
@@ -51,7 +52,7 @@ void Airport::LoadTransports() {
             time1 = Time(stoi(hour),stoi(min));
             schedule.push_back(time1);
         }
-        if(nID = this->id) {
+        if(airportid == this->id) {
             Transport P1 = Transport(t, nID, airportid ,nDist, schedule);
             transportTree.insert(P1);
         }
