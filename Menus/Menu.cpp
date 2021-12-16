@@ -340,7 +340,7 @@ void costumer_menu(Airline &airline) {
 
         switch ((char) option) {
             case '1':
-                airport.reserveSeat();
+                airline.reserveSeat();
                 break;
             case '2':
                 airline.printAllFlights();
