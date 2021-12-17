@@ -10,6 +10,10 @@
 #include <iomanip>
 #include <ctime>
 
+/**
+ * @brief Time class for storing and comparing time type values
+ * 
+ */
 class Time {
 private:
     int hours, minutes;

@@ -1,13 +1,17 @@
 //
 // Created by zedio on 22/11/2021.
 //
-
+/** \file Date.h */
 #ifndef PROJETO_DATE_H
 #define PROJETO_DATE_H
 
 #include <iostream>
 #include <iomanip>
 
+/**
+ * @brief Date class for storing and comparing date type values
+ * 
+ */
 class Date {
 private:
     int year, month, day;
@@ -89,7 +93,7 @@ public:
         return oss.str();
     }
 
-    /** brief: overload of operator < to be used while comparing two given Dates **/
+    /** @brief: overload of operator < to be used while comparing two given Dates **/
     bool operator < (const Date &b) const {
         if (year == b.year) {
             if (month == b.month) {

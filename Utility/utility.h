@@ -80,7 +80,7 @@ static bool validateTime(const std::string &s) {
 }
 
 /**
- * @brief: Validates the answer of some user Input
+ * @brief Validates the answer of some user Input
  * @param string
  * @return True in case the regular expression Valid Type accepts the input, else False
  */
