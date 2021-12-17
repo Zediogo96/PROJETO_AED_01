@@ -93,6 +93,16 @@ public:
         return oss.str();
     }
 
+    bool operator < (const Date &b) const {
+        if (year == b.year) {
+            if (month == b.month) {
+                return day < b.day;
+            }
+            return month < b.month;
+        }
+        return year < b.year;
+    }
+
 
 };
 

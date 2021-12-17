@@ -76,5 +76,12 @@ public:
         << std::setw(2)<< minutes;
         return oss.str();
     }
+
+    bool operator < (const Time &b) const {
+        if (hours == b.hours) {
+            return minutes < b.minutes;
+        }
+        return hours < b.hours;
+    }
 };
 #endif //PROJETO_TIME_H

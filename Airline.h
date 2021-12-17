@@ -41,7 +41,8 @@ public:
     int getAirportCount();
     Airport getAirport(int id);
     Airport getAirport(const string& name);
-    /******************************************** HANDLE PLANES **************************** */
+
+    /////////////////////////////////// HANDLE PLANES ///////////////////////////////////////
 
     void SavePlanes();
     void LoadPlanes();
@@ -93,19 +94,19 @@ public:
      */
     void clearFlights();
 
-    Plane* getPlaneRef_input();
-
     Plane *getPlaneRef(int num);
 
     bool PlaneExists(int num);
 
-    /************************************** HANDLE FLIGHTS *********************/
+    /////////////////////////////////// HANDLE FLIGHTS ///////////////////////////////////////
 
 
     void SaveFlights();
     void LoadFlights();
 
     bool availableFlight(int flightID);
+
+    void sortFlights();
 
     void addFlight();
     void deleteFlight();

@@ -7,6 +7,10 @@
 
 using namespace std;
 
+int Airline::getAirportCount() {
+    return airportList.size();
+}
+
 Airport Airline::getAirport(int id) {
     Airport airport;
     for (auto & i : airportList) {
@@ -306,7 +310,49 @@ void Airline::deleteFlight() {
     std::cout << "Flight was not found in our database. \n";
 }
 
+void Airline::sortFlights() {
+
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+    char userInput;
+
+    std::cout << "Please select the parameter you wish to sort the planes by: " << std::endl;
+    std::cout << "[1] FlightID" << std::endl;
+    std::cout << "[2] Departure Date" << std::endl;
+    std::cout << "[3] Flight Duration" << std::endl;
+    std::cout << "[4] Available Seats" << std::endl;
+
+    std::cin >> userInput;
+
+    switch(userInput) {
+        case '1':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getFlightID() < b.getFlightID();
+            });
+            break;
+        case '2':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getDepartureDate() < b.getDepartureDate();
+            });
+            break;
+        case '3':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getFlightDuration() < b.getFlightDuration();
+            });
+            break;
+        case '4':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getSeatsAvailable().size() < b.getSeatsAvailable().size();
+            });
+            break;
+        default: std::cout << "Invalid Input." << std::endl;
+    }
+}
+
 void Airline::printAllFlights() {
+
+    sortFlights();
+
     for (const auto& it : flightsList) {
         it.printInfo();
     }

@@ -23,7 +23,6 @@ Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDurati
     }
 }
 
-
 int Flight::getPlaneID() const {
     return planeID;
 }
@@ -67,8 +66,8 @@ void Flight::printInfo() const {
     std::cout << "{Plane ID: " << getPlaneID() << " ,FlightID: " << getFlightID() << ", Departure Date: " <<
               getDepartureDate().toString() << ", Flight Duration: "
               << getFlightDuration().toString() << ", Departure Location: "
-              << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats: "
-              << getSeatsNumber() << "}" << std::endl;
+              << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats Available: "
+              << mSeatsAvailable.size() << "}" << std::endl;
 }
 
 void Flight::ReserveSeat(Passenger& passenger)
