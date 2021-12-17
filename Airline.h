@@ -126,6 +126,13 @@ public:
     void printAllServicesDue();
 
     void reserveSeat();
+
+/////////////////////////////////// HANDLE PASSENGERS ///////////////////////////////////////
+
+    void LoadPassengers();
+
+    void ReservedSeats(int flightID, string firstName, string lastName, int seatNum, int clientID, bool baggage);
+
 };
 
 #endif //PROJETO_AIRLINE_H
