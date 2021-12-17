@@ -10,8 +10,8 @@
 #include <list>
 
 #include "Plane.h"
-#include "Services/Staff.h"
-#include "Services/Service.h"
+#include "../Services/Staff.h"
+#include "../Services/Service.h"
 #include "Airport.h"
 
 class Airline {

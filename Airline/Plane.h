@@ -12,10 +12,10 @@
 #include <fstream>
 #include <queue>
 
-#include "Utility/utility.h"
+#include "../Utility/utility.h"
 #include "Flight.h"
-#include "Services/Service.h"
-#include "Baggage/Baggage.h"
+#include "../Services/Service.h"
+#include "../Baggage/Baggage.h"
 
 class Plane {
 

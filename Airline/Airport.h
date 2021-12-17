@@ -2,10 +2,10 @@
 #include <string>
 #include <vector>
 
-#include "binaryTree.h"
-#include "Transports/Transport.h"
-#include "Baggage/BaggageCart.h"
-#include "Baggage/BaggageConveyor.h"
+#include "../Utility/binaryTree.h"
+#include "../Transports/Transport.h"
+#include "../Baggage/BaggageCart.h"
+#include "../Baggage/BaggageConveyor.h"
 
 class Plane;
 

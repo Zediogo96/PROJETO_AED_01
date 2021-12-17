@@ -6,11 +6,11 @@
 #define PROJETO_FLIGHT_H
 
 #include <vector>
-#include "Utility/Date.h"
-#include "Utility/Time.h"
-#include "Passenger/Passenger.h"
+#include "../Utility/Date.h"
+#include "../Utility/Time.h"
+#include "../Passenger/Passenger.h"
 #include "Airport.h"
-#include "Passenger/Seat.h"
+#include "../Passenger/Seat.h"
 
 class Flight {
 

@@ -1,2 +1,0 @@
-Ver problemas com console clear para o trabalho ficar mais fluído.
-adicionar lista(queue) na parte das bagagens (tapete rolante)

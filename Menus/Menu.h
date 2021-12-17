@@ -6,7 +6,7 @@
 #define PROJETO_MENU_H
 #include <cstdlib>
 #include <iostream>
-#include "../Airline.h"
+#include "../Airline/Airline.h"
 
 void main_menu(Airline &airline);
 void airport_menu(Airline &airline);
