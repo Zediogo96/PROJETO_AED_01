@@ -45,6 +45,7 @@ void test() {
     airline.LoadPlanes();
     airline.LoadFlights();
     airline.LoadServices();
+    airline.LoadPassengers();
     main_menu(airline);
 }
 

@@ -416,7 +416,7 @@ void Airline::LoadFlights() {
 Flight& Airline::getFlightRef(int num) {
 
     for (Flight &i: flightsList) {
-        if (i.getPlaneID() == num) {
+        if (i.getFlightID() == num) {
             return i;
         }
     }
@@ -549,6 +549,7 @@ void Airline::reserveSeat() {
 
     InputInt(numberOfSeats, "How many Seats do you wish to buy?");
 
+    ofstream passengerFile("passengers.txt", ios::app);
     for (int i = 0; i < numberOfSeats; i++) {
 
         flight.printSeats();
@@ -572,14 +573,60 @@ void Airline::reserveSeat() {
         string includeBaggage;
         string autoBaggage;
         InputStr(includeBaggage, "Include baggage (y/n)? ");
-        if(includeBaggage == "y") 
+        int luggage;
+        if(includeBaggage == "y") {
             passenger.setBaggageInclusion(true);
-        else 
+            luggage = 1;
+        }
+        else {
             passenger.setBaggageInclusion(false);
+            luggage = 0;
+        }
+
+        ///////WRITING IN PASSENGERS FILE//////
+        passengerFile << "\n" << flightID << " " << firstName << " " << lastName << " " << chosenSeat << " " << passengerId << " " << luggage;
     }
+    passengerFile.close();
 
     std::cout << "________________________________________________" << std::endl;
     std::cout << "|                                              |" << std::endl;
     std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
     std::cout << "________________________________________________" << std::endl;
+
+}
+
+/////////////////////////////// HANDLE PASSENGERS ////////////////////////////////////////////////
+
+void Airline::ReservedSeats(int flightID, string firstName, string lastName, int seatNum, int clientID, bool baggage) {
+    Flight& flight = getFlightRef(flightID);
+    Passenger passenger(firstName, lastName, clientID);
+    passenger.SetSeatNumber(seatNum);
+    flight.ReserveSeat(passenger);
+    passenger.setBaggageInclusion(baggage);
+}
+
+void Airline::LoadPassengers(){
+    ifstream passengerFile;
+    passengerFile.open("passengers.txt", ios::in);
+    if (passengerFile){
+        while (!passengerFile.eof()){
+            string flight, firstName, lastName, seat, id, luggage;
+            getline(passengerFile, flight, ' ');
+            getline(passengerFile, firstName, ' ');
+            getline(passengerFile, lastName, ' ');
+            getline(passengerFile, seat, ' ');
+            getline(passengerFile, id, ' ');
+            getline(passengerFile, luggage);
+            int flightID, seatID, ID, luggageInt;
+            bool baggage;
+            flightID = stoi(flight);
+            seatID = stoi(seat);
+            ID = stoi(id);
+            luggageInt = stoi(luggage);
+            if (luggageInt == 1) baggage = true;
+            else baggage = false;
+            ReservedSeats(flightID,firstName,lastName,seatID,ID,baggage);
+        }
+    }
+    passengerFile.close();
 }
