@@ -1,6 +1,13 @@
 #include "Menu.h"
 
+#ifdef _WIN32
+#define CLEAR "cls"
+#else //In any other OS
+#define CLEAR "clear"
+#endif
+
 void main_menu(Airline &airline) {
+
     char option;
 
     while (true) {
@@ -338,6 +345,7 @@ void costumer_menu(Airline &airline) {
         std::cout << "|    [1] Seat Reservation           |" << std::endl;
         std::cout << "|    [2] Flights Schedule           |" << std::endl;
         std::cout << "|    [3] Transport Information      |" << std::endl;
+        std::cout << "|    [4] Check your Reservations    |" << std::endl;
         std::cout << "|    [0] Exit                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -353,6 +361,9 @@ void costumer_menu(Airline &airline) {
                 break;
             case '3':
                 select_airport_menu(airline);
+                break;
+            case '4':
+                airline.checkPassengerSeats();
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";

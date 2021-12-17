@@ -2,6 +2,8 @@
 1 Martin Johnson 5 2 1
 1 Julian King 6 3 0
 1 Melman Miller 7 4 0
+2 Melman Miller 5 4 0
+3 Melman Miller 6 4 0
 2 Skipper Forstman 1 5 1
 2 Rico Roberts 2 6 0
 2 Kowalski Smith 3 7 1

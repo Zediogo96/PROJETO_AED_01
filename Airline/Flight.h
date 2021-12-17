@@ -83,6 +83,8 @@ public:
     void printSeats();
 
     string board();
+
+    vector<Passenger> &getPassengersList();
 };
 
 #endif //PROJETO_FLIGHT_H

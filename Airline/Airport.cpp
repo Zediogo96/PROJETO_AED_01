@@ -2,7 +2,6 @@
 #include <utility>
 
 #include "Airport.h"
-#include "../Utility/utility.h"
 #include "Plane.h"
 
 Airport::Airport() : transportTree(Transport(type::BUS, -1, -1, -1, vector<Time>())) {}
@@ -18,7 +17,7 @@ const string& Airport::getName() {
     return name;
 }
 
-const int& Airport::getID() {
+const int& Airport::getID() const {
     return id;
 }
 
@@ -68,6 +67,7 @@ void Airport::showAvailables(type vehicle) const {
         it.advance();
     }
 }
+
 void Airport::showDistances(type vehicle) const {
     cout << "Distance from the airport: " << endl;
     BSTItrLevel<Transport> it(transportTree);
@@ -76,6 +76,7 @@ void Airport::showDistances(type vehicle) const {
         it.advance();
     }
 }
+
 void Airport::showSchedules(type vehicle) const {
     cout << "Available Schedules: " << endl;
     BSTItrLevel<Transport> it(transportTree);
@@ -112,7 +113,7 @@ void Airport::emptyConveyor() {
 }
 
 void Airport::fillPlane(Plane& plane) {
-    while(!baggageCart.getAmount() > 0) {
+    while(baggageCart.getAmount() > 0) {
         Baggage baggage = baggageCart.retrieveBaggage();
         plane.fill(baggage);
     }

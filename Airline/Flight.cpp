@@ -54,6 +54,10 @@ std::vector<Seat>& Flight::getSeatsAvailable() {
     return mSeatsAvailable;
 }
 
+std::vector<Passenger>& Flight::getPassengersList() {
+    return mPassengers;
+}
+
 void Flight::setDestAirport(Airport airport) {
     this->destAirport = std::move(airport);
 }

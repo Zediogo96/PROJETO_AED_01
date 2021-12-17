@@ -14,7 +14,7 @@ class Airport {
     BST<Transport> transportTree;
     std::string name;
     string city;
-    int id;
+    int id{};
     BaggageConveyor conveyor;
     BaggageCart baggageCart = BaggageCart(2);
 
@@ -30,7 +30,7 @@ public:
     Airport(int id, string name, string city);
 
     // GETTERS
-    const int& getID();
+    const int& getID() const;
     const std::string& getName();
     const std::string& getCity();
 

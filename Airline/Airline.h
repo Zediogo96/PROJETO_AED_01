@@ -135,8 +135,9 @@ public:
 
     void LoadPassengers();
 
-    void ReservedSeats(int flightID, string firstName, string lastName, int seatNum, int clientID, bool baggage);
+    void ReservedSeats(int flightID, const string& firstName, const string& lastName, int seatNum, int clientID, bool baggage);
 
+    void checkPassengerSeats();
 };
 
 #endif //PROJETO_AIRLINE_H

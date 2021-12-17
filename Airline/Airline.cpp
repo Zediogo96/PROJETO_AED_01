@@ -597,7 +597,7 @@ void Airline::reserveSeat() {
 
 /////////////////////////////// HANDLE PASSENGERS ////////////////////////////////////////////////
 
-void Airline::ReservedSeats(int flightID, string firstName, string lastName, int seatNum, int clientID, bool baggage) {
+void Airline::ReservedSeats(int flightID, const string& firstName, const string& lastName, int seatNum, int clientID, bool baggage) {
     Flight& flight = getFlightRef(flightID);
     Passenger passenger(firstName, lastName, clientID);
     passenger.SetSeatNumber(seatNum);
@@ -629,4 +629,20 @@ void Airline::LoadPassengers(){
         }
     }
     passengerFile.close();
+}
+
+void Airline::checkPassengerSeats() {
+
+    int passID;
+    InputInt(passID, "Enter your Client ID: ");
+
+    for (auto elem : flightsList) {
+        for (const auto& passenger : elem.getPassengersList()) {
+            if (passenger.GetPassengerID() == passID) {
+                cout << "{Flight ID: " << elem.getFlightID() << ", Name: " << passenger.GetPassengerFirstName()
+                << " " << passenger.GetPassengerLastName() << " , Seat Number: " << passenger.GetSeatNumber() << "}" << endl;
+            }
+        }
+    }
+
 }
