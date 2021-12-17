@@ -17,7 +17,7 @@
 #endif
 
 /**
- * Using Regular Expressions (Regex) to validate a number plate input
+ * Using Regular Expressions (Regex) to validate a Plane Type input
  * Example accepted formats: A340, B500, C731
  * @param string
  * @return boolean
@@ -29,6 +29,22 @@ static bool validatePlaneType(const std::string &s) {
     if (std::regex_match(s, validType))
         return true;
     std::cout << "Invalid type format, must be for example 'A750'." << std::endl;
+    return false;
+}
+
+/**
+ * Using Regular Expressions (Regex) to validate a Plane NumberPlate input
+ * Example accepted formats: CS5000, CS7010, AP8401
+ * @param string
+ * @return boolean
+ */
+static bool validatePlaneNumber(const std::string &s) {
+
+    static const std::regex validType("([A-Z]{2}([0-9]{4}))");
+
+    if (std::regex_match(s, validType))
+        return true;
+    std::cout << "Invalid Plate Number format, must be for example 'CS2010'." << std::endl;
     return false;
 }
 

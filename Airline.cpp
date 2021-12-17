@@ -8,7 +8,7 @@
 using namespace std;
 
 int Airline::getAirportCount() {
-    return airportList.size();
+    return (int) airportList.size();
 }
 
 Airport Airline::getAirport(int id) {
@@ -102,7 +102,9 @@ void Airline::addPlane() {
         InputStr(type, "Enter the type of this plane: ");
     } while (!validatePlaneType(type));
 
-    InputStr(numberPlate, "Enter the numberPlate of this plane: ");
+    do {
+        InputStr(numberPlate, "Enter the numberPlate of this plane: ");
+    } while (!validatePlaneNumber(numberPlate));
 
     InputInt(capacity, "Enter the capacity of this plane: ");
 

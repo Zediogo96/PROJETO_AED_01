@@ -66,8 +66,8 @@ public:
     }
 
     /**
-     * @brief: Converts this Date into a string format to be output
-     * @return string format of Date
+     * @brief: Converts this Time into a string format to be output
+     * @return string format of Time
      */
     std::string toString() const
     {
@@ -77,6 +77,7 @@ public:
         return oss.str();
     }
 
+    /** brief: overload of operator < to be used while comparing two given Times **/
     bool operator < (const Time &b) const {
         if (hours == b.hours) {
             return minutes < b.minutes;

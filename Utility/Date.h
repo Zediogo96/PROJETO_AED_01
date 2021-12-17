@@ -54,7 +54,7 @@ public:
 
     /**
      * Method to override .equals(), to compare if two object of Time class are equals
-     * @param otherTime
+     * @param Date object to compare
      * @return boolean
      */
     bool equals(Date &otherDate) const {
@@ -64,28 +64,24 @@ public:
         return false;
     }
 
-    void printDate() const {
-        std::cout << std::setw(4) << std::setfill('0') << year << "/"
-                  << std::setw(2) << std::setfill('0') << month << "/"
-                  << std::setw(2) << std::setfill('0') << day << std::endl;
-    }
-
     /**
     * Calculates today's Date based on current system, and updates current Date object with those values
     */
     void now() {
         // Current Date/Time based on current System
-        time_t now = time(0);
+        time_t now = time(nullptr);
 
         tm *ltm = localtime(&now);
 
         setYear(1900 + ltm->tm_year);
         setMonth(1 + ltm->tm_mon);
         setDay(ltm->tm_mday);
-
     }
 
-
+    /**
+     * @brief: Converts this Date into a string format to be output
+     * @return string format of Date
+     */
     std::string toString() const {
         std::ostringstream oss;
         oss << year << "/" << std::setfill('0') << std::setw(2) << month << "/"
@@ -93,6 +89,7 @@ public:
         return oss.str();
     }
 
+    /** brief: overload of operator < to be used while comparing two given Dates **/
     bool operator < (const Date &b) const {
         if (year == b.year) {
             if (month == b.month) {
@@ -102,8 +99,6 @@ public:
         }
         return year < b.year;
     }
-
-
 };
 
 #endif //PROJETO_DATE_H
