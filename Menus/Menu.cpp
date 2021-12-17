@@ -287,7 +287,6 @@ void transport_options(char vehicle, const Airport &airport){
                 system("pause");
         }
     }
-
 }
 
 void transport_menu(const Airport &airport){
@@ -326,7 +325,7 @@ void transport_menu(const Airport &airport){
 }
 
 void costumer_menu(Airline &airline) {
-    //Airport airport;// = airline.getAirport(select_airport_menu(airline));
+
     char option;
 
     while (true) {
@@ -344,7 +343,7 @@ void costumer_menu(Airline &airline) {
 
         std::cout << "Please input your choice: " << std::endl << std::flush;
         std::cin >> option;
-        int id;
+
         switch ((char) option) {
             case '1':
                 airline.reserveSeat();
@@ -354,7 +353,6 @@ void costumer_menu(Airline &airline) {
                 break;
             case '3':
                 select_airport_menu(airline);
-                //transport_menu(airline.getAirport(id));
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";

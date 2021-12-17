@@ -23,7 +23,6 @@ Flight::Flight(int planeID, int flightID, Date departureDate_, Time flightDurati
     }
 }
 
-
 int Flight::getPlaneID() const {
     return planeID;
 }
@@ -55,34 +54,6 @@ std::vector<Seat>& Flight::getSeatsAvailable() {
     return mSeatsAvailable;
 }
 
-void Flight::setFlightID(int flightID_) {
-    this->flightID = flightID_;
-}
-
-void Flight::setDepartureDate(Date date_) {
-    departureDate = date_;
-}
-
-void Flight::setFlightDuration(Time time_) {
-    flightDuration = time_;
-}
-
-void Flight::setDepartureLocation(std::string departureLocation_) {
-    departureLocation = std::move(departureLocation_);
-}
-
-void Flight::setDestination(std::string destination_) {
-    destination = std::move(destination_);
-}
-
-void Flight::setPlaneID(int planeID_) {
-    planeID = planeID_;
-}
-
-void Flight::setSeatsNumber(int seatsNum_) {
-    seatsNumber = seatsNum_;
-}
-
 void Flight::setDestAirport(Airport airport) {
     this->destAirport = std::move(airport);
 }
@@ -95,8 +66,8 @@ void Flight::printInfo() const {
     std::cout << "{Plane ID: " << getPlaneID() << " ,FlightID: " << getFlightID() << ", Departure Date: " <<
               getDepartureDate().toString() << ", Flight Duration: "
               << getFlightDuration().toString() << ", Departure Location: "
-              << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats: "
-              << getSeatsNumber() << "}" << std::endl;
+              << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats Available: "
+              << mSeatsAvailable.size() << "}" << std::endl;
 }
 
 void Flight::ReserveSeat(Passenger& passenger)
@@ -113,13 +84,13 @@ void Flight::ReserveSeat(Passenger& passenger)
 
 bool Flight::availableSeat(int num) {
 
-    for (auto & it : mPassengers) {
-        if (it.GetSeatNumber() == num) {
-            std::cout << "This Seat is Already Taken! \n";
-            return false;
+    for (auto &it : mSeatsAvailable) {
+        if (it.getSeatNum() == num && !it.isTaken()) {
+            return true;
         }
     }
-    return true;
+    std::cout << "This Seat is Already Taken! \n";
+    return false;
 }
 
 bool Flight::availableClientID(int num, const std::string& firstName, const std::string& lastName) {

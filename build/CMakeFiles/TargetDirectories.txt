@@ -1,4 +1,0 @@
-C:/Users/User/Desktop/PROJETO_AED_01/build/CMakeFiles/edit_cache.dir
-C:/Users/User/Desktop/PROJETO_AED_01/build/CMakeFiles/PROJETO.dir
-C:/Users/User/Desktop/PROJETO_AED_01/build/CMakeFiles/Doxygen.dir
-C:/Users/User/Desktop/PROJETO_AED_01/build/CMakeFiles/rebuild_cache.dir

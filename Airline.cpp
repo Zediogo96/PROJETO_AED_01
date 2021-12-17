@@ -8,17 +8,27 @@
 using namespace std;
 
 int Airline::getAirportCount() {
-    return (int) airportList.size();
+    return airportList.size();
 }
 
 Airport Airline::getAirport(int id) {
     Airport airport;
-    for (auto & i : airportList){
-        if (i.getID() == id){
+    for (auto & i : airportList) {
+        if (i.getID() == id) {
             return i;
         }
     }
     return airport;
+}
+
+bool Airline::airportExists(string &city) {
+    for (auto &i : airportList) {
+        if (i.getCity() == city) {
+            return true;
+        }
+    }
+    cout << "We do not have any Airport with that destination in our Airline." << endl;
+    return false;
 }
 
 Airport Airline::getAirport(const string& city_) {
@@ -30,6 +40,7 @@ Airport Airline::getAirport(const string& city_) {
 
     return airport;
 }
+
 void Airline::loadAirports() {
     int airportID;
     string airportName, city;
@@ -46,6 +57,7 @@ void Airline::loadAirports() {
     file.close();
 }
 
+/////////////////////////////// HANDLE PLANES ////////////////////////////////////////////////
 bool Airline::availablePlane(int planeID) {
 
     for (auto & it : planesList) {
@@ -218,7 +230,7 @@ void Airline::sortPlanes() {
     }
 }
 
-//////////////// HANDLE FLIGHTS //////////////
+/////////////////////////////// HANDLE FLIGHTS ////////////////////////////////////////////////
 
 bool Airline::availableFlight(int flightID) {
 
@@ -232,14 +244,15 @@ bool Airline::availableFlight(int flightID) {
 }
 
 void Airline::addFlight() {
+    if (flightsList.size() == maxNumOfFlights) {
 
-    Flight newFlight;
-
+    }
     int flightID, planeID;
     std::string departDate;
     std::string flightDuration;
     std::string departLocation;
     std::string destination;
+
     do  {
         InputInt(planeID, "Enter the planeID for this Flight:");
     } while (!PlaneExists(planeID));
@@ -256,27 +269,30 @@ void Airline::addFlight() {
         InputStr(flightDuration, "Enter the duration of this Flight: ");
     } while(!validateTime(flightDuration));
 
-    InputStr(departLocation, "Enter the Flight's Departure Location: ");
+    do {
+        InputStr(departLocation, "Enter the Flight's Departure Location: ");
+    } while (!airportExists(departLocation));
 
-    InputStr(destination, "Enter the Flight's Destination: ");
+    do {
+        InputStr(destination, "Enter the Flight's Destination: ");
+    } while (!airportExists(destination));
 
-    newFlight.setPlaneID(planeID);
-    newFlight.setFlightID(flightID);
-    newFlight.setDepartureDate(Date(std::stoi(departDate.substr(0,4)),
+    Date date (std::stoi(departDate.substr(0,4)),
                                     std::stoi(departDate.substr(5,6)),
-                                    std::stoi(departDate.substr(8,11))));
+                                    std::stoi(departDate.substr(8,11)));
 
-    newFlight.setFlightDuration(Time(std::stoi(flightDuration.substr(0,2)),
-                                     std::stoi(flightDuration.substr(3,4))));
-
-    newFlight.setDepartureLocation(departLocation);
-    newFlight.setDestination(destination);
+    Time time(std::stoi(flightDuration.substr(0,2)),
+                                     std::stoi(flightDuration.substr(3,4)));
 
     int numSeats = getPlaneRef(planeID)->getCapacity();
-    newFlight.setSeatsNumber(numSeats);
 
+    Flight flight(planeID, flightID, date,
+                  time, departLocation, destination, numSeats);
 
-    flightsList.emplace_back(newFlight);
+    flight.setOriginAirport(getAirport(departLocation));
+    flight.setDestAirport(getAirport(destination));
+
+    flightsList.emplace_back(flight);
 }
 
 void Airline::deleteFlight() {
@@ -294,7 +310,49 @@ void Airline::deleteFlight() {
     std::cout << "Flight was not found in our database. \n";
 }
 
+void Airline::sortFlights() {
+
+    std::cin.clear();
+    std::cin.ignore(10000, '\n');
+    char userInput;
+
+    std::cout << "Please select the parameter you wish to sort the planes by: " << std::endl;
+    std::cout << "[1] FlightID" << std::endl;
+    std::cout << "[2] Departure Date" << std::endl;
+    std::cout << "[3] Flight Duration" << std::endl;
+    std::cout << "[4] Available Seats" << std::endl;
+
+    std::cin >> userInput;
+
+    switch(userInput) {
+        case '1':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getFlightID() < b.getFlightID();
+            });
+            break;
+        case '2':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getDepartureDate() < b.getDepartureDate();
+            });
+            break;
+        case '3':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getFlightDuration() < b.getFlightDuration();
+            });
+            break;
+        case '4':
+            std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
+                return a.getSeatsAvailable().size() < b.getSeatsAvailable().size();
+            });
+            break;
+        default: std::cout << "Invalid Input." << std::endl;
+    }
+}
+
 void Airline::printAllFlights() {
+
+    sortFlights();
+
     for (const auto& it : flightsList) {
         it.printInfo();
     }
@@ -478,6 +536,7 @@ void Airline::LoadServices() {
 }
 
 void Airline::reserveSeat() {
+
     int chosenSeat, numberOfSeats, flightID;
     std::string firstName;
     std::string lastName;
@@ -531,6 +590,7 @@ void Airline::reserveSeat() {
     std::cout << "|                                              |" << std::endl;
     std::cout << "|   Your Seats were successfully reserved!     |" << std::endl;
     std::cout << "________________________________________________" << std::endl;
+
 }
 
 /////////////////////////////// HANDLE PASSENGERS ////////////////////////////////////////////////
