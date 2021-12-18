@@ -79,38 +79,37 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="_passenger_8h.html">Passenger.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_seat.html">   12</a></span><span class="keyword">class </span><a class="code hl_class" href="class_seat.html">Seat</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">int</span> seatNum;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keywordtype">int</span> occupied;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">   17</a></span>    <a class="code hl_function" href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">Seat</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">   18</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">Seat</a>(<span class="keywordtype">int</span> num) {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        this-&gt;seatNum = num;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        occupied = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    }</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">   22</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">isTaken</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> occupied;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">   25</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">setTaken</a>() {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        occupied = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_seat.html#aee101743df23424dce8f235c475eb9e4">   28</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_seat.html#aee101743df23424dce8f235c475eb9e4">getSeatNum</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keywordflow">return</span> seatNum;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_SEAT_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_seat.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="class_seat.html">Seat</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">int</span> seatNum;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> occupied;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">   24</a></span>    <a class="code hl_function" href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">Seat</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">   30</a></span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">Seat</a>(<span class="keywordtype">int</span> num) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        this-&gt;seatNum = num;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        occupied = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">   39</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">isTaken</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> occupied;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">   46</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">setTaken</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        occupied = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_seat.html#aee101743df23424dce8f235c475eb9e4">   54</a></span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_seat.html#aee101743df23424dce8f235c475eb9e4">getSeatNum</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keywordflow">return</span> seatNum;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_SEAT_H</span></div>
 <div class="ttc" id="a_passenger_8h_html"><div class="ttname"><a href="_passenger_8h.html">Passenger.h</a></div></div>
-<div class="ttc" id="aclass_seat_html"><div class="ttname"><a href="class_seat.html">Seat</a></div><div class="ttdef"><b>Definition:</b> Seat.h:12</div></div>
-<div class="ttc" id="aclass_seat_html_a5c028099e4ffdfe4bf46517033d977e5"><div class="ttname"><a href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">Seat::isTaken</a></div><div class="ttdeci">bool isTaken() const</div><div class="ttdef"><b>Definition:</b> Seat.h:22</div></div>
-<div class="ttc" id="aclass_seat_html_a6ba60a564b79dafd6f8660f35689165d"><div class="ttname"><a href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">Seat::Seat</a></div><div class="ttdeci">Seat(int num)</div><div class="ttdef"><b>Definition:</b> Seat.h:18</div></div>
-<div class="ttc" id="aclass_seat_html_a7b57a7bc23522658935e388ee9aae075"><div class="ttname"><a href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">Seat::setTaken</a></div><div class="ttdeci">void setTaken()</div><div class="ttdef"><b>Definition:</b> Seat.h:25</div></div>
-<div class="ttc" id="aclass_seat_html_a7b933ae51d6c55b3565701835a3553ae"><div class="ttname"><a href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">Seat::Seat</a></div><div class="ttdeci">Seat()=default</div></div>
-<div class="ttc" id="aclass_seat_html_aee101743df23424dce8f235c475eb9e4"><div class="ttname"><a href="class_seat.html#aee101743df23424dce8f235c475eb9e4">Seat::getSeatNum</a></div><div class="ttdeci">int getSeatNum() const</div><div class="ttdef"><b>Definition:</b> Seat.h:28</div></div>
+<div class="ttc" id="aclass_seat_html"><div class="ttname"><a href="class_seat.html">Seat</a></div><div class="ttdoc">Class handling seats.</div><div class="ttdef"><b>Definition:</b> Seat.h:15</div></div>
+<div class="ttc" id="aclass_seat_html_a5c028099e4ffdfe4bf46517033d977e5"><div class="ttname"><a href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">Seat::isTaken</a></div><div class="ttdeci">bool isTaken() const</div><div class="ttdoc">Method for checking if seat is already occupied.</div><div class="ttdef"><b>Definition:</b> Seat.h:39</div></div>
+<div class="ttc" id="aclass_seat_html_a6ba60a564b79dafd6f8660f35689165d"><div class="ttname"><a href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">Seat::Seat</a></div><div class="ttdeci">Seat(int num)</div><div class="ttdoc">Construct a new Seat object specifying a seat number.</div><div class="ttdef"><b>Definition:</b> Seat.h:30</div></div>
+<div class="ttc" id="aclass_seat_html_a7b57a7bc23522658935e388ee9aae075"><div class="ttname"><a href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">Seat::setTaken</a></div><div class="ttdeci">void setTaken()</div><div class="ttdoc">Set 'occupied' to true.</div><div class="ttdef"><b>Definition:</b> Seat.h:46</div></div>
+<div class="ttc" id="aclass_seat_html_a7b933ae51d6c55b3565701835a3553ae"><div class="ttname"><a href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">Seat::Seat</a></div><div class="ttdeci">Seat()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="aclass_seat_html_aee101743df23424dce8f235c475eb9e4"><div class="ttname"><a href="class_seat.html#aee101743df23424dce8f235c475eb9e4">Seat::getSeatNum</a></div><div class="ttdeci">int getSeatNum() const</div><div class="ttdoc">Returns the seat number stored in 'seatNum'.</div><div class="ttdef"><b>Definition:</b> Seat.h:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -19,7 +19,7 @@ var searchData=
   ['airportexists_16',['airportExists',['../class_airline.html#a5074bdd84916933c77f00e23ec0a0026',1,'Airline']]],
   ['architecture_5fid_17',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['availableclientid_18',['availableClientID',['../class_flight.html#a9f1137b41f0800c6e9e5e10eaef9c410',1,'Flight']]],
-  ['availableflight_19',['availableFlight',['../class_airline.html#a13d5db4e84a88e46a0a0e6ff50142920',1,'Airline']]],
-  ['availableplane_20',['availablePlane',['../class_airline.html#a9e396f0c59c41bc37a9973853779adaf',1,'Airline']]],
-  ['availableseat_21',['availableSeat',['../class_flight.html#aed56c16ebfb5115c9900b1da3c509692',1,'Flight']]]
+  ['availableplane_19',['availablePlane',['../class_airline.html#a9e396f0c59c41bc37a9973853779adaf',1,'Airline']]],
+  ['availableseat_20',['availableSeat',['../class_flight.html#aed56c16ebfb5115c9900b1da3c509692',1,'Flight']]],
+  ['avaliableflight_21',['avaliableFlight',['../class_airline.html#ab8f6a58100b7b77d56f0d43142b8e65b',1,'Airline']]]
 ];

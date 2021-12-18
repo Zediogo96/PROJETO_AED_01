@@ -235,7 +235,7 @@ void Airline::sortPlanes() {
 
 /////////////////////////////// HANDLE FLIGHTS ////////////////////////////////////////////////
 
-bool Airline::availableFlight(int flightID) {
+bool Airline::avaliableFlight(int flightID) {
 
     for (auto & it : flightsList) {
         if (it.getFlightID() == flightID) {
@@ -262,7 +262,7 @@ void Airline::addFlight() {
 
     do {
         InputInt(flightID, "Enter the flightID for this Flight: ");
-    } while (!availableFlight(flightID));
+    } while (!avaliableFlight(flightID));
 
     do {
         InputStr(departDate, "Enter the Departure Date for this Flight: ");
@@ -323,7 +323,7 @@ void Airline::sortFlights() {
     std::cout << "[1] FlightID" << std::endl;
     std::cout << "[2] Departure Date" << std::endl;
     std::cout << "[3] Flight Duration" << std::endl;
-    std::cout << "[4] Available Seats" << std::endl;
+    std::cout << "[4] Avaliable Seats" << std::endl;
 
     std::cin >> userInput;
 

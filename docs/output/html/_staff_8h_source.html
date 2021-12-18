@@ -82,33 +82,30 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">using namespace </span>std;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="class_staff.html">   14</a></span><span class="keyword">class </span><a class="code hl_class" href="class_staff.html">Staff</a> {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::string firstName;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    std::string lastName;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_staff.html#adce0b2141d13105529e6295526a54576">   21</a></span>    <a class="code hl_function" href="class_staff.html#adce0b2141d13105529e6295526a54576">Staff</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="class_staff.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="class_staff.html">Staff</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::string firstName;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    std::string lastName;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">   23</a></span>    <a class="code hl_function" href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">Staff</a>(<span class="keywordtype">string</span> &amp;firstName, <span class="keywordtype">string</span> &amp;lastName) {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        this-&gt;firstName = firstName;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        this-&gt;lastName = lastName;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_staff.html#a00fca4c576038184128dc8effef438d8">   28</a></span>    std::string <a class="code hl_function" href="class_staff.html#a00fca4c576038184128dc8effef438d8">toString</a>() {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        std::ostringstream oss;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        oss &lt;&lt; firstName &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lastName;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_STAFF_H</span></div>
-<div class="ttc" id="aclass_staff_html"><div class="ttname"><a href="class_staff.html">Staff</a></div><div class="ttdef"><b>Definition:</b> Staff.h:14</div></div>
-<div class="ttc" id="aclass_staff_html_a00fca4c576038184128dc8effef438d8"><div class="ttname"><a href="class_staff.html#a00fca4c576038184128dc8effef438d8">Staff::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdef"><b>Definition:</b> Staff.h:28</div></div>
-<div class="ttc" id="aclass_staff_html_ad40d91d7d6cd7799ac39113677d2502d"><div class="ttname"><a href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">Staff::Staff</a></div><div class="ttdeci">Staff(string &amp;firstName, string &amp;lastName)</div><div class="ttdef"><b>Definition:</b> Staff.h:23</div></div>
-<div class="ttc" id="aclass_staff_html_adce0b2141d13105529e6295526a54576"><div class="ttname"><a href="class_staff.html#adce0b2141d13105529e6295526a54576">Staff::Staff</a></div><div class="ttdeci">Staff()=default</div></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_staff.html#adce0b2141d13105529e6295526a54576">   28</a></span>    <a class="code hl_function" href="class_staff.html#adce0b2141d13105529e6295526a54576">Staff</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">   35</a></span>    <a class="code hl_function" href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">Staff</a>(<span class="keywordtype">string</span> &amp;firstName, <span class="keywordtype">string</span> &amp;lastName) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        this-&gt;firstName = firstName;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        this-&gt;lastName = lastName;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_staff.html#a00fca4c576038184128dc8effef438d8">   44</a></span>    std::string <a class="code hl_function" href="class_staff.html#a00fca4c576038184128dc8effef438d8">toString</a>() {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        std::ostringstream oss;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        oss &lt;&lt; firstName &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; lastName;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">//PROJETO_STAFF_H</span></div>
+<div class="ttc" id="aclass_staff_html"><div class="ttname"><a href="class_staff.html">Staff</a></div><div class="ttdoc">Class handling staff responsible for performing services.</div><div class="ttdef"><b>Definition:</b> Staff.h:18</div></div>
+<div class="ttc" id="aclass_staff_html_a00fca4c576038184128dc8effef438d8"><div class="ttname"><a href="class_staff.html#a00fca4c576038184128dc8effef438d8">Staff::toString</a></div><div class="ttdeci">std::string toString()</div><div class="ttdoc">Returns the first and last name of the staff as a custom formatted string.</div><div class="ttdef"><b>Definition:</b> Staff.h:44</div></div>
+<div class="ttc" id="aclass_staff_html_ad40d91d7d6cd7799ac39113677d2502d"><div class="ttname"><a href="class_staff.html#ad40d91d7d6cd7799ac39113677d2502d">Staff::Staff</a></div><div class="ttdeci">Staff(string &amp;firstName, string &amp;lastName)</div><div class="ttdoc">Constructs a new Staff object with a first and last name.</div><div class="ttdef"><b>Definition:</b> Staff.h:35</div></div>
+<div class="ttc" id="aclass_staff_html_adce0b2141d13105529e6295526a54576"><div class="ttname"><a href="class_staff.html#adce0b2141d13105529e6295526a54576">Staff::Staff</a></div><div class="ttdeci">Staff()=default</div><div class="ttdoc">Default constructor.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

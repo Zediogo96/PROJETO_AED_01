@@ -69,22 +69,32 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling seats.  
+ <a href="class_seat.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_seat_8h_source.html">Seat.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b933ae51d6c55b3565701835a3553ae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">Seat</a> ()=default</td></tr>
+<tr class="memdesc:a7b933ae51d6c55b3565701835a3553ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="class_seat.html#a7b933ae51d6c55b3565701835a3553ae">More...</a><br /></td></tr>
 <tr class="separator:a7b933ae51d6c55b3565701835a3553ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ba60a564b79dafd6f8660f35689165d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">Seat</a> (int num)</td></tr>
+<tr class="memdesc:a6ba60a564b79dafd6f8660f35689165d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> object specifying a seat number.  <a href="class_seat.html#a6ba60a564b79dafd6f8660f35689165d">More...</a><br /></td></tr>
 <tr class="separator:a6ba60a564b79dafd6f8660f35689165d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c028099e4ffdfe4bf46517033d977e5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">isTaken</a> () const</td></tr>
+<tr class="memdesc:a5c028099e4ffdfe4bf46517033d977e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method for checking if seat is already occupied.  <a href="class_seat.html#a5c028099e4ffdfe4bf46517033d977e5">More...</a><br /></td></tr>
 <tr class="separator:a5c028099e4ffdfe4bf46517033d977e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b57a7bc23522658935e388ee9aae075"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">setTaken</a> ()</td></tr>
+<tr class="memdesc:a7b57a7bc23522658935e388ee9aae075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set 'occupied' to true.  <a href="class_seat.html#a7b57a7bc23522658935e388ee9aae075">More...</a><br /></td></tr>
 <tr class="separator:a7b57a7bc23522658935e388ee9aae075"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee101743df23424dce8f235c475eb9e4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_seat.html#aee101743df23424dce8f235c475eb9e4">getSeatNum</a> () const</td></tr>
+<tr class="memdesc:aee101743df23424dce8f235c475eb9e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the seat number stored in 'seatNum'.  <a href="class_seat.html#aee101743df23424dce8f235c475eb9e4">More...</a><br /></td></tr>
 <tr class="separator:aee101743df23424dce8f235c475eb9e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling seats. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7b933ae51d6c55b3565701835a3553ae" name="a7b933ae51d6c55b3565701835a3553ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b933ae51d6c55b3565701835a3553ae">&#9670;&nbsp;</a></span>Seat() <span class="overload">[1/2]</span></h2>
 
@@ -107,6 +117,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Default constructor. </p>
 
 </div>
 </div>
@@ -134,6 +146,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> object specifying a seat number. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>-&gt; seat number </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -160,6 +180,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Returns the seat number stored in 'seatNum'. </p>
+<dl class="section return"><dt>Returns</dt><dd>int -&gt; seat number </dd></dl>
+
 </div>
 </div>
 <a id="a5c028099e4ffdfe4bf46517033d977e5" name="a5c028099e4ffdfe4bf46517033d977e5"></a>
@@ -185,6 +208,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Method for checking if seat is already occupied. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool -&gt; occupied </dd></dl>
+
 </div>
 </div>
 <a id="a7b57a7bc23522658935e388ee9aae075" name="a7b57a7bc23522658935e388ee9aae075"></a>
@@ -209,6 +235,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set 'occupied' to true. </p>
 
 </div>
 </div>
