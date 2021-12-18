@@ -17,7 +17,7 @@ void main_menu(Airline &airline) {
         std::cout << "|             MAIN MENU             |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;
-        std::cout << "|    [1] Airport Management         |" << std::endl;
+        std::cout << "|    [1] Airline Management         |" << std::endl;
         std::cout << "|    [2] Costumer                   |" << std::endl;
         std::cout << "|    [0] Exit                       |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
