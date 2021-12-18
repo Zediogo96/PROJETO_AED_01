@@ -230,9 +230,11 @@ void services_menu(Airline &airline) {
                 airline.checkService();
                 break;
             case '3':
+                cout << "Services Due: " << endl;
                 airline.printAllServicesDue();
                 break;
             case '4':
+                cout << "Services Completed: " << endl;
                 airline.printAllServicesHistory();
                 break;
             case '5':
