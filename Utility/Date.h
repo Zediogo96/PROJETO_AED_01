@@ -10,7 +10,6 @@
 
 /**
  * @brief Date class for storing and comparing date type values
- * 
  */
 class Date {
 private:
@@ -83,7 +82,7 @@ public:
     }
 
     /**
-     * @brief: Converts this Date into a string format to be output
+     * @brief Converts this Date into a string format to be output
      * @return string format of Date
      */
     std::string toString() const {
@@ -93,7 +92,7 @@ public:
         return oss.str();
     }
 
-    /** @brief: overload of operator < to be used while comparing two given Dates **/
+    /** @brief overload of operator < to be used while comparing two given Dates **/
     bool operator < (const Date &b) const {
         if (year == b.year) {
             if (month == b.month) {

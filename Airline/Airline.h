@@ -205,7 +205,7 @@ public:
      */
     void printAllFlights();
 
-    /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
+    /////////////////////////////////// HANDLE SERVICES ///////////////////////////////////////
 
     /**
      * @brief Adds a new service with specified user input data
@@ -270,6 +270,8 @@ public:
      * 
      */
     void checkPassengerSeats();
+
+    void saveServices();
 };
 
 #endif //PROJETO_AIRLINE_H

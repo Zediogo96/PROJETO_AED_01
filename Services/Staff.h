@@ -16,6 +16,7 @@ using namespace std;
  * 
  */
 class Staff {
+
 private:
     std::string firstName;
     std::string lastName;
