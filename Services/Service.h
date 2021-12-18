@@ -8,7 +8,10 @@
 #include "../Utility/Date.h"
 #include "Staff.h"
 
-/** brief: Abstract Class for the different types of services **/
+/**
+ * @brief Abstract superclass outlining basic service functionality and information
+ * 
+ */
 class Service {
 
 protected:
@@ -19,37 +22,41 @@ protected:
 public:
 
     /**
-     * Method that returns the planeID to which the Service refers to
+     * @brief Method that returns the planeID to which the Service refers to
      * @return int (foreign key)
      */
     virtual int getPlaneID();
 
     /**
-     * Method to use after checking if the Service is already complete, sets the Date of completion of Service
+     * @brief Method to use after checking if the Service is already complete, sets the Date of completion of Service
      * (using date.now())
      * @param date
      */
     virtual void setComplete(Date &date);
 
     /**
-     * Returns the Date in which the Service was completed
+     * @brief Returns the Date in which the Service was completed
      * @return Date
      */
     Date getDateCompleted();
 
     /**
-     * Returns the Staff responsible for the Service
+     * @brief Returns the Staff responsible for the Service
      * @return Staff
      */
     Staff getResponsible();
 
-    /** brief: Body for pure virtual method **/
+    /** @brief: Body for pure virtual method **/
     virtual bool check() = 0;
 
-    /** brief: Body for pure virtual method **/
+    /** @brief: Body for pure virtual method **/
     virtual string printType() = 0;
 };
 
+/**
+ * @brief Subclass for the services related to cleaning
+ * 
+ */
 class Cleaning : public Service {
 
 private:
@@ -60,21 +67,24 @@ private:
 public:
 
     /**
-     * Constructor for Cleaning class, derived from Service
+     * @brief Constructor for Cleaning class, derived from Service
      * @param planeID
      * @param staff
      */
     Cleaning(int planeID, Staff &staff);
-    /** brief: default destructor **/
+    /** @brief: default destructor **/
     ~Cleaning() = default;
-    /** brief: Overriden method from service, to use when we want to complete a service **/
+    /** @brief: Overriden method from service, to use when we want to complete a service **/
     bool check() override;
-    /** brief: Just for convenience in outputting Service this type **/
+    /** @brief: Just for convenience in outputting Service this type **/
     string printType() override {
         return "Cleaning";
     }
 };
-
+/**
+ * @brief Subclass for services related to maintenance
+ * 
+ */
 class Maintenance : public Service {
 
 private:
@@ -83,16 +93,16 @@ private:
     bool emergencyDoors = false;
 public:
     /**
-     * Constructor for Maintenace class, derived from service
+     * @brief Constructor for Maintenace class, derived from service
      * @param planeID
      * @param staff
      */
     Maintenance(int planeID, Staff &staff);
-    /** brief: default destructor **/
+    /** @brief: default destructor **/
     ~Maintenance() = default;
-    /** brief: Overriden method from service, to use when we want to complete a service **/
+    /** @brief: Overriden method from service, to use when we want to complete a service **/
     bool check() override;
-    /** brief: Just for convenience in outputting Service of this type **/
+    /** @brief: Just for convenience in outputting Service of this type **/
     string printType() override {
         return "Maintenance";
     }

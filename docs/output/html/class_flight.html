@@ -69,54 +69,80 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling flights. Stores information regarding airports connected by the flight, plane's id associated with the flight, passengers who booked the flight and seats availiable.  
+ <a href="class_flight.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_flight_8h_source.html">Flight.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acbf1e8c321e01e04db2fe651a08b30af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#acbf1e8c321e01e04db2fe651a08b30af">Flight</a> ()</td></tr>
+<tr class="memdesc:acbf1e8c321e01e04db2fe651a08b30af"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Default constructor  <a href="class_flight.html#acbf1e8c321e01e04db2fe651a08b30af">More...</a><br /></td></tr>
 <tr class="separator:acbf1e8c321e01e04db2fe651a08b30af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e7a915b27d752effc82bd749fbf0371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a9e7a915b27d752effc82bd749fbf0371">Flight</a> (int planeAssigned, int numberOfFlight_, <a class="el" href="class_date.html">Date</a> departureDate_, <a class="el" href="class_time.html">Time</a> flightDuration_, std::string departureLocation_, std::string destination_, int seatsNum)</td></tr>
+<tr class="memdesc:a9e7a915b27d752effc82bd749fbf0371"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Constructor for <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a> Class  <a href="class_flight.html#a9e7a915b27d752effc82bd749fbf0371">More...</a><br /></td></tr>
 <tr class="separator:a9e7a915b27d752effc82bd749fbf0371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7a92ba296f861d4ba78db354c199836"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#ac7a92ba296f861d4ba78db354c199836">getPlaneID</a> () const</td></tr>
+<tr class="memdesc:ac7a92ba296f861d4ba78db354c199836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the plane's id associated with the flight.  <a href="class_flight.html#ac7a92ba296f861d4ba78db354c199836">More...</a><br /></td></tr>
 <tr class="separator:ac7a92ba296f861d4ba78db354c199836"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5cf3a213bc8e5621432ccdc85a90643"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#aa5cf3a213bc8e5621432ccdc85a90643">getFlightID</a> () const</td></tr>
+<tr class="memdesc:aa5cf3a213bc8e5621432ccdc85a90643"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the flight's unique identifier.  <a href="class_flight.html#aa5cf3a213bc8e5621432ccdc85a90643">More...</a><br /></td></tr>
 <tr class="separator:aa5cf3a213bc8e5621432ccdc85a90643"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e7f539121bbe8021bb09e53dc7c8474"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_date.html">Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a9e7f539121bbe8021bb09e53dc7c8474">getDepartureDate</a> () const</td></tr>
+<tr class="memdesc:a9e7f539121bbe8021bb09e53dc7c8474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the date of departure of the flight.  <a href="class_flight.html#a9e7f539121bbe8021bb09e53dc7c8474">More...</a><br /></td></tr>
 <tr class="separator:a9e7f539121bbe8021bb09e53dc7c8474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b7ec1404eb850e4f41ad12240e4593b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_time.html">Time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a1b7ec1404eb850e4f41ad12240e4593b">getFlightDuration</a> () const</td></tr>
+<tr class="memdesc:a1b7ec1404eb850e4f41ad12240e4593b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the duration of the flight.  <a href="class_flight.html#a1b7ec1404eb850e4f41ad12240e4593b">More...</a><br /></td></tr>
 <tr class="separator:a1b7ec1404eb850e4f41ad12240e4593b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1000b986b217f595e4bf5bf1d22fbfe9"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a1000b986b217f595e4bf5bf1d22fbfe9">getDepartureLocation</a> () const</td></tr>
+<tr class="memdesc:a1000b986b217f595e4bf5bf1d22fbfe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the departure location of the flight.  <a href="class_flight.html#a1000b986b217f595e4bf5bf1d22fbfe9">More...</a><br /></td></tr>
 <tr class="separator:a1000b986b217f595e4bf5bf1d22fbfe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796784349325e703d6989344d7ad025b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a796784349325e703d6989344d7ad025b">getDestination</a> () const</td></tr>
+<tr class="memdesc:a796784349325e703d6989344d7ad025b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the destination location of the light.  <a href="class_flight.html#a796784349325e703d6989344d7ad025b">More...</a><br /></td></tr>
 <tr class="separator:a796784349325e703d6989344d7ad025b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28193cf62fd89241089989dab4bfbe9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a28193cf62fd89241089989dab4bfbe9c">getSeatsNumber</a> () const</td></tr>
+<tr class="memdesc:a28193cf62fd89241089989dab4bfbe9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the numbers of the seats allocated to the flight.  <a href="class_flight.html#a28193cf62fd89241089989dab4bfbe9c">More...</a><br /></td></tr>
 <tr class="separator:a28193cf62fd89241089989dab4bfbe9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a933386e91cbda0b38aa2ed9a0f4bc71b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_airport.html">Airport</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a933386e91cbda0b38aa2ed9a0f4bc71b">getOriginAirport</a> ()</td></tr>
+<tr class="memdesc:a933386e91cbda0b38aa2ed9a0f4bc71b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the airport of origin of the flight.  <a href="class_flight.html#a933386e91cbda0b38aa2ed9a0f4bc71b">More...</a><br /></td></tr>
 <tr class="separator:a933386e91cbda0b38aa2ed9a0f4bc71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8928a219385d3379dbba044ff5d89fac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_airport.html">Airport</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a8928a219385d3379dbba044ff5d89fac">getDestAirport</a> ()</td></tr>
+<tr class="memdesc:a8928a219385d3379dbba044ff5d89fac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the airport of destination of the flight.  <a href="class_flight.html#a8928a219385d3379dbba044ff5d89fac">More...</a><br /></td></tr>
 <tr class="separator:a8928a219385d3379dbba044ff5d89fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e33d0147c1c4fd89bef9a78a7970f69"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_seat.html">Seat</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a4e33d0147c1c4fd89bef9a78a7970f69">getSeatsAvailable</a> ()</td></tr>
+<tr class="memdesc:a4e33d0147c1c4fd89bef9a78a7970f69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the seats still avaliable in the flight.  <a href="class_flight.html#a4e33d0147c1c4fd89bef9a78a7970f69">More...</a><br /></td></tr>
 <tr class="separator:a4e33d0147c1c4fd89bef9a78a7970f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf8f5f0031009ca30205c6a184db5fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#aaf8f5f0031009ca30205c6a184db5fef">setOriginAirport</a> (<a class="el" href="class_airport.html">Airport</a> airport)</td></tr>
+<tr class="memdesc:aaf8f5f0031009ca30205c6a184db5fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Origin <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> according to the departure city of the flight.  <a href="class_flight.html#aaf8f5f0031009ca30205c6a184db5fef">More...</a><br /></td></tr>
 <tr class="separator:aaf8f5f0031009ca30205c6a184db5fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cc6f8f22d2e1003dce03efeaccef604"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a6cc6f8f22d2e1003dce03efeaccef604">setDestAirport</a> (<a class="el" href="class_airport.html">Airport</a> airport)</td></tr>
+<tr class="memdesc:a6cc6f8f22d2e1003dce03efeaccef604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the Destination <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> according to the destination city of the flight.  <a href="class_flight.html#a6cc6f8f22d2e1003dce03efeaccef604">More...</a><br /></td></tr>
 <tr class="separator:a6cc6f8f22d2e1003dce03efeaccef604"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42f0d455e1a88bf4241a4b59ae85339f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a42f0d455e1a88bf4241a4b59ae85339f">printInfo</a> () const</td></tr>
+<tr class="memdesc:a42f0d455e1a88bf4241a4b59ae85339f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the info about this specific <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a>.  <a href="class_flight.html#a42f0d455e1a88bf4241a4b59ae85339f">More...</a><br /></td></tr>
 <tr class="separator:a42f0d455e1a88bf4241a4b59ae85339f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a875890840a6cedf0893e9c958b2afd3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a875890840a6cedf0893e9c958b2afd3f">ReserveSeat</a> (<a class="el" href="class_passenger.html">Passenger</a> &amp;passenger)</td></tr>
+<tr class="memdesc:a875890840a6cedf0893e9c958b2afd3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">reserves a <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> for the <a class="el" href="class_passenger.html" title="Class handling passengers and all data related to them.">Passenger</a>, and updates the <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> in the <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a> to occupied.  <a href="class_flight.html#a875890840a6cedf0893e9c958b2afd3f">More...</a><br /></td></tr>
 <tr class="separator:a875890840a6cedf0893e9c958b2afd3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed56c16ebfb5115c9900b1da3c509692"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#aed56c16ebfb5115c9900b1da3c509692">availableSeat</a> (int num)</td></tr>
+<tr class="memdesc:aed56c16ebfb5115c9900b1da3c509692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> a User is trying to choose is already taken or not.  <a href="class_flight.html#aed56c16ebfb5115c9900b1da3c509692">More...</a><br /></td></tr>
 <tr class="separator:aed56c16ebfb5115c9900b1da3c509692"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f1137b41f0800c6e9e5e10eaef9c410"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a9f1137b41f0800c6e9e5e10eaef9c410">availableClientID</a> (int num, const std::string &amp;firstName, const std::string &amp;lastName)</td></tr>
+<tr class="memdesc:a9f1137b41f0800c6e9e5e10eaef9c410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the clientID belongs to another person, and also if the user with this clientID already has a reserved <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> to this flight, notyfing him.  <a href="class_flight.html#a9f1137b41f0800c6e9e5e10eaef9c410">More...</a><br /></td></tr>
 <tr class="separator:a9f1137b41f0800c6e9e5e10eaef9c410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af479570dca3e03463a5ae354b29f934d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#af479570dca3e03463a5ae354b29f934d">printSeats</a> ()</td></tr>
+<tr class="memdesc:af479570dca3e03463a5ae354b29f934d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to print all the available seats in this flight.  <a href="class_flight.html#af479570dca3e03463a5ae354b29f934d">More...</a><br /></td></tr>
 <tr class="separator:af479570dca3e03463a5ae354b29f934d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73e0a20ea37b14f88ccee2a13a74d065"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a73e0a20ea37b14f88ccee2a13a74d065">board</a> ()</td></tr>
+<tr class="memdesc:a73e0a20ea37b14f88ccee2a13a74d065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boards the passengers belonging to the flight.  <a href="class_flight.html#a73e0a20ea37b14f88ccee2a13a74d065">More...</a><br /></td></tr>
 <tr class="separator:a73e0a20ea37b14f88ccee2a13a74d065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eda91f276b9451e2f894b06a7299264"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_passenger.html">Passenger</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_flight.html#a2eda91f276b9451e2f894b06a7299264">getPassengersList</a> ()</td></tr>
+<tr class="memdesc:a2eda91f276b9451e2f894b06a7299264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the passengers belonging to the flight.  <a href="class_flight.html#a2eda91f276b9451e2f894b06a7299264">More...</a><br /></td></tr>
 <tr class="separator:a2eda91f276b9451e2f894b06a7299264"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling flights. Stores information regarding airports connected by the flight, plane's id associated with the flight, passengers who booked the flight and seats availiable. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acbf1e8c321e01e04db2fe651a08b30af" name="acbf1e8c321e01e04db2fe651a08b30af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbf1e8c321e01e04db2fe651a08b30af">&#9670;&nbsp;</a></span>Flight() <span class="overload">[1/2]</span></h2>
 
@@ -139,7 +165,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >brief: Default constructor </p>
+
+<p>: Default constructor </p>
 
 </div>
 </div>
@@ -198,7 +225,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: Constructor for <a class="el" href="class_flight.html">Flight</a> Class </p>
+
+<p>: Constructor for <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a> Class </p>
 
 </div>
 </div>
@@ -234,7 +262,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Check if the clientID belongs to another person, and also if the user with this clientID already has a reserved <a class="el" href="class_seat.html">Seat</a> to this flight, notyfing him </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Check if the clientID belongs to another person, and also if the user with this clientID already has a reserved <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> to this flight, notyfing him. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td></td></tr>
     <tr><td class="paramname">firstName</td><td></td></tr>
@@ -261,7 +291,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Checks if the <a class="el" href="class_seat.html">Seat</a> a User is trying to choose is already taken or not </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Checks if the <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> a User is trying to choose is already taken or not. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">num</td><td></td></tr>
   </table>
@@ -286,6 +318,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Boards the passengers belonging to the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
+
 </div>
 </div>
 <a id="a9e7f539121bbe8021bb09e53dc7c8474" name="a9e7f539121bbe8021bb09e53dc7c8474"></a>
@@ -302,6 +337,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the date of departure of the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_date.html" title="Date class for storing and comparing date type values.">Date</a> </dd></dl>
 
 </div>
 </div>
@@ -320,6 +358,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the departure location of the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
+
 </div>
 </div>
 <a id="a8928a219385d3379dbba044ff5d89fac" name="a8928a219385d3379dbba044ff5d89fac"></a>
@@ -336,6 +377,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the airport of destination of the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a>&amp; </dd></dl>
 
 </div>
 </div>
@@ -354,6 +398,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the destination location of the light. </p>
+<dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
+
 </div>
 </div>
 <a id="a1b7ec1404eb850e4f41ad12240e4593b" name="a1b7ec1404eb850e4f41ad12240e4593b"></a>
@@ -370,6 +417,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the duration of the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_time.html" title="Time class for storing and comparing time type values.">Time</a> </dd></dl>
 
 </div>
 </div>
@@ -388,6 +438,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the flight's unique identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="a933386e91cbda0b38aa2ed9a0f4bc71b" name="a933386e91cbda0b38aa2ed9a0f4bc71b"></a>
@@ -404,6 +457,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the airport of origin of the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a>&amp; </dd></dl>
 
 </div>
 </div>
@@ -422,6 +478,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the passengers belonging to the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;Passenger&gt;&amp; </dd></dl>
+
 </div>
 </div>
 <a id="ac7a92ba296f861d4ba78db354c199836" name="ac7a92ba296f861d4ba78db354c199836"></a>
@@ -438,6 +497,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the plane's id associated with the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -456,6 +518,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the seats still avaliable in the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>vector&lt;Seat&gt;&amp; </dd></dl>
+
 </div>
 </div>
 <a id="a28193cf62fd89241089989dab4bfbe9c" name="a28193cf62fd89241089989dab4bfbe9c"></a>
@@ -473,6 +538,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the numbers of the seats allocated to the flight. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="a42f0d455e1a88bf4241a4b59ae85339f" name="a42f0d455e1a88bf4241a4b59ae85339f"></a>
@@ -489,7 +557,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: Prints the info about this specific <a class="el" href="class_flight.html">Flight</a> </p>
+
+<p>Prints the info about this specific <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a>. </p>
 
 </div>
 </div>
@@ -507,7 +576,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: Method to print all the available seats in this flight </p>
+
+<p>Method to print all the available seats in this flight. </p>
 
 </div>
 </div>
@@ -526,7 +596,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >reserves a <a class="el" href="class_seat.html">Seat</a> for the <a class="el" href="class_passenger.html">Passenger</a>, and updates the <a class="el" href="class_seat.html">Seat</a> in the <a class="el" href="class_flight.html">Flight</a> to occupied. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>reserves a <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> for the <a class="el" href="class_passenger.html" title="Class handling passengers and all data related to them.">Passenger</a>, and updates the <a class="el" href="class_seat.html" title="Class handling seats.">Seat</a> in the <a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a> to occupied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">passenger</td><td></td></tr>
   </table>
@@ -550,7 +622,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: Sets the Destination <a class="el" href="class_airport.html">Airport</a> according to the destination city of the flight </p>
+
+<p>Sets the Destination <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> according to the destination city of the flight. </p>
 
 </div>
 </div>
@@ -569,7 +642,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: Sets the Origin <a class="el" href="class_airport.html">Airport</a> according to the departure city of the flight </p>
+
+<p>Sets the Origin <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> according to the departure city of the flight. </p>
 
 </div>
 </div>

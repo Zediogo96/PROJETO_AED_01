@@ -69,20 +69,29 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling a baggage conveyor. Implements a queue system to store baggages.  
+ <a href="class_baggage_conveyor.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_baggage_conveyor_8h_source.html">BaggageConveyor.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a97d1855c2b6a48cce8642eaf2b4d408b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_conveyor.html#a97d1855c2b6a48cce8642eaf2b4d408b">addBaggage</a> (<a class="el" href="class_baggage.html">Baggage</a> baggage)</td></tr>
+<tr class="memdesc:a97d1855c2b6a48cce8642eaf2b4d408b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a baggage to the conveyor's queue.  <a href="class_baggage_conveyor.html#a97d1855c2b6a48cce8642eaf2b4d408b">More...</a><br /></td></tr>
 <tr class="separator:a97d1855c2b6a48cce8642eaf2b4d408b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a191d93ee3edbd8347c11ea1ed2a46133"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_baggage.html">Baggage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_conveyor.html#a191d93ee3edbd8347c11ea1ed2a46133">retrieveBaggage</a> ()</td></tr>
+<tr class="memdesc:a191d93ee3edbd8347c11ea1ed2a46133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns the first baggage in the conveyor's queue.  <a href="class_baggage_conveyor.html#a191d93ee3edbd8347c11ea1ed2a46133">More...</a><br /></td></tr>
 <tr class="separator:a191d93ee3edbd8347c11ea1ed2a46133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a668a9882b47cf28ecf9b648ebbe916da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_conveyor.html#a668a9882b47cf28ecf9b648ebbe916da">getAmount</a> ()</td></tr>
+<tr class="memdesc:a668a9882b47cf28ecf9b648ebbe916da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the amount of baggages in the conveyor.  <a href="class_baggage_conveyor.html#a668a9882b47cf28ecf9b648ebbe916da">More...</a><br /></td></tr>
 <tr class="separator:a668a9882b47cf28ecf9b648ebbe916da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06cc40d15cf78a64ebae03389df000ea"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_conveyor.html#a06cc40d15cf78a64ebae03389df000ea">isEmpty</a> ()</td></tr>
+<tr class="memdesc:a06cc40d15cf78a64ebae03389df000ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the conveyor has any baggages.  <a href="class_baggage_conveyor.html#a06cc40d15cf78a64ebae03389df000ea">More...</a><br /></td></tr>
 <tr class="separator:a06cc40d15cf78a64ebae03389df000ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling a baggage conveyor. Implements a queue system to store baggages. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a97d1855c2b6a48cce8642eaf2b4d408b" name="a97d1855c2b6a48cce8642eaf2b4d408b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97d1855c2b6a48cce8642eaf2b4d408b">&#9670;&nbsp;</a></span>addBaggage()</h2>
 
@@ -98,6 +107,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a baggage to the conveyor's queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baggage</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -116,6 +133,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the amount of baggages in the conveyor. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="a06cc40d15cf78a64ebae03389df000ea" name="a06cc40d15cf78a64ebae03389df000ea"></a>
@@ -133,6 +153,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks whether the conveyor has any baggages. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
 </div>
 </div>
 <a id="a191d93ee3edbd8347c11ea1ed2a46133" name="a191d93ee3edbd8347c11ea1ed2a46133"></a>
@@ -149,6 +172,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes and returns the first baggage in the conveyor's queue. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_baggage.html" title="Class handling baggages, storing basic information about their owners.">Baggage</a> </dd></dl>
 
 </div>
 </div>

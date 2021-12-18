@@ -69,26 +69,38 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling baggage carts, storing the baggage carriages attached to it. It sets each carriage's stack amount and maximum stack size.  
+ <a href="class_baggage_cart.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_baggage_cart_8h_source.html">BaggageCart.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a3fa67a73af13b7b5a5eb3c2dae083f6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#a3fa67a73af13b7b5a5eb3c2dae083f6d">BaggageCart</a> (int c)</td></tr>
+<tr class="memdesc:a3fa67a73af13b7b5a5eb3c2dae083f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new baggage cart with a specified number of carriages.  <a href="class_baggage_cart.html#a3fa67a73af13b7b5a5eb3c2dae083f6d">More...</a><br /></td></tr>
 <tr class="separator:a3fa67a73af13b7b5a5eb3c2dae083f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b20f0d26b280b20b5cb44446cb41a48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#a9b20f0d26b280b20b5cb44446cb41a48">addBaggage</a> (<a class="el" href="class_baggage.html">Baggage</a> baggage)</td></tr>
+<tr class="memdesc:a9b20f0d26b280b20b5cb44446cb41a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a baggage to a cart's carriage.  <a href="class_baggage_cart.html#a9b20f0d26b280b20b5cb44446cb41a48">More...</a><br /></td></tr>
 <tr class="separator:a9b20f0d26b280b20b5cb44446cb41a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a21c50334e6a67b65841d796612be2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#ac9a21c50334e6a67b65841d796612be2">isFull</a> ()</td></tr>
+<tr class="memdesc:ac9a21c50334e6a67b65841d796612be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if all of the cart's carriages are full.  <a href="class_baggage_cart.html#ac9a21c50334e6a67b65841d796612be2">More...</a><br /></td></tr>
 <tr class="separator:ac9a21c50334e6a67b65841d796612be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba3f2a09be70fc7cfd4801e728db6ebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#aba3f2a09be70fc7cfd4801e728db6ebb">clear</a> ()</td></tr>
+<tr class="memdesc:aba3f2a09be70fc7cfd4801e728db6ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all baggages from the cart's carriages.  <a href="class_baggage_cart.html#aba3f2a09be70fc7cfd4801e728db6ebb">More...</a><br /></td></tr>
 <tr class="separator:aba3f2a09be70fc7cfd4801e728db6ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20bbf6f9a34910d81b6f438c5a1639ae"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#a20bbf6f9a34910d81b6f438c5a1639ae">getAmount</a> ()</td></tr>
+<tr class="memdesc:a20bbf6f9a34910d81b6f438c5a1639ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total amount of baggages in all of the cart's carriages.  <a href="class_baggage_cart.html#a20bbf6f9a34910d81b6f438c5a1639ae">More...</a><br /></td></tr>
 <tr class="separator:a20bbf6f9a34910d81b6f438c5a1639ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae58fc8bcffbc15ceec468bee2be8cabb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#ae58fc8bcffbc15ceec468bee2be8cabb">getMaxAmount</a> ()</td></tr>
+<tr class="memdesc:ae58fc8bcffbc15ceec468bee2be8cabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum amount of baggages the cart can carry.  <a href="class_baggage_cart.html#ae58fc8bcffbc15ceec468bee2be8cabb">More...</a><br /></td></tr>
 <tr class="separator:ae58fc8bcffbc15ceec468bee2be8cabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addc7920715768ba6eefcc4958f53226c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_baggage.html">Baggage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_baggage_cart.html#addc7920715768ba6eefcc4958f53226c">retrieveBaggage</a> ()</td></tr>
+<tr class="memdesc:addc7920715768ba6eefcc4958f53226c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes and returns a baggage from the cart.  <a href="class_baggage_cart.html#addc7920715768ba6eefcc4958f53226c">More...</a><br /></td></tr>
 <tr class="separator:addc7920715768ba6eefcc4958f53226c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling baggage carts, storing the baggage carriages attached to it. It sets each carriage's stack amount and maximum stack size. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3fa67a73af13b7b5a5eb3c2dae083f6d" name="a3fa67a73af13b7b5a5eb3c2dae083f6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3fa67a73af13b7b5a5eb3c2dae083f6d">&#9670;&nbsp;</a></span>BaggageCart()</h2>
 
@@ -104,6 +116,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a new baggage cart with a specified number of carriages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>-&gt; number of baggage carriages </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -124,6 +144,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a baggage to a cart's carriage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baggage</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aba3f2a09be70fc7cfd4801e728db6ebb" name="aba3f2a09be70fc7cfd4801e728db6ebb"></a>
@@ -140,6 +168,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes all baggages from the cart's carriages. </p>
 
 </div>
 </div>
@@ -158,6 +188,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the total amount of baggages in all of the cart's carriages. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="ae58fc8bcffbc15ceec468bee2be8cabb" name="ae58fc8bcffbc15ceec468bee2be8cabb"></a>
@@ -174,6 +207,10 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the maximum amount of baggages the cart can carry. </p>
+<p >It's calculated by the amount of stacks times the stack size of each carriage times the number of carriages the cart has</p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -192,6 +229,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks if all of the cart's carriages are full. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
 </div>
 </div>
 <a id="addc7920715768ba6eefcc4958f53226c" name="addc7920715768ba6eefcc4958f53226c"></a>
@@ -208,6 +248,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Removes and returns a baggage from the cart. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_baggage.html" title="Class handling baggages, storing basic information about their owners.">Baggage</a> -&gt; <a class="el" href="class_baggage.html" title="Class handling baggages, storing basic information about their owners.">Baggage</a> object </dd></dl>
 
 </div>
 </div>

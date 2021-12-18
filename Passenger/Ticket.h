@@ -7,11 +7,14 @@
 
 
 #include "Passenger.h"
-
+/**
+ * @brief A data class with a unique identifier and a passenger
+ * 
+ */
 class Ticket {
 private:
-    int ticketID;
-    Passenger passenger;
+    int ticketID; /*!< Unique identifier */
+    Passenger passenger; /*!< Passenger who this ticket belongs to */
 public:
 
 };

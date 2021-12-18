@@ -7,5 +7,5 @@ var searchData=
   ['clear_4',['clear',['../class_baggage_carriage.html#ad007a08a65231bb25237d844151371a1',1,'BaggageCarriage::clear()'],['../class_baggage_cart.html#aba3f2a09be70fc7cfd4801e728db6ebb',1,'BaggageCart::clear()']]],
   ['clearflights_5',['clearFlights',['../class_airline.html#a861716850232e0be8461e442a07491a7',1,'Airline']]],
   ['clearplanes_6',['clearPlanes',['../class_airline.html#aabccb2c51e1990e00452d455c813643e',1,'Airline']]],
-  ['costumer_5fmenu_7',['costumer_menu',['../_menu_8cpp.html#a30c41fe1d8b43c83578cafefb27c62c6',1,'costumer_menu(Airline &amp;airline):&#160;Menu.cpp'],['../_menu_8h.html#a30c41fe1d8b43c83578cafefb27c62c6',1,'costumer_menu(Airline &amp;airline):&#160;Menu.cpp']]]
+  ['customer_5fmenu_7',['customer_menu',['../_menu_8cpp.html#ad8a192a98baa08585e9e4ebb47e75d5d',1,'customer_menu(Airline &amp;airline):&#160;Menu.cpp'],['../_menu_8h.html#ad8a192a98baa08585e9e4ebb47e75d5d',1,'customer_menu(Airline &amp;airline):&#160;Menu.cpp']]]
 ];
