@@ -82,7 +82,7 @@ void Airport::showSchedules(type vehicle) const {
     BSTItrLevel<Transport> it(transportTree);
     while (!it.isAtEnd()){
         if (it.retrieve().getType() == vehicle){
-            cout << "\n-For number: " << it.retrieve().getId() << endl;
+            cout << "-For number: " << it.retrieve().getId() << endl;
             it.retrieve().printSchedule();
         }
         it.advance();

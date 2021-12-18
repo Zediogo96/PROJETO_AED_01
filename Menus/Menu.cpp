@@ -387,9 +387,10 @@ void select_airport_menu(Airline &airline) {
         std::cout << "| Which airport you want to check?  |" << std::endl;
         std::cout << "|                                   |" << std::endl;
         std::cout<<setfill(' ');
+        int j = 24;
         for(int i = 0; i < airline.getAirportCount(); i++) {
-            std::cout << "|    [" << i + 1 << "] " << setw(3) << left << airline.getAirport(i + 1).getName() << " "
-            << setw(23) << left << airline.getAirport(i + 1).getCity() << "|" << std::endl;
+            std::cout  << "|    [" << i + 1 << "] " << setw(3) << left << airline.getAirport(i + 1).getName() << " "
+            << setw(j - to_string(i+1).size()) << left << airline.getAirport(i + 1).getCity() << "|" << std::endl;
         }
         std::cout << "|                                   |" << std::endl;
         std::cout << "|    [0] EXIT                       |" << std::endl;
@@ -397,7 +398,7 @@ void select_airport_menu(Airline &airline) {
 
         std::cout << "Please input your choice: " << std::endl << std::flush;
         std::cin >> option;
-        if(option > 0 && option < airline.getAirportCount() - 1) {
+        if(option > 0 && option < airline.getAirportCount() + 1) {
             Airport airport = airline.getAirport(option);
             transport_menu(airport);
         }

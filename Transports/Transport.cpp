@@ -19,7 +19,7 @@ void Transport::addTime(Time time) {
 void Transport::printSchedule() const {
     for (int i = 0; i < schedule.size(); i++){
         if ((i % 4) == 0 && i != 0) cout << endl;
-        cout << setfill('0') << setw(2) << schedule[i].getHours() << ":" << setw(2) <<schedule[i].getMinutes() << "  ";
+        cout << setfill('0') << right << setw(2) << schedule[i].getHours() << ":" << setw(2) <<schedule[i].getMinutes() << "  ";
     }
     cout << endl;
 }
