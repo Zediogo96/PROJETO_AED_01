@@ -82,14 +82,12 @@ class Passenger
 		 */
 		void setBaggageInclusion(bool state);
 
-		bool includedBaggage() const;
-
 		/**
 		 * @brief Checks if the passenger has chosen to include baggage
 		 * 
 		 * @return bool -> includeBaggage
 		 */
-		bool includedBaggage();
+		bool includedBaggage() const;
 		/**
 		 * @brief Retrieves the passenger's baggage
 		 * 
