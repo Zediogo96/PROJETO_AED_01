@@ -30,7 +30,7 @@ void main_menu(Airline &airline) {
                 airport_menu(airline);
                 break;
             case '2':
-                costumer_menu(airline);
+                customer_menu(airline);
                 break;
             case '0': return;
             default: std::cout << "Invalid Input \n:";
@@ -230,9 +230,11 @@ void services_menu(Airline &airline) {
                 airline.checkService();
                 break;
             case '3':
+                cout << "Services Due: " << endl;
                 airline.printAllServicesDue();
                 break;
             case '4':
+                cout << "Services Completed: " << endl;
                 airline.printAllServicesHistory();
                 break;
             case '5':
@@ -334,7 +336,7 @@ void transport_menu(const Airport &airport){
     }
 }
 
-void costumer_menu(Airline &airline) {
+void customer_menu(Airline &airline) {
 
     char option;
 

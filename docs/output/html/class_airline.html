@@ -69,35 +69,48 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling airlines. Contains information regarding services, planes, flights, and airports.  
+ <a href="class_airline.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_airline_8h_source.html">Airline.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1af4b7585be237ac4032a975320b7f04"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a1af4b7585be237ac4032a975320b7f04">Airline</a> (const std::string &amp;name, int maxNumOfFlights)</td></tr>
-<tr class="memdesc:a1af4b7585be237ac4032a975320b7f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_airline.html">Airline</a> Class.  <a href="class_airline.html#a1af4b7585be237ac4032a975320b7f04">More...</a><br /></td></tr>
+<tr class="memdesc:a1af4b7585be237ac4032a975320b7f04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="class_airline.html" title="Class handling airlines. Contains information regarding services, planes, flights,...">Airline</a> Class.  <a href="class_airline.html#a1af4b7585be237ac4032a975320b7f04">More...</a><br /></td></tr>
 <tr class="separator:a1af4b7585be237ac4032a975320b7f04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accedcaa8e254eddfd8c55c80150a2e16"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#accedcaa8e254eddfd8c55c80150a2e16">getName</a> ()</td></tr>
-<tr class="memdesc:accedcaa8e254eddfd8c55c80150a2e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">GETTERS for fields of <a class="el" href="class_airline.html">Airline</a> Class.  <a href="class_airline.html#accedcaa8e254eddfd8c55c80150a2e16">More...</a><br /></td></tr>
+<tr class="memdesc:accedcaa8e254eddfd8c55c80150a2e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name of the airline.  <a href="class_airline.html#accedcaa8e254eddfd8c55c80150a2e16">More...</a><br /></td></tr>
 <tr class="separator:accedcaa8e254eddfd8c55c80150a2e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f5c732522aa3f5bcce9a429745061e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ac0f5c732522aa3f5bcce9a429745061e">getMaxNumOfFlights</a> () const</td></tr>
+<tr class="memdesc:ac0f5c732522aa3f5bcce9a429745061e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum number of flights allowed by the airline.  <a href="class_airline.html#ac0f5c732522aa3f5bcce9a429745061e">More...</a><br /></td></tr>
 <tr class="separator:ac0f5c732522aa3f5bcce9a429745061e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab596a3ffa5b4350273614db0963f5767"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="class_plane.html">Plane</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ab596a3ffa5b4350273614db0963f5767">getPlanes</a> ()</td></tr>
+<tr class="memdesc:ab596a3ffa5b4350273614db0963f5767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the planes belonging to the airline.  <a href="class_airline.html#ab596a3ffa5b4350273614db0963f5767">More...</a><br /></td></tr>
 <tr class="separator:ab596a3ffa5b4350273614db0963f5767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e0c45520c28be8d57cd24e089617f5a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a9e0c45520c28be8d57cd24e089617f5a">getAirportCount</a> ()</td></tr>
+<tr class="memdesc:a9e0c45520c28be8d57cd24e089617f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the amount of airports allocated to the airline.  <a href="class_airline.html#a9e0c45520c28be8d57cd24e089617f5a">More...</a><br /></td></tr>
 <tr class="separator:a9e0c45520c28be8d57cd24e089617f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6144f30738ac19e85b20f2679ad09a9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_airport.html">Airport</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a6144f30738ac19e85b20f2679ad09a9d">getAirport</a> (int id)</td></tr>
+<tr class="memdesc:a6144f30738ac19e85b20f2679ad09a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an airport with the respective 'id'.  <a href="class_airline.html#a6144f30738ac19e85b20f2679ad09a9d">More...</a><br /></td></tr>
 <tr class="separator:a6144f30738ac19e85b20f2679ad09a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7058e591c8b904e6774993b913ab4fe8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_airport.html">Airport</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a7058e591c8b904e6774993b913ab4fe8">getAirport</a> (const string &amp;name)</td></tr>
+<tr class="memdesc:a7058e591c8b904e6774993b913ab4fe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an airport with the respective 'name'.  <a href="class_airline.html#a7058e591c8b904e6774993b913ab4fe8">More...</a><br /></td></tr>
 <tr class="separator:a7058e591c8b904e6774993b913ab4fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bc48b4adeaacef15dfe0fb20ea3c235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a0bc48b4adeaacef15dfe0fb20ea3c235">SavePlanes</a> ()</td></tr>
+<tr class="memdesc:a0bc48b4adeaacef15dfe0fb20ea3c235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all the planes into the file 'Data/planes.txt'.  <a href="class_airline.html#a0bc48b4adeaacef15dfe0fb20ea3c235">More...</a><br /></td></tr>
 <tr class="separator:a0bc48b4adeaacef15dfe0fb20ea3c235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9d32267d31ebbb10c709c055a17abb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ac9d32267d31ebbb10c709c055a17abb1">LoadPlanes</a> ()</td></tr>
+<tr class="memdesc:ac9d32267d31ebbb10c709c055a17abb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all the planes from the file 'Data/planes.txt'.  <a href="class_airline.html#ac9d32267d31ebbb10c709c055a17abb1">More...</a><br /></td></tr>
 <tr class="separator:ac9d32267d31ebbb10c709c055a17abb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24b38073bf1aa3985493e0644771bc2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a24b38073bf1aa3985493e0644771bc2e">loadAirports</a> ()</td></tr>
+<tr class="memdesc:a24b38073bf1aa3985493e0644771bc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all the airports from the file 'Data/airports.txt'.  <a href="class_airline.html#a24b38073bf1aa3985493e0644771bc2e">More...</a><br /></td></tr>
 <tr class="separator:a24b38073bf1aa3985493e0644771bc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e396f0c59c41bc37a9973853779adaf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a9e396f0c59c41bc37a9973853779adaf">availablePlane</a> (int planeID)</td></tr>
+<tr class="memdesc:a9e396f0c59c41bc37a9973853779adaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that analyzes if a determinate planeID is already in use when creating a new plane, return False if it's already in use, return True if it's free.  <a href="class_airline.html#a9e396f0c59c41bc37a9973853779adaf">More...</a><br /></td></tr>
 <tr class="separator:a9e396f0c59c41bc37a9973853779adaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2332de1d11503263d2fabd90f47f3d85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a2332de1d11503263d2fabd90f47f3d85">findPlane</a> ()</td></tr>
+<tr class="memdesc:a2332de1d11503263d2fabd90f47f3d85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that allows the user to search for a determinate plane based on it's planeID (by input), returns the planeID if its found, or -1 in case if it's not found.  <a href="class_airline.html#a2332de1d11503263d2fabd90f47f3d85">More...</a><br /></td></tr>
 <tr class="separator:a2332de1d11503263d2fabd90f47f3d85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58c76c1bf46807fac529aa06600e5b22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a58c76c1bf46807fac529aa06600e5b22">addPlane</a> ()</td></tr>
 <tr class="memdesc:a58c76c1bf46807fac529aa06600e5b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method to add a plane to the airline planes database, filling it's parameters by user input.  <a href="class_airline.html#a58c76c1bf46807fac529aa06600e5b22">More...</a><br /></td></tr>
@@ -106,58 +119,81 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a3e3180bc7f637e3752b1c709e5fe19fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method to allow the user to delete a plane by inputting it's userID.  <a href="class_airline.html#a3e3180bc7f637e3752b1c709e5fe19fe">More...</a><br /></td></tr>
 <tr class="separator:a3e3180bc7f637e3752b1c709e5fe19fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0285aa7b8c59f72eed8d15b58b662468"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a0285aa7b8c59f72eed8d15b58b662468">printPlanes</a> ()</td></tr>
-<tr class="memdesc:a0285aa7b8c59f72eed8d15b58b662468"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method that prints all the planes in the <a class="el" href="class_airline.html">Airline</a> database.  <a href="class_airline.html#a0285aa7b8c59f72eed8d15b58b662468">More...</a><br /></td></tr>
+<tr class="memdesc:a0285aa7b8c59f72eed8d15b58b662468"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method that prints all the planes in the <a class="el" href="class_airline.html" title="Class handling airlines. Contains information regarding services, planes, flights,...">Airline</a> database.  <a href="class_airline.html#a0285aa7b8c59f72eed8d15b58b662468">More...</a><br /></td></tr>
 <tr class="separator:a0285aa7b8c59f72eed8d15b58b662468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabccb2c51e1990e00452d455c813643e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#aabccb2c51e1990e00452d455c813643e">clearPlanes</a> ()</td></tr>
 <tr class="memdesc:aabccb2c51e1990e00452d455c813643e"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method that eliminates all Planes from the planesList database.  <a href="class_airline.html#aabccb2c51e1990e00452d455c813643e">More...</a><br /></td></tr>
 <tr class="separator:aabccb2c51e1990e00452d455c813643e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12cd054ff6401537595cc03344f1513f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a12cd054ff6401537595cc03344f1513f">sortPlanes</a> ()</td></tr>
+<tr class="memdesc:a12cd054ff6401537595cc03344f1513f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the user to sort the planeList according to the user chosen parameter.  <a href="class_airline.html#a12cd054ff6401537595cc03344f1513f">More...</a><br /></td></tr>
 <tr class="separator:a12cd054ff6401537595cc03344f1513f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a861716850232e0be8461e442a07491a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a861716850232e0be8461e442a07491a7">clearFlights</a> ()</td></tr>
 <tr class="memdesc:a861716850232e0be8461e442a07491a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">: Method that eliminates all Flights from all planes in the database.  <a href="class_airline.html#a861716850232e0be8461e442a07491a7">More...</a><br /></td></tr>
 <tr class="separator:a861716850232e0be8461e442a07491a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b324d1ce9bf7621fb102a87bbfae20"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_plane.html">Plane</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a21b324d1ce9bf7621fb102a87bbfae20">getPlaneRef</a> (int num)</td></tr>
+<tr class="memdesc:a21b324d1ce9bf7621fb102a87bbfae20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the plane with id equal to 'num'.  <a href="class_airline.html#a21b324d1ce9bf7621fb102a87bbfae20">More...</a><br /></td></tr>
 <tr class="separator:a21b324d1ce9bf7621fb102a87bbfae20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdaef0c060db230175a06b0b007241c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#afdaef0c060db230175a06b0b007241c0">PlaneExists</a> (int num)</td></tr>
+<tr class="memdesc:afdaef0c060db230175a06b0b007241c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a plane with id equal to 'num' exists in the airline.  <a href="class_airline.html#afdaef0c060db230175a06b0b007241c0">More...</a><br /></td></tr>
 <tr class="separator:afdaef0c060db230175a06b0b007241c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a087c8ae0dddb17a3814e11322c8572f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a087c8ae0dddb17a3814e11322c8572f8">SaveFlights</a> ()</td></tr>
+<tr class="memdesc:a087c8ae0dddb17a3814e11322c8572f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all flights into the file 'Data/flights.txt'.  <a href="class_airline.html#a087c8ae0dddb17a3814e11322c8572f8">More...</a><br /></td></tr>
 <tr class="separator:a087c8ae0dddb17a3814e11322c8572f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c50a3b257a4fcd109e809c09dec8da2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a8c50a3b257a4fcd109e809c09dec8da2">LoadFlights</a> ()</td></tr>
+<tr class="memdesc:a8c50a3b257a4fcd109e809c09dec8da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all the flights from the file 'Data/flights.txt'.  <a href="class_airline.html#a8c50a3b257a4fcd109e809c09dec8da2">More...</a><br /></td></tr>
 <tr class="separator:a8c50a3b257a4fcd109e809c09dec8da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13d5db4e84a88e46a0a0e6ff50142920"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a13d5db4e84a88e46a0a0e6ff50142920">availableFlight</a> (int flightID)</td></tr>
-<tr class="separator:a13d5db4e84a88e46a0a0e6ff50142920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8f6a58100b7b77d56f0d43142b8e65b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ab8f6a58100b7b77d56f0d43142b8e65b">avaliableFlight</a> (int flightID)</td></tr>
+<tr class="memdesc:ab8f6a58100b7b77d56f0d43142b8e65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a flight with id equal to 'flightID' already exists in the airline.  <a href="class_airline.html#ab8f6a58100b7b77d56f0d43142b8e65b">More...</a><br /></td></tr>
+<tr class="separator:ab8f6a58100b7b77d56f0d43142b8e65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38b0952ec75105c12e9bb670bac3afa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#af38b0952ec75105c12e9bb670bac3afa">sortFlights</a> ()</td></tr>
+<tr class="memdesc:af38b0952ec75105c12e9bb670bac3afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the flights according to user input.  <a href="class_airline.html#af38b0952ec75105c12e9bb670bac3afa">More...</a><br /></td></tr>
 <tr class="separator:af38b0952ec75105c12e9bb670bac3afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89b8bdb20acbf03c0bd7b0ba6bfbfe0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a89b8bdb20acbf03c0bd7b0ba6bfbfe0a">addFlight</a> ()</td></tr>
+<tr class="memdesc:a89b8bdb20acbf03c0bd7b0ba6bfbfe0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new flight to the airline.  <a href="class_airline.html#a89b8bdb20acbf03c0bd7b0ba6bfbfe0a">More...</a><br /></td></tr>
 <tr class="separator:a89b8bdb20acbf03c0bd7b0ba6bfbfe0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a198350416c01772834c40f9afb0f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a93a198350416c01772834c40f9afb0f2">deleteFlight</a> ()</td></tr>
+<tr class="memdesc:a93a198350416c01772834c40f9afb0f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a flight from the airline.  <a href="class_airline.html#a93a198350416c01772834c40f9afb0f2">More...</a><br /></td></tr>
 <tr class="separator:a93a198350416c01772834c40f9afb0f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a781bb38fa4ffc9271a364229d729ac0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_flight.html">Flight</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a781bb38fa4ffc9271a364229d729ac0f">getFlightRef</a> (int num)</td></tr>
+<tr class="memdesc:a781bb38fa4ffc9271a364229d729ac0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the flight with id equal to 'num'.  <a href="class_airline.html#a781bb38fa4ffc9271a364229d729ac0f">More...</a><br /></td></tr>
 <tr class="separator:a781bb38fa4ffc9271a364229d729ac0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adde4ddf376655e4923e66fabc0324207"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#adde4ddf376655e4923e66fabc0324207">printAllFlights</a> ()</td></tr>
+<tr class="memdesc:adde4ddf376655e4923e66fabc0324207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all flights belonging to the airline.  <a href="class_airline.html#adde4ddf376655e4923e66fabc0324207">More...</a><br /></td></tr>
 <tr class="separator:adde4ddf376655e4923e66fabc0324207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a920c2c91d6e0256a32980b41352eaa07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a920c2c91d6e0256a32980b41352eaa07">addService</a> ()</td></tr>
+<tr class="memdesc:a920c2c91d6e0256a32980b41352eaa07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new service with specified user input data.  <a href="class_airline.html#a920c2c91d6e0256a32980b41352eaa07">More...</a><br /></td></tr>
 <tr class="separator:a920c2c91d6e0256a32980b41352eaa07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedfbfb562d660c3934641a83463d954e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#aedfbfb562d660c3934641a83463d954e">checkService</a> ()</td></tr>
+<tr class="memdesc:aedfbfb562d660c3934641a83463d954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a service with the specified user input exists.  <a href="class_airline.html#aedfbfb562d660c3934641a83463d954e">More...</a><br /></td></tr>
 <tr class="separator:aedfbfb562d660c3934641a83463d954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b10e03bea3ac1e46b0d44f683bf200"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ae4b10e03bea3ac1e46b0d44f683bf200">printAllServicesHistory</a> ()</td></tr>
+<tr class="memdesc:ae4b10e03bea3ac1e46b0d44f683bf200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all performed services.  <a href="class_airline.html#ae4b10e03bea3ac1e46b0d44f683bf200">More...</a><br /></td></tr>
 <tr class="separator:ae4b10e03bea3ac1e46b0d44f683bf200"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a0fc5c401ebecc1db152b70f3a4fb14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a0a0fc5c401ebecc1db152b70f3a4fb14">LoadServices</a> ()</td></tr>
+<tr class="memdesc:a0a0fc5c401ebecc1db152b70f3a4fb14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all services from the file 'Data/services.txt'.  <a href="class_airline.html#a0a0fc5c401ebecc1db152b70f3a4fb14">More...</a><br /></td></tr>
 <tr class="separator:a0a0fc5c401ebecc1db152b70f3a4fb14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b5dc4d92f807d5718b0aa6c665e866"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#ad4b5dc4d92f807d5718b0aa6c665e866">printAllServicesDue</a> ()</td></tr>
+<tr class="memdesc:ad4b5dc4d92f807d5718b0aa6c665e866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints all services to be performed.  <a href="class_airline.html#ad4b5dc4d92f807d5718b0aa6c665e866">More...</a><br /></td></tr>
 <tr class="separator:ad4b5dc4d92f807d5718b0aa6c665e866"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25a8097bd26d560f5989b27a34379d68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a25a8097bd26d560f5989b27a34379d68">reserveSeat</a> ()</td></tr>
+<tr class="memdesc:a25a8097bd26d560f5989b27a34379d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the user to reserve a seat in a specific flight.  <a href="class_airline.html#a25a8097bd26d560f5989b27a34379d68">More...</a><br /></td></tr>
 <tr class="separator:a25a8097bd26d560f5989b27a34379d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5074bdd84916933c77f00e23ec0a0026"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a5074bdd84916933c77f00e23ec0a0026">airportExists</a> (string &amp;city)</td></tr>
+<tr class="memdesc:a5074bdd84916933c77f00e23ec0a0026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if an airport located in a 'city' exists in the airline.  <a href="class_airline.html#a5074bdd84916933c77f00e23ec0a0026">More...</a><br /></td></tr>
 <tr class="separator:a5074bdd84916933c77f00e23ec0a0026"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ee0b5dba4e0b8f5531e99d91c39e9f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#a8ee0b5dba4e0b8f5531e99d91c39e9f9">LoadPassengers</a> ()</td></tr>
+<tr class="memdesc:a8ee0b5dba4e0b8f5531e99d91c39e9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads all passengers from the file 'Data/passengers.txt'.  <a href="class_airline.html#a8ee0b5dba4e0b8f5531e99d91c39e9f9">More...</a><br /></td></tr>
 <tr class="separator:a8ee0b5dba4e0b8f5531e99d91c39e9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0853601c46f67688c1544ccf6d3a94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#acd0853601c46f67688c1544ccf6d3a94">ReservedSeats</a> (int flightID, const string &amp;firstName, const string &amp;lastName, int seatNum, int clientID, bool baggage)</td></tr>
+<tr class="memdesc:acd0853601c46f67688c1544ccf6d3a94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds seats already reserved from passengers loaded from file.  <a href="class_airline.html#acd0853601c46f67688c1544ccf6d3a94">More...</a><br /></td></tr>
 <tr class="separator:acd0853601c46f67688c1544ccf6d3a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfaae064f9e1c79416bbc11ff93ae2a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airline.html#adfaae064f9e1c79416bbc11ff93ae2a7">checkPassengerSeats</a> ()</td></tr>
+<tr class="memdesc:adfaae064f9e1c79416bbc11ff93ae2a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks seats already taken by passengers.  <a href="class_airline.html#adfaae064f9e1c79416bbc11ff93ae2a7">More...</a><br /></td></tr>
 <tr class="separator:adfaae064f9e1c79416bbc11ff93ae2a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling airlines. Contains information regarding services, planes, flights, and airports. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1af4b7585be237ac4032a975320b7f04" name="a1af4b7585be237ac4032a975320b7f04"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1af4b7585be237ac4032a975320b7f04">&#9670;&nbsp;</a></span>Airline()</h2>
 
@@ -192,7 +228,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Constructor for the <a class="el" href="class_airline.html">Airline</a> Class. </p>
+<p>Constructor for the <a class="el" href="class_airline.html" title="Class handling airlines. Contains information regarding services, planes, flights,...">Airline</a> Class. </p>
 
 </div>
 </div>
@@ -211,6 +247,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a new flight to the airline. </p>
 
 </div>
 </div>
@@ -248,6 +286,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a new service with specified user input data. </p>
+
 </div>
 </div>
 <a id="a5074bdd84916933c77f00e23ec0a0026" name="a5074bdd84916933c77f00e23ec0a0026"></a>
@@ -266,23 +306,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a13d5db4e84a88e46a0a0e6ff50142920" name="a13d5db4e84a88e46a0a0e6ff50142920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a13d5db4e84a88e46a0a0e6ff50142920">&#9670;&nbsp;</a></span>availableFlight()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Airline::availableFlight </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>flightID</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Checks if an airport located in a 'city' exists in the airline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">city</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>
@@ -301,13 +332,42 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Method that analyzes if a determinate planeID is already in use when creating a new plane, return False if it's already in use, return True if it's free. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Method that analyzes if a determinate planeID is already in use when creating a new plane, return False if it's already in use, return True if it's free. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">planeID</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Boolean </dd></dl>
+
+</div>
+</div>
+<a id="ab8f6a58100b7b77d56f0d43142b8e65b" name="ab8f6a58100b7b77d56f0d43142b8e65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8f6a58100b7b77d56f0d43142b8e65b">&#9670;&nbsp;</a></span>avaliableFlight()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Airline::avaliableFlight </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flightID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a flight with id equal to 'flightID' already exists in the airline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flightID</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
 
 </div>
 </div>
@@ -326,6 +386,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Checks seats already taken by passengers. </p>
+
 </div>
 </div>
 <a id="aedfbfb562d660c3934641a83463d954e" name="aedfbfb562d660c3934641a83463d954e"></a>
@@ -342,6 +404,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Checks if a service with the specified user input exists. </p>
 
 </div>
 </div>
@@ -398,6 +462,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Deletes a flight from the airline. </p>
+
 </div>
 </div>
 <a id="a3e3180bc7f637e3752b1c709e5fe19fe" name="a3e3180bc7f637e3752b1c709e5fe19fe"></a>
@@ -433,7 +499,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Method that allows the user to search for a determinate plane based on it's planeID (by input), returns the planeID if its found, or -1 in case if it's not found. </p><dl class="section return"><dt>Returns</dt><dd>planeID </dd></dl>
+
+<p>Method that allows the user to search for a determinate plane based on it's planeID (by input), returns the planeID if its found, or -1 in case if it's not found. </p>
+<dl class="section return"><dt>Returns</dt><dd>planeID </dd></dl>
 
 </div>
 </div>
@@ -453,6 +521,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns an airport with the respective 'name'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> </dd></dl>
+
 </div>
 </div>
 <a id="a6144f30738ac19e85b20f2679ad09a9d" name="a6144f30738ac19e85b20f2679ad09a9d"></a>
@@ -471,6 +548,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns an airport with the respective 'id'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> </dd></dl>
+
 </div>
 </div>
 <a id="a9e0c45520c28be8d57cd24e089617f5a" name="a9e0c45520c28be8d57cd24e089617f5a"></a>
@@ -487,6 +573,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the amount of airports allocated to the airline. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -506,6 +595,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the flight with id equal to 'num'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_flight.html" title="Class handling flights. Stores information regarding airports connected by the flight,...">Flight</a>&amp; </dd></dl>
+
 </div>
 </div>
 <a id="ac0f5c732522aa3f5bcce9a429745061e" name="ac0f5c732522aa3f5bcce9a429745061e"></a>
@@ -522,6 +620,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the maximum number of flights allowed by the airline. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -540,7 +641,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>GETTERS for fields of <a class="el" href="class_airline.html">Airline</a> Class. </p>
+<p>Returns the name of the airline. </p>
+<dl class="section return"><dt>Returns</dt><dd>const string&amp; </dd></dl>
 
 </div>
 </div>
@@ -560,6 +662,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns a pointer to the plane with id equal to 'num'. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Plane* </dd></dl>
+
 </div>
 </div>
 <a id="ab596a3ffa5b4350273614db0963f5767" name="ab596a3ffa5b4350273614db0963f5767"></a>
@@ -576,6 +687,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the planes belonging to the airline. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Plane&gt; </dd></dl>
 
 </div>
 </div>
@@ -594,6 +708,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Loads all the airports from the file 'Data/airports.txt'. </p>
+
 </div>
 </div>
 <a id="a8c50a3b257a4fcd109e809c09dec8da2" name="a8c50a3b257a4fcd109e809c09dec8da2"></a>
@@ -610,6 +726,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads all the flights from the file 'Data/flights.txt'. </p>
 
 </div>
 </div>
@@ -628,6 +746,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Loads all passengers from the file 'Data/passengers.txt'. </p>
+
 </div>
 </div>
 <a id="ac9d32267d31ebbb10c709c055a17abb1" name="ac9d32267d31ebbb10c709c055a17abb1"></a>
@@ -645,6 +765,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Loads all the planes from the file 'Data/planes.txt'. </p>
+
 </div>
 </div>
 <a id="a0a0fc5c401ebecc1db152b70f3a4fb14" name="a0a0fc5c401ebecc1db152b70f3a4fb14"></a>
@@ -661,6 +783,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Loads all services from the file 'Data/services.txt'. </p>
 
 </div>
 </div>
@@ -680,6 +804,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check if a plane with id equal to 'num' exists in the airline. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
 </div>
 </div>
 <a id="adde4ddf376655e4923e66fabc0324207" name="adde4ddf376655e4923e66fabc0324207"></a>
@@ -696,6 +829,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints all flights belonging to the airline. </p>
 
 </div>
 </div>
@@ -714,6 +849,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Prints all services to be performed. </p>
+
 </div>
 </div>
 <a id="ae4b10e03bea3ac1e46b0d44f683bf200" name="ae4b10e03bea3ac1e46b0d44f683bf200"></a>
@@ -730,6 +867,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints all performed services. </p>
 
 </div>
 </div>
@@ -748,7 +887,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>: Method that prints all the planes in the <a class="el" href="class_airline.html">Airline</a> database. </p>
+<p>: Method that prints all the planes in the <a class="el" href="class_airline.html" title="Class handling airlines. Contains information regarding services, planes, flights,...">Airline</a> database. </p>
 
 </div>
 </div>
@@ -802,6 +941,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds seats already reserved from passengers loaded from file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flightID</td><td></td></tr>
+    <tr><td class="paramname">firstName</td><td></td></tr>
+    <tr><td class="paramname">lastName</td><td></td></tr>
+    <tr><td class="paramname">seatNum</td><td></td></tr>
+    <tr><td class="paramname">clientID</td><td></td></tr>
+    <tr><td class="paramname">baggage</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a25a8097bd26d560f5989b27a34379d68" name="a25a8097bd26d560f5989b27a34379d68"></a>
@@ -818,6 +970,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Allows the user to reserve a seat in a specific flight. </p>
 
 </div>
 </div>
@@ -836,6 +990,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Saves all flights into the file 'Data/flights.txt'. </p>
+
 </div>
 </div>
 <a id="a0bc48b4adeaacef15dfe0fb20ea3c235" name="a0bc48b4adeaacef15dfe0fb20ea3c235"></a>
@@ -852,6 +1008,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Saves all the planes into the file 'Data/planes.txt'. </p>
 
 </div>
 </div>
@@ -870,6 +1028,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Sorts the flights according to user input. </p>
+
 </div>
 </div>
 <a id="a12cd054ff6401537595cc03344f1513f" name="a12cd054ff6401537595cc03344f1513f"></a>
@@ -886,7 +1046,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Allows the user to sort the planeList according to the user chosen parameter. </p>
+
+<p>Allows the user to sort the planeList according to the user chosen parameter. </p>
 
 </div>
 </div>

@@ -69,44 +69,65 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class handling airports. Stores transports belonging to the airport, as well as the baggage system and other specific information.  
+ <a href="class_airport.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_airport_8h_source.html">Airport.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2fc0f2402c94225b9deaf76176bb887f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a2fc0f2402c94225b9deaf76176bb887f">Airport</a> ()</td></tr>
+<tr class="memdesc:a2fc0f2402c94225b9deaf76176bb887f"><td class="mdescLeft">&#160;</td><td class="mdescRight">default constructor for Airpot  <a href="class_airport.html#a2fc0f2402c94225b9deaf76176bb887f">More...</a><br /></td></tr>
 <tr class="separator:a2fc0f2402c94225b9deaf76176bb887f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a332f76f83eb7671b26c56282dce0e44f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a332f76f83eb7671b26c56282dce0e44f">Airport</a> (int id, string name, string city)</td></tr>
+<tr class="memdesc:a332f76f83eb7671b26c56282dce0e44f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an airport with specified information.  <a href="class_airport.html#a332f76f83eb7671b26c56282dce0e44f">More...</a><br /></td></tr>
 <tr class="separator:a332f76f83eb7671b26c56282dce0e44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add1a93a7fded05cadea4fc4db62ab13f"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#add1a93a7fded05cadea4fc4db62ab13f">getID</a> () const</td></tr>
+<tr class="memdesc:add1a93a7fded05cadea4fc4db62ab13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the airport's unique identifier.  <a href="class_airport.html#add1a93a7fded05cadea4fc4db62ab13f">More...</a><br /></td></tr>
 <tr class="separator:add1a93a7fded05cadea4fc4db62ab13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6e7fc994922ca16a621af90ac6a0d45"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#aa6e7fc994922ca16a621af90ac6a0d45">getName</a> ()</td></tr>
+<tr class="memdesc:aa6e7fc994922ca16a621af90ac6a0d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the airport's name.  <a href="class_airport.html#aa6e7fc994922ca16a621af90ac6a0d45">More...</a><br /></td></tr>
 <tr class="separator:aa6e7fc994922ca16a621af90ac6a0d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4417cac786e93aacbaedabc303ac214c"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a4417cac786e93aacbaedabc303ac214c">getCity</a> ()</td></tr>
+<tr class="memdesc:a4417cac786e93aacbaedabc303ac214c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the city the airport is located in.  <a href="class_airport.html#a4417cac786e93aacbaedabc303ac214c">More...</a><br /></td></tr>
 <tr class="separator:a4417cac786e93aacbaedabc303ac214c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7a66259dfce6df46d213b489c18e3b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#ad7a66259dfce6df46d213b489c18e3b1">LoadTransports</a> ()</td></tr>
+<tr class="memdesc:ad7a66259dfce6df46d213b489c18e3b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to load transports associated with this <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a>.  <a href="class_airport.html#ad7a66259dfce6df46d213b489c18e3b1">More...</a><br /></td></tr>
 <tr class="separator:ad7a66259dfce6df46d213b489c18e3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bf02a710b455bb1b4be83253ac1d73f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a8bf02a710b455bb1b4be83253ac1d73f">showAvailables</a> (<a class="el" href="_transport_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a> vehicle) const</td></tr>
+<tr class="memdesc:a8bf02a710b455bb1b4be83253ac1d73f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the available transports of type vehicle (input)  <a href="class_airport.html#a8bf02a710b455bb1b4be83253ac1d73f">More...</a><br /></td></tr>
 <tr class="separator:a8bf02a710b455bb1b4be83253ac1d73f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adad2f38271fcfc85d8e5ab0a2b663fef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#adad2f38271fcfc85d8e5ab0a2b663fef">showDistances</a> (<a class="el" href="_transport_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a> vehicle) const</td></tr>
+<tr class="memdesc:adad2f38271fcfc85d8e5ab0a2b663fef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the distance of the different vehicles to the airport.  <a href="class_airport.html#adad2f38271fcfc85d8e5ab0a2b663fef">More...</a><br /></td></tr>
 <tr class="separator:adad2f38271fcfc85d8e5ab0a2b663fef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb17b97547f16c5ca228b70d8e9d17cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#aeb17b97547f16c5ca228b70d8e9d17cd">showSchedules</a> (<a class="el" href="_transport_8h.html#a7aead736a07eaf25623ad7bfa1f0ee2d">type</a> vehicle) const</td></tr>
+<tr class="memdesc:aeb17b97547f16c5ca228b70d8e9d17cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs the schedules of all the transports associated with the airport.  <a href="class_airport.html#aeb17b97547f16c5ca228b70d8e9d17cd">More...</a><br /></td></tr>
 <tr class="separator:aeb17b97547f16c5ca228b70d8e9d17cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab92efbef818030041d426fbed4808b82"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#ab92efbef818030041d426fbed4808b82">getCartLoad</a> ()</td></tr>
+<tr class="memdesc:ab92efbef818030041d426fbed4808b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the baggage cart's current baggage load.  <a href="class_airport.html#ab92efbef818030041d426fbed4808b82">More...</a><br /></td></tr>
 <tr class="separator:ab92efbef818030041d426fbed4808b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34d2f889381347f34695c4203f052c62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a34d2f889381347f34695c4203f052c62">getCartMaxLoad</a> ()</td></tr>
+<tr class="memdesc:a34d2f889381347f34695c4203f052c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the baggage cart's maximum baggage load.  <a href="class_airport.html#a34d2f889381347f34695c4203f052c62">More...</a><br /></td></tr>
 <tr class="separator:a34d2f889381347f34695c4203f052c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a602804552528581fb4fe407975552f0d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a602804552528581fb4fe407975552f0d">getConveyorLoad</a> ()</td></tr>
+<tr class="memdesc:a602804552528581fb4fe407975552f0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the baggage conveyor's current baggage load.  <a href="class_airport.html#a602804552528581fb4fe407975552f0d">More...</a><br /></td></tr>
 <tr class="separator:a602804552528581fb4fe407975552f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1104c3fbcc00ed997ff004e0d4de6c08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a1104c3fbcc00ed997ff004e0d4de6c08">addBaggageToConveyor</a> (<a class="el" href="class_baggage.html">Baggage</a> baggage)</td></tr>
+<tr class="memdesc:a1104c3fbcc00ed997ff004e0d4de6c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a baggage to the baggage conveyor.  <a href="class_airport.html#a1104c3fbcc00ed997ff004e0d4de6c08">More...</a><br /></td></tr>
 <tr class="separator:a1104c3fbcc00ed997ff004e0d4de6c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2085c1a233a5f297b588adf438c04ee5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a2085c1a233a5f297b588adf438c04ee5">emptyConveyor</a> ()</td></tr>
+<tr class="memdesc:a2085c1a233a5f297b588adf438c04ee5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Empties the baggage conveyor of all baggages.  <a href="class_airport.html#a2085c1a233a5f297b588adf438c04ee5">More...</a><br /></td></tr>
 <tr class="separator:a2085c1a233a5f297b588adf438c04ee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af74cb9ecc4ecb2d3be9fc72a89c811d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#af74cb9ecc4ecb2d3be9fc72a89c811d7">fillPlane</a> (<a class="el" href="class_plane.html">Plane</a> &amp;plane)</td></tr>
+<tr class="memdesc:af74cb9ecc4ecb2d3be9fc72a89c811d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the plane passed as parameter with the passenger's baggages.  <a href="class_airport.html#af74cb9ecc4ecb2d3be9fc72a89c811d7">More...</a><br /></td></tr>
 <tr class="separator:af74cb9ecc4ecb2d3be9fc72a89c811d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cd27f277ba08985ebe7c07ea6a89937"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_airport.html#a9cd27f277ba08985ebe7c07ea6a89937">toString</a> () const</td></tr>
+<tr class="memdesc:a9cd27f277ba08985ebe7c07ea6a89937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns airport information as a custom formatted string.  <a href="class_airport.html#a9cd27f277ba08985ebe7c07ea6a89937">More...</a><br /></td></tr>
 <tr class="separator:a9cd27f277ba08985ebe7c07ea6a89937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Class handling airports. Stores transports belonging to the airport, as well as the baggage system and other specific information. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2fc0f2402c94225b9deaf76176bb887f" name="a2fc0f2402c94225b9deaf76176bb887f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2fc0f2402c94225b9deaf76176bb887f">&#9670;&nbsp;</a></span>Airport() <span class="overload">[1/2]</span></h2>
 
@@ -121,7 +142,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: default constructor for Airpot </p>
+
+<p>default constructor for Airpot </p>
 
 </div>
 </div>
@@ -156,11 +178,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Constructor </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Constructs an airport with specified information. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>(<a class="el" href="class_airport.html">Airport</a> ID) </td></tr>
-    <tr><td class="paramname">name</td><td>(<a class="el" href="class_airport.html">Airport</a> Name) </td></tr>
-    <tr><td class="paramname">city</td><td>(<a class="el" href="class_airport.html">Airport</a> City) </td></tr>
+    <tr><td class="paramname">id</td><td>-&gt; (<a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> ID) </td></tr>
+    <tr><td class="paramname">name</td><td>-&gt; (<a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> Name) </td></tr>
+    <tr><td class="paramname">city</td><td>-&gt; (<a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a> City) </td></tr>
   </table>
   </dd>
 </dl>
@@ -184,6 +208,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a baggage to the baggage conveyor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">baggage</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2085c1a233a5f297b588adf438c04ee5" name="a2085c1a233a5f297b588adf438c04ee5"></a>
@@ -200,6 +232,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Empties the baggage conveyor of all baggages. </p>
 
 </div>
 </div>
@@ -219,6 +253,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fills the plane passed as parameter with the passenger's baggages. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">plane</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="ab92efbef818030041d426fbed4808b82" name="ab92efbef818030041d426fbed4808b82"></a>
@@ -235,6 +277,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the baggage cart's current baggage load. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -253,6 +298,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the baggage cart's maximum baggage load. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="a4417cac786e93aacbaedabc303ac214c" name="a4417cac786e93aacbaedabc303ac214c"></a>
@@ -269,6 +317,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the city the airport is located in. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; </dd></dl>
 
 </div>
 </div>
@@ -287,6 +338,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the baggage conveyor's current baggage load. </p>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
+
 </div>
 </div>
 <a id="add1a93a7fded05cadea4fc4db62ab13f" name="add1a93a7fded05cadea4fc4db62ab13f"></a>
@@ -303,6 +357,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns the airport's unique identifier. </p>
+<dl class="section return"><dt>Returns</dt><dd>const int&amp; </dd></dl>
 
 </div>
 </div>
@@ -321,6 +378,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Returns the airport's name. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::string&amp; </dd></dl>
+
 </div>
 </div>
 <a id="ad7a66259dfce6df46d213b489c18e3b1" name="ad7a66259dfce6df46d213b489c18e3b1"></a>
@@ -337,7 +397,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >brief: method to load transports for this associated with this <a class="el" href="class_airport.html">Airport</a> </p>
+
+<p>Method to load transports associated with this <a class="el" href="class_airport.html" title="Class handling airports. Stores transports belonging to the airport, as well as the baggage system an...">Airport</a>. </p>
 
 </div>
 </div>
@@ -356,7 +417,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Outputs the available transports of type vehicle (input) </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Outputs the available transports of type vehicle (input) </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vehicle</td><td></td></tr>
   </table>
@@ -380,7 +443,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p >Outputs the distance of the different vehicles to </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Outputs the distance of the different vehicles to the airport. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vehicle</td><td></td></tr>
   </table>
@@ -405,6 +470,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Outputs the schedules of all the transports associated with the airport. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vehicle</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a9cd27f277ba08985ebe7c07ea6a89937" name="a9cd27f277ba08985ebe7c07ea6a89937"></a>
@@ -421,6 +494,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Returns airport information as a custom formatted string. </p>
+<dl class="section return"><dt>Returns</dt><dd>string </dd></dl>
 
 </div>
 </div>
