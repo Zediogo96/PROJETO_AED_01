@@ -4,12 +4,14 @@
 
 #include "Transport.h"
 
+#include <utility>
+
 Transport::Transport(type t, int id, int airportid , int distance, vector<Time> schedule) {
     this->transporttype = t;
     this->transportid = id;
     this->airportid = airportid;
     this->distance = distance;
-    this->schedule = schedule;
+    this->schedule = std::move(schedule);
 }
 void Transport::addTime(Time time) {
     schedule.push_back(time);

@@ -22,14 +22,14 @@ class Passenger
 		void SetSeatNumber(int seatNumber);
 		int GetSeatNumber() const;
 		void setBaggageInclusion(bool state);
-		bool includedBaggage();
+		bool includedBaggage() const;
 		Baggage getBaggage();
 	private:
 		std::string mfirstName;
 		std::string mlastName;
 		int mSeatNumber=-1;
 		int mID=-1;
-		bool includeBaggage;
+		bool includeBaggage{};
 		Baggage baggage;
 	};
 

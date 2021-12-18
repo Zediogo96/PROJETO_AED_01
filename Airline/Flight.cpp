@@ -144,10 +144,11 @@ void Flight::printSeats() {
     cout << "Seats Available: " << endl;
     for (Seat elem: mSeatsAvailable) {
         if (!elem.isTaken()) {
-            if (aux % 16 == 0) {
+            if (aux % 10 == 0) {
+                cout << "[" << setw(3) << elem.getSeatNum() << "] ";
                 cout << endl;
             } else {
-                cout << "[" << elem.getSeatNum() << "]";
+                cout << "[" << setw(3) << elem.getSeatNum() << "] ";
             }
             aux++;
         }
