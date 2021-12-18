@@ -215,6 +215,7 @@ void services_menu(Airline &airline) {
         std::cout << "|    [2] Check next Service         |" << std::endl;
         std::cout << "|    [3] Services not completed     |" << std::endl;
         std::cout << "|    [4] Services history           |" << std::endl;
+        std::cout << "|    [5] Save All Services          |" << std::endl;
         std::cout << "|    [0] Exit to Main Menu          |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
 
@@ -234,6 +235,8 @@ void services_menu(Airline &airline) {
             case '4':
                 airline.printAllServicesHistory();
                 break;
+            case '5':
+                airline.saveServices();
             case '0':
                 return;
             default:

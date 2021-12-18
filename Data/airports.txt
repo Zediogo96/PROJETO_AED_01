@@ -6,3 +6,5 @@
 6 CR7 Madeira
 7 MAD Madrid
 8 BRB Brasilia
+9 DJE Tunisia
+10 SHA Shanghai

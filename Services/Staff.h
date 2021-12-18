@@ -12,6 +12,7 @@
 using namespace std;
 
 class Staff {
+
 private:
     std::string firstName;
     std::string lastName;
@@ -25,6 +26,10 @@ public:
         this->lastName = lastName;
     }
 
+    /**
+    * @brief Converts Staff into a string format to be output
+    * @return string format of Staff
+    **/
     std::string toString() {
         std::ostringstream oss;
         oss << firstName << " " << lastName;

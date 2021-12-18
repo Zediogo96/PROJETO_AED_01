@@ -8,7 +8,7 @@
 #include "../Utility/Date.h"
 #include "Staff.h"
 
-/** brief: Abstract Class for the different types of services **/
+/** brief Abstract Class for the different types of services **/
 class Service {
 
 protected:
@@ -50,6 +50,9 @@ public:
     virtual string printType() = 0;
 };
 
+/**
+ * Cleaning Class, derived from Service
+ */
 class Cleaning : public Service {
 
 private:
@@ -75,6 +78,9 @@ public:
     }
 };
 
+/**
+ * Maintenance Class, derived from Service
+ */
 class Maintenance : public Service {
 
 private:
@@ -83,7 +89,7 @@ private:
     bool emergencyDoors = false;
 public:
     /**
-     * Constructor for Maintenace class, derived from service
+     * Constructor for Maintenace class
      * @param planeID
      * @param staff
      */

@@ -22,6 +22,7 @@ public:
     bool isTaken() const {
         return occupied;
     }
+    /** brief: **/
     void setTaken() {
         occupied = true;
     }

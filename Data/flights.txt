@@ -1,8 +1,11 @@
-1 1 2020/12/12 04:30 Porto Barcelona
-2 2 2023/04/05 10:34 Lisbon London
+1 1 2022/12/12 04:30 Porto Barcelona
+2 2 2023/04/05 04:30 Lisbon London
 3 3 2022/05/06 02:30 Porto California
 3 4 2021/12/19 00:30 Lisbon Brasilia
 4 5 2022/04/05 02:00 Porto Madeira
-5 6 2020/01/03 01:30 Lisbon Madrid
+5 6 2022/01/03 01:30 Lisbon Madrid
+5 7 2021/04/12 10:30 Porto Shanghai
 7 8 2021/02/14 03:30 California Madeira
 8 10 2021/03/05 04:00 Brasilia California
+9 11 2022/12/30 05:00 Lisbon Tunisia
+1 12 2022/12/14 10:00 Tunisia Shanghai

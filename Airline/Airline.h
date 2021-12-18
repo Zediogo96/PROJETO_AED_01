@@ -114,7 +114,7 @@ public:
 
     void printAllFlights();
 
-    /////////////////////////////////// HANDLE SERCICES ///////////////////////////////////////
+    /////////////////////////////////// HANDLE SERVICES ///////////////////////////////////////
 
     void addService();
 
@@ -138,6 +138,8 @@ public:
     void ReservedSeats(int flightID, const string& firstName, const string& lastName, int seatNum, int clientID, bool baggage);
 
     void checkPassengerSeats();
+
+    void saveServices();
 };
 
 #endif //PROJETO_AIRLINE_H

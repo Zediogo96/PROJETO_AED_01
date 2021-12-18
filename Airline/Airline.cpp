@@ -145,6 +145,7 @@ void Airline::SavePlanes() {
                    it.getNumberPlate() << " " << it.getCapacity();
         }
     }
+    output.close();
 }
 
 void Airline::LoadPlanes() {
@@ -507,31 +508,63 @@ void Airline::LoadServices() {
         servicesQueue.pop();
     }
 
-    int planeID;
+    int planeID, year, month, day;
     string type, firstName, lastName;
+    char separator = '/';
 
     std::ifstream file;
     std::string filename = "services.txt";
 
     file.open(filename, std::ifstream::in);
 
-    while(file >> planeID >> type >> firstName >> lastName) {
+    if (file.is_open()) {
+        while(file >> planeID >> type >> firstName >> lastName) {
 
-        Staff staff(firstName, lastName);
+            Staff staff(firstName, lastName);
 
-        if (type == "Cleaning") {
-            Service* serviceptr;
-            auto* cleaning = new Cleaning(planeID, staff);
+            if (type == "Cleaning") {
+                Service* serviceptr;
+                auto* cleaning = new Cleaning(planeID, staff);
 
-            serviceptr = cleaning;
-            servicesQueue.push(serviceptr);
+                serviceptr = cleaning;
+                servicesQueue.push(serviceptr);
+            }
+            else {
+                Service* serviceptr;
+                auto * maintenance = new Maintenance(planeID, staff);
+
+                serviceptr = maintenance;
+                servicesQueue.push(serviceptr);
+            }
         }
-        else {
-            Service* serviceptr;
-            auto * maintenance = new Maintenance(planeID, staff);
+        file.close();
+    }
 
-            serviceptr = maintenance;
-            servicesQueue.push(serviceptr);
+    filename = "servicesHist.txt";
+
+    file.open(filename, std::ifstream::in);
+
+    if (file.is_open()) {
+        while (file >> planeID >> type >> firstName >> lastName >> year >> separator >> month >> separator >> day) {
+            Date date(year, month, day);
+            Staff staff(firstName, lastName);
+
+            if (type == "Cleaning") {
+                Service* serviceptr;
+                auto* cleaning = new Cleaning(planeID, staff);
+                cleaning->setComplete(date);
+
+                serviceptr = cleaning;
+                servicesHistory.push_back(serviceptr);
+            }
+            else {
+                Service* serviceptr;
+                auto * maintenance = new Maintenance(planeID, staff);
+                maintenance->setComplete(date);
+
+                serviceptr = maintenance;
+                servicesHistory.push_back(serviceptr);
+            }
         }
     }
     file.close();
@@ -595,6 +628,36 @@ void Airline::reserveSeat() {
 
 }
 
+void Airline::saveServices() {
+
+    queue<Service*> copy = servicesQueue;
+    std::string filename1 = "services.txt";
+    std::string filename2 = "servicesHist.txt";
+    std::fstream output;
+
+    output.open(filename1, std::fstream::out);
+
+    if(output.is_open()) {
+
+        while (!copy.empty()) {
+            Service *service = copy.front();
+            output << service->getPlaneID() << " " << service->printType() << " " << service->getResponsible().toString() << endl;
+            copy.pop();
+        }
+    }
+    output.close();
+
+    output.open(filename2, std::fstream::out);
+
+    if (output.is_open()) {
+        for (auto elem : servicesHistory) {
+            output << elem->getPlaneID() << " " << elem->printType() << " " << elem->getResponsible().toString() <<  " " << elem->getDateCompleted().toString() << endl;
+        }
+    }
+    output.close();
+
+}
+
 /////////////////////////////// HANDLE PASSENGERS ////////////////////////////////////////////////
 
 void Airline::ReservedSeats(int flightID, const string& firstName, const string& lastName, int seatNum, int clientID, bool baggage) {
@@ -644,5 +707,4 @@ void Airline::checkPassengerSeats() {
             }
         }
     }
-
 }
