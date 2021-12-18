@@ -13,7 +13,7 @@ void main_menu(Airline &airline) {
     while (true) {
 
         std::cout << "_____________________________________" << std::endl;
-        std::cout << "|        AIRLINE MANAGEMENT         |" << std::endl;
+        std::cout << "|              AIRLINE              |" << std::endl;
         std::cout << "|             MAIN MENU             |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|                                   |" << std::endl;
@@ -46,7 +46,7 @@ void airport_menu(Airline &airline) {
     while (true) {
 
         std::cout << "_____________________________________" << std::endl;
-        std::cout << "|        AIRPORT MANAGEMENT         |" << std::endl;
+        std::cout << "|        AIRLINE MANAGEMENT         |" << std::endl;
         std::cout << "|___________________________________|" << std::endl;
         std::cout << "|    What do you want to manage?    |" << std::endl;
         std::cout << "|                                   |" << std::endl;

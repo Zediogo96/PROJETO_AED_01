@@ -81,6 +81,9 @@ class Passenger
 		 * @param state 
 		 */
 		void setBaggageInclusion(bool state);
+
+		bool includedBaggage() const;
+
 		/**
 		 * @brief Checks if the passenger has chosen to include baggage
 		 * 
@@ -92,13 +95,14 @@ class Passenger
 		 * 
 		 * @return Baggage -> a Baggage object
 		 */
+
 		Baggage getBaggage();
 	private:
 		std::string mfirstName;
 		std::string mlastName;
 		int mSeatNumber=-1;
 		int mID=-1;
-		bool includeBaggage;
+		bool includeBaggage{};
 		Baggage baggage;
 	};
 

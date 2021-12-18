@@ -46,7 +46,7 @@ int Passenger::GetPassengerID() const
     return mID;
 }
 
-bool Passenger::includedBaggage() {
+bool Passenger::includedBaggage() const {
     return includeBaggage;
 }
 
