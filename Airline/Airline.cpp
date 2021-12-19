@@ -597,7 +597,10 @@ void Airline::reserveSeat() {
         InputStr(lastName, "Your Last Name: ");
 
         do {
-            InputInt(passengerId, "Your Client ID: ");
+            InputInt(passengerId, "Your Client ID: (or press 0 to Cancel)");
+
+            if (passengerId == 0) return;
+
         } while(!flight.availableClientID(passengerId, firstName, lastName));
 
         Passenger passenger(firstName, lastName, passengerId);

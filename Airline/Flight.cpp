@@ -98,12 +98,13 @@ bool Flight::availableSeat(int num) {
 }
 
 bool Flight::availableClientID(int num, const std::string& firstName, const std::string& lastName) {
+
     for (auto & it : mPassengers) {
         if (it.GetPassengerID() == num) {
             if (it.GetPassengerFirstName() == firstName && it.GetPassengerLastName() == lastName) {
                 std::cout << "You already have a Seat under your clientID for this Flight!" << std::endl;
                 system("pause");
-                break;
+                return false;
             }
             std::cout << "That clientID belongs to another Person." << std::endl;
             return false;
@@ -162,6 +163,5 @@ int Flight::getFreeSeatsCount() const {
     for (auto elem : mSeatsAvailable) {
         if (!elem.isTaken()) res++;
     }
-
     return res;
 }
