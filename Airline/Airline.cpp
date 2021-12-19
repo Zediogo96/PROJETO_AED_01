@@ -248,7 +248,9 @@ bool Airline::avaliableFlight(int flightID) {
 
 void Airline::addFlight() {
     if (flightsList.size() == maxNumOfFlights) {
-
+        cout << "Maximum Number of Flights Exceeded." << endl;
+        system("pause");
+        return;
     }
     int flightID, planeID;
     std::string departDate;

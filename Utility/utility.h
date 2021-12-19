@@ -10,12 +10,6 @@
 #include <iostream>
 #include <cstdlib>
 
-#ifdef _WIN32
-#define CLEAR "cls"
-#else
-#define CLEAR "clear"
-#endif
-
 /**
  * Using Regular Expressions (Regex) to validate a Plane Type input
  * Example accepted formats: A340, B500, C731
@@ -59,7 +53,7 @@ static bool validateDate(const std::string &s) {
 
     if (std::regex_match(s, validType))
         return true;
-    std::cout << "Invalid date format, must be for example: 1996/12/19 (yyyy/mm/dd).";
+    std::cout << "Invalid date format, must be for example: 1996/12/19 (yyyy/mm/dd)." << std::endl;
     return false;
 }
 

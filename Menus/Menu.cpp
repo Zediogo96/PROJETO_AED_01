@@ -1,13 +1,7 @@
 #include "Menu.h"
 
-#ifdef _WIN32
-#define CLEAR "cls"
-#else //In any other OS
-#define CLEAR "clear"
-#endif
 
 void main_menu(Airline &airline) {
-
     char option;
 
     while (true) {

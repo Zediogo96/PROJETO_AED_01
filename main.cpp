@@ -1,7 +1,6 @@
 #include <iostream>
 
 #include "Utility/Time.h"
-#include "Utility/utility.h"
 #include "Transports/Transport.h"
 #include "Airline/Airline.h"
 #include "Menus/Menu.h"
@@ -39,8 +38,8 @@ void testDate_now() {
     std::cout << date.getYear() << " " << date.getMonth() << " " << date.getDay();
 }
 
-void test() {
-    Airline airline("Tap", 100);
+void init() {
+    Airline airline("Tap", 50);
     airline.loadAirports();
     airline.LoadPlanes();
     airline.LoadFlights();
@@ -50,6 +49,6 @@ void test() {
 }
 
 int main() {
-    test();
+    init();
     return 0;
 }
