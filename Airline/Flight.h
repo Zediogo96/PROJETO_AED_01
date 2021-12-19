@@ -148,6 +148,12 @@ public:
      * @return vector<Passenger>& 
      */
     vector<Passenger> &getPassengersList();
+
+    /**
+     * @brief Method to count the Number of Free Seats in a Flight (in which taken is set to false)
+     * @return int
+     */
+    int getFreeSeatsCount() const;
 };
 
 #endif //PROJETO_FLIGHT_H

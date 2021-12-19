@@ -71,7 +71,7 @@ void Flight::printInfo() const {
               getDepartureDate().toString() << ", Flight Duration: "
               << getFlightDuration().toString() << ", Departure Location: "
               << getDepartureLocation() << ", Destination: " << getDestination() << ", Number of Seats Available: "
-              << mSeatsAvailable.size() << "}" << std::endl;
+              << getFreeSeatsCount() << "}" << std::endl;
 }
 
 void Flight::ReserveSeat(Passenger& passenger)
@@ -154,4 +154,14 @@ void Flight::printSeats() {
         }
     }
     cout << endl;
+}
+
+int Flight::getFreeSeatsCount() const {
+    int res = 0;
+
+    for (auto elem : mSeatsAvailable) {
+        if (!elem.isTaken()) res++;
+    }
+
+    return res;
 }

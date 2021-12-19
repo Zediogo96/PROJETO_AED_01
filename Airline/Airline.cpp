@@ -347,7 +347,7 @@ void Airline::sortFlights() {
             break;
         case '4':
             std::sort(flightsList.begin(), flightsList.end(),[](Flight & a, Flight & b) {
-                return a.getSeatsAvailable().size() < b.getSeatsAvailable().size();
+                return a.getFreeSeatsCount() < b.getFreeSeatsCount();
             });
             break;
         default: std::cout << "Invalid Input." << std::endl;
