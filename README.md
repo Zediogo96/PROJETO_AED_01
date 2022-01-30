@@ -1,6 +1,6 @@
 # PROJETO_AED_01
 
-First Pratical Project for Algorithms and DataStructures 2021/2022
+First Pratical Project for Algorithms and Data Structures 2021/2022
 
 José Diogo up202003529
 Aníbal Ferreira up202005429
